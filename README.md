@@ -1,8 +1,4 @@
-= This Google Code project has been deprecated and is no longer maintained. =
-
-----
-
-# summary A collection of links to tools and code snippets that generate Sitemap files.
+# A collection of links to tools and code snippets that generate Sitemap files.
 
 ## Web Sitemap Generators
 
