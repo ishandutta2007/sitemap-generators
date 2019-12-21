@@ -2,15 +2,15 @@
 
 ----
 
-#summary A collection of links to tools and code snippets that generate Sitemap files.
+# summary A collection of links to tools and code snippets that generate Sitemap files.
 
-= Web Sitemap Generators =
+## Web Sitemap Generators
 
 The following are links to tools that generate or maintain files in the XML Sitemaps format, an open standard defined on [http://sitemaps.org/ sitemaps.org] and supported by the search engines such as Ask, Google, Microsoft Live Search and Yahoo!. Sitemap files generally contain a collection of URLs on a website along with some meta-data for these URLs. The following tools generally generate "web-type" XML Sitemap and URL-list files (some may also support other formats).
 
 Please Note: *Google has not tested or verified the features or security of the third party software listed on this site*. Please direct any questions regarding the software to the software's author. We hope you enjoy these tools!
 
-== Server-side Programs ==
+## Server-side Programs
 
   * [http://enarion.net/google/ Enarion phpSitemapsNG] (PHP)
   * [http://code.google.com/p/googlesitemapgenerator/ Google Sitemap Generator] (Linux/Windows, 32/64bit, open-source)  
@@ -41,7 +41,7 @@ Please Note: *Google has not tested or verified the features or security of the 
   * [http://wikkawiki.org/GoogleSitemapHandler Wikka Wiki] (PHP)
   * [http://www.arnebrachhold.de/projects/wordpress-plugins/google-xml-sitemaps-generator/ WordPress] 
 
-== Downloadable Tools ==
+## Downloadable Tools
   * [http://gsitecrawler.com/ GSiteCrawler] (Windows)
   * [http://trytobreak.com GWebCrawler & Sitemap Creator] (Windows)  
   * [http://www.dbnetsolutions.co.uk/gmapper/ G-Mapper] (Windows)
@@ -61,7 +61,7 @@ Please Note: *Google has not tested or verified the features or security of the 
   * [http://www.illumit.com/weblight/ Weblight] (Windows/Mac) $
   * [http://wonderwebware.com/sitemap-generator/ WonderWebWare Sitemap Generator] (Windows)
 
-== Online Generators/Services ==
+## Online Generators/Service
   * [http://www.auditmypc.com/free-sitemap-generator.asp AuditMyPc.com Sitemap Generator] 
   * [http://www.automapit.com/googlesitemaps.html AutoMapIt] 
   * [http://www.autositemap.com/ Autositemap] $
@@ -78,18 +78,16 @@ Please Note: *Google has not tested or verified the features or security of the 
   * [http://xmlsitemapgenerator.org/ XML Sitemap Generator]
   * [http://www.xml-sitemaps.com/ XML-Sitemaps Generator]
 
-== CMS with integrated Sitemap generators ==
+## CMS with integrated Sitemap generators
   * [http://www.concrete5.org/ Concrete5]
 
-
-= Google News Sitemap Generators =
+# Google News Sitemap Generators
 
 The following plugins allow publishers to update [http://news.google.com/ Google News] Sitemap files, a variant of the [http://sitemaps.org/ sitemaps.org protocol] that we describe [http://www.google.com/support/news_pub/bin/topic.py?topic=11666 in our Help Center]. In addition to the normal properties of Sitemap files, Google News Sitemaps allow publishers to describe the types of content they publish, along with specifying levels of access for individual articles. More information about Google News can be found in our [http://www.google.com/support/news_pub/?hl=en Help Center] and [http://www.google.com/support/forum/p/news?hl=en Help Forums]. 
 
   * [http://wordpress.org/extend/plugins/gn-xml-sitemap/ WordPress Google News plugin]
 
-
-= Code Snippets / Libraries =
+# Code Snippets / Libraries
   * [http://www.iteam5.net/francesco/sitemap_gen/ ASP script] 
   * [http://xahlee.org/emacs/make_sitemap.html Emacs Lisp script] 
   * [http://code.google.com/p/sitemapgen4j/ Java library]
