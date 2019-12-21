@@ -1,0 +1,748 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel=stylesheet href="http://www.google.com/google.css">
+<link rel=stylesheet href="../leftnav.css">
+<style>
+<!--
+body,td,font,p,a{font-family:arial,sans-serif}
+.i { margin-left: 1em; margin-right: 2em; }
+//.style1 {font-weight: bold}
+.style1 {font-weight: bold}
+.d {color:#999999;text-decoration:italics;font-size:10px;}
+.changes {color: #FF0000}
+-->
+</style>
+<script
+  src=" https://ssl.google-analytics.com/urchin.js "
+  type="text/javascript">
+</script>
+<script type="text/javascript">
+  _uacct="UA-18009-2";
+  _utcp="/webmasters/sitemaps/";
+  _uanchor=1; 
+  urchinTracker();
+</script>
+
+<title>أدوات مشرفي المواقع من Google</title>
+</head>
+<body class=search bgcolor=#ffffff text=#000000 link=#0000CC vlink=#800080 alink=#ff0000 topmargin=3 dir="rtl">
+<table width=95% border=0 cellpadding=0 cellspacing=2>
+  <tr valign=top>
+    <td width=1%><a href=https://www.google.com/webmasters/sitemaps/?hl=ar> <img src=http://www.google.com/images/google_sm.gif border=0 width=143 height=59 alt="العودة إلى صفحة Google الرئيسية." hspace=15 vspace=5></a></td>
+    <td width=100% valign="middle">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		<td><font size="+0"><b>أدوات مشرفي المواقع</b></font></td>
+		</tr>
+		<tr>
+		<td style="border-bottom:1px solid #999999" height="1"><img width="1" height="1" alt=""></td>
+		</tr>
+		</table>  	
+	</td>
+  </tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=0 width=95%> 
+  <tr> 
+    <td width="175" valign="top">
+		<font size="-1">
+    <p class="sidenavlink">
+    <a href="about.html">حول أدوات مشرفي المواقع</a></p>
+    <p class="sidenavlink"><a href="protocol.html">استخدام بروتوكول Sitemap</a></span>
+    <p class="sidenavtoc">استخدام مولِّد ملفات Sitemap</p>
+<p class="sidenavlink"><a href="http://www.google.ae/webmasters/">مجموعة خدمات مشرفي المواقع من Google</a></p>
+  </font></td>
+    <td background=http://www.google.com/images/dot2.gif valign=bottom width=5><img src=http://www.google.com/images/dot2.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=10 height=1></td> 
+    <td>
+		<div class="content"> 
+		
+			<p><strong>المحتويات</strong></p>
+			<p><font size="-1"><a href="#before">قبل البدء</a>
+		    <br><a href="#download">تنزيل ملفات برنامج مولِّد ملفات Sitemap</a>
+		    <br><a href="#config">إنشاء ملف تكوين</a><br>
+		    <a href="#copy">تحميل الملفات إلى مركز خدمة الويب "سيرفر" الخاص بك</a>
+		    <br><a href="#execute">تشغيل الشفرة البرمجية لمولِّد ملفات Sitemap</a>
+		    <br><a href="#submitting">تقديم ملف Sitemap إلى Google</a>
+		    <br><a href="#troubleshoot">استكشاف المشكلات وإصلاحها</a>
+		    </font></p>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="before"></a><b>قبل البدء</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">
+إن مولِّد ملفات Google Sitemap هو عبارة عن شفرة برمجية لـ Python تقوم بإنشاء ملف Sitemap للموقع الخاص بك باستخدام بروتوكول Sitemap. وتستطيع هذه الشفرة البرمجية إنشاء ملفات Sitemap من قوائم عناوين URL أو أدلة مركز خدمة الويب "سيرفر" أو من سجلات الوصول. ولاستخدام هذه الشفرة البرمجية: </font></p>
+				
+				<ul>
+				  <li><font size="-1">يجب أن تكون قادرًا على الاتصال بالشفرة البرمجية وتشغيلها على مركز خدمة الويب. </font></li>
+				  <li><font size="-1">يجب أن يكون مركز خدمة الويب الخاص بك مثبتًا عليه Python 2.2 أو إصدار أحدث. </font></li>
+				  <li><font size="-1">يجب أن تعرف الأمر الذي يشغِّل Python. (بصفة عامة, يكون هذا الأمر <strong>python</strong>, ولكن قد يختلف وفقًا للتثبيت. على سبيل المثال، إذا تم تثبيت إصدارين من Python على مركز خدمة الويب، فيمكن استدعاء الإصدار السابق باستخدام الأمر <strong>python</strong> واستدعاء الإصدار الأحدث باستخدام الأمر <strong> python2</strong>.) </font></li>
+				  <li><font size="-1">يجب أن تعرف مسار الدليل إلى الموقع الخاص بك. إذا كان مركز خدمة الويب يستضيف موقعًا واحدًا، فيمكن أن يكون هذا المسار بالشكل التالي <strong>var/www/html</strong>. وإذا كان لديك مركز خدمة ظاهري يستضيف مواقع متعددة، فيمكن أن يكون المسار به بالشكل التالي <strong>home/virtual/site1/fst/var/www/html</strong>. </font></li>
+				  <li><font size="-1"> يجب أن تكون قادرًا على تحميل الملفات إلى مركز خدمة الويب الخاص بك (على سبيل المثال استخدام FTP). </font></li>
+				  <li><font size="-1">إذا كنت ستنشئ قائمة بعناوين URL استنادًا إلى سجلات الوصول، فيجب أن تعرف التشفير المستخدم لهذه السجلات والمسار الكامل إليها. </font></li>
+          </ul>
+		  
+				<p><font size="-1">إذا لم تكن متأكدًا من أي نقطة من هذه النقاط، فيمكنك الرجوع إلى شركة استضافة الويب. </font></p>
+				<font size="-1">
+				<p> والآن أنت مستعد للشروع في العمل. وفيما يلي نظرة عامة حول ما تحتاج إلى القيام به. </p>
+				</font>
+		  <font size="-1">
+				<ol>
+                  <li><font size="-1"><a href="#download">تنزيل</a> ملفات برنامج مولِّد ملفات Sitemap. استخرج الملفات إلى دليل محلي. </font></li>
+                  <li><font size="-1"><a href="#config">إنشاء ملف تكوين</a> للموقع الخاص بك باستخدام ملف <strong>example_config.xml</strong> كقالب. قم بتعديل هذا الملف حسب حاجة موقعك ثم قم بحفظه. </font></li>
+                  <li><font size="-1"><a href="#copy">تحميل الملفات الضرورية </a> إلى مركز خدمة الويب. </font></li>
+                  <li><font size="-1"><a href="#execute">تشغيل</a> <strong>sitemap_gen.py</strong>. </font></li>
+                  <li><font size="-1"><a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">إضافة</a> ملف Sitemap الذي تم إنشاؤه إلى حساب أدوات مشرفي المواقع من Google. </font></li>
+		          <li><font size="-1"><a href="#recur">إعداد شفرة برمجية مكررة</a>. (اختياري) </font></li>
+				</ol>
+		  </font>
+		  
+				<p><font size="-1">إذا لم تكن قادرًا على استخدام مولد ملفات Sitemap، فيمكنك إضافة ملف Sitemap إلى حساب أدوات مشرفي المواقع من Google في <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34606&topic=8516>تنسيق آخر</a>, كملف نصي بسيط مثلاً. <a href="http://code.google.com/sm_thirdparty.html">برامج الجهات الخارجية التي تدعم بروتوكول Sitemap</a>.</font></p>
+				<p><font size="-1"><strong>بالنسبة لملفات Sitemap للأخبار:</strong> لا يُنصح باستخدام مولِّد ملفات Sitemap في إنشاء ملفات Sitemap لأخبار Google في هذا الوقت، وذلك بسبب المتطلبات الخاصة لملفات Sitemap للأخبار.  والغرض من ملفات Sitemap للأخبار أن تكون بمثابة قوائم ديناميكية لمقالات الأخبار المنشورة حديثًا فقط (وليس لموقع الويب بالكامل)، ويتم تحديثها بشكل متكرر.</font></p>  
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="download"></a><b>1. تنزيل ملفات برنامج مولِّد ملفات Sitemap</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p> تتوفر ملفات مولِّد Sitemap بتنسيقي أرشيف ZIP وGZ <font size="-1">من المكان التالي:</font></p>
+				</font>
+				<p><font size="-1"><a href="http://www.sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422">http://sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422</a></font></p>
+				<font size="-1">
+				<p>وبمجرد تنزيل الأرشيف، قم باستخراجه إلى دليل محلي. ثم قم بتحديد أماكن الملفات التالية: </p>
+				<ul>
+                  <li><strong> README</strong> &#8212;يحتوي على أحدث معلومات حول هذه الأداة </li>
+                  <li><strong> sitemap_gen.py</strong> &#8212; الشفرة البرمجية لـ python التي تقوم بإنشاء ملف Sitemap الخاص بك. </li>
+                  <li><strong> example_config.xml</strong> &#8212; ملف التكوين القالب الذي ستقوم باستخدامه لتحديد التكوين للموقع الخاص بك</li>
+                  <li><strong> example_urllist.txt</strong> &#8212;قائمة عناوين URL القالب التي يمكنك استخدامها إذا كنت ترغب في إنشاء ملف Sitemap استنادًا إلى مجموعة عناوين URL تحددها</li>
+		        </ul>
+				</font>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="config"></a><b>2أ. إنشاء ملف تكوين</b></td> 
+				</tr> 
+			</tbody></table>
+		  <font size="-1">
+		  </font><p><font size="-1">يقدم هذا القسم إرشادات خطوة بخطوة لإنشاء ملف تكوين. كما يقدم <a href="#config_reference">مرجعًا كاملاً</a> بالخيارات المتاحة. وفي حالة إنشاء <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34627&topic=8493">ملفات Sitemap للجوال</a>, راجع <a href="#creating_mobile">إرشادات الجوال الإضافية</a>.</font></p>
+				<font size="-1"><p>لإنشاء ملف تكوين لموقعك، يجب أن تتوفر لديك المعلومات التالية: </p>
+				<ul>
+                  <li>عنوان URL الأساسي لموقعك (مثل /<strong>http://www.example.com</strong>). تأكد من تضمين البروتوكول (مثل <strong>//:http</strong>). على سبيل المثال, <strong>http://www.google.ae</strong> هو عنوان url صالح, في حين أن <strong>www.google.ae</strong> غير صالح. </li>
+		
+                  <li>مسار مركز خدمة الويب "سيرفر" إلى المكان الذي تريد تخزين ملف Sitemap فيه. بشكل عام، يكون هذا هو المسار إلى عنوان URL الأساسي حيث لا يمكن أن يشتمل ملف Sitemap على عناوين URL في دليل أعلى من مكان ملف Sitemap. وعند تشغيل مولِّد ملفات Google Sitemap، فإنه يقوم بإنشاء ملف Sitemap ويقوم بوضعه في المكان الذي تحدده. </li>
+		 
+                  <li>الطريقة التي تريد أن يستخدمها مولِّد ملفات Sitemap لإنشاء ملف Sitemap الخاص بك. ويمكنك استخدام أي مجموعة من الطرق. كما تتوفر الطرق التالية: </li>
+		  </ul>
+				
+		  </font><ol>
+<ul>
+                    <li><font size="-1"><strong> <a href="#URL">عنوان URL</a></strong> &#8212; سرد عناوين URL الفردية في هذا القسم من ملف التكوين، إلى جانب معلومات حول كل عنوان URL. وبشكل عام، سوف تستخدم هذه الطريقة مع طريقة أخرى لتضمين عناوين URL إضافية لا تلتقطها الطريقة الأخرى. </font></li>
+                    <li><font size="-1"><strong><a href="#urllist">قائمة عناوين URL</a> </strong> &#8212; توجيه ملف التكوين إلى ملف نصي يحتوي على قائمة بعناوين URL. ويفضل استخدام هذه الطريقة إذا كان هذا الملف النصي موجودًا بالفعل أو إذا كنت تستخدم شفرة برمجية لإنشاء قائمة بعناوين URL. </font></li>
+                    <li><font size="-1"><strong><a href="#directory">مسارات الأدلة</a></strong>&#8212; تحديد مسارات الأدلة الخاصة بموقعك وعناوين URL ذات الصلة إلى هذه المسارات. وسوف يقوم مولِّد ملفات Sitemap بإنشاء قائمة بعناوين URL استنادًا إلى محتوى تلك الأدلة. ويفضل استخدام هذه الطريقة إذا كان موقعك يتكون من ملفات HTML ثابتة. </font></li>
+            <li><font size="-1"><strong> <a href="#logs">سجلات الوصول</a></strong>&#8212; الإشارة إلى المسار لملفات السجل. وسوف يقوم مولِّد ملفات Sitemap بإنشاء قائمة بعناوين URL استنادًا إلى عناوين URL المضمنة في السجلات. ويفضل استخدام هذه الطريقة إذا كان موقعك يتكون من صفحات ديناميكية. </font></li>
+ <li><font size="-1"><strong> <a href="#sitemap">ملف Sitemap</a></strong>&#8212;الإشارة إلى ملفات Sitemap الموجودة التي قمت بإنشائها باستخدام مولِّد ملفات Sitemap. وسوف يقوم مولِّد ملفات Sitemap بإنشاء ملف Sitemap فردي يتضمن عناوين URL الموجودة في كل ملف Sitemap. ويمكنك استخدام هذه الطريقة إذا كنت قد أنشأت بالفعل ملفات Sitemap صغيرة متعددة تريد تضمينها في ملف Sitemap كبير. </font></li>
+            </ul>
+		  </ol>
+				
+		  <font size="-1"><p><b><a name="create_config"></a>قم بإنشاء ملف التكوين على النحو التالي:</b></p>
+		  </font>
+				<ol>
+                 <font size="-1"> <li>افتح ملف <strong>example_config.xml</strong> في محرر نص. قم بحفظه كملف جديد (مثل <strong>config.xml</strong> أو <strong>mysite_config.xml</strong>).</li> 
+                 </font>
+				
+                 
+                 <font size="-1">
+                 <li>حدد مكان قسم تعريف الملف. </li>
+                 </font>		  
+				
+				<pre dir="ltr">&lt;site base_url="http://www.example.com/" store_into="/var/www/docroot/sitemap.xml.gz"
+verbose="1"&gt;
+				</pre>				
+				
+                  <font size="-1"><li>قم بتغيير قيمة <strong>base_url</strong> إلى عنوان URL الخاص بموقعك. </li>
+		 
+                  <li>قم بتغيير قيمة <strong>store_into</strong>
+إلى المسار الموجود على مركز خدمة الويب الخاص بك الذي تريد تخزين ملف Sitemap فيه وكذلك اسم الملف الذي تريد استخدامه لملف Sitemap. وبشكل عام، يكون هذا هو المسار إلى عنوان URL الأساسي نظرًا لأن Google لا تقبل سوى عناوين URL الموجودة في نفس مستوى الدليل الذي يحتوي على ملف Sitemap أو الأدلة الفرعية له. ويمكنك تحديد مسار نسبي من الدليل الذي قمت بتحميل الشفرة البرمجية إليه أو تحديد مسار كامل من جذر مركز خدمة الويب الخاص بك. وفي حالة تحميل الشفرة البرمجية إلى دليل عنوان URL الأساسي الخاص بك، فيمكنك تحديد اسم الملف فحسب.</li>
+                  </font>
+                  <font size="-1"></font><font size="-1"><li>حدد مكان أقسام طريقة الإنشاء التي تبدأ بـ <span class="style1">** MODIFY</span> <span class="style1">or DELETE **</span>. ويتطابق كل قسم من هذه الأقسام مع طريقة ما لإنشاء ملف Sitemap. </li>
+                  <li>قم بحذف الأقسام الخاصة بالطرق التي لن تستخدمها.</li>
+                  <li>اتبع الإرشادات الموضحة أدناه للطرق التي ستستخدمها. </li>
+                <p><strong> عنوان URL<a name="URL"></a></strong></p>
+                <p> حدد مكان القسم التالي: </p>
+                </font>
+                  <pre dir="ltr">&lt;!-- ** MODIFY or DELETE ** 
+"url" nodes specify individual URLs to include in the map. &lt;br&gt;
+
+Required attributes: 
+href - the URL
+
+Optional attributes: 
+lastmod - timestamp of last modification (ISO8601 format) 
+changefreq - how often content at this URL is usually updated
+priority - value 0.0 to 1.0 of relative importance in your site 
+--&gt; 
+
+&lt;url href="http://www.example.com/stats?q=name" /&gt; 
+&lt;url 
+href="http://www.example.com/stats?q=age" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre>
+                  <font size="-1">
+                <p>يقدم هذا القسم مثالين: يشتمل المثال الأول على السمة المطلوبة فقط ويشتمل المثال الثاني على السمة المطلوبة إلى جانب سمات اختيارية. </p>
+                <p>استخدم هذا التنسيق لكل عنوان URL تريد تضمينه. وتعمل السمة <strong>changefreq</strong> على إعطاء Google فكرة عامة حول عدد مرات تحديث عنوان URL. ويساعد هذا Google في معرفة معدل تكرار زيارة الصفحة للحصول على محتوى جديد. وتعمل السمة <strong>priority</strong> على إعطاء Google معلومات حول الأهمية النسبية لهذه الصفحة مقارنة بالصفحات الأخرى في موقعك. ولا تؤثر هذه السمة على الطريقة التي تقارن بها Google صفحتك مع الصفحات الموجودة في مواقع أخرى، فكل ما تفعله هو مساعدة Google في معرفة صفحات موقعك التي ترى أنت أنها الأكثر أهمية. </p>
+                  </font>
+				<p><font size="-1"><strong> قائمة عناوين URL <a name="urllist"></a> </strong></font></p>
+				<font size="-1"><p> حدد مكان القسم التالي: </p>
+				
+			</font>
+			<pre dir="ltr">
+&lt;!-- ** MODIFY or DELETE **
+"urllist" nodes name text files with lists of URLs. 
+An example file "example_urllist.txt" is provided. 
+
+Required attributes: 
+path - path to the file 
+
+Optional attributes: 
+encoding - encoding of the file if not US-ASCII 
+--&gt; 
+&lt;urllist path="example_urllist.txt" encoding="UTF-8" /&gt; 
+				</pre>
+				
+				<p><font size="-1"> استخدم هذا التنسيق للإشارة على مسار واسم الملف النصي الذي يحتوي على قائمة عناوين URL الخاصة بك. ويمكنك استخدام ملف <strong>example_urllist.txt</strong> المقدم كقالب لهذا الملف النصي. ويمكنك تحديد مسار نسبي أو كامل آخر إلى مركز خدمة الويب. على سبيل المثال، إذا كان مولِّد ملفات Sitemap وملف <strong>urlist.txt</strong> موجودين في نفس الدليل، فيمكنك ببساطة تحديد اسم الملف الخاص بملف <strong>.txt</strong>, وإذا قمت بإنشاء ملف نصي باستخدام تشفير مختلف عن UTF-8، فيمكنك استخدام السمة <strong>encoding</strong> لتضمين هذا التشفير. وإذا كان لديك ملفات .txt متعددة، فيمكنك استخدام أحرف البدل. على سبيل المثال:</font></p>
+				<pre dir="ltr">&lt;urllist path=&quot;example_urllist*.txt&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">لكل عنوان URL تقوم بتضمينه في الملف النصي، يمكنك تحديد تاريخ آخر تعديل وتكرار التغيير والأولوية. راجع <a href="#urllist_reference">قيم مرجع الملف النصي لقائمة عناوين URL</a> للحصول على المعلومات الكاملة حول بنية هذا الملف.</font>  </p>
+				<p><font size="-1"><strong> مسارات الأدلة<a name="directory"></a> </strong></font></p>
+				<p><font size="-1"> حدد مكان القسم التالي: </font></p>
+				
+				<pre dir="ltr">
+&lt;!-- ** MODIFY or DELETE ** 
+"directory" nodes tell the script to walk the file system and 
+include all files and directories in the Sitemap.
+
+Required attributes:
+path - path to begin walking from 
+url - URL equivalent of that path 
+
+Optional attributes:
+default_file - name of the index or default file for directory URLs
+
+--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.example.com/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.example.com/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+				
+				<p><font size="-1">يقدم هذا القسم مثالين. إذا كانت جميع صفحاتك موجودة في أدلة فرعية لمسار واحد، فإنك تحتاج إلى تضمين إدخال واحد فقط. ومع ذلك، إذا كان لديك مسارات متعددة للصفحات الموجودة في موقعك، فقم بتضمين إدخال لكل مسار. </font></p>
+				
+				<p><font size="-1">تذكر أن كل عنوان URL يجب أن يبدأ بعنوان URL الأساسي الذي قمت بتحديده في الخطوة الثالثة. على سبيل المثال، يشتمل المثالان الواردان في ملف <strong>example_config.xml</strong> على عناوين URL تبدأ بـ <strong>http://www.example.com/</strong>. وبالتالي، فإن عنواني URL صالحان. </font></p>
+				
+				<p><font size="-1">استبدل بإدخالات المثال الإدخالات الخاصة بموقعك. وسوف تشتمل مواقع عديدة على إدخال واحد فقط يشير إلى عنوان URL الأساسي. تأكد أن قيمة <strong>path</strong> (المسار) هي المسار الكامل للدليل الموجود على مركز خدمة الويب. تأكد أن قيمة <strong>url</strong> هي عنوان URL الكامل، بما في ذلك البروتوكول (مثل http) والشركة المائلة في النهاية، إن لزم الأمر.</font></p>
+				<p><font size="-1">يمكنك استخدام المعلمة <strong>default_file</strong> لتحديد اسم الملف الذي يستخدمه مركز الخدمة الخاص بك كصفحة افتراضية لدليل ما. وفي المثال السابق، يتم تحليل <strong>/var/www/docroot</strong> إلى <strong>http://www.example.com/index.html</strong>. ولست مطالبًا بتحديد هذه المعلمة. ومع ذلك، إذا قمت بتحديدها، سيقوم مولِّد ملفات Sitemap بتضمين الصفحة التي تشير إلى كل دليل فرعي مرة واحدة فقط، (بدلاً من سرد عنوان URL الخاص بالدليل وعنوان URL الخاص باسم الملف) وسوف يستخدم تاريخ آخر تعديل للملف (بدلاً من الدليل) لاستخراج سمة lastmod لهذه الصفحة. </font></p>
+				<p><font size="-1"><strong> سجلات الوصول <a name="logs"></a></strong></font></p>
+				<p><font size="-1"> حدد مكان القسم التالي: </font></p>
+				
+<pre dir="ltr">&lt;!-- ** MODIFY or DELETE **
+&quot;accesslog&quot; nodes tell the script to scan webserver log files to
+extract URLs on your site.  Both Common Logfile Format (Apache's default 
+logfile) and Extended Logfile Format (IIS's default logfile) can be read.
+				
+Required attributes:
+ path - path to the file
+Optional attributes:
+ encoding - encoding of the file if not US-ASCII
+  --&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.0&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.1.gz&quot; encoding=&quot;UTF-8&quot; /&gt;
+</pre>
+				 
+				<p><font size="-1">يقدم هذا القسم ثلاثة أمثلة. يجب استبدال هذه الإدخالات وتضمين إدخال لكل ملف سجل. تأكد أن قيمة المسار هي المسار الكامل واسم الملف الموجودان على مركز خدمة الويب. إذا كانت ملفات السجلات مشفرة كـ US-ASCII أو UTF-8، فاستخدم سمة <strong>التشفير</strong> الاختيارية <a href="#encoding">لتحديد</a> التشفير. وبدلاً من سرد كل ملف سجل، يمكنك استخدام أحرف البدل. على سبيل المثال، في المثال الموضح أعلاه، يمكنك تضمين الإدخال التالي الذي يشتمل على ملفات السجلات الثلاثة بأكملها:</font></p>
+<pre dir="ltr">&lt;accesslog path=&quot;/etc/httpd/logs/access.log*&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">يقوم مولِّد ملفات Sitemap بتعيين الأولوية لعناوين URL التي يعثر عليها في السجلات استنادًا إلى عدد مرات الوصول إلى عنوان URL. على سبيل المثال، عنوان URL الذي تم الوصول إليه 100 مرة يتم إعطاؤه أولوية أعلى من عنوان URL الذي تم الوصول إليه مرتين. وتكون الأولوية الفعلية نسبية وتعتمد على مقارنة كل عنوان URL بعناوين URL الأخرى في الموقع.</font></p>
+<p><font size="-1"><strong> ملف sitemap <a name="sitemap"></a></strong></font></p>
+<p><font size="-1"> حدد مكان القسم التالي: </font></p>
+				
+<pre dir="ltr"> &lt;!-- ** MODIFY or DELETE **<br>    
+&quot;sitemap&quot; nodes tell the script to scan other Sitemap files.  This can    
+be useful to aggregate the results of multiple runs of this script into
+a single Sitemap.
+				 
+Required attributes:
+  path - path to the file
+  --&gt;
+&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>
+				 
+				<p><font size="-1">يقدم هذا القسم مثالاً واحدًا. يجب استبدال هذا الإدخال وتضمين إدخال لكل ملف Sitemap تريد تضمينه. تأكد أن قيمة المسار هي المسار الكامل واسم الملف الموجودان على مركز خدمة الويب.  ويمكنك أيضًا استخدام ملفات Sitemap المضغوطة باستخدام gzip، طالما أنها تشتمل على امتداد .gz. وبدلاً من سرد كل ملف Sitemap، يمكنك استخدام أحرف البدل. على سبيل المثال، ينبغي أن يشتمل الإدخال التالي على أية ملفات Sitemap تبدأ بالكلمة &quot;sitemap&quot; ويشتمل على امتداد .xml:</font></p>
+<pre dir="ltr">&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap*.xml&quot; /&gt; </pre>
+				<p><font size="-1">يقوم مولِّد ملفات Sitemap باستخراج جميع عناوين URL والبيانات الاختيارية المدرجة لكل عنوان URL وذلك لكل ملف Sitemap تقوم بإدراجه كما يقوم بإنشاء ملف Sitemap واحد يشتمل على هذه المعلومات. وفي نفس الوقت، لا نستطيع ضمان أن هذه الطريقة ستعمل مع ملفات Sitemap التي تم إنشاؤها باستخدام أدوات غير مولِّد ملفات Sitemap.</font></p>
+
+
+
+				<font size="-1"><li>حدد مكان قسم تعريف الفلتر.</li></font>
+				  
+		 
+<pre>&lt;!-- ********************************************************         
+الفلاتر
+				
+تحدد الفلاتر أنماط أحرف البدل التي تقوم الشفرة البرمجية بمقارنتها مع جميع عناوين URL التي تعثر عليها. ويمكن استخدام الفلاتر لاستبعاد عناوين URL معينة من ملف Sitemap الخاص بك، كأن يكون لديك محتوى مخفي مثلاً لا تريد أن تعثر عليه محركات البحث.
+
+ويمكن أن تكون الفلاتر من النوع =&quot;wildcard&quot;, ويعني هذا استخدام أحرف البدل القياسية للمسار (* و ؟) في المقارنة مع عناوين URL، أو النوع =&quot;regexp&quot;, ويعني هذا استخدام التعبيرات العادية في المقارنة.
+
+ويتم تطبيق الفلاتر بالترتيب المحدد في هذا الملف. فيؤدي فلتر الإجراء =&quot;drop&quot; إلى استبعاد عناوين URL المطابقة. في حين يؤدي فلتر الإجراء =&quot;pass&quot; إلى تضمين عناوين URL المطابقة، مما يؤدي إلى توفير أية فلاتر لاحقة قد تتطابق. وفي حالة عدم تطابق أي فلتر مع عنوان URL، فيتم تضمين عنوان URL. إلى جانب ذلك، يمكنك إنشاء قواعد مركبة.
+
+الإجراء الافتراضي هو &quot;drop&quot;. النوع الافتراضي هو &quot;wildcard&quot;.
+
+ويمكنك تعديل أو حذف هذه الإدخالات بما يلائم الموقع الخاص بك. ولكن على عكس ما سبق، فإن إدخالات هذا المثال ليست مخترعة وقد تكون مفيدة لك بالشكل التي عليه.
+********************************************************* --&gt;
+<pre dir="ltr">
+&lt;!-- Exclude URLs that end with a '~' (IE: emacs backup files) --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*~&quot; /&gt;
+
+&lt;!-- Exclude URLs within UNIX-style hidden files or directories --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;regexp&quot; pattern=&quot;/\.[^/]*&quot; /&gt;
+</pre></pre>
+				<p><font size="-1">يمكنك استخدام الفلترة لاستبعاد عناوين URL معينة من ملف Sitemap الذي تم إنشاؤه. ويفضل أن تقوم بهذا الإجراء لإنشاء قائمة أفضل أو لتقليل القوائم المتكرر أو لمنع فهرسة عناوين URL معينة. ولاحظ أنه في حالة استخدام ملف <a href="http://www.robotstxt.org/wc/robots.html">robots.txt</a> لمنع فهرسة عناوين URL، فلن تبحث Google عن عناوين URL أو تفهرسها، حتى وإن تم تضمينها في ملف Sitemap الخاص بك. </font></p>
+				
+				<p><font size="-1">
+يمكنك استخدام جميع طرق الفلترة أو أي منها. ويمكنك حذف الإدخالات التي لا تحتاج إليها كما يمكنك إنشاء إدخالات إضافية، إن أردت. وفيما يلي عينات من الاستخدام. </font></p>
+				<pre dir="ltr">&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*.jpg&quot; /&gt;</pre>
+				<p><font size="-1">يؤدي هذا الفلتر إلى استبعاد عناوين URL التي تنتهي بالامتداد .jpg. ومن الأفضل تضمين فلتر مشابه إذا كانت جميع صور موقعك مضمنة في صفحات HTML ويجب عدم الوصول إليها كعناوين URL مستقلة. </font></p>
+				<pre dir="ltr">&lt;filter action=&quot;pass&quot; type=&quot;wildcard&quot; pattern=&quot;*.htm*&quot; /&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*&quot; /&gt;</pre>
+				<font size="-1"> يؤدي هذا الفلتر إلى تضمين جميع ملفات .htm* ولكن يستبعد كل شيء آخر.</font><br>
+				<br>
+
+
+				<font size="-1"></font><font size="-1"><li>وبعد الانتهاء من إجراء كافة التغييرات على موقعك، قم بحفظ الملف.</li></font>
+				</ol>
+				
+				
+		        <font size="-1"><a name="config_reference"></a><p><b>مرجع بنية ملف التكوين</b></p>
+		  </font><font size="-1">
+				</font>
+		  <p><font size="-1">فيما يلي شرح كامل لبنية ملف التكوين. تبدأ كل علامة بنموذج شفرة، وبعده وصف للسمات.
+</font></p>
+				
+		  <p><font size="-1"><strong><a name="sitetag"></a>site (الموقع)<br>
+		  </strong></font><font size="-1">علامة مطلوبة في بداية كل ملف تكوين. </font></p>
+		  <pre dir="ltr">&lt;sitebase_url="http://www.example.com/"
+store_into="/var/www/html/sitemap.xml.gz"
+verbose="1"
+supress_search_engine_notify="1"
+default_encoding="UTF-8"&gt;</pre>
+				<br>
+				<font size="-1">
+				<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				
+					<tbody><tr>
+					<td valign="top" width="19%"><pre>base_url</pre></td>
+					<td valign="top" width="6%"><font size="-1">مطلوب</font></td>
+					<td valign="top" width="75%"><font size="-1">مسار HTTP الخاص بأساس موقع الويب الخاص بك – يمكن تضمين عناوين URL التي تبدأ بهذا الأساس فقط في ملف Sitemap</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>store_into</pre></td>
+					<td valign="top"><font size="-1">مطلوب</font></td>
+					<td valign="top"><font size="-1">مسار مركز خدمة الويب إلى ملف الإخراج المراد. تقوم الشفرة البرمجية بإنشاء هذا الملف – ولا حاجة إلى إنشاء الملف قبل تشغيل الشفرة البرمجية.</font></td>
+					</tr> 
+					
+					<tr>
+					<td valign="top"><pre>verbose</pre></td>
+					<td valign="top"><font size="-1">اختياري</font></td>
+					<td valign="top"><font size="-1">أدخل رقمًا من 0 إلى 3، بحيث تتطابق الأرقام الكبيرة مع معلومات التصحيح المتزايدة</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>suppress_search_engine_notify</pre></td>
+					<td valign="top"><font size="-1">اختياري</font></td>
+					<td valign="top"><font size="-1"></font><font size="-1">تعطيل إعلام محرك البحث عن طريق إدخال "1" لأغراض الاختبار</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>default_encoding</pre></td>
+					<td valign="top"><font size="-1">اختياري</font></td>
+					<td valign="top"><font size="-1">تحديد تشفير أحرف المراد تطبيقه على مسارات نظام الملفات وعناوين URL.</font></td>
+					</tr>
+				 
+		  </tbody></table>
+		   </font>
+					<font size="-1">
+					
+				<p></p>
+				</font>
+					<p><font size="-1"><strong>url (عنوان url)<br>
+					</strong></font><font size="-1">علامة اختيارية يمكنك استخدامها لسرد كل عنوان URL موجود في موقعك. </font></p>
+					<p><pre dir="ltr">&lt;url href="http://www.example.com/stats?q=age" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre></p><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>href</pre></td>
+					  <td width="6%" valign="top"><font size="-1">مطلوب</font></td>
+					<td valign="top" width="75%"><font size="-1">مسار HTTP الخاص بأساس موقع الويب الخاص بك – يمكن تضمين عناوين URL التي تبدأ بهذا الأساس فقط في ملف Sitemap</font></td>
+					</tr><tr>
+					<td valign="top"><pre>lastmod</pre></td>
+					<td valign="top"><font size="-1">اختياري</font></td>
+					<td valign="top"><font size="-1">وقت آخر تعديل على عنوان URL بتنسيق <a href="http://www.w3.org/TR/NOTE-datetime">W3C Datetime</a> (YYYY-MM-DDThh:mm:ss+00:00). ويمكنك حذف جزء الوقت. أمثلة:<br>
+				&nbsp;&nbsp;"2005-02-21T18:00:15+00:00"<br>
+				&nbsp;&nbsp;"2005-02-21"</font></td>
+					</tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">اختياري</font></td>
+					<td valign="top"><font size="-1">مدى تكرر التغيير المحتمل في عنوان URL. ويعتبر هذا بمثابة تلميح وليس أمرًا. يجب أن تكون القيمة واحدة من "always" (دائمًا) أو "hourly" (كل ساعة) أو "daily" (يوميًا) أو "weekly" (أسبوعيًا) أو "monthly" (شهريًا) أو "yearly" (سنويًا) أو "never" (أبدًا).</font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">اختياري</font></td>
+					<td valign="top"><font size="-1">أولوية هذه الصفحة بالنسبة للصفحات الأخرى في نفس الموقع. وتكون القيمة رقمًا بين 0.0 و1.0، حيث يمثل الرقم 0.0 أقل أولوية ويمثل الرقم 1.0 أعلى أولوية. ويمكن أن تؤثر الأولوية على الترتيب الذي تحدد به محركات البحث عناوين URL المراد استكشافها على موقعك. وحيث أن الأولوية نسبية، فإنها تُستخدم فقط للاختيار من بين عناوين URL الموجودة في الموقع الخاص بك؛ فلن تتم مقارنة أولوية صفحاتك بأولوية الصفحات الموجودة على مواقع أخرى.</font></td>
+					</tr>
+		  </tbody></table>
+					<p><font size="-1"><b>urllist (قائمة عناوين url)<br>
+					</b></font><font size="-1">علامة اختيارية يمكنك استخدامها للإشارة إلى ملف نصي يشتمل على قائمة بعناوين URL الموجودة في موقعك. </font></p>
+					<pre dir="ltr">&lt;urllist path="/var/www/html/urllist.txt" encoding="UTF-8" /&gt;</pre>
+		  <br>
+		<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>path</pre></td>
+					  <td width="6%" valign="top"><font size="-1">مطلوب</font></td>
+					<td valign="top" width="75%"><font size="-1">المسار والاسم الملف لملف .txt. ويمكنك تحديد مسار نسبي أو كامل. </font></td>
+			</tr><tr>
+					<td valign="top"><pre>encoding</pre></td>
+					<td valign="top"><font size="-1">اختياري</font></td>
+					<td valign="top"><font size="-1">تشفير الملف، إذا كان مختلفًا عن UTF-8.</font></td>
+					</tr>
+		  </tbody></table>
+<p><font size="-1"><a name="urllist_reference"></a>ملف <b>urllist.txt</b> هو عبارة عن ملف نصي بسيط يشتمل على قائمة بعناوين URL المراد تخطيطها. ويمكنك أيضًا تضمين سمات اختيارية لكل عنوان URL. ويتم إدخال السمات في نفس سطر عنوان URL ويتم فصلها باستخدام مسافة واحدة. على سبيل المثال:</font>
+          </p>
+		  <pre dir="ltr">
+http://www.example.com/abc/something
+http://www.example.com/abc/xyy.pdf lastmod=2001-12-31T14:05:06+00:00
+http://www.example.com/abc/def?x=12&amp;y=23 changefreq=weekly priority=0.3</pre>
+				<p>
+				<font size="-1">
+					
+				  </font><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%"  valign="top"><pre>lastmod</pre></td>
+					<td valign="top" width="6%"><font size="-1">اختياري</font></td>
+					<td width="75%"  valign="top"><p><font size="-1">وقت آخر تعديل على عنوان URL بتنسيق <a href="http://www.w3.org/TR/NOTE-datetime">W3C Datetime</a> (YYYY-MM-DDThh:mm:ss+00:00). ويمكنك حذف جزء الوقت. أمثلة:</font><font size="-1"><br>
+				  <br>
+&nbsp;&nbsp;"2005-02-21T18:00:15+00:00"<br>
+&nbsp;&nbsp;"2005-02-21"</font></p>
+				  </td>
+				  </tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">اختياري</font></td>
+					<td valign="top"><font size="-1"><font size="-1">مدى تكرر التغيير المحتمل في عنوان URL. ويعتبر هذا بمثابة تلميح وليس أمرًا. يجب أن تكون القيمة واحدة من "always" (دائمًا) أو "hourly" (كل ساعة) أو "daily" (يوميًا) أو "weekly" (أسبوعيًا) أو "monthly" (شهريًا) أو "yearly" (سنويًا) أو "never" (أبدًا).</font></font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">اختياري</font></td>
+					<td valign="top"><font size="-1">أولوية هذه الصفحة بالنسبة للصفحات الأخرى في نفس الموقع. وتكون القيمة رقمًا بين 0.0 و1.0، حيث يمثل الرقم 0.0 أقل أولوية ويمثل الرقم 1.0 أعلى أولوية. ويمكن أن تؤثر الأولوية على الترتيب الذي تحدد به محركات البحث عناوين URL المراد استكشافها على موقعك. وحيث أن الأولوية نسبية، فإنها تُستخدم فقط للاختيار من بين عناوين URL الموجودة في الموقع الخاص بك؛ فلن تتم مقارنة أولوية صفحاتك بأولوية الصفحات الموجودة على مواقع أخرى.</font></td>
+					</tr>
+					</tbody></table>
+				</p>
+		  <font size="-1">
+		  </font>
+		  <p><font size="-1"><strong>directory (الدليل)<br>
+		  </strong></font><font size="-1">علامة اختيارية يمكنك استخدامها لتحديد الأدلة الموجودة في موقعك حتى يستطيع مولِّد ملفات Sitemap إنشاء قائمة بعناوين URL من الملفات التي تم العثور عليها في هذه الأدلة. </font></p>
+				<pre dir="ltr">--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.example.com/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.example.com/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+		  <table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">مطلوب</font></td>
+					<td width="75%" valign="top"><font size="-1">يحدد المسار الأولي. سوف يجتاز مولِّد ملفات Sitemap هذا الدليل وجميع الأدلة الفرعية</font>.</td>
+				  </tr>
+					
+					<tr>
+					<td valign="top"><pre>url</pre></td>
+					 <td valign="top"><font size="-1">مطلوب</font></td>
+					<td valign="top"><font size="-1">يحدد عنوان URL المساوي لقيمة المسار.</font></td>
+					</tr>
+					<tr>
+					<td valign="top"><pre>default_file</pre></td>
+					 <td valign="top"><font size="-1">اختياري</font></td>
+					 <td valign="top"><font size="-1">يحدد الملف الافتراضي لدليل ما على الخادم.</font></td>
+					</tr>
+		    </tbody></table>
+		  </font>
+		  <p><font size="-1"><b>accesslog (سجل الوصول)<br>
+		  </b>علامة اختيارية يمكنك استخدامها لتحديد المسار واسم الملف لسجلات وصول IIS وApache-style حتى يتمكن مولِّد ملفات Sitemap من التقاط عناوين URL تلقائيًا من هذه السجلات. </font>
+          </p>
+		  
+		  <pre dir="ltr">&lt;accesslog path="/etc/httpd/logs/access-0.log" encoding="UTF-8"/&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">مطلوب</font></td>
+					<td width="75%" valign="top"><font size="-1">يحدد المسار إلى الملف.</font></td>
+		  </tr>
+					
+					<tr>
+					<td valign="top"><pre>encoding</pre></td>
+					 <td valign="top"><font size="-1">اختياري</font></td>
+					<td valign="top"><font size="-1">يحدد تشفير الملف، إذا كان مختلفًا عن UTF-8.</font></td>
+					</tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><b>sitemap<br>
+		  </b>علامة اختيارية يمكنك استخدامها لتحديد المسار واسم الملف لملفات Sitemap الموجودة التي قمت بإنشائها باستخدام مولِّد ملفات Sitemap. وسوف يقوم مولِّد ملفات Sitemap بإنشاء ملف Sitemap فردي يتضمن عناوين URL الموجودة في كل ملف Sitemap. </font>
+          </p>
+		  
+		  <pre dir="ltr">&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">مطلوب</font></td>
+					<td width="75%" valign="top"><font size="-1">يحدد المسار إلى ملف Sitemap.</font></td>
+		  </tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><strong><a name="filter_examples"></a>filter (الفلتر)<br>
+		  </strong></font><font size="-1"> علامة اختيارية يمكنك استخدامها لإنشاء قواعد تقوم بتضمين أو استبعاد ملفات معينة. ويتم تطبيق الفلاتر بالترتيب التي تظهر به في ملف config.xml. ومع ذلك، لا يكون لإدخالات الفلتر المختلطة (url أو urllist أو directory أو accesslog) أي تأثير إضافي، فكل عنوان URL يضيفه مولِّد ملفات Sitemap إلى ملف Sitemap تتم مقارنته أولاً مع كل فلتر. </font><font size="-1">وفي حالة عدم تطابق أي فلتر مع عنوان URL، يكون الإعداد الافتراضي هو تضمين عنوان URL في ملف Sitemap.</font></p>
+				
+				<pre dir="ltr">&lt;filter action="drop" type="wildcard" pattern="*/internal/*" /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>action</pre></td>
+					<td valign="top" width="6%"><font size="-1">اختياري</font></td>
+					<td width="75%" valign="top">
+				      <font size="-1"><p>الإجراء الذي يجب أن يتخذه الفلتر. القيم الصالحة هي:</p>
+					  </font>				      <ul>
+					  <li><font size="-1">drop (إسقاط) – استبعاد عناوين URL المطابقة. وهذا هو الإجراء الافتراضي، وبذلك في حالة عدم تحديد أي إجراء يفترض المولد الإجراء &quot;drop&quot;.</font></li>
+					  <li><font size="-1">pass (مرور) – تضمين عناوين URL المطابقة.</font></li>
+					  </ul>
+				      </p></td>
+		  </tr>
+					
+					<tr>
+					<td width="19%" valign="top"><pre>type</pre></td>
+					<td valign="top" width="6%"><font size="-1">اختياري</font></td>
+					<td width="75%" valign="top"><font size="-1"><p>نوع الفلترة. القيم الصالحة هي:</p>
+					</font>					  <ul>
+					<li><font size="-1">Wildcard (أحرف البدل) – تُستخدم أحرف البدل القياسية (؟ و*) للمقارنة مع عناوين URL. وهذا هو النوع الافتراضي، وبذلك في حالة عدم تحديد أي نوع يفترض المولد الإجراء &quot;wildcard&quot;.</font></li>
+					<li><font size="-1">regexp (التعبيرات العادية) – تُستخدم التعبيرات العادية.</font></li>
+					  </ul></td>
+		  </tr>
+				 
+<tr>
+					<td valign="top"><pre>pattern</pre></td>
+					 <td valign="top"><font size="-1">مطلوب</font></td>
+					 <td valign="top"><font size="-1">يحدد النمط المراد المطابقة به.</font></td>
+		  </tr>
+		  </tbody></table>
+
+<font size="-1">
+<p><b><a name="encoding"></a>التشفيرات</b></p>
+				
+		<p>تستطيع الملفات المشار إليها بواسطة ملف التكوين الخاص بك – سواء كانت قوائم عناوين URL أم سجلات مركز خدمة – استخدام تشفيرات بخلاف التشفير الافتراضي UTF-8. ويمكنك تحديد تشفيرات بديلة في ملف config.xml لتحديد الطريقة التي يقرأ بها مولِّد ملفات Sitemap ملفاتك. وفيما يلي بعض التشفيرات الشائعة:
+		</p>
+				<ul>
+				<li><strong><span dir="ltr">encoding="utf-8"</span></strong> التشفير الافتراضي
+				</li><li><strong><span dir="ltr">encoding="ascii"</strong></span> مجموعة فرعية من التشفير UTF-8 ولذلك لا يلزم تحديده
+				</li><li><strong><span dir="ltr">encoding="iso-8859-1"</strong></span> شائع الاستخدام في العديد من اللغات الأوروبية الغربية
+				</li></ul>
+		  </font>
+		  
+		  <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="creating_mobile" id="creating_mobile"></a><b>2ب. معلومات إضافية حول إنشاء ملف التكوين للجوال</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">يتم إنشاء ملف تكوين "لملف Sitemap للجوال" بنفس الطريقة التي يتم بها إنشاء ملف تكوين "لملف Sitemap لغير الجوال". ومع ذلك، يجب إنشاء ملف تكوين منفصل لكل لغة ترميزية وتشغيل مولِّد ملفات Sitemap مع كل ملف تكوين بشكل منفصل وبذلك يتم إنشاء ملف Sitemap منفصل لكل منهم.</font></p>
+				<p><font size="-1">ويجب أن يتحقق ما يلي في كل ملف تكوين:</font></p>
+		  <ul>
+		    <li><font size="-1">يحدد اسم ملف مختلف لقيمة <a href="#create_config"><strong>store_into</strong></a>.</font></li>
+	        <li><font size="-1">يستخدم <a href="#filter_examples">الفلاتر</a> لتحديد عناوين URL المراد تضمينها أو استبعادها للغة الترميزية. وتذكر أن كل ملف Sitemap يجب أن يشتمل على عناوين URL للغة ترميزية واحدة فقط. ويعني هذا أنه يمكن تضمين عنوان URL نفسه في ملفات Sitemap، إذا كانت عناوين URL هذه تخدم لغات ترميزية متعددة.</font></li>
+	      </ul>
+			<p><strong><font size="-1">أمثلة على الفلترة</font></strong></p>
+			<p><font size="-1">فيما يلي بعض الأمثلة على كيفية استخدام الفلاتر المستندة إلى امتدادات الملفات لإنشاء ملفات Sitemap للجوال للغات ترميزية متعددة. ويجب أن تعتمد الفلترة التي تستخدمها على أنواع اللغات الترميزية المستخدمة في موقعك وطريقة تحديد كل نوع. وفي حالة تطبيق تفاصيل موقعك بشكل مختلف (كأن تنظم عناوين URL باستخدام لغات ترميزية مختلفة في مجلدات منفصلة)، فيجب إجراء الفلترة استنادًا إلى تفاصيل تطبيق موقعك. وتذكر أنه يتم تطبيق الفلاتر بالترتيب المسرودة به في ملف التكوين. ولذلك، يجب أن يكون أول فلتر تسرده هو الإجراء &quot;pass&quot; والذي يحدد عناوين URL التي تريد تضمينها في ملف Sitemap. </font></p>
+			<p><font size="-1">لإنشاء ملف Sitemap للمحتوى WML (WAP 1.2):</font></p>
+			
+			<pre dir="ltr">&lt;filter action="pass" type="wildcard" pattern="*.wml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+</pre>
+			
+			<p><font size=-1>لإنشاء ملف Sitemap لمحتوى وضع الجوال بتنسيق XHTML (WAP 2.0):</font></p>
+			
+			<pre dir="ltr">&lt;filter action="pass" type="wildcard" pattern="*.xhtml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+			</pre>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="copy"></a><b>3. تحميل الملفات إلى مركز خدمة الويب "سيرفر" الخاص بك</b></td> 
+				</tr> 
+			</tbody></table>
+		<p><font size="-1"> يجب تحميل الملفات التالية إلى مركز خدمة الويب في مكان يمكنك الوصول إليه من سطر أوامر: </font></p>
+			
+			<font size="-1"><ul>
+              <li><strong> config.xml</strong> &#8212; هذا هو ملف التكوين الذي أنشأته باستخدام <strong>example_config.xml</strong>. </li>
+              <li><strong> sitemap_gen.py</strong> &#8212; هذا هو الشفرة البرمجية لـ Python التي تقوم بإنشاء ملف Sitemap الخاص بك. </li>
+              <li><strong> urllist.txt</strong> &#8212; هذا الملف اختياري، ولا تحتاج إلى تضمينه إلا في حالة استخدام طريقة الملف النصي لإنشاء ملف Sitemap. </li>
+		  </ul>
+			
+		  </font>
+		  <p><font size="-1"> وتعتمد الطريقة التي تستخدمها لتحميل هذه الملفات على البيئة الخاصة بك. ومن بين الطرق الشائعة <a href="http://www.google.ae/search?q=ftp">FTP</a> وSCP. لمزيدٍ من المعلومات، اتصل بمضيف الويب.		  </font></p>
+			
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="execute"></a><strong>4. تشغيل الشفرة البرمجية لمولِّد ملفات Sitemap (sitemap_gen.py). </strong></td> 
+				</tr> 
+			</tbody></table>
+				
+				<p><font size="-1">
+لتشغيل مولِّد ملفات Sitemap، تحتاج إلى الاتصال بمركز خدمة الويب. وتعتمد الطريقة التي تستخدمها للاتصال على البيئة الخاصة بك. على سبيل المثال, يمكنك الوصول بشكل عام إلى مركز الخدمة المستند إلى UNIX باستخدام <a href="http://www.google.ae/search?q=ssh">SSH</a>.  لمزيد من المعلومات حول الاتصال بمركز خدمة الويب وتشغيل الشفرات البرمجية، راجع مضيف الويب. </font></p>
+				
+				<p><font size="-1"> وبمجرد نسخ الملفات إلى مركز خدمة الويب، يلزم تشغيل الشفرة البرمجية لمولِّد ملفات Sitemap. اتصل بخادم الويب الخاص بك ثم قم بتشغيل الأمر التالي (استبدل <strong>&lt;path/config.xml&gt;</strong> بالمسار إلى ملف التكوين واسم الملف الخاص به، وفي حالة تحميل هذا الملف إلى نفس المكان الموجودة فيه الشفرة البرمجية لـ Python، يمكنك استبعاد المسار):</font></p>
+				
+				<pre dir="ltr">python sitemap_gen.py --config=&lt;path/config.xml&gt;
+</pre>
+<p><font size="-1">على سبيل المثال، قد يكون سطر الأوامر المستند إلى UNIX بالشكل التالي:</font></p>
+<p><img src="images/python_command.gif" alt="أمر Python"></p>
+<p><font size="-1">قد يكون برنامج تربيط الأوامر المستند إلى A MS-DOS بالشكل التالي:</font></p>
+<p><img src="images/python_dos.gif" alt="أمر Python"></p>
+<p><font size="-1"><b>نصيحة:</b> إذا كنت تختبر التكوين الخاص بك ولست مستعدًا لتقديم ملف Sitemap، فإن البنية التالية تمنع مولِّد ملف Sitemap من الاتصال بـ Google:</font></p>
+				<pre dir="ltr"><br>	$ python sitemap_gen.py --config=config.xml --testing</pre>
+				<font size="-1"><p>وتظهر حالة الطلب الخاص بك في موجه الأوامر:</p></font>
+<pre>	
+	قراءة ملف التكوين: path/config.xml/
+	URLLIST مفتوحة "path/urllist.txt/"
+	<span dir="ltr">Walking DIRECTORY "/var/www/html/dir"
+	Walking DIRECTORY "/var/www/html/dir2"</span>
+	ACCESSLOG مفتوح "/etc/httpd/logs/access-0.log/"
+	فرز وضبط عناوين URL التي تم جمعها.
+	كتابة ملف Sitemap "/path/sitemap.xml.gz" with 1092 URLs
+	إعلام محركات البحث.
+	إعلام www.google.ae
+	عدد امتدادات الملفات في عناوين URL:
+		208  .html
+		574  .jpg
+		...
+		عدد الأخطاء: 0
+		عدد التحذيرات: 0</pre>
+				<font size="-1">
+				<p>إذا لم يظهر لك إخراج شبيه بهذا إلى حد كبير، فاعلم أن الإعداد المطول في ملف التكوين يؤثر على مقدار المعلومات التي تظهر على الشاشة.  ويوضع هذا المثال الإعداد المطول على "1".</p>
+				<p>كذلك يم إرجاع أية أخطاء في الملف.  على سبيل المثال، إذا حذفت url= attribute من إدخال دليل، ستخرج الشفرة البرمجية ما يلي:
+				</p></font>
+<pre dir="ltr">	
+	[ERROR] Directory entries must have both "path" and "url" attributes
+	Number of errors: 1</pre>
+				<font size="-1">
+				</font>
+				<p><font size="-1">قم بتصحيح أية أخطاء في ملف <b>config.xml</b> ثم أعد تشغيل الشفرة البرمجية. وفي حالة عدم وجود أية أخطاء، يقوم مولِّد ملفات Sitemap بإنشاء ملف <b>sitemap.xml.gz</b> جديد في المكان الذي قمت بتحديده في ملف التكوين. </font></p>
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="submitting" id="submitting"></a><strong>5. تقديم ملف Sitemap إلى Google </strong></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">يقوم مولِّد ملفات Sitemap بإنشاء ملف <strong>sitemap.xml.gz</strong> في المكان الذي قمت بتحديده في ملف التكوين. وبمجرد إنشاء هذا الملف بنجاح، تأكد أنه يمكن الوصول إيه من خلال متصفح الويب. بعد ذلك، <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">أضف</a> الملف إلى حساب <a href="https://www.google.com/webmasters/sitemaps/siteoverview">ملفات Google Sitemap</a> الخاص بك. ويؤدي هذا إلى تمكين Google من تقديم معلومات الحالة والمعلومات الإحصائية المفيدة لك. وفي حالة إبلاغ Google عن أية مشاكل في ملف Sitemap الخاص بك، يمكنك تصحيح المشاكل وإعادة تقديم الملف. كل ما عليك هو إضافة ملف Sitemap يدويًا مرة واحدة. بعد ذلك، يمكنك استخدام <a href=submit.html#ping>طلب HTTP</a> لإعلام Google بالتغييرات على ملف Sitemap الخاص بك (برغم أنه يمكنك إعادة تقديمه من خلال حساب أدوات مشرفي المواقع من Google). </font></p>
+		        
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="recur"></a><b>6. إعداد شفرة برمجية مكررة.</b></td> 
+				</tr> 
+		  </tbody></table>
+		  <font size="-1">
+				<p>نحن نقترح إعداد مولِّد ملفات Sitemap بحيث يتم تشغيله كلما تغير المحتوى الخاص بك، وذلك إلى أقصى معدل تكرار وهو مرة كل ساعة.</p>
+		  </font>
+		  <p><font size="-1">ويستطيع مشرفو المواقع الذين يستخدمون مركز خدمة ويب UNIX إعداد هذا كـ <a href="http://www.google.ae/search?q=cron">cron job</a>. </font></p>
+				<font size="-1"><p>ويتعين على مشرفي المواقع الذين يستخدمون أنظمة أساسية أخرى الاتصال بمشرف النظام للحصول على المساعدة في تكوين الشفرات البرمجية المكررة. كما يمكنك الاستفادة من نصيحة زميل في مجموعة Google Sitemap على <a href="http://groups.google.com/group/Google_Webmaster_Help-Sitemap-en?tsc=1">مجموعات Google</a>.
+</p>
+				
+	      </font>
+				<p><font size="-1"> يمكنك استخدام <a href=submit.html#ping>طلب HTTP</a> لإعلام Google بالتغييرات التي يتم إجراؤها على ملف Sitemap الخاص بك. ومع ذلك، يرجى التأكد من تسجيل الدخول في <a href="https://www.google.com/webmasters/tools/siteoverview">أدوات مشرفي المواقع من Google</a> باستخدام حساب Google الخاص بك مرة واحدة <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496>لإضافة ملف Sitemap الخاص بك</a> يدويًا إلى حساب أدوات مشرفي المواقع من Google الخاص بك.</font></p>
+				<font size="-1"></font>		
+			    <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="troubleshoot"></a><b>استكشاف المشكلات وإصلاحها</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p>سنتناول في هذا القسم بعض التساؤلات أو المشاكل الشائعة التي يصادفها بعض الأشخاص أثناء استخدام مولِّد ملفات Sitemap، وكذلك ما يمكن القيام به عند مصادفة أحد هذه التساؤلات أو المشاكل.</p>
+				<p><b>الوصول إلى الويب</b></p>
+				<p><b>المشكلة:</b> يرجع مولِّد ملفات Sitemap الخطأ والتحذير التاليين:</p>
+				</font>
+<pre dir="ltr">	
+	[ERROR] When attempting to access your generated Sitemap at the following URL:
+	http://www.example.com/sitemap.xml.gz
+	we failed to read it.  Please verify the store_into path you specified in
+	your configuration file is web-accessible.  Consult the FAQ for more
+	information.
+	[WARNING] Proceeding to notify with an unverifiable URL.</pre>
+				<font size="-1">
+				<p><b>ماذا حدث؟</b> قام مولِّد ملفات Sitemap بإنشاء المكان في المكان الذي حددته، ثم حاول استرداده باستخدام HTTP كما يفعل محرك البحث، ولكنه فشل.  لقد واصل عمله وقام بإعلام محركات البحث، ولكنه يظهر الخطأ والتحذير لكي تعرف أن ملف Sitemap الخاص بك قد لا يمكن قراءته بواسطة محركات البحث.</p>
+				<p>يقوم مولِّد ملفات Sitemap بإنشاء ملف Sitemap الخاص بك في المسار المحدد في السمة store_into الخاصة بملف <b>config.xml</b>. ثم يقوم مولِّد ملفات Sitemap بإنشاء عنوان URL لذلك الملف باستخدام السمة base_url، ويبلغ محركات البحث بعنوان URL.  على سبيل المثال، إذا قمت بتعيين التكوين على:</p>
+				</font>
+<pre dir="ltr">	&lt;site base_url="http://www.example.com/"
+	      store_into="/var/www/html/sitemap.xml.gz"&gt;</pre>
+				<font size="-1">
+				</font><p><font size="-1">سيقوم برنامج Sitemap Generator بإشعار محركات البحث لتقوم بالبحث عن ملف Sitemap على:</font></p>
+				
+				<pre dir="ltr">	http://www.example.com/sitemap.xml.gz</pre>
+				<font size="-1"><p>
+				يجب أن يكون الملف قابلاً للوصول عبر عنوان URL هذا.  وإذا تعذر استرداد الملف باستخدام عنوان URL هذا، فلن تتمكن محركات البحث من العثور على ملف Sitemap الخاص بك.</p>
+				</font><p><font size="-1"><b>ماذا يمكنك أن تفعل؟</b>  إنك بحاجة إلى التحقق من أن ملف <b>config.xml</b> يحدد مساري base_url وstore_into الصحيحين لملف Sitemap الخاص بك.  كما تحتاج إلى التأكد من أن متصفحي الويب يستطيعون استرداد ملف Sitemap من base_url.  وفي حالة مصادفة أخطاء في المسار أو عنوان URL، قد تحتاج إلى إعادة تشغيل مولِّد ملفات Sitemap أو نقل ملف Sitemap إلى المكان الصحيح وإعلام محركات البحث يدويًا عبر مواقع الويب الخاصة بها.
+				</font></p>
+				<font size="-1"><p><b>دعم XML</b></p>
+				<p><strong>المشكلة:</strong> يعطي مولِّد ملفات Sitemap الخطأ التالي:</p>
+				</font>
+<pre dir="ltr">	
+	Some installs of Python 2.2 do not include complete support for XML. 
+	Please try upgrading your version of Python and re-running the script.</pre>
+				<font size="-1"><p>
+				<b>ماذا حدث؟</b>  كما تُظهر الرسالة، تشتمل بعض الأنظمة الأساسية على إصدار من Python (اللغة المكتوبة بها الشفرة البرمجية لمولِّد ملفات Sitemap) يفتقد إلى مكتبات الدعم اللازمة لمعالجة ملفات XML.  تتطلب هذه الشفرة البرمجية دعم XML كامل لكي تعمل.
+				</p>
+				<p><b>ماذا يمكنك أن تفعل؟</b> حاول ترقية إصدار Python المثبت لديك إلى إصدار أحدث.  ومن المحتمل أن تحتاج إلى الاتصال بمشرف النظام لإجراء ذلك.</p>
+				<p>لاحظ أن هذا لا يؤثر إلا على مولِّد ملفات Sitemap، وليس ملفات Sitemap بأكملها.  إذا كان لديك طريقة أو أداة أخرى لإنشاء ملفات Sitemap، فيمكن استخدامها وتقديم ملفات Sitemap إلى محركات البحث.</p>
+				<p><b>ما كل هذه الملفات الإضافية في .gz أو .zip؟</b></p>
+				<p>عند استخراج الشفرة البرمجية sitemap_gen.py، من المحتمل أن ترى ملفات أكثر بعض الشيء مما أشرنا إليه أعلاه.  وتكون قائمة الملفات الكاملة قريبة من الشكل التالي:</p>
+				</font>
+	<pre dir="ltr">	
+	AUTHORS
+	ChangeLog
+	COPYING
+	example_config.xml
+	example_urllist.txt
+	PKG-INFO
+	README
+	setup.py
+	sitemap_gen.py
+	test_sitemap_gen.py</pre>
+		  <font size="-1"><p>
+				تضم الملفات الإضافية معلومات حول الحزمة وبنود الترخيص.  وندعوك إلى إلقاء نظرة على هذه الملفات.</p>
+				<p>والاستثناء الوحيد من ذلك هو test_sitemap_gen.py، وهو عبارة عن شفرة برمجية تجريبية قد يستفاد منها المطورون الآخرون إذا أرادوا المساهمة في مشروع المصدر المفتوح هذا.  وإذا كنت تعتزم استخدام مولِّد ملفات Sitemap دون تعديل في أي من الشفرات المصدر - وهي الحالة المتوقعة للجميع تقريبًا - فقد لا تحتاج إلى هذه الشفرة البرمجية التجريبية.
+</p>
+	  إذا كنت مهتمًا بالمساعدة في هذا المشروع، فالرجاء زيارة الموقع التالي <a href="http://sourceforge.net/projects/goog-sitemapgen">http://sourceforge.net/projects/goog-sitemapgen</a>. <a href="http://code.google.com/sm_thirdparty.html">برامج الجهات الخارجية التي تدعم بروتوكول Sitemap</a>.</p>
+	  
+	  <font size="-1"></font></font>
+		  <p><font size="-1"><b><a name="nonascii"></a>أحرف غير ASCII </b></font></p>
+				<font size="-1"><font size="-1">
+				</font></font>
+				<p><font size="-1"><strong>المشكلة:</strong> اسم نطاق موقعك أو عناوين URL الموجودة فيه تحتوي على أحرف غير ASCII.</font></p>
+				<p><font size="-1">بشكل عام، يجب أن تكون عناوين URL غير ASCII <a href="protocol.html#escaped">مشفرة باستخدام UTF-8</a> قبل استبدالها بعلامة النسبة المئوية (percent-escaped). ومع ذلك، لا تستجيب بعض مراكز خدمة الويب بشكل صحيح إلا في حالة تشفير عناوين URL باستخدام تشفير مختلف عن UTF-8. ويجب تشفير جميع عناوين URL في ملف Sitemap الخاص بك وكذلك عناوين URL الخاصة بملف Sitemap نفسه لكي تكون قابلة للقراءة بواسطة مركز خدمة الويب الذي توجد فيه. في <a href="#sitetag">قسم تعريف الموقع</a>، استخدم السمة الاختيارية <strong>default_encoding</strong> لتحديد التشفير المستخدم بواسطة مركز خدمة الويب. وإذا لم تستخدم هذه العلامة ويستخدم مركز خدمة الويب تشفيرًا مختلفًا عن UTF-8، فلا نستطيع معرفة التشفير المراد استخدامه.</font></p>
+				<p><font size="-1">إذا كانت عناوين URL الخاصة بك تحتوي على أحرف غير ASCII، فنوصيك بتشغيل الشفرة البرمجية لمولِّد ملفات Sitemap باستخدام Python 2.3 أو إصدار أحدث. ويشتمل هذا الإصدار من Python على دعم أكبر للأحرف غير ASCII. وإذا كان اسم النطاق الخاص بك يحتوي على أحرف غير ASCII، فيجب استخدام Python 2.3 أو إصدار أحدث، حيث لم تتم إضافة دعم Internationalizing Domain Names in Applications (IDNA) (ترجمة أسماء النطاقات في التطبيقات) قبل هذا الإصدار. وبدون دعم IDNA، لا يستطيع مولِّد ملفات Sitemap تشفير اسم النطاق المكتوب بأحرف غير ASCII بشكل صحيح. </font></p>
+				<font size="-1">
+	  
+	  
+	  
+	<br>
+	<p class="d" align="left"><i>تاريخ آخر تعديل: 15 أبريل 2006</i></p>
+	  </font></div>
+	</td> 
+  </tr> 
+  <tr> 
+    <td width=1% valign=top><img src=http://www.google.com/images/art.gif width=143 height=53 vspace=5 hspace=15></td> 
+    <td style="background-color: #ffffff" width=1 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td valign=middle><div class=footer> 
+        <div align=center><font size="-1"> &copy;2007 Google - <a href=http://www.google.ae/privacy.html>سياسة الخصوصية</a> - <a href=http://www.google.ae/accounts/TOS>البنود والشروط</a> - <a href=http://www.google.com/about.html>حول Google</a> </font></div> 
+      </div></td> 
+  </tr> 
+</table> 
+</body>
+</html>

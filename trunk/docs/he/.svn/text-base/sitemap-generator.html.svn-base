@@ -1,0 +1,750 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel=stylesheet href="http://www.google.com/google.css">
+<link rel=stylesheet href="../leftnav.css">
+<style>
+<!--
+body,td,font,p,a{font-family:arial,sans-serif}
+.i { margin-left: 1em; margin-right: 2em; }
+//.style1 {font-weight: bold}
+.style1 {font-weight: bold}
+.d {color:#999999;text-decoration:italics;font-size:10px;}
+.changes {color: #FF0000}
+-->
+</style>
+<script
+  src=" https://ssl.google-analytics.com/urchin.js "
+  type="text/javascript">
+</script>
+<script type="text/javascript">
+  _uacct="UA-18009-2";
+  _utcp="/webmasters/sitemaps/";
+  _uanchor=1; 
+  urchinTracker();
+</script>
+
+<title>Google Webmaster Tools</title>
+</head>
+<body class=search bgcolor=#ffffff text=#000000 link=#0000CC vlink=#800080 alink=#ff0000 topmargin=3 dir="rtl">
+<table width=95% border=0 cellpadding=0 cellspacing=2>
+  <tr valign=top>
+    <td width=1%><a href=https://www.google.com/webmasters/sitemaps/?hl=iw> <img src=http://www.google.com/images/google_sm.gif border=0 width=143 height=59 alt="חזור אל דף הבית של Google." hspace=15 vspace=5></a></td>
+    <td width=100% valign="middle">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		<td><font size="+0"><b>Webmaster Tools</b></font></td>
+		</tr>
+		<tr>
+		<td style="border-bottom:1px solid #999999" height="1"><img width="1" height="1" alt=""></td>
+		</tr>
+		</table>  	
+	</td>
+  </tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=0 width=95%> 
+  <tr> 
+    <td width="175" valign="top">
+		<font size="-1">
+    <p class="sidenavlink">
+    <a href="about.html">על-אודות Webmaster Tools</a></p>
+    <p class="sidenavlink"><a href="protocol.html">השימוש בפרוטוקול Sitemap</a></span>
+    <p class="sidenavtoc">השימוש ביוצר Sitemap</p>
+<p class="sidenavlink"><a href="http://www.google.co.il/webmasters/">המרכז של Google Webmaster </a></p>
+  </font></td>
+    <td background=http://www.google.com/images/dot2.gif valign=bottom width=5><img src=http://www.google.com/images/dot2.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=10 height=1></td> 
+    <td>
+		<div class="content"> 
+		
+			<p><strong>תוכן העניינים</strong></p>
+			<p><font size="-1"><a href="#before">לפני שתתחיל</a>
+		    <br><a href="#download">הורדת הקבצים של תוכנית יוצר Sitemap</a>
+		    <br><a href="#config">יצירת קובץ תצורה</a><br>
+		    <a href="#copy">טעינת הקבצים לשרת האינטרנט שלך</a>
+		    <br><a href="#execute">הפעלת הסקריפט של יוצר  Sitemap</a>
+		    <br><a href="#submitting">שליחת ה- Sitemap שלך אל Google</a>
+		    <br><a href="#troubleshoot">פתרון בעיות</a>
+		    </font></p>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="before"></a><b>לפני שתתחיל</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">
+יוצר Sitemap של Google הינו סקריפט Python היוצרSitemap עבור האתר שלך, תוך שימוש בפרוטוקול Sitemap. סקריפט זה יכול ליצור Sitemaps מרשימות של כתובות אתר, מספריות של שרת אינטרנט, או מיומני גישה. כדי להשתמש בסקריפט זה: </font></p>
+				
+				<ul>
+				  <li><font size="-1">אתה זקוק ליכולת חיבור לסקריפטים ולהפעלתם בשרת האינטרנט שלך. </font></li>
+				  <li><font size="-1">על שרת האינטרנט שלך להכיל Python גרסה 2.2 ומעלה. </font></li>
+				  <li><font size="-1">עליך להכיר את הפקודה המפעילה את Python. (בדרך כלל, זוהי  <strong>python</strong>, אך היא עשויה להשתנות בהתאם להתקנה. לדוגמה, אם שרת האינטרנט מכיל שתי גרסאות של  Python , הגרסה המוקדמת יותר עשויה לפעול על ידי הפקודה <strong>python</strong> והגרסה המאוחרת יותר עשויה לפעול על ידי הפקודה <strong>python2</strong>). </font></li>
+				  <li><font size="-1">עליך להכיר את נתיב הספרייה לאתר שלך. אם שרת האינטרנט שלך מארח אתר אחד, הנתיב עשוי להיות  <strong>var/www/html</strong>. אם יש לך שרת וירטואלי המארח אתרים מרובים, הנתיב עשוי להיות <strong>home/virtual/site1/fst/var/www/html</strong>. </font></li>
+				  <li><font size="-1"> אתה זקוק ליכולת טעינת קבצים לשרת האינטרנט שלך (לדוגמה, באמצעות FTP). </font></li>
+				  <li><font size="-1">אם תיצור רשימה של כתובות אתרים על סמך יומני גישה, עליך להכיר את הקידוד המשמש ליומנים אלו וכן את הנתיב המלא אליהם. </font></li>
+          </ul>
+		  
+				<p><font size="-1">אם אינך בטוח שיש ברשותך מידע זה, תוכל לבדוק זאת מול חברת האירוח באינטרנט שלך. </font></p>
+				<font size="-1">
+				<p> כעת אתה מוכן להתחיל. להלן סקירה כללית על הפעולות שתתבקש לבצע. </p>
+				</font>
+		  <font size="-1">
+				<ol>
+                  <li><font size="-1"><a href="#download">הורד</a> את הקבצים של תוכנית יוצר Sitemap. הוצא את הקבצים לספרייה מקומית. </font></li>
+                  <li><font size="-1"><a href="#config">צור קובץ תצורה</a> עבור האתר שלך באמצעות קובץ <strong>example_config.xml</strong> המסופק כתבנית. שנה קובץ זה כנדרש עבור האתר שלך ושמור אותו. </font></li>
+                  <li><font size="-1"><a href="#copy">טען את הקבצים הנחוצים</a> לשרת הרשת שלך  </font></li>
+                  <li><font size="-1"><a href="#execute">הפעל את</a> <strong>sitemap_gen.py</strong>. </font></li>
+                  <li><font size="-1"><a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">הוסף</a>  את ה-Sitemap  שנוצר אל חשבון הכלים של Googleלמנהלי אתרים. </font></li>
+		          <li><font size="-1"><a href="#recur">הגדר סקריפט חוזר</a>. (אופציונלי) </font></li>
+				</ol>
+		  </font>
+		  
+				<p><font size="-1">אם אין באפשרותך להשתמש ביוצר Sitemap, תוכל להוסיף Sitemap לחשבון הכלים של Google שלך למנהלי אתרים <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34606&topic=8516>בפורמט אחר</a>, כגון קובץ טקסט פשוט. <a href="http://code.google.com/sm_thirdparty.html">תוכניות צדדים שלישיים התומכות בפרוטוקול Sitemap</a>.</font></p>
+				<p><font size="-1"><strong>עבור News Sitemaps:</strong> בשלב זה, לא מומלץ להשתמש ביוצר Sitemap ליצירת Google News Sitemaps, בשל הדרישות הספציפיות של News Sitemaps.  News Sitemaps אמורים להיות רשימות דינמיות של כתבות על החדשות העדכניות ביותר (ולא על אתר האינטרנט כולו) והם מעודכנים לעתים קרובות.</font></p>  
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="download"></a><b>1. הורדת הקבצים של תוכנית יוצר Sitemap</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p> הקבצים של יוצר  Sitemap זמינים בפורמט ארכיון ZIP ו- GZ <font size="-1">מהמיקום הבא:</font></p>
+				</font>
+				<p><font size="-1"><a href="http://www.sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422">http://sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422</a></font></p>
+				<font size="-1">
+				<p>לאחר שתוריד את הארכיון, הוצא אותו לספרייה מקומית. אתר את הקבצים הבאים: </p>
+				<ul>
+                  <li><strong> README</strong> &#8212;מכיל את המידע העדכני ביותר על אודות כלי זה </li>
+                  <li><strong> sitemap_gen.py</strong> &#8212;סקריפט python היוצר את ה-Sitemap שלך </li>
+                  <li><strong> example_config.xml</strong> &#8212;קובץ תצורת התבנית בו תשתמש לציון התצורה של האתר שלך</li>
+                  <li><strong> example_urllist.txt</strong> &#8212;רשימת תבנית כתובות האתר בה תוכל להשתמש ליצירת Sitemap על סמך קבוצת כתובות האתרים שתציין</li>
+		        </ul>
+				</font>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="config"></a><b>2א. יצירת קובץ תצורה</b></td> 
+				</tr> 
+			</tbody></table>
+		  <font size="-1">
+		  </font><p><font size="-1">חלק זה מביא הנחיות צעד אחר צעד ליצירת קובץ תצורה. בנוסף, החלק מכיל <a href="#config_reference">פירוט מלא</a> של האפשרויות הזמינות. אם אתה יוצר <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34627&topic=8493">Sitemaps להתקנים ניידים</a>, עיין <a href="#creating_mobile">בהנחיות הנוספות בנושא התקנים ניידים</a>.</font></p>
+				<font size="-1"><p>כדי ליצור קובץ תצורה עבור האתר שלך, אתה זקוק למידע הבא: </p>
+				<ul>
+                  <li>כתובת האתר הבסיסית עבור האתר שלך (כגון /<strong>http://www.example.co.il</strong>). ודא שאתה מוסיף את הפרוטוקול (כגון <strong>//:http</strong>). לדוגמה, הכתובת <strong>http://www.google.co.il</strong> היא כתובת אתר בסיסית חוקית, בעוד שהכתובת   <strong>www.google.co.il</strong>איננה. </li>
+		
+                  <li>נתיב שרת האינטרנט למיקום בו יאוחסן ה-Sitemap. לרוב, זהו הנתיב אל כתובת האתר הבסיסית, שכן Sitemap אינו יכול להכיל כתובות אתר המצויות בספרייה ברמה גבוהה יותר ממיקום ה-Sitemap. כאשר אתה מפעיל את יוצר Sitemap של Google, הוא יוצרSitemap וממקם אותו במיקום שציינת. </li>
+		 
+                  <li>השיטות שבהן תרצה שיוצר Sitemap ישתמש ליצירת ה-Sitemap שלך. תוכל להשתמש בכל שילוב בין השיטות. להלן השיטות הזמינות: </li>
+		  </ul>
+				
+		  </font><ol>
+<ul>
+                    <li><font size="-1"><strong> <a href="#URL">כתובת אתר</a></strong> &#8212;ציין את כתובות האתר הבודדות במקטע זה בקובץ התצורה, לצד מידע על אודות כל אחת מכתובות האתר. בדרך כלל תשתמש בשיטה זו ביחד עם שיטה נוספת, כדי להוסיף ידנית כתובות אתר נוספות ששיטות אחרות לא יוסיפו. </font></li>
+                    <li><font size="-1"><strong><a href="#urllist">רשימת כתובות אתר</a> </strong> &#8212;הפניית קובץ התצורה אל קובץ טקסט המכיל רשימה של כתובות האתרים. מומלץ להשתמש בשיטה זו אם קובץ הטקסט כבר קיים, או אם אתה משתמש בסקריפט ליצירת רשימה של כתובות אתרים. </font></li>
+                    <li><font size="-1"><strong><a href="#directory">נתיבי ספרייה</a></strong>&#8212;ציין את נתיבי הספרייה עבור האתר שלך ואת כתובות האתר המקבילות לנתיבים אלו. יוצר Sitemap ייצור רשימה של כתובות אתר על סמך התוכן של ספריות אלו. מומלץ להשתמש בשיטה זו אם האתר שלך מכיל קובצי HTML סטטיים. </font></li>
+            <li><font size="-1"><strong> <a href="#logs">יומני גישה</a></strong>&#8212;הפנייה אל הנתיב של קובצי היומן שלך. יוצר Sitemap ייצור רשימה של כתובות אתר על סמך כתובות האתר הכלולות ביומנים. מומלץ להשתמש בשיטה זו אם האתר שלך מכיל דפים דינמיים. </font></li>
+ <li><font size="-1"><strong> <a href="#sitemap">Sitemap</a></strong>&#8212;הפנייה אל Sitemaps קיימים שיצרת באמצעות יוצר Sitemap. יוצר Sitemap ייצור Sitemap יחיד הכולל את כתובות האתר הכלולות בכל Sitemap. תוכל להשתמש בשיטה זו אם כבר יצרת מספר Sitemaps קטנים יותר שברצונך לשלב בתוך Sitemap אחד גדול יותר. </font></li>
+            </ul>
+		  </ol>
+				
+		  <font size="-1"><p><b><a name="create_config"></a>צור את קובץ התצורה באופן הבא:</b></p>
+		  </font>
+				<ol>
+                 <font size="-1"> <li>פתח את הקובץ <strong>example_config.xml</strong> בעורך טקסט. שמור אותו כקובץ חדש (כגון <strong>config.xml</strong> או <strong>mysite_config.xml</strong>).</li> 
+                 </font>
+				
+                 
+                 <font size="-1">
+                 <li>אתר את מקטע הגדרת האתר: </li>
+                 </font>		  
+				
+				<pre dir="ltr">&lt;site base_url="http://www.example.co.il/" store_into="/var/www/docroot/sitemap.xml.gz"
+verbose="1"&gt;
+				</pre>				
+				
+                  <font size="-1"><li>שנה את הערך <strong>base_url</strong> לכתובת האתר של האתר שלך. </li>
+		 
+                  <li>שנה את הערך <strong>store_into</strong>
+לנתיב בשרת האינטרנט שלך שבו תרצה לאחסן את ה-Sitemap ואת שם הקובץ שבו תרצה להשתמש עבור ה-Sitemap. לרוב, זהו הנתיב אל כתובת האתר הבסיסית, שכן Google יכולה לקבל כתובות אתר הנמצאות באותה רמה, או ברמות משנה של הספרייה בה נמצא ה-Sitemap. תוכל לציין נתיב יחסי מהספרייה שבה תטען את הסקריפט, או נתיב מלא מהשורש של שרת האינטרנט שלך. אם תטען את הסקריפט לספריית כתובת האתר הבסיסית שלך, תוכל לציין את שם הקובץ בלבד.</li>
+                  </font>
+                  <font size="-1"></font><font size="-1"><li>אתר את מקטעי שיטת היצירה המתחילים ב- <span class="style1">** MODIFY</span> <span class="style1">או ב- DELETE **</span>. כל אחד ממקטעים אלו מתאים לשיטה ליצירת Sitemap. </li>
+                  <li>מחק את המקטעים עבור השיטות שאינך מתכוון להשתמש בהן.</li>
+                  <li>פעל לפי ההנחיות שלהלן עבור השיטות שבהן בכוונתך להשתמש. </li>
+                <p><strong> כתובת אתר<a name="URL"></a></strong></p>
+                <p> אתר את המקטע הבא: </p>
+                </font>
+                  <pre dir="ltr">&lt;!-- ** MODIFY or DELETE ** 
+"url" nodes specify individual URLs to include in the map. &lt;br&gt;
+
+Required attributes: 
+href - the URL
+
+Optional attributes: 
+lastmod - timestamp of last modification (ISO8601 format) 
+changefreq - how often content at this URL is usually updated
+priority - value 0.0 to 1.0 of relative importance in your site 
+--&gt; 
+
+&lt;url href="http://www.example.co.il/stats?q=name" /&gt; 
+&lt;url 
+href="http://www.example.co.il/stats?q=age" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre>
+                  <font size="-1">
+                <p>מקטע זה מביא שתי דוגמאות: הדוגמה הראשונה כוללת רק את המאפיין הדרוש והדוגמה השנייה כוללת את המאפיין הדרוש ואת המאפיינים האופציונליים. </p>
+                <p>השתמש בפורמט זה עבור כל כתובת אתר שברצונך להוסיף. המאפיין <strong>changefreq</strong> מאפשר ל- Googleלקבל מושג כללי לגבי התדירות שבה כתובת האתר מתעדכנת. כך, Google יכולה לדעת באיזו תכיפות לבקר את הדף למציאת תוכן חדש. המאפיין <strong>priority</strong> מספק ל- Googleמידע על אודות החשיבות היחסית של דף זה בהשוואה לדפים האחרים באתר שלך. מאפיין זה אינו משפיע על האופן בו Google משווה בין הדף שלך לדפים באתרים אחרים, והוא רק עוזר ל- Google לדעת אילו מהדפים באתר שלך נחשבים לחשובים ביותר בעיניך. </p>
+                  </font>
+				<p><font size="-1"><strong> רשימת כתובות אתר <a name="urllist"></a> </strong></font></p>
+				<font size="-1"><p> אתר את המקטע הבא: </p>
+				
+			</font>
+			<pre dir="ltr">
+&lt;!-- ** MODIFY or DELETE **
+"urllist" nodes name text files with lists of URLs. 
+An example file "example_urllist.txt" is provided. 
+
+Required attributes: 
+path - path to the file 
+
+Optional attributes: 
+encoding - encoding of the file if not US-ASCII 
+--&gt; 
+&lt;urllist path="example_urllist.txt" encoding="UTF-8" /&gt; 
+				</pre>
+				
+				<p><font size="-1"> השתמש בפורמט זה להפניה לנתיב ולשם קובץ הטקסט המכיל את רשימת כתובות האתר שלך. תוכל להשתמש בקובץ  <strong>example_urllist.txt </strong>המסופק כתבנית עבור קובץ טקסט זה. תוכל לציין נתיב יחסי או מלא אל שרת האינטרנט שלך. לדוגמה, אם יוצר Sitemap וקובץ <strong>urlist.txt </strong>ממוקמים באותה ספרייה, תוכל לציין את שם הקובץ של הקובץ <strong> .txt</strong> . אם אתה יוצר קובץ טקסט שהקידוד שלו שונה מ- UTF-8, תוכל להשתמש במאפיין <strong>קידוד</strong> לציון קידוד זה. אם יש לך קובצי .txt מרובים, תוכל להשתמש ב-wildcards. לדוגמה:</font></p>
+				<pre dir="ltr">&lt;urllist path=&quot;example_urllist*.txt&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">עבור כל כתובת אתר שתוסיף בקובץ הטקסט, תוכל לציין את תאריך השינוי האחרון, לשנות את התדירות ואת העדיפות. למידע מלא על אודות המבנה של קובץ זה, עיין <a href="#urllist_reference">במקטע בנושא קובץ טקסט רשימת כתובות אתרים</a>.</font>  </p>
+				<p><font size="-1"><strong> נתיבי ספרייה<a name="directory"></a> </strong></font></p>
+				<p><font size="-1"> אתר את המקטע הבא: </font></p>
+				
+				<pre dir="ltr">
+&lt;!-- ** MODIFY or DELETE ** 
+"directory" nodes tell the script to walk the file system and 
+include all files and directories in the Sitemap.
+
+Required attributes:
+path - path to begin walking from 
+url - URL equivalent of that path 
+
+Optional attributes:
+default_file - name of the index or default file for directory URLs
+
+--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.example.co.il/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.example.co.il/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+				
+				<p><font size="-1">מקטע זה מביא שתי דוגמאות. אם כל הדפים שלך כלולים בספריות משנה של נתיב אחד, עליך להוסיף ערך אחד בלבד. אולם, אם יש לך נתיבים מרובים לדפים באתר שלך, הוסיף ערך עבור כל אחד מהם. </font></p>
+				
+				<p><font size="-1">זכור כי על כל כתובת אתר להתחיל עם כתובת האתר הבסיסית שציינת בשלב 3. לדוגמה, הדוגמאות המובאות בקובץ <strong>example_config.xml</strong> מכילות כתובות אתר המתחילות ב- <strong>http://www.example.co.il/</strong>. לכן, שתי כתובות האתר הן חוקיות. </font></p>
+				
+				<p><font size="-1">החלף את ערכי הדוגמה בערכי האתר שלך. אתרים רבים יכילו ערך אחד בלבד אשר יפנה אל כתובת האתר הבסיסית. ודא שהערך <strong>נתיב</strong> הינו נתיב שלם אל הספרייה בשרת האינטרנט שלך. ודא שהערך <strong>כתובת אתר</strong>  הינו כתובת האתר המלאה, לרבות הפרוטוקול (כגון http) וקו אלכסוני, במידת הצורך.</font></p>
+				<p><font size="-1">תוכל להשתמש בפרמטר <strong>default_file</strong> לציון שם הקובץ שבו השרת שלך משתמש כדף ברירת המחדל עבור ספרייה. בדוגמה שלמעלה,  <strong>/var/www/docroot</strong> הופכת ל- <strong>http://www.example.co.il/index.html</strong>. אינך נדרש לציין זאת. עם זאת, אם תציין זאת, יוצר Sitemap יוסיף את הדף הממפה לכל ספריית משנה פעם אחת בלבד (במקום לציין גם את כתובת אתר הספרייה וגם את כתובת אתר שם הקובץ), והוא ישתמש בתאריך השינוי האחרון של הקובץ (במקום של הספרייה) כדי להוציא את המאפיין lastmod עבור הדף. </font></p>
+				<p><font size="-1"><strong> יומני גישה <a name="logs"></a></strong></font></p>
+				<p><font size="-1"> אתר את המקטע הבא: </font></p>
+				
+<pre dir="ltr">&lt;!-- ** MODIFY or DELETE **
+&quot;accesslog&quot; nodes tell the script to scan webserver log files to
+extract URLs on your site.  Both Common Logfile Format (Apache's default 
+logfile) and Extended Logfile Format (IIS's default logfile) can be read.
+				
+Required attributes:
+ path - path to the file
+Optional attributes:
+ encoding - encoding of the file if not US-ASCII
+  --&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.0&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.1.gz&quot; encoding=&quot;UTF-8&quot; /&gt;
+</pre>
+				 
+				<p><font size="-1">מקטע זה מביא שלוש דוגמאות. עליך להחליף ערכים אלו ולהוסיף ערך עבור כל קובץ יומן. ודא שערך הנתיב הוא הנתיב השלם ושם הקובץ בשרת האינטרנט שלך. אם קובצי היומן אינם מקודדים כ- US-ASCII או כ- UTF-8, השתמש במאפיין האופציונלי <strong>קידוד</strong> כדי <a href="#encoding">לציין</a> את הקידוד. במקום לציין כל קובץ יומן, תוכל להשתמש ב-wildcards. לדוגמה, בדוגמה שלמעלה, תוכל להוסיף את הערך הבא אשר יכלול את כל שלושת קובצי היומן:</font></p>
+<pre dir="ltr">&lt;accesslog path=&quot;/etc/httpd/logs/access.log*&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">יוצר Sitemap מקצה עדיפות לכתובות האתר שהוא מוצא ביומנים על סמך תדירות הגישה אל כל כתובת אתר. לדוגמה, כתובת אתר שניגשו אליה 100 פעמים תקבל עדיפות גבוהה יותר מכתובת אתר שניגשו אליה פעמיים. העדיפות המוקצית בפועל היא יחסית ותלויה בכל כתובת אתר בהשוואה לכתובות אתר אחרות באתר.</font></p>
+<p><font size="-1"><strong> sitemap <a name="sitemap"></a></strong></font></p>
+<p><font size="-1"> אתר את המקטע הבא: </font></p>
+				
+<pre dir="ltr"> &lt;!-- ** MODIFY or DELETE **<br>    
+&quot;sitemap&quot; nodes tell the script to scan other Sitemap files.  This can    
+be useful to aggregate the results of multiple runs of this script into
+a single Sitemap.
+				 
+Required attributes:
+  path - path to the file
+  --&gt;
+&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>
+				 
+				<p><font size="-1">מקטע זה מביא דוגמה אחת. עליך להחליף ערך זה ולהוסיף ערך עבור כל קובץ Sitemap שאתה רוצה להוסיף. ודא שערך הנתיב הוא הנתיב השלם ושם הקובץ בשרת האינטרנט שלך.  תוכל גם לציין Sitemaps בפורמט gzip כל עוד הסיומת שלהם היא .gz במקום לציין כל Sitemap, תוכל להשתמש ב-wildcards. לדוגמה, הערך הבא יוסיף כל Sitemap המתחיל במילה &quot;sitemap&quot; והמסתיים בסיומת  .xml.</font></p>
+<pre dir="ltr">&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap*.xml&quot; /&gt; </pre>
+				<p><font size="-1">יוצר Sitemap מוציא את כל כתובות האתר והנתונים האופציונליים המפורטים עבור כל כתובת אתר לכל Sitemap שתציין, ויוצר Sitemap אחד המכיל מידע זה. בשלב זה אין באפשרותנו להבטיח ששיטה זו תפעל עם Sitemaps שנוצרו עם כלים אחרים מלבד יוצר Sitemap.</font></p>
+
+
+
+				<font size="-1"><li>אתר את מקטע הגדרת המסנן:</li></font>
+				  
+		 
+<pre>&lt;!-- ********************************************************         
+מסננים
+				
+מסננים מציינים תבניות wild-card שהסקריפט משווה מול כל כתובות האתר שהוא מוצא. ניתן להשתמש במסננים כדי לבצע אי הכללה של כתובות אתר מסוימות ב- Sitemap שלך, למשל, אם יש לך תוכן חבוי שאתה מקווה שמנועי החיפוש לא ימצאו.
+
+המסננים יכולים להיות type=&quot;wildcard&quot;, כלומר wildcards של נתיבים רגילים (* וגם ?) משמשים לשם השוואה מול כתובות אתרים, או type=&quot;regexp&quot;, כלומר ביטויים רגילים המשמשים להשוואה.
+
+המסננים מיושמים בסדר שמצוין בקובץ זה. מסנן  action=&quot;drop&quot; גורם לאי הכללה של כתובות אתר תואמות. מסנן  action=&quot;pass&quot; גורם להוספה של כתובות אתר תואמות, תוך עקיפת כל מסנן מאוחר יותר אחר שעשוי להתאים אף הוא. אם המסננים אינם תואמים לכתובת אתר, כתובת האתר תיווסף. באמצעות המסננים תוכל לבנות כללים מורכבים למדי.
+
+פעולת ברירת המחדל היא &quot;drop&quot;. סוג ברירת המחדל הוא &quot;wildcard&quot;.
+
+תוכל לשנות (MODIFY) או למחוק (DELETE) ערכים אלו כנדרש עבור האתר שלך. עם זאת, בשונה מהדוגמאות שלמעלה, ערכי הדוגמה במקטע זה מתוכננים ותוכל להשתמש בהם כמות שהם.
+********************************************************* --&gt;
+
+&lt;!-- Exclude URLs that end with a '~' (IE: emacs backup files) --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*~&quot; /&gt;
+
+&lt;!-- Exclude URLs within UNIX-style hidden files or directories --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;regexp&quot; pattern=&quot;/\.[^/]*&quot; /&gt;
+
+</pre>
+				<p><font size="-1">תוכל להשתמש בסינון כדי לבצע אי הכללה של כתובות אתר ספציפיות מה-Sitemap שנוצר. מומלץ לעשות זאת כדי ליצור רשימה ברורה יותר, כדי לצמצם רישומים כפולים, או כדי לוודא שכתובות אתר מסוימות אינן מוספות לאינדקס. לידיעתך, אם תשתמש בקובץ<a href="http://www.robotstxt.org/wc/robots.html">robots.txt</a> כדי לוודא אי הכללה של כתובות אתר באינדקס, גם אם כתובות האתר כלולות ב-Sitemap שלך, Google לא תחפש אותן או תוסיף אותן לאינדקס. </font></p>
+				
+				<p><font size="-1">
+תוכל להשתמש בשיטת סינון אחת או בכולן. תוכל למחוק את הערכים שאינך זקוק להם ותוכל ליצור ערכים נוספים אם תרצה בכך. להלן דוגמאות לשימושים שונים. </font></p>
+				<pre dir="ltr">&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*.jpg&quot; /&gt;</pre>
+				<p><font size="-1">מסנן זה מבצע אי הכללה של כתובות אתר עם הסיומת .jpg. מומלץ להוסיף מסנן דומה אם כל התמונות באתר שלך משולבות בתוך דפי HTML ואין לגשת אליהן ככתובות אתר עצמאיות. </font></p>
+				<pre dir="ltr">&lt;filter action=&quot;pass&quot; type=&quot;wildcard&quot; pattern=&quot;*.htm*&quot; /&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*&quot; /&gt;</pre>
+				<font size="-1"> מסנן זה כולל את כל קובצי ה- .tml* וכל דבר אחר אינו כלול בו.</font><br>
+				<br>
+
+
+				<font size="-1"></font><font size="-1"><li>לאחר שתבצע את כל השינויים עבור האתר שלך, שמור את הקובץ.</li></font>
+				</ol>
+				
+				
+		        <font size="-1"><a name="config_reference"></a><p><b>אסמכתת תחביר לקובץ Config</b></p>
+		  </font><font size="-1">
+				</font>
+		  <p><font size="-1">להלן הסבר מלא לגבי התחביר של קובץ Config. כל תג מתחיל עם קוד לדוגמה ולאחר מכן מובא תיאור של המאפיינים.
+</font></p>
+				
+		  <p><font size="-1"><strong><a name="sitetag"></a>אתר<br>
+		  </strong></font><font size="-1">תג דרוש בתחילת כל קובץ Config. </font></p>
+		  <pre dir="ltr">&lt;sitebase_url="http://www.example.co.il/"
+store_into="/var/www/html/sitemap.xml.gz"
+verbose="1"
+supress_search_engine_notify="1"
+default_encoding="UTF-8"&gt;</pre>
+				<br>
+				<font size="-1">
+				<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				
+					<tbody><tr>
+					<td valign="top" width="19%"><pre>base_url</pre></td>
+					<td valign="top" width="6%"><font size="-1">דרוש</font></td>
+					<td valign="top" width="75%"><font size="-1">נתיב ה-HTTP של כתובת האתר הבסיסית של האתר שלך – רק כתובות אתר המתחילות עם הכתובת הבסיסית יכולות להיכלל ב-Sitemap.</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>store_into</pre></td>
+					<td valign="top"><font size="-1">דרוש</font></td>
+					<td valign="top"><font size="-1">נתיב שרת האינטרנט לקובץ הפלט המבוקש. הסקריפט ייצור קובץ זה – אין צורך ליצור את הקובץ לפני הפעלת הסקריפט.</font></td>
+					</tr> 
+					
+					<tr>
+					<td valign="top"><pre>verbose</pre></td>
+					<td valign="top"><font size="-1">אופציונלי</font></td>
+					<td valign="top"><font size="-1">הזן מספר בין 0 ל-3, כאשר המספרים הגבוהים ביותר תואמים למידע ניקוי הבאגים.</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>suppress_search_engine_notify</pre></td>
+					<td valign="top"><font size="-1">אופציונלי</font></td>
+					<td valign="top"><font size="-1">השבת</font><font size="-1">את היידוע של מנועי חיפוש על ידי הזנת "1" לצורך בדיקה</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>default_encoding</pre></td>
+					<td valign="top"><font size="-1">אופציונלי</font></td>
+					<td valign="top"><font size="-1">ציין קידוד תו שאותו יש ליישם בנתיבי מערכת קבצים ובכתובות אתר</font></td>
+					</tr>
+				 
+		  </tbody></table>
+		   </font>
+					<font size="-1">
+					
+				<p></p>
+				</font>
+					<p><font size="-1"><strong>כתובת אתר<br>
+					</strong></font><font size="-1">תג אופציונלי שבו תוכל להשתמש כדי לציין כל אחת מכתובות האתר באתר שלך. </font></p>
+					<p><pre dir="ltr">&lt;url href="http://www.example.co.il/stats?q=age" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre></p><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>href</pre></td>
+					  <td width="6%" valign="top"><font size="-1">דרוש</font></td>
+					<td valign="top" width="75%"><font size="-1">נתיב ה-HTTP של כתובת האתר הבסיסית של האתר שלך – רק כתובות אתר המתחילות עם הכתובת הבסיסית יכולות להיכלל ב-Sitemap.</font></td>
+					</tr><tr>
+					<td valign="top"><pre>lastmod</pre></td>
+					<td valign="top"><font size="-1">אופציונלי</font></td>
+					<td valign="top"><font size="-1">השעה בה כתובת האתר שונתה לאחרונה בפורמט  <a href="http://www.w3.org/TR/NOTE-datetime">W3C Datetime</a> (YYYY-MM-DDThh:mm:ss+00:00). תוכל להשמיט את מקטע השעה. דוגמאות:<br>
+				&nbsp;&nbsp;"2005-02-21T18:00:15+00:00"<br>
+				&nbsp;&nbsp;"2005-02-21"</font></td>
+					</tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">אופציונלי</font></td>
+					<td valign="top"><font size="-1">התדירות בה כתובת האתר צפויה להשתנות. מידע זה נחשב רמז ולא פקודה. על הערך להיות "תמיד", "מדי שעה", "מדי יום", "מדי שבוע", "מדי חודש", "מדי שנה", או "לעולם לא".</font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">אופציונלי</font></td>
+					<td valign="top"><font size="-1">העדיפות של דף זה ביחס לדפים אחרים באותו אתר. ערך זה הוא מספר בין 0.0 ל-1.0, כאשר 0.0 הוא העדיפות הנמוכה ביותר ו-1.0 הוא העדיפות הגבוהה ביותר. העדיפות יכולה להשפיע על הסדר שבו מנועי חיפוש בוחרים כתובות אתר באתר שלך. היות שהעדיפות היא יחסית, השימוש בה הוא רק לבחירה בין כתובות אתר במסגרת האתר שלך. עדיפות הדפים שלך לא תושווה לעדיפות של דפים באתרים אחרים.</font></td>
+					</tr>
+		  </tbody></table>
+					<p><font size="-1"><b>urllist<br>
+					</b></font><font size="-1">תג אופציונלי שבו תוכל להשתמש כדי להפנות לקובץ טקסט המכיל רשימה של כתובות האתרים שבאתר שלך. </font></p>
+					<pre dir="ltr">&lt;urllist path="/var/www/html/urllist.txt" encoding="UTF-8" /&gt;</pre>
+		  <br>
+		<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>path</pre></td>
+					  <td width="6%" valign="top"><font size="-1">דרוש</font></td>
+					<td valign="top" width="75%"><font size="-1">הנתיב ושם הקובץ של קובץ ה-.txt. תוכל לציין נתיב יחסי או מלא. </font></td>
+			</tr><tr>
+					<td valign="top"><pre>encoding</pre></td>
+					<td valign="top"><font size="-1">אופציונלי</font></td>
+					<td valign="top"><font size="-1">הקידוד של האתר שלך, אם הוא אינו UTF-8.</font></td>
+					</tr>
+		  </tbody></table>
+<p><font size="-1"><a name="urllist_reference"></a>הקובץ <b>urllist.txt</b> הוא קובץ טקסט פשוט המכיל רשימה של כתובות אתרים למיפוי. כמו כן, תוכל להוסיף מאפיינים אופציונליים עבור כל כתובת אתר. המאפיינים מוזנים באותה שורה ככתובת האתר ומופרדים באמצעות רווח בודד. לדוגמה:</font>
+          </p>
+		  <pre dir="ltr">
+http://www.example.co.il/abc/something
+http://www.example.co.il/abc/xyy.pdf lastmod=2001-12-31T14:05:06+00:00
+http://www.example.co.il/abc/def?x=12&amp;y=23 changefreq=weekly priority=0.3</pre>
+				<p>
+				<font size="-1">
+					
+				  </font><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%"  valign="top"><pre>lastmod</pre></td>
+					<td valign="top" width="6%"><font size="-1">אופציונלי</font></td>
+					<td width="75%"  valign="top"><p><font size="-1">השעה בה כתובת האתר שונתה לאחרונה בפורמט  <a href="http://www.w3.org/TR/NOTE-datetime">W3C Datetime</a> (YYYY-MM-DDThh:mm:ss+00:00). תוכל להשמיט את מקטע השעה. דוגמאות:</font><font size="-1"><br>
+				  <br>
+&nbsp;&nbsp;"2005-02-21T18:00:15+00:00"<br>
+&nbsp;&nbsp;"2005-02-21"</font></p>
+				  </td>
+				  </tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">אופציונלי</font></td>
+					<td valign="top"><font size="-1"><font size="-1">התדירות בה כתובת האתר צפויה להשתנות. מידע זה נחשב רמז ולא פקודה. על הערך להיות "תמיד", "מדי שעה", "מדי יום", "מדי שבוע", "מדי חודש", "מדי שנה", או "לעולם לא".</font></font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">אופציונלי</font></td>
+					<td valign="top"><font size="-1">העדיפות של דף זה ביחס לדפים אחרים באותו אתר. ערך זה הוא מספר בין 0.0 ל-1.0, כאשר 0.0 הוא העדיפות הנמוכה ביותר ו-1.0 הוא העדיפות הגבוהה ביותר. העדיפות יכולה להשפיע על הסדר שבו מנועי חיפוש בוחרים כתובות אתר באתר שלך. היות שהעדיפות היא יחסית, השימוש בה הוא רק לבחירה בין כתובות אתר במסגרת האתר שלך. עדיפות הדפים שלך לא תושווה לעדיפות של דפים באתרים אחרים.</font></td>
+					</tr>
+					</tbody></table>
+				</p>
+		  <font size="-1">
+		  </font>
+		  <p><font size="-1"><strong>ספרייה<br>
+		  </strong></font><font size="-1">תג אופציונלי שבו תוכל להשתמש כדי לציין ספריות באתר שלך, כך שיוצר Sitemap יוכל ליצור רשימה של כתובות אתר מהקבצים שנמצאים בספריות אלו. </font></p>
+				<pre dir="ltr">--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.example.co.il/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.example.co.il/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+		  <table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">דרוש</font></td>
+					<td width="75%" valign="top"><font size="-1">מציין את הנתיב ההתחלתי. יוצרSitemap  יעבור דרך ספרייה זו וכל ספריות המשנה</font>.</td>
+				  </tr>
+					
+					<tr>
+					<td valign="top"><pre>url</pre></td>
+					 <td valign="top"><font size="-1">דרוש</font></td>
+					<td valign="top"><font size="-1">מציין את שווה-ערך ערך הנתיב לכתובת האתר.</font></td>
+					</tr>
+					<tr>
+					<td valign="top"><pre>default_file</pre></td>
+					 <td valign="top"><font size="-1">אופציונלי</font></td>
+					 <td valign="top"><font size="-1">מציין את קובץ ברירת המחדל עבור ספרייה בשרת שלך.</font></td>
+					</tr>
+		    </tbody></table>
+		  </font>
+		  <p><font size="-1"><b> accesslog<br>
+		  </b>תג אופציונלי שבו תוכל להשתמש כדי לציין את הנתיב ושם הקובץ של יומני גישה IIS ומסגנון Apache, כך שיוצר Sitemap יוכל לבחור מהם כתובות אתר באופן אוטומטי. </font>
+          </p>
+		  
+		  <pre dir="ltr">&lt;accesslog path="/etc/httpd/logs/access-0.log" encoding="UTF-8"/&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">דרוש</font></td>
+					<td width="75%" valign="top"><font size="-1">מציין את הנתיב לקובץ.</font></td>
+		  </tr>
+					
+					<tr>
+					<td valign="top"><pre>encoding</pre></td>
+					 <td valign="top"><font size="-1">אופציונלי</font></td>
+					<td valign="top"><font size="-1">מציין את קידוד האתר, אם הוא אינו UTF-8.</font></td>
+					</tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><b> sitemap <br>
+		  </b>תג אופציונלי שבו תוכל להשתמש כדי לציין את הנתיב ושם הקובץ של Sitemaps קיימים שאותם יצרת עם יוצר Sitemap. יוצר Sitemap ייצור Sitemap יחיד הכולל את כתובות האתר הכלולות בכל Sitemap. </font>
+          </p>
+		  
+		  <pre dir="ltr">&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">דרוש</font></td>
+					<td width="75%" valign="top"><font size="-1">מציין את הנתיב לקובץ Sitemap.</font></td>
+		  </tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><strong><a name="filter_examples"></a>מסנן<br>
+		  </strong></font><font size="-1">תג אופציונלי שבו תוכל להשתמש כדי לבנות כללים המוסיפים קבצים ספציפיים, או מונעים את הוספתם. המסננים מיושמים לפי סדר הופעתם בקובץ config.xml. יחד עם זאת, אין השפעה לשילוב בין ערכי מסננים וערכי פלטים (כתובת אתר, רשימת כתובות אתרים, ספרייה, או יומני גישה) – כל כתובת אתר שיוצר Sitemap מוסיף ל- Sitemap מושווית תחילה מול כל מסנן. </font><font size="-1">אם המסננים איתם תואמים כתובת אתר, ברירת המחדל היא הוספת כתובת האתר ב-Sitemap.</font></p>
+				
+				<pre dir="ltr">&lt;filter action="drop" type="wildcard" pattern="*/internal/*" /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>action</pre></td>
+					<td valign="top" width="6%"><font size="-1">אופציונלי</font></td>
+					<td width="75%" valign="top">
+				      <font size="-1"><p>הפעולה שהמסנן יבצע. הערכים התקפים הם:</p>
+					  </font>				      <ul>
+					  <li><font size="-1">Drop – אי הכללה של כתובות אתר תואמות. זוהי פעולת ברירת המחדל, לכן אם לא צוינה כל פעולה, היוצר מניח  &quot;drop&quot;.</font></li>
+					  <li><font size="-1">pass – הוספה של כתובות אתר תואמות.</font></li>
+					  </ul>
+				      </p></td>
+		  </tr>
+					
+					<tr>
+					<td width="19%" valign="top"><pre>type</pre></td>
+					<td valign="top" width="6%"><font size="-1">אופציונלי</font></td>
+					<td width="75%" valign="top"><font size="-1"><p>סוג הסינון. הערכים התקפים הם:</p>
+					</font>					  <ul>
+					<li><font size="-1">wildcard – wildcards לנתיבים רגילים (? וגם *) משמשים להשוואה מול כתובות אתרים. זהו סוג ברירת המחדל, לכן אם לא צוין סוג כלשהו, היוצר מניח  &quot;wildcard&quot;.</font></li>
+					<li><font size="-1">Regexp – שימוש בביטויים רגילים.</font></li>
+					  </ul></td>
+		  </tr>
+				 
+<tr>
+					<td valign="top"><pre>pattern</pre></td>
+					 <td valign="top"><font size="-1">דרוש</font></td>
+					 <td valign="top"><font size="-1">מציין את התבנית שמולה יש לבצע התאמה.</font></td>
+		  </tr>
+		  </tbody></table>
+
+<font size="-1">
+<p><b><a name="encoding"></a>קידודים</b></p>
+				
+		<p>קבצים שמאוזכרים על ידי קובץ התצורה שלך, בין שהוא רשימות של כתובות אתר ובין שהוא יומני שרת אינטרנט, יכולים להשתמש בקידודים שאינם קידוד ברירת המחדל UTF-8. תוכל לציין קידודים חלופיים ב- config.xml כדי להשפיע על האופן בו יוצר Sitemap קורא את הקבצים שלך. להלן כמה מהקידודים הנפוצים:
+		</p>
+				<ul>
+				<li><strong>encoding="utf-8"</strong> הינו הנחת ברירת המחדל
+				</li><li><strong>encoding="ascii</strong>" הינו קבוצת משנה של UTF-8 כך שאינך צריך לציינו
+				</li><li><strong>encoding="iso-8859-1</strong>" נפוץ בשפות מערב אירופאיות רבות
+				</li></ul>
+		  </font>
+		  
+		  <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="creating_mobile" id="creating_mobile"></a><b>2ב. מידע נוסף ליצירת קובץ תצורה להתקנים ניידים</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">תוכל ליצור קובץ תצורה עבור Sitemap להתקנים ניידים באותו אופן כמו יצירת Sitemap שלא להתקנים ניידים. עם זאת, עליך ליצור קובץ config נפרד עבור כל שפת סימון ולהפעיל את יוצר Sitemap עם כל קובץ config בנפרד, כדי שתיצור Sitemap נפרד עבור כל אחת מהן.</font></p>
+				<p><font size="-1">על כל קובץ config:</font></p>
+		  <ul>
+		    <li><font size="-1">לציין שם קובץ שונה עבור הערך <a href="#create_config"><strong>store_into</strong> </a>.</font></li>
+	        <li><font size="-1">להשתמש <a href="#filter_examples">במסננים</a> לציון כתובות האתר לאי ההכללה ולהוספה עבור שפת הסימון. זכור כי כל Sitemap צריך לכלול כתובות אתר עבור שפת סימון אחת בלבד. כלומר, ניתן להוסיף אותה כתובת אתר ב-Sitemaps מרובים, אם כתובות אתר אלו משמשות לשפות סימון מרובות.</font></li>
+	      </ul>
+			<p><strong><font size="-1">דוגמאות של סינון</font></strong></p>
+			<p><font size="-1">להלן דוגמאות לאופן השימוש במסננים מבוססי-סיומת לשם יצירת Sitemaps להתקנים ניידים עבור שפות סימון שונות. הסינון הספציפי שבו אתה משתמש יהיה מבוסס על סוגי שפות הסימון המשמשות לאתר שלך, ועל האופן שבו אתה מציין כל סוג. אם יישמת את פרטי האתר שלך באופן שונה (למשל, יתכן שארגנת את כתובות האתר עם שפות סימון שונות בתיקיות נפרדות), עליך לבצע סינון על סמך פרטי היישום של האתר שלך. זכור כי המסננים מיושמים לפי הסדר שבו אתה מציין אותם בקובץ config. לכן, המסנן הראשון שתציין יהיה פעולת &quot;pass&quot; המציינת את כתובות האתר שברצונך להוסיף ל- Sitemap. </font></p>
+			<p><font size="-1">ליצירת Sitemap עבור תוכן WML (WAP 1.2):</font></p>
+			
+			<pre dir="ltr">&lt;filter action="pass" type="wildcard" pattern="*.wml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+</pre>
+			
+			<p><font size=-1>ליצירת Sitemap עבור תוכן XHTML פרופיל התקנים ניידים (WAP 2.0):</font></p>
+			
+			<pre dir="ltr">&lt;filter action="pass" type="wildcard" pattern="*.xhtml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+			</pre>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="copy"></a><b>3. טעינת הקבצים לשרת האינטרנט שלך</b></td> 
+				</tr> 
+			</tbody></table>
+		<p><font size="-1"> עליך לטעון את הקבצים הבאים לשרת האינטרנט שלך במיקום שאליו תוכל לגשת משורת פקודה: </font></p>
+			
+			<font size="-1"><ul>
+              <li><strong> config.xml</strong> &#8212;זהו קובץ התצורה שיצרת באמצעות <strong>example_config.xml</strong>. </li>
+              <li><strong> sitemap_gen.py</strong> &#8212;זהו סקריפט ה-Python שיוצר את ה- Sitemap שלך. </li>
+              <li><strong> urllist.txt</strong> &#8212;קובץ זה הוא אופציונלי. עליך להוסיפו רק אם השתמשת בשיטת קובץ הטקסט ליצירת Sitemap. </li>
+		  </ul>
+			
+		  </font>
+		  <p><font size="-1"> השיטה שבה תשתמש לטעינת קבצים אלו תלויה בסביבה שלך. השיטות הנפוצות הן  <a href="http://www.google.co.il/search?q=ftp">FTP</a> וכן SCP. למידע נוסף, צור קשר עם מארח האינטרנט שלך.		  </font></p>
+			
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="execute"></a><strong>4. הפעלת הסקריפט של יוצר Sitemap (sitemap_gen.py) </strong></td> 
+				</tr> 
+			</tbody></table>
+				
+				<p><font size="-1">
+כדי להפעיל את יוצר Sitemap, עליך להתחבר לשרת האינטרנט שלך. השיטה שבה תשתמש להתחברות תלויה בסביבה שלך. לדוגמה, בדרך כלל תוכל לגשת לשרת מבוסס-UNIX באמצעות <a href="http://www.google.co.il/search?q=ssh">SSH</a>.  למידע נוסף בנושא ההתחברות לשרת האינטרנט שלך וההפעלה של סקריפטים, צור קשר עם מארח האינטרנט שלך. </font></p>
+				
+				<p><font size="-1"> לאחר שתעתיק את הקבצים אל שרת האינטרנט שלך, עליך להפעיל את הסקריפט של יוצר Sitemap. התחבר לשרת האינטרנט שלך והפעל את הפקודה הבאה (החלף את <strong>&lt;path/config.xml&gt;</strong> בנתיב אל קובץ התצורה שלך ובשם הקובץ. אם טענת קובץ זה לאותו מיקום שבו נמצא סקריפט ה- Python, תוכל לבצע אי הכללה של הנתיב):</font></p>
+				
+				<pre dir="ltr">python sitemap_gen.py --config=&lt;path/config.xml&gt;
+</pre>
+<p><font size="-1">לדוגמה, שורת פקודה מבוססת-UNIX עשויה להיראות כך:</font></p>
+<p><img src="images/python_command.gif" alt="פקודת Python"></p>
+<p><font size="-1">Shell של פקודה מבוססת MS-DOS עשוי להיראות כך:</font></p>
+<p><img src="images/python_dos.gif" alt="פקודת Python"></p>
+<p><font size="-1"><b>טיפ:</b> אם אתה בודק את התצורה שלך ואינך מוכן לשלוח את ה- Sitemap שלך, התחביר הבא ימנע מיוצר Sitemap ליצור קשר עם Google:</font></p>
+				<pre dir="ltr"><br>	$ python sitemap_gen.py --config=config.xml --testing</pre>
+				<font size="-1"><p>בבקשת הפקודה תראה את מצב הבקשה שלך:</p></font>
+<pre>	
+	קריאת קובץ תצורה: path/config.xml/ 
+	URLLIST פתוח  "path/urllist.txt/"
+	הליכה  DIRECTORY "/var/www/html/dir"
+	הליכה  DIRECTORY "/var/www/html/dir2"
+	ACCESSLOG פתוח  "etc/httpd/logs/access-0.log/"
+	מיון וארגון כתובות האתר שנאספו.
+	כתיבת קובץ Sitemap  "/path/sitemap.xml.gz" with 1092 URLs
+	יידוע מנועי חיפוש.
+	יידוע  www.google.co.il
+	ספירת סיומות קובץ בכתובות האתרים:
+		208  .html
+		574  .jpg
+		...
+		מספר שגיאות: 0
+		מספר אזהרות: 0</pre>
+				<font size="-1">
+				<p>אם אינך רואה מידע כה רב, זכור כי עודף הגדרות בקובץ התצורה שלך משפיע על כמות המידע המופיעה על המסך.  דוגמה זו מייצגת עודף הגדרות של "1".</p>
+				<p>כל שגיאה בקובץ תוחזר אף היא.  לדוגמה, אם תשאיר את המאפיין url= מחוץ לערך ספרייה, הסקריפט יציג את המידע הבא:
+				</p></font>
+<pre dir="ltr">	
+	[ERROR] Directory entries must have both "path" and "url" attributes
+	Number of errors: 1</pre>
+				<font size="-1">
+				</font>
+				<p><font size="-1">תקן את השגיאות בקובץ  <b>config.xml</b>שלך והפעל מחדש את הסקריפט. אם לא קיבלת כל הודעת שגיאה, יוצר Sitemap ייצור קובץ  <b>sitemap.xml.gz</b> חדש במיקום שאותו ציינת בקובץ config. </font></p>
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="submitting" id="submitting"></a><strong>5. שליחת ה- Sitemap שלך אל Google </strong></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">יוצר ה-Sitemap יוצר קובץ  <strong>sitemap.xml.gz</strong> במיקום שאותו ציינת בקובץ config. לאחר שהקובץ נוצר בהצלחה, ודא שהוא נגיש דרך דפדפן אינטרנט. לאחר מכן <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">הוסף</a> אותו לחשבון <a href="https://www.google.com/webmasters/sitemaps/siteoverview">Google Sitemaps</a>  שלך. פעולה זו מאפשרת ל-Google לספק לך מצב מוצלח ומידע סטטיסטי. אם Google תדווח על בעיות עם ה-Sitemap שלך, תוכל לתקן את הבעיות ולשלוח אותו מחדש. עליך רק להוסיף את ה-Sitemap באופן ידני פעם אחת בלבד. לאחר מכן, תוכל להשתמש<a href=submit.html#ping>בבקשת HTTP </a>כדי ליידע את Google על אודות שינויים ב- Sitemap שלך (למרות שתוכל גם לשלוח אותו שוב דרך חשבון הכלים של Google שלך למנהלי אתרים). </font></p>
+		        
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="recur"></a><b>6. הגדרת סקריפט חוזר</b></td> 
+				</tr> 
+		  </tbody></table>
+		  <font size="-1">
+				<p>מומלץ להגדיר את יוצר Sitemap להפעלה ככל שהתוכן שלך משתנה, כדי למקסם את התדירות לפעם בשעה.</p>
+		  </font>
+		  <p><font size="-1">מומלץ למנהלי אתרים עם שרת אינטרנט מסוג UNIX לשקול להגדיר זאת כ- <a href="http://www.google.co.il/search?q=cron">cron job</a>. </font></p>
+				<font size="-1"><p>על מנהלי אתרים המשתמשים בפלטפורמות אחרות ליצור קשר עם מנהל המערכת שלהם כדי לעזור בתצורת סקריפטים חוזרים. בנוסף, תוכל ליהנות מעצות של עמיתים אחרים בקבוצת Google Sitemaps ב- <a href="http://groups.google.com/group/Google_Webmaster_Help-Sitemap-en?tsc=1">Google Groups</a>.
+</p>
+				
+	      </font>
+				<p><font size="-1"> תוכל להשתמש<a href=submit.html#ping>בבקשת HTTP</a> כדי ליידע את Google על אודות שינויים ב-Sitemap שלך. עם זאת, ודא שאתה נכנס פעם אחת אל <a href="https://www.google.com/webmasters/tools/siteoverview">Google Webmaster Tools</a> באמצעות חשבון Google שלך כדי  <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496>להוסיף את ה-Sitemap שלך</a> באופן ידני לחשבון Google Webmaster Tools שלך.</font></p>
+				<font size="-1"></font>		
+			    <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="troubleshoot"></a><b>פתרון בעיות</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p>במקטע זה נדון על אודות השאלות הנפוצות והבעיות בהן נתקלים אנשים בעת שימוש ביוצר Sitemap, ומה תוכל לעשות אם תיתקל באחת מבעיות אלו.</p>
+				<p><b>נגישות דרך האינטרנט</b></p>
+				<p><b>הבעיה:</b> יוצר Sitemap מחזיר את השגיאה והאזהרה הבאות:</p>
+				</font>
+<pre dir="ltr">	
+	[ERROR] When attempting to access your generated Sitemap at the following URL:
+	http://www.example.co.il/sitemap.xml.gz
+	we failed to read it.  Please verify the store_into path you specified in
+	your configuration file is web-accessible.  Consult the FAQ for more
+	information.
+	[WARNING] Proceeding to notify with an unverifiable URL.</pre>
+				<font size="-1">
+				<p><b>מה קרה?</b> יוצר Sitemap יצר את הקובץ במיקום שאותו ציינת, ולאחר מכן ניסה לאחזר אותו באמצעות HTTP בדיוק כשם שמנוע חיפוש יעשה והניסיון נכשל.  הכלי יידע את מנועי החיפוש בכל מקרה, אך הוא מציג את השגיאה והאזהרה כדי ליידע אותך שייתכן שה-Sitemap שלך אינו קריא בכל מנועי החיפוש.</p>
+				<p>יוצר ה-Sitemap יוצר את קובץ Sitemap שלך בנתיב המצויין במאפיין store_into בקובץ <b>config.xml</b>שלך. יוצר Sitemap בונה כתובת אתר אל אותו הקובץ באמצעות המאפיין base_url ומדווח על כתובת האתר למנועי חיפוש.  לדוגמה, אם תגדיר את התצורה שלך ל:</p>
+				</font>
+<pre dir="ltr">	&lt;site base_url="http://www.example.com/"
+	      store_into="/var/www/html/sitemap.xml.gz"&gt;</pre>
+				<font size="-1">
+				</font><p><font size="-1">Sitemap Generator will notify search engines to look for your Sitemap at:</font></p>
+				
+				<pre dir="ltr">	http://www.example.co.il/sitemap.xml.gz</pre>
+				<font size="-1"><p>
+				על הקובץ להיות נגיש דרך כתובת אתר זו.  אם לא ניתן לאחזר את הקובץ באמצעות כתובת אתר זו, מנועי החיפוש לא יצליחו למצוא את ה-Sitemap שלך.</p>
+				</font><p><font size="-1"><b>מה תוכל לעשות?</b>  עליך לוודא שה- <b>config.xml</b> שלך מציין את ה- base_url הנכון ואת נתיבי ה- store_into הנכונים עבור ה- Sitemap שלך.  כמו כן, עליך לוודא כי דפדפני אינטרנט יכולים לאחזר את קובץ ה- Sitemap מתוך ה- base_url.  אם תקבל שגיאות בנתיב או בכתובת האתר, יתכן שיהיה עליך להפעיל מחדש את יוצר Sitemap או להעביר את קובץ ה- Sitemap למקום הנכון, וליידע את מנועי החיפוש באופן ידני דרך אתרי האינטרנט שלהם.
+				</font></p>
+				<font size="-1"><p><b>תמיכה עבור XML</b></p>
+				<p><strong>הבעיה:</strong> יוצר Sitemap מחזיר את השגיאה הבאה:</p>
+				</font>
+<pre dir="ltr">	
+	Some installs of Python 2.2 do not include complete support for XML. 
+	Please try upgrading your version of Python and re-running the script.</pre>
+				<font size="-1"><p>
+				<b>מה קרה?</b>  כאמור בהודעה, פלטפורמים מסוימים מכילים גרסה של Python (השפה שבה כתוב הסקריפט של יוצר Sitemap) אשר אין בה ספריות התמיכה הדרושות לשם עיבוד קובצי XML.  כדי שיפעל, סקריפט זה דורש תמיכת XML מלאה.
+				</p>
+				<p><b>מה תוכל לעשות?</b> נסה לשדרג את הגרסה המותקנת שלך של Python לגרסה חדשה יותר.  לשם כך, סביר להניח שיהיה עליך ליצור קשר עם מנהל המערכת שלך.</p>
+				<p>לידיעתך, הדבר משפיע על יוצר Sitemap בלבד ולא על Sitemaps בכללותם.  אם יש לך שיטה אחרת או כלי אחר ליצירת Sitemaps, אתה מוזמן לנסות אותם ולשלוח את ה- Sitemaps שלך למנועי חיפוש.</p>
+				<p><b>מהם כל הקבצים האחרים ב- .gz או ב- .zip?</b></p>
+				<p>כאשר אתה מוציא את הסקריפט sitemap_gen.py, סביר שתראה כמה קבצים נוספים שלא ציינו למעלה.  רשימת הקבצים המלאה תיראה כך:</p>
+				</font>
+	<pre dir="ltr">	
+	AUTHORS
+	ChangeLog
+	COPYING
+	example_config.xml
+	example_urllist.txt
+	PKG-INFO
+	README
+	setup.py
+	sitemap_gen.py
+	test_sitemap_gen.py</pre>
+		  <font size="-1"><p>
+				הקבצים האחרים כוללים מידע בנושא החבילה ותנאי רישיון.  מומלץ לעיין בקבצים אלו.</p>
+				<p>יוצא הדופן הוא test_sitemap_gen.py, שהינו סקריפט בדיקת יחידה שמפתחים אחרים יוכלו להשתמש בו כדי לתרום לפרוייקט מקור פתוח זה.  אם בכוונתך להשתמש ביוצר Sitemap מבלי לשנות את קוד המקור – זהו המצב עבור מרבית האנשים – סביר שלא תזדקק לסקריפט בדיקה זה.
+</p>
+	  אם ברצונך לעזור בפרוייקט זה, בקר בכתובת  <a href="http://sourceforge.net/projects/goog-sitemapgen">http://sourceforge.net/projects/goog-sitemapgen</a>. תוכניות צדדים שלישיים התומכות בפרוטוקול <a href="http://code.google.com/sm_thirdparty.html">Sitemap</a>.</p>
+	  
+	  <font size="-1"></font></font>
+		  <p><font size="-1"><b><a name="nonascii"></a>תווי Non-ASCII </b></font></p>
+				<font size="-1"><font size="-1">
+				</font></font>
+				<p><font size="-1"><strong>הבעיה:</strong> שם תחום האתר שלך או כתובות האתר שבתוך האתר מכילים תווי non-ASCII.</font></p>
+				<p><font size="-1">בדרך כלל, יש לקודד כתובות אתר non-ASCII  <a href="protocol.html#escaped">באמצעותUTF-8</a>  לפני ביצוע percent-escape. עם זאת, שרתי אינטרנט מסוימים מגיבים כהלכה רק אם כתובות האתר מקודדות באמצעות קידוד שאיננו UTF-8. יש לקודד את כל כתובות האתר שב-Sitemap שלך וכן את כתובת האתר של ה-Sitemap עצמו, כך שייקראו על ידי שרת האינטרנט שבו הן ממוקמות. במסגרת <a href="#sitetag">מקטע הגדרת האתר</a>, השתמש במאפיין האופציונלי <strong>default_encoding</strong> כדי לציין את הקידוד המשמש לשרת האינטרנט שלך. אם אינך משתמש בתג זה ושרת האינטרנט שלך משתמש בקידוד שאיננו UTF-8, לא נוכל לדעת באיזה קידוד עלינו להשתמש.</font></p>
+				<p><font size="-1">אם כתובות האתר שלך מכילות תווי non-ASCII, מומלץ להפעיל את הסקריפט של יוצר Sitemap באמצעות Python גרסה 2.3 ומעלה. גרסת Python זו מכילה תמיכה מוגברת לתווי non-ASCII. אם שם התחום שלך מכיל תווי non-ASCII, עליך להשתמש ב-Python גרסה 2.3 ומעלה, שכן תמיכת ה- IDNA לא הוספה בגרסאות ישנות יותר. ללא תמיכת IDNA, יוצר Sitemap לא יכול לקודד כהלכה שם תחום non-ASCII. </font></p>
+				<font size="-1">
+	  
+	  
+	  
+	<br>
+	<p class="d" align="left"><i>שונה לאחרונה בתאריך: 15 באפריל 2006</i></p>
+	  </font></div>
+	</td> 
+  </tr> 
+  <tr> 
+    <td width=1% valign=top><img src=http://www.google.com/images/art.gif width=143 height=53 vspace=5 hspace=15></td> 
+    <td style="background-color: #ffffff" width=1 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td valign=middle><div class=footer> 
+        <div align=center><font size="-1"> &copy;2007 Google - <a href=http://www.google.co.il/privacy.html>מדיניות פרטיות</a> - <a href=http://www.google.co.il/accounts/TOS>תנאים והגבלות</a> - <a href=http://www.google.com/about.html>על אודות  Google </a> </font></div> 
+      </div></td> 
+  </tr> 
+</table> 
+</body>
+</html>
+

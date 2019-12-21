@@ -1,0 +1,742 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel=stylesheet href="http://www.google.com/google.css">
+<link rel=stylesheet href="../leftnav.css">
+<style>
+<!--
+body,td,font,p,a{font-family:arial,sans-serif}
+.i { margin-left: 1em; margin-right: 2em; }
+//.style1 {font-weight: bold}
+.style1 {font-weight: bold}
+.d {color:#999999;text-decoration:italics;font-size:10px;}
+.changes {color: #FF0000}
+-->
+</style>
+<script
+  src=" https://ssl.google-analytics.com/urchin.js "
+  type="text/javascript">
+</script>
+<script type="text/javascript">
+  _uacct="UA-18009-2";
+  _utcp="/webmasters/sitemaps/";
+  _uanchor=1; 
+  urchinTracker();
+</script>
+
+<title>Google Webmester Eszközök</title>
+</head>
+<body class=search bgcolor=#ffffff text=#000000 link=#0000CC vlink=#800080 alink=#ff0000 topmargin=3>
+<table width=95% border=0 cellpadding=0 cellspacing=2>
+  <tr valign=top>
+    <td width=1%><a href=https://www.google.com/webmasters/sitemaps?hl=hu> <img src=http://www.google.com/images/google_sm.gif border=0 width=143 height=59 alt="Vissza a Google főoldalra." hspace=15 vspace=5></a></td>
+    <td width=100% valign="middle">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		<td><font size="+0"><b>Webmester Eszközök</b></font></td>
+		</tr>
+		<tr>
+		<td style="border-bottom:1px solid #999999" height="1"><img width="1" height="1" alt=""></td>
+		</tr>
+		</table>  	
+	</td>
+  </tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=0 width=95%> 
+  <tr> 
+    <td width="175" valign="top">
+		<font size="-1">
+    <p class="sidenavlink">
+    <a href="about.html">A Webmester Eszközökről</a></p>
+    <p class="sidenavlink"><a href="protocol.html">A Webhelytérkép protokoll használata</a></span>
+    <p class="sidenavtoc">A Webhelytérkép Generátor használata</p>
+<p class="sidenavlink"><a href="http://www.google.hu/webmasters/">Google Webmester Központ</a></p>
+  </font></td>
+    <td background=http://www.google.com/images/dot2.gif valign=bottom width=5><img src=http://www.google.com/images/dot2.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=10 height=1></td> 
+    <td>
+		<div class="content"> 
+		
+			<p><strong>Tartalom</strong></p>
+			<p><font size="-1"><a href="#before">Mielőtt elkezdené</a>
+		    <br><a href="#download">A Webhelytérkép Generátor programfájlok letöltése</a>
+		    <br><a href="#config">Konfigurációs fájl létrehozása</a><br>
+		    <a href="#copy">A fájlok feltöltése az Ön webszerverére</a>
+		    <br><a href="#execute">A Webhelytérkép Generátor szkript futtatása</a>
+		    <br><a href="#submitting">A webhelytérképe elküldése a Google-nak</a>
+		    <br><a href="#troubleshoot">Hibaelhárítás</a>
+		    </font></p>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="before"></a><b>Mielőtt elkezdené</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">
+A Google Webhelytérkép Generátor egy Python szkript, amely a Webhelytérkép Protokoll segítségével webhelytérképet hoz létre az Ön webhelyéhez. Ez a szkript URL-listákból, webszerverkönyvtárakból és naplófájlokból is létre tud hozni webhelytérképeket. Ahhoz, hogy használni tudja a szkriptet: </font></p>
+				
+				<ul>
+				  <li><font size="-1">Képesnek kell lenni a webszerverhez való kapcsolódásra és szkripteknek a webszerveren való futtatására. </font></li>
+				  <li><font size="-1">A webszerverre telepítve kell lennie a Python 2.2 vagy későbbi verziójának. </font></li>
+				  <li><font size="-1">Ismernie kell a Python programot elindító parancsot. (Ez általában a <strong>python</strong>, de a telepítéstől függően változhat. Ha például a webszerverre a Python két különböző verziója van telepítve, akkor elképzelhető, hogy a korábbi verziót a <strong>python</strong>, a későbbi verziót pedig a <strong>python2</strong> paranccsal lehet meghívni.) </font></li>
+				  <li><font size="-1">Ismernie kell a webhelyének megfelelő könyvtár elérési útját. Ha a webszervere egyetlen webhelynek szolgáltat tárhelyet, akkor ez valószínűleg a <strong>var/www/html</strong> útvonalhoz hasonló. Ha virtuális szervere van, amely több webhelynek szolgáltat tárhelyet, akkor az útvonal valószínűleg a  <strong>home/virtual/site1/fst/var/www/html</strong> útvonalhoz hasonló. </font></li>
+				  <li><font size="-1"> Képesnek kell lenni fájloknak a webszerverre való feltöltésére (például FTP használatával). </font></li>
+				  <li><font size="-1">Ha naplófájlok alapján fog létrehozni URL-listát, akkor ismernie kell a naplók kódolását és a teljes elérési útjukat. </font></li>
+          </ul>
+		  
+				<p><font size="-1">Ha a fentiek valamelyikével kapcsolatban bizonytalan, érdeklődhet a webüzemeltető vállalatánál. </font></p>
+				<font size="-1">
+				<p> Most már készen áll az indulásra. Az alább olvasható egy áttekintés arról, mit kell majd tennie. </p>
+				</font>
+		  <font size="-1">
+				<ol>
+                  <li><font size="-1"><a href="#download">Töltse le</a> a Webhelytérkép Generátor fájlokat. Bontsa ki a fájlokat egy helyi könyvtárba. </font></li>
+                  <li><font size="-1"><a href="#config">Hozzon létre egy konfigurációs fájlt</a> a webhelyéhez a megadott <strong>example_config.xml</strong> fájlt használva sablonként. Módosítsa szükség szerint a fájlt a webhelyéhez, majd mentse el. </font></li>
+                  <li><font size="-1"><a href="#copy">Töltse fel a szükséges fájlokat</a> a webszerverére. </font></li>
+                  <li><font size="-1"><a href="#execute">Futtassa le a</a> <strong>sitemap_gen.py</strong> programot. </font></li>
+                  <li><font size="-1"><a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">Adja hozzá</a> a létrehozott webhelytérképet a Google Webmester Eszközök fiókjához. </font></li>
+		          <li><font size="-1"><a href="#recur">Állítson be egy ismétlődő szkriptet</a>. (nem kötelező) </font></li>
+				</ol>
+		  </font>
+		  
+				<p><font size="-1">Ha nem tudja használni a Webhelytérkép Generátort, a Google Webmester Eszközök fiókjához <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34606&topic=8516>másik formátumban</a>, például egyszerű szöveges fájlként is hozzáadhat webhelytérképet. Továbbá <a href="http://code.google.com/sm_thirdparty.html">itt</a> találhat linkeket külső felektől származó, a Google Webhelytérképeket támogató programokra.</font></p>
+				<p><font size="-1"><strong>Hírek webhelytérképekhez:</strong> A Webhelytérkép Generátor használatát jelenleg nem javasoljuk Google Hírek webhelytérképek létrehozásához, mivel a Hírek webhelytérképei különleges követelményekkel rendelkeznek.  A Hírek webhelytérképeknek olyan dinamikus listáknak kell lenniük, amelyek csak a legutóbb közzétett híreket tartalmazzák (nem pedig az egész webhelyet), és gyakran frissülnek.</font></p>  
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="download"></a><b>1. A Webhelytérkép Generátor programfájlok letöltése</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p> A Webhelytérkép Generátor fájlok <font size="-1">a következő helyen</font> érhetők el (ZIP és GZ archívumformátumban):</p>
+				</font>
+				<p><font size="-1"><a href="http://www.sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422">http://sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422</a></font></p>
+				<font size="-1">
+				<p>Ha letöltötte a tömörített fájlt, bontsa ki a helyi könyvtárba. Keresse meg az alábbi fájlokat: </p>
+				<ul>
+                  <li><strong> README</strong> &#8212; az eszköz legfrissebb információit tartalmazza </li>
+                  <li><strong> sitemap_gen.py</strong> &#8212; a webhelytérképet létrehozó python szkript </li>
+                  <li><strong> example_config.xml</strong> &#8212; az a konfigurációs sablonfájl, amelyet a webhelye konfigurációjának megadásához fog használni</li>
+                  <li><strong> example_urllist.txt</strong> &#8212; az a sablon URL-lista, amelyet akkor használhat, ha az Ön által megadott URL-halmaz alapján szeretne webhelytérképet létrehozni</li>
+		        </ul>
+				</font>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="config"></a><b>2a. Konfigurációs fájl létrehozása</b></td> 
+				</tr> 
+			</tbody></table>
+		  <font size="-1">
+		  </font><p><font size="-1">Ez a szakasz a konfigurációs fájl létrehozásához szükséges útmutatásokat mutatja be lépésről lépésre. A használható beállítások <a href="#config_reference">teljes körű leírásaként</a> is szolgál. Ha <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34627&topic=8493">mobil webhelytérképeket</a> hoz létre, tanulmányozza a <a href="#creating_mobile">kiegészítő mobil irányelveket</a>.</font></p>
+				<font size="-1"><p>Ha létre szeretne hozni egy konfigurációs fájlt a webhelyéhez, a következő információkra van szüksége: </p>
+				<ul>
+                  <li>A webhelye alap URL-je (például <strong>http://www.pelda.com</strong>/). Csak olyan URL-ek szerepelhetnek a webhelytérképben, amelyek ezzel az alap URL-lel kezdődnek. Ügyeljen arra, hogy a protokoll (például <strong>http://</strong>) is fel legyen tüntetve. Például a <strong>http://www.google.hu</strong> érvényes alap URL, a <strong>www.google.hu</strong> azonban nem. </li>
+		
+                  <li>A webszerver azon helyének elérési útvonala, ahol tárolni szeretné a webhelytérképet. Általában ez az alap URL elérési útvonala, mivel a webhelytérkép nem tartalmazhat olyan URL-eket, amelyek a webhelytérkép lelőhelyénél magasabb szintű könyvtárban vannak. Amikor futtatja a Google Webhelytérkép Generátort, az létrehoz egy webhelytérképet, és az Ön által megadott helyre helyezi. </li>
+		 
+                  <li>Azok a módszerek, amelyekkel létre kívánja hozatni a webhelytérképét a Webhelytérkép Generátorral. A módszerek tetszőleges kombinációját használhatja. A következő módszerek érhetők el: </li>
+		  </ul>
+				
+		  </font><ol>
+<ul>
+                    <li><font size="-1"><strong> <a href="#URL">URL</a></strong>
+&#8212; a konfigurációs fájlnak ebben a szakaszában egyedi URL-eket sorolhat fel, továbbá megadhatja az egyes URL-ek információit. Ezt a módszert általában egy másik módszerrel együtt szokás használni, olyan URL-ek szerepeltetése céljából, amelyeket más módszerek nem vennének fel. </font></li>
+                    <li><font size="-1"><strong><a href="#urllist">URL-lista</a> </strong>
+&#8212; a konfigurációs fájlból egy szöveges fájlra mutathat, amely URL-ek egy listáját tartalmazza. Ezt a módszert akkor érdemes használni, ha ez a szöveges fájl már létezik, vagy ha szkript segítségével létrehoz egy URL-listát. </font></li>
+                    <li><font size="-1"><strong><a href="#directory">Könyvtárútvonalak</a></strong>
+&#8212; megadhatja a könyvtárútvonalakat a webhelyéhez és a megfelelő URL-eket ezekhez az útvonalakhoz. A Webhelytérkép Generátor a könyvtárak tartalma alapján létre fog hozni egy URL-listát. Ezt a módszert akkor érdemes használni, ha a webhelye statikus HTML fájlokból áll. </font></li>
+            <li><font size="-1"><strong> <a href="#logs">Naplófájlok</a></strong>
+&#8212; a naplófájlok útvonalára mutathat. A Webhelytérkép Generátor a naplókban lévő URL-ek alapján létre fog hozni egy URL-listát. Ezt a módszert akkor érdemes használni, ha a webhelye dinamikus oldalakból áll. </font></li>
+ <li><font size="-1"><strong> <a href="#sitemap">Webhelytérkép</a></strong>
+&#8212; meglévő, a Webhelytérkép Generátorral létrehozott webhelytérképekre mutathat. A Webhelytérkép Generátor egyetlen webhelytérképet fog létrehozni, amely az összes webhelytérképben lévő URL-t tartalmazni fogja. Ezt a módszert használhatja, ha már létrehozott több kisebb webhelytérképet, amelyeket most egyetlen nagyobb webhelytérképpé szeretne egyesíteni. </font></li>
+            </ul>
+		  </ol>
+				
+		  <font size="-1"><p><b><a name="create_config"></a>Hozza létre a konfigurációs fájlt a következőképpen:</b></p>
+		  </font>
+				<ol>
+                 <font size="-1"> <li>Nyissa meg a <strong>example_config.xml</strong> fájlt egy szöveges szerkesztőben. Mentse el új fájlként (például <strong>config.xml</strong> vagy <strong>mysite_config.xml</strong>).</li> 
+                 </font>
+				
+                 
+                 <font size="-1">
+                 <li>Keresse meg a webhelydefiníciós szakaszt: </li>
+                 </font>		  
+				
+				<pre>&lt;site base_url="http://www.pelda.com/" store_into="/var/www/docroot/sitemap.xml.gz"verbose="1"&gt;
+				</pre>				
+				
+                  <font size="-1"><li>Módosítsa a <strong>base_url</strong> értékét a webhelye URL-jére. </li>
+		 
+                  <li>Módosítsa a <strong>store_into</strong> értékét arra az útvonalra a webszerveren, ahol tárolni szeretné a webhelytérképet, és arra a fájlnévre, amelyet a webhelytérképnek adni kíván. Általában ez az alap URL elérési útvonala, mivel a Google csak olyan URL-eket fogad el, amelyek a webhelytérkép könyvtárával egy szinten vagy annak egy alkönyvtárában vannak. Az útvonalat megadhatja relatív útvonalként, ahhoz a könyvtárhoz képest, ahová a szkriptet feltölti, vagy teljes útvonalként, a webszervere gyökerétől. Ha a szkriptet az alap URL könyvtárba tölti fel, megadhatja egyszerűen csak a fájlnevet.</li>
+                  </font>
+                  <font size="-1"></font><font size="-1"><li>Keresse meg a létrehozási módszert megadó szakaszokat, amelyek a <span class="style1">** MODIFY</span> <span class="style1">vagy a DELETE **</span> karaktersorozattal kezdődnek. E szakaszok mindegyike megfelel egy-egy webhelytérkép-létrehozási módszernek. </li>
+                  <li>Törölje ki azoknak a módszereknek a szakaszait, amelyeket nem szándékozik használni.</li>
+                  <li>Hajtsa végre az alábbi utasításokat azokhoz a módszerekhez, amelyeket használni fog. </li>
+                <p><strong> URL<a name="URL"></a></strong></p>
+                <p> Keresse meg az alábbi szakaszt: </p>
+                </font>
+                  <pre>&lt;!-- ** MODIFY or DELETE ** 
+"url" nodes specify individual URLs to include in the map. &lt;br&gt;
+
+Required attributes: 
+href - the URL
+
+Optional attributes: 
+lastmod - timestamp of last modification (ISO8601 format) 
+changefreq - how often content at this URL is usually updated
+priority - value 0.0 to 1.0 of relative importance in your site 
+--&gt; 
+
+&lt;url href="http://www.pelda.com/stats?q=name" /&gt; &lt;url href="http://www.pelda.com/stats?q=age" lastmod="2004-11-14T01:00:00-07:00" changefreq="yearly" priority="0.3"/&gt; </pre>
+                  <font size="-1">
+                <p>Ebben a szakaszban két példa található: az első csak a kötelező attribútumot tartalmazza, a második a kötelező attribútumot és nem kötelező attribútumokat is tartalmaz. </p>
+                <p>Használja ezt a formátumot minden, szerepeltetni kívánt URL-hez. A <strong>changefreq</strong> attribútum közli a Google keresővel, hogy nagyjából milyen gyakran frissül az URL. Így a Google megtudja, milyen gyakran látogassa meg az oldalt új tartalomért. A <strong>priority</strong> attribútum információt ad a Google részére ennek az oldalnak a relatív fontosságáról a webhely más oldalaihoz képest. Ez az attribútum nem befolyásolja azt, hogyan hasonlítja össze a Google ezt az oldalt más webhelyek oldalaival, csak segít abban, hogy a Google megtudja, a webhelye mely oldalait véli Ön a legfontosabbnak. </p>
+                  </font>
+				<p><font size="-1"><strong> URL-lista <a name="urllist"></a> </strong></font></p>
+				<font size="-1"><p> Keresse meg az alábbi szakaszt: </p>
+				
+			</font>
+			<pre>
+&lt;!-- ** MODIFY or DELETE **
+"urllist" nodes name text files with lists of URLs. 
+An example file "example_urllist.txt" is provided. 
+
+Required attributes: 
+path - path to the file 
+
+Optional attributes: 
+encoding - encoding of the file if not US-ASCII 
+--&gt; 
+&lt;urllist path="example_urllist.txt" encoding="UTF-8" /&gt; 
+				</pre>
+				
+				<p><font size="-1"> Ezzel a formátummal mutathat az URL-listáját tartalmazó szöveges fájl útvonalára és nevére. A szöveges fájl sablonjaként használhatja a megadott <strong>example_urllist.txt </strong>fájlt. Relatív vagy teljes útvonalat is megadhat a webszerverére. Ha például a Webhely Generátor és a <strong>urlist.txt </strong>fájl ugyanabban a könyvtárban található, akkor egyszerűen megadhatja a <strong> .txt</strong> fájl nevét. Ha olyan szöveges fájlt hoz létre, amelynek kódolása nem UTF-8, akkor az <strong>encoding</strong> attribútummal adhatja meg a kódolást. Ha több .txt fájlja van, használhat helyettesítő karaktereket is. Például:</font></p>
+				<pre>&lt;urllist path=&quot;example_urllist*.txt&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">A szöveges fájlban lévő minden URL-hez megadhatja az utolsó módosítás dátumát, a módosítás gyakoriságát és a prioritást. Az <a href="#urllist_reference">URL-listát tartalmazó szöveges fájlt ismertető referenciaszakaszban</a> található teljes körű leírás a fájl szerkezetéről.</font>  </p>
+				<p><font size="-1"><strong> Könyvtárútvonalak<a name="directory"></a> </strong></font></p>
+				<p><font size="-1"> Keresse meg az alábbi szakaszt: </font></p>
+				
+				<pre>
+&lt;!-- ** MODIFY or DELETE ** 
+"directory" nodes tell the script to walk the file system and 
+include all files and directories in the Sitemap.
+
+Required attributes:
+path - path to begin walking from 
+url - URL equivalent of that path 
+
+Optional attributes:
+default_file - name of the index or default file for directory URLs
+
+--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.pelda.com/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.pelda.com/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+				
+				<p><font size="-1">Ebben a szakaszban két példa található. Ha minden oldala egyetlen útvonal alkönyvtáraiban található, akkor csak egy bejegyzést kell szerepeltetnie. Ha azonban a webhelyén lévő oldalakra több útvonal vezet, mindegyikhez vegyen fel egy-egy bejegyzést. </font></p>
+				
+				<p><font size="-1">Ne feledje, hogy minden URL-nak a 3. lépésben megadott alap URL-lel kell kezdődnie. Például az <strong>example_config.xml</strong> fájlban megadott példák közül mind a kettő URL-jének <strong>http://www.pelda.com/</strong> volt a kezdete. Tehát mindkét URL érvényes. </font></p>
+				<p><font size="-1">Cserélje ki a példabejegyzéseket a webhelyéhez tartozó bejegyzésekre. Sok webhelyhez csak egyetlen bejegyzés fog tartozni, amely az alap URL-re mutat. Győződjön meg róla, hogy a <strong>path</strong> értéke a webszerverén lévő könyvtárba vezető teljes útvonal. Győződjön meg róla, hogy az <strong>url</strong> értéke a teljes URL, beleértve a protokollt (például http) és szükség esetén a záró perjelet is.</font></p>
+				<p><font size="-1">A <strong>default_file</strong> paraméterrel megadhatja azt a fájlnevet, amelyet a szervere alapértelmezett oldalként használ egy könyvtárhoz. A fenti példában a <strong>/var/www/docroot</strong> a <strong>http://www.pelda.com/index.html</strong> URL-t jeleníti meg. Ezt nem kell megadnia. Ha azonban megadja, a Webhelytérkép Generátor csak egyszer fogja feltüntetni azt az oldalt, amely az egyes alkönyvtárakhoz hozzá van rendelve (és nem fogja felsorolni a könyvtár URL-t és a fájlnév URL-t is), és a fájl (nem pedig a könyvtár) utolsó módosításának dátuma segítségével bontja ki az oldalhoz tartozó lastmod attribútumot. </font></p>
+				<p><font size="-1"><strong> Naplófájlok <a name="logs"></a></strong></font></p>
+				<p><font size="-1"> Keresse meg az alábbi szakaszt: </font></p>
+				
+<pre>&lt;!-- ** MODIFY or DELETE **
+&quot;accesslog&quot; nodes tell the script to scan webserver log files to
+extract URLs on your site.  Both Common Logfile Format (Apache's default 
+logfile) and Extended Logfile Format (IIS's default logfile) can be read.
+				
+Required attributes:
+ path - path to the file
+Optional attributes:
+ encoding - encoding of the file if not US-ASCII
+  --&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.0&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.1.gz&quot; encoding=&quot;UTF-8&quot; /&gt;
+</pre>
+				<p><font size="-1">Ebben a szakaszban három példa található. Ezeket a bejegyzéseket ki kell cserélnie, és helyükre minden naplófájlhoz fel kell vennie egy-egy bejegyzést. Győződjön meg róla, hogy a path értéke a teljes útvonal és fájlnév a webszerverén. Ha a naplófájlok kódolása nem US-ASCII vagy UTF-8, akkor a nem kötelező <strong>encoding</strong> attribútummal <a href="#encoding">adhatja meg</a> a kódolást. Nem szükséges egyesével felsorolnia a naplófájlokat, használhat helyettesítő karaktereket is. Például a fenti példába felveheti a következő bejegyzést, amely mind a három naplófájlt szerepelteti:</font></p>
+<pre>&lt;accesslog path=&quot;/etc/httpd/logs/access.log*&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">A Webhelytérkép Generátor aszerint rendel prioritást a naplókban talált URL-ekhez, hogy milyen gyakran férnek hozzá az egyes URL-ekhez. Például egy olyan URL, amelyhez 100-szor fértek hozzá, nagyobb prioritást kap, mint egy olyan URL, amelyhez kétszer fértek hozzá. A tényleges prioritás-hozzárendelés relatív, és az egyes URL-eknek a webhely más URL-ekkel való összevetésétől függ.</font></p>
+<p><font size="-1"><strong> webhelytérkép <a name="sitemap"></a></strong></font></p>
+<p><font size="-1"> Keresse meg az alábbi szakaszt: </font></p>
+<pre> &lt;!-- ** MODIFY or DELETE **<br>    
+&quot;sitemap&quot; nodes tell the script to scan other Sitemap files.  This can    
+be useful to aggregate the results of multiple runs of this script into
+a single Sitemap.
+				 
+Required attributes:
+  path - path to the file
+  --&gt;
+&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>
+				<p><font size="-1">Ebben a szakaszban egy példa található. Ezt a bejegyzést ki kell cserélnie, és helyére minden szerepeltetni kívánt webhelytérképhez fel kell vennie egy-egy bejegyzést. Győződjön meg róla, hogy a path értéke a teljes útvonal és fájlnév a webszerverén.  Felsorolhat a gzip programmal tömörített webhelytérképeket is, amennyiben .gz a kiterjesztésük. Nem szükséges egyesével felsorolnia a webhelytérképeket, használhat helyettesítő karaktereket is. A következő bejegyzés például minden olyan webhelytérképet magában foglal, amely a &quot;sitemap&quot; szóval kezdődik és .xml kiterjesztése van:</font></p>
+<pre>&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap*.xml&quot; /&gt; </pre>
+				<p><font size="-1">A Webhelytérkép Generátor kibontja minden webhelytérkép minden URL-jét és a hozzájuk felsorolt nem kötelező adatokat, és egyetlen webhelytérképet hoz létre ezekből az adatokból. Jelenleg nem tudjuk garantálni, hogy ez a módszer olyan webhelytérképekre is működik, amelyeket nem Webhelytérkép Generátorral, hanem más eszközzel hoztak létre.</font></p>
+
+
+
+				<font size="-1"><li>Keresse meg a szűrődefiníciós szakaszt:</li></font>
+				  
+		 
+<pre>&lt;!-- ********************************************************         
+FILTERS
+				
+Filters specify wild-card patterns that the script compares against all URLs it finds. Filters can be used to exclude certain URLs from your Sitemap, for instance if you have hidden content that you hope the search engines don't find.
+
+Filters can be either type=&quot;wildcard&quot;, which means standard path wildcards (* and ?) are used to compare against URLs, or type=&quot;regexp&quot;, which means regular expressions are used to compare.
+
+Filters are applied in the order specified in this file.
+An action=&quot;drop&quot; filter causes exclusion of matching URLs.
+An action=&quot;pass&quot; filter causes inclusion of matching URLs,
+shortcutting any other later filters that might also match.
+If no filter at all matches a URL, the URL will be included.
+Together you can build up fairly complex rules.
+
+The default action is &quot;drop&quot;.
+The default type is &quot;wildcard&quot;.
+
+You can MODIFY or DELETE these entries as appropriate for
+your site. However, unlike above, the example entries in
+this section are not contrived and may be useful to you as
+they are.
+********************************************************* --&gt;
+
+&lt;!-- Exclude URLs that end with a '~' (IE: emacs backup files) --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*~&quot; /&gt;
+
+&lt;!-- Exclude URLs within UNIX-style hidden files or directories --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;regexp&quot; pattern=&quot;/\.[^/]*&quot; /&gt;
+</pre>
+				<p><font size="-1">Szűréssel kizárhat bizonyos megadott URL-eket a létrejött webhelytérképből. Szűrésre akkor lehet szükség, ha tisztább listát szeretne létrehozni, csökkenteni szeretné a redundáns bejegyzéseket, vagy meg szeretné akadályozni bizonyos URL-ek indexelését. Megjegyzendő, hogy ha egy <a href="http://www.robotstxt.org/wc/robots.html">robots.txt</a> fájl segítségével akadályozza meg egyes URL-ek indexelését, akkor a Google még akkor sem fogja keresni vagy indexelni az URL-eket, ha szerepelnek a webhelytérképben. </font></p>
+				<p><font size="-1">Használhatja az alábbi szűrési módszerek bármelyikét, vagy akár az összest. Kitörölheti azokat a bejegyzéseket, amelyekre nincs szüksége, és, ha kívánja, további bejegyzéseket hozhat létre. Az alábbiakban a szűrők néhány mintahasználata van felsorolva. </font></p>
+				<pre>&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*.jpg&quot; /&gt;</pre>
+				<p><font size="-1">Ez a szűrő kiszűri a .jpg végű URL-eket. Ehhez hasonló szűrőt alkalmazhat például, ha a webhelye minden képe be van ágyazva a HTML oldalakon belül, és nem érhetők el önálló URL-ként. </font></p>
+				<pre>&lt;filter action=&quot;pass&quot; type=&quot;wildcard&quot; pattern=&quot;*.htm*&quot; /&gt;&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*&quot; /&gt;</pre>
+				<font size="-1"> Ez a szűrő minden .htm* fájlt bevesz, de minden mást kizár.</font><br>
+				<br>
+
+
+				<font size="-1"></font><font size="-1"><li>Miután elvégezte a webhely minden kívánt módosítását, mentse el a fájlt.</li></font>
+				</ol>
+				
+				
+		        <font size="-1"><a name="config_reference"></a><p><b>A konfigurációs fájl szintaxisának ismertetése</b></p>
+		  </font><font size="-1">
+				</font>
+		  <p><font size="-1">A konfigurációs fájl szintaxisának teljes magyarázata az alábbiakban olvasható. Minden címke kódmintával kezdődik, amelyet az attribútumok leírása követ.
+</font></p>
+				
+		  <p><font size="-1"><strong><a name="sitetag"></a>site<br>
+</strong></font><font size="-1">Kötelező címke minden konfigurációs fájl végén. </font></p>
+		  <pre>&lt;site
+base_url="http://www.pelda.com/"
+store_into="/var/www/html/sitemap.xml.gz"
+verbose="1"
+supress_search_engine_notify="1"
+default_encoding="UTF-8"&gt;</pre>
+				<br>
+				<font size="-1">
+				<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				
+					<tbody><tr>
+					<td valign="top" width="19%"><pre>base_url</pre></td>
+					<td valign="top" width="6%"><font size="-1">kötelező</font></td>
+					<td valign="top" width="75%"><font size="-1">A webhely alapjának HTTP útvonala; csak olyan URL-ek szerepeltethetők a webhelytérképben, amelyek ezzel az alap URL-lel kezdődnek.</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>store_into</pre></td>
+					<td valign="top"><font size="-1">kötelező</font></td>
+					<td valign="top"><font size="-1">A kívánt kimeneti fájl webszerver-útvonala. A szkript létre fogja hozni a fájlt, nem kell létrehozni a fájlt a szkript futtatása előtt.</font></td>
+					</tr> 
+					
+					<tr>
+					<td valign="top"><pre>verbose</pre></td>
+					<td valign="top"><font size="-1">nem kötelező</font></td>
+					<td valign="top"><font size="-1">Adjon meg egy 0 és 3 közötti számot, a nagyobb szám több hibakeresési információnak felel meg</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>suppress_search_engine_notify</pre></td>
+					<td valign="top"><font size="-1">nem kötelező</font></td>
+					<td valign="top"><font size="-1">L</font><font size="-1">etilthatja a keresőmotor értesítését, ha "1"-et ad meg tesztelési célokból</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>default_encoding</pre></td>
+					<td valign="top"><font size="-1">nem kötelező</font></td>
+					<td valign="top"><font size="-1">Adja meg a fájlrendszer elérési útjaira és az URL-ekre alkalmazandó kódolást</font></td>
+					</tr>
+				 
+		  </tbody></table>
+		   </font>
+					<font size="-1">
+					
+				<p></p>
+				</font>
+					<p><font size="-1"><strong>url<br>
+					</strong></font><font size="-1">Nem kötelező címke, amellyel felsorolhatja a webhelye egyes URL-jeit. </font></p>
+					<p><pre>&lt;url
+href="http://www.pelda.com/stats?q=age" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre></p><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>href</pre></td>
+					  <td width="6%" valign="top"><font size="-1">kötelező</font></td>
+					<td valign="top" width="75%"><font size="-1">A webhely alapjának HTTP útvonala; csak olyan URL-ek szerepeltethetők a webhelytérképben, amelyek ezzel az alap URL-lel kezdődnek.</font></td>
+					</tr><tr>
+					<td valign="top"><pre>lastmod</pre></td>
+					<td valign="top"><font size="-1">nem kötelező</font></td>
+					<td valign="top"><font size="-1">Az URL utolsó módosításának időpontja <a href="http://www.w3.org/TR/NOTE-datetime">W3C dátum-idő</a> formátumban (ÉÉÉÉ-HH-NNTóó:pp:mm+00:00). Az időrész elhagyható. Példák:<br>
+				&nbsp;&nbsp;"2005-02-21T18:00:15+00:00"<br>
+				&nbsp;&nbsp;"2005-02-21"</font></td>
+					</tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">nem kötelező</font></td>
+					<td valign="top"><font size="-1">Az URL valószínű módosítási gyakorisága. Ez nem parancsnak, hanem irányadásnak minősül. A következő értékekei lehetnek: "always" (mindig), "hourly" (óránként), "daily" (naponta), "weekly" (hetente), "monthly" (havonta), "yearly" (évente) vagy "never" (soha).</font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">nem kötelező</font></td>
+					<td valign="top"><font size="-1">Ennek az oldalnak a prioritása a webhely más oldalaihoz képest. Az érték egy 0,0 és 1,0 közötti szám, ahol 0,0 a legalacsonyabb, és 1,0 a legmagasabb prioritás. A prioritás befolyásolhatja azt a sorrendet, amely alapján a keresőmotorok kiválasztják az URL-eket, amikor feltárják az Ön webhelyét. Mivel a prioritás viszonylagos, csak az URL-ek webhelyen belüli kiválasztására használatos, az oldalai prioritása nem kerül összevetésre más webhelyek oldalainak prioritásával.</font></td>
+					</tr>
+		  </tbody></table>
+					<p><font size="-1"><b>urllist<br>
+					</b></font><font size="-1">Nem kötelező címke, amellyel rámutathat egy, a webhelyei URL-jének listáját tartalmazó szöveges fájlra. </font></p>
+					<pre>&lt;urllist path="/var/www/html/urllist.txt" encoding="UTF-8" /&gt;</pre>
+		  <br>
+		<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>path</pre></td>
+					  <td width="6%" valign="top"><font size="-1">kötelező</font></td>
+					<td valign="top" width="75%"><font size="-1">A .txt fájl elérési útja és fájlneve. Megadhat relatív és teljes útvonalat is. </font></td>
+			</tr><tr>
+					<td valign="top"><pre>encoding</pre></td>
+					<td valign="top"><font size="-1">nem kötelező</font></td>
+					<td valign="top"><font size="-1">A fájl kódolása, ha az nem UTF-8.</font></td>
+					</tr>
+		  </tbody></table>
+<p><font size="-1"><a name="urllist_reference"></a>Az <b>urllist.txt</b> fájl egy egyszerű szöveges fájl, amely azon URL-ek listáját tartalmazza, amelyből a térképet készíteni szeretné. Nem kötelező attribútumokat is szerepeltethet az egyes URL-eknél. Az attribútumokat az URL-lel egy sorba kell írni, egy szóközzel elválasztva. Például:</font>
+          </p>
+		  <pre>
+http://www.pelda.com/abc/something
+http://www.pelda.com/abc/xyy.pdf lastmod=2001-12-31T14:05:06+00:00
+http://www.pelda.com/abc/def?x=12&amp;y=23 changefreq=weekly priority=0.3</pre>
+				<p>
+				<font size="-1">
+					
+				  </font><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%"  valign="top"><pre>lastmod</pre></td>
+					<td valign="top" width="6%"><font size="-1">nem kötelező</font></td>
+					<td width="75%"  valign="top"><p><font size="-1">Az URL utolsó módosításának időpontja <a href="http://www.w3.org/TR/NOTE-datetime">W3C dátum-idő</a> formátumban (ÉÉÉÉ-HH-NNTóó:pp:mm+00:00). Az időrész elhagyható. Példák:</font><font size="-1"><br>
+				  <br>
+&nbsp;&nbsp;"2005-02-21T18:00:15+00:00"<br>
+&nbsp;&nbsp;"2005-02-21"</font></p>
+				  </td>
+				  </tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">nem kötelező</font></td>
+					<td valign="top"><font size="-1"><font size="-1">Az URL valószínű módosítási gyakorisága. Ez nem parancsnak, hanem irányadásnak minősül. A következő értékekei lehetnek: "always" (mindig), "hourly" (óránként), "daily" (naponta), "weekly" (hetente), "monthly" (havonta), "yearly" (évente) vagy "never" (soha).</font></font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">nem kötelező</font></td>
+					<td valign="top"><font size="-1">Ennek az oldalnak a prioritása a webhely más oldalaihoz képest. Az érték egy 0,0 és 1,0 közötti szám, ahol 0,0 a legalacsonyabb, és 1,0 a legmagasabb prioritás. A prioritás befolyásolhatja azt a sorrendet, amely alapján a keresőmotorok kiválasztják az URL-eket, amikor feltárják az Ön webhelyét. Mivel a prioritás viszonylagos, csak az URL-ek webhelyen belüli kiválasztására használatos, az oldalai prioritása nem kerül összevetésre más webhelyek oldalainak prioritásával.</font></td>
+					</tr>
+					</tbody></table>
+				</p>
+		  <font size="-1">
+		  </font>
+		  <p><font size="-1"><strong>könyvtár<br>
+		  </strong></font><font size="-1">Nem kötelező címke, amellyel megadhatja a webhelye könyvtárait, amelyek alapján a Webhelytérkép Generátor létrehoz egy URL-listát a könyvtárakban található fájlokból. </font></p>
+				<pre>--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.pelda.com/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.pelda.com/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+		  <table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">kötelező</font></td>
+					<td width="75%" valign="top"><font size="-1">A kezdeti útvonalat adja meg. A Webhelytérkép Generátor át fog haladni ezen a könyvtáron és ennek minden alkönyvtárán</font>.</td>
+				  </tr>
+					
+					<tr>
+					<td valign="top"><pre>url</pre></td>
+					 <td valign="top"><font size="-1">kötelező</font></td>
+					<td valign="top"><font size="-1">Megadja az útvonalértéknek megfelelő ekvivalens URL-t.</font></td>
+					</tr>
+					<tr>
+					<td valign="top"><pre>default_file</pre></td>
+					 <td valign="top"><font size="-1">nem kötelező</font></td>
+					 <td valign="top"><font size="-1">Megadja az alapértelmezett fájlt egy, a szerveren lévő könyvtárhoz.</font></td>
+					</tr>
+		    </tbody></table>
+		  </font>
+		  <p><font size="-1"><b> accesslog<br>
+		  </b>Nem kötelező címke, amellyel megadhatja az IIS és Apache stílusú naplófájlok elérési útját és fájlnevét, hogy a Webhelytérkép Generátor képes legyen automatikusan lekérni belőlük az URL-eket. </font>
+          </p>
+		  
+		  <pre>&lt;accesslog path="/etc/httpd/logs/access-0.log" encoding="UTF-8"/&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">kötelező</font></td>
+					<td width="75%" valign="top"><font size="-1">A fájl elérési útját adja meg.</font></td>
+		  </tr>
+					
+					<tr>
+					<td valign="top"><pre>encoding</pre></td>
+					 <td valign="top"><font size="-1">nem kötelező</font></td>
+					<td valign="top"><font size="-1">A fájl kódolását adja meg, ha az nem UTF-8.</font></td>
+					</tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><b> sitemap <br>
+		  </b>Nem kötelező címke, amellyel megadhatja a már meglévő, a Webhelytérkép Generátorral létrehozott webhelytérképek útvonalát és fájlnevét. A Webhelytérkép Generátor egyetlen webhelytérképet fog létrehozni, amely az összes webhelytérképben lévő URL-t tartalmazni fogja. </font>
+          </p>
+		  
+		  <pre>&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">kötelező</font></td>
+					<td width="75%" valign="top"><font size="-1">Megadja a webhelytérképfájl útvonalát.</font></td>
+		  </tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><strong><a name="filter_examples"></a>filter<br>
+</strong></font><font size="-1">Nem kötelező címke, amellyel adott fájlok bevételét vagy kizárását előíró szabályokat hozhat létre. A rendszer abban a sorrendben alkalmazza a szűrőket, amelyben a config.xml fájlban megjelennek. A szűrőbejegyzések és a beviteli bejegyzések (url, urllist, directory vagy accesslog) vegyítésének azonban nincs további hatása, mivel a Webhelytérkép Generátor minden URL-t, amelyet a webhelytérképhez ad, először összevet minden szűrővel. </font><font size="-1">Ha egy szűrő sem felel meg az URL-nek, akkor az URL alapértelmezés szerint bekerül a webhelytérképbe.</font></p>
+				
+				<pre>&lt;filter action="drop" type="wildcard" pattern="*/internal/*" /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>action</pre></td>
+					<td valign="top" width="6%"><font size="-1">nem kötelező</font></td>
+					<td width="75%" valign="top">
+				      <font size="-1"><p>Az a művelet, amelyet a szűrőnek el kell végeznie. Érvényes értékek:</p>
+					  </font>				      <ul>
+					  <li><font size="-1">drop – kizárja a megfelelő URL-eket. Ez az alapértelmezett művelet, ha tehát nincs megadva művelet, akkor a generátor a &quot;drop&quot; értéket feltételezi.</font></li>
+					  <li><font size="-1">pass – beveszi a megfelelő URL-eket.</font></li>
+					  </ul>
+				      </p></td>
+		  </tr>
+					
+					<tr>
+					<td width="19%" valign="top"><pre>type</pre></td>
+					<td valign="top" width="6%"><font size="-1">nem kötelező</font></td>
+					<td width="75%" valign="top"><font size="-1"><p>A szűrőzés típusa. Érvényes értékek:</p>
+					</font>					  <ul>
+					<li><font size="-1">wildcard – az URL-ekkel való összevetéshez a rendszer szabványos útvonal-helyettesítő karaktereket használ (? és *). Ez az alapértelmezett típus, ha tehát nincs megadva típus, akkor a generátor a &quot;wildcard&quot; értéket feltételezi.</font></li>
+					<li><font size="-1">regexp – a rendszer reguláris kifejezéseket használ.</font></li>
+					  </ul></td>
+		  </tr>
+				 
+<tr>
+					<td valign="top"><pre>pattern</pre></td>
+					 <td valign="top"><font size="-1">kötelező</font></td>
+					 <td valign="top"><font size="-1">Megadja a megfeleltetni kívánt mintázatot.</font></td>
+		  </tr>
+		  </tbody></table>
+
+<font size="-1">
+<p><b><a name="encoding"></a>Kódolás</b></p>
+		<p>A konfigurációs fájlban hivatkozott fájlok, legyenek akár URL-listák vagy webszervernaplók, használhatnak az alapértelmezett UTF-8-tól eltérő kódolást is. A config.xml fájlban adhat meg alternatív kódolásokat, és ezzel befolyásolhatja, hogyan olvassa a Webhelytérkép Generátor az Ön fájljait. Néhány gyakori kódolás:</p>
+				<ul>
+				<li><strong>encoding="utf-8"</strong> a feltételezett alapértelmezés
+				</li><li><strong>encoding="ascii</strong>" az UTF-8 részhalmaza, hogy ne kelljen megadnia
+				</li><li><strong>encoding="iso-8859-1</strong>" gyakori sok nyugat-európai nyelv esetén
+				</li></ul>
+		  </font>
+		  
+		  <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="creating_mobile" id="creating_mobile"></a><b>2b. További információk egy mobilkonfigurációs fájl létrehozásához</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">Mobil webhelytérképhez ugyanúgy kell konfigurációs fájlt létrehozni, mint nem mobil webhelytérképhez. Az egyes jelölőnyelvekhez azonban külön-külön konfigurációs fájlt kell létrehoznia, és a Webhelytérkép Generátort az egyes konfigurációs fájlokhoz külön-külön kell lefuttatnia, hogy így külön webhelytérképet hozzon létre mindegyikhez.</font></p>
+				<p><font size="-1">Minden egyes konfigurációs fájlnak:</font></p>
+		  <ul>
+		    <li><font size="-1">Külön-külön fájlnevet kell megadnia a <a href="#create_config"><strong>store_into</strong> értékhez</a>.</font></li>
+	        <li><font size="-1"><a href="#filter_examples">Szűrőkkel</a> kell megadnia a szerepeltetni és kizárni kívánt URL-eket az adott jelölőnyelvhez. Ne feledje, hogy minden webhelytérképben csak egy jelölőnyelvhez szerepelhetnek URL-ek. Ez azt jelenti, hogy ugyanaz az URL több webhelytérképben is szerepelhet, ha az URL több jelölőnyelvet is kiszolgál.</font></li>
+	      </ul>
+			<p><strong><font size="-1">Példák a szűrésre</font></strong></p>
+			<p><font size="-1">Az alábbiakban néhány példa található arra, hogyan használhatja a kiterjesztés alapú szűrőket arra, hogy mobil webhelytérképeket hozzon létre különböző jelölőnyelvekhez. A konkrétan használt szűrőzésnek a webhelyén használt jelölőnyelvek típusán és az egyes típusok megadási módján kell alapulnia. Ha a webhely részleteit máshogyan valósította meg (például a különböző jelölőnyelvekhez tartozó URL-eket különböző mappákba helyezheti), akkor a webhely megvalósításának sajátosságai alapján kell szűrnie. Ne feledje, hogy a szűrők alkalmazása a konfigurációs fájlban található felsorolási sorrendjük szerint történik. Az első szűrő tehát, amit fel kell sorolnia, egy &quot;pass&quot; művelet, amely megadja azokat az URL-eket, amelyek szerepeltetni szeretne a webhelytérképben. </font></p>
+			<p><font size="-1">Ha WML (WAP 1.2) tartalomhoz szeretne webhelytérképet létrehozni:</font></p>
+			
+			<pre>&lt;filter action="pass" type="wildcard" pattern="*.wml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+</pre>
+			
+			<p><font size=-1>Ha XHTML mobilprofil (WAP 2.0) tartalomhoz szeretne webhelytérképet létrehozni:</font></p>
+			
+			<pre>&lt;filter action="pass" type="wildcard" pattern="*.xhtml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+			</pre>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="copy"></a><b>3. A fájlok feltöltése az Ön webszerverére</b></td> 
+				</tr> 
+			</tbody></table>
+		<p><font size="-1"> A következő fájlokat kell feltöltenie a webszerverére, egy olyan helyre, amelyet el tud érni a parancssorból: </font></p>
+			
+			<font size="-1"><ul>
+              <li><strong> config.xml</strong> &#8212;ez a konfigurációs fájl, amelyet az imént hozott létre az <strong>example_config.xml</strong> segítségével. </li>
+              <li><strong> sitemap_gen.py</strong> &#8212; ez az a Python szkript, amely létrehozza az Ön webhelytérképét. </li>
+              <li><strong> urllist.txt</strong> &#8212; ez a fájl nem kötelező; csak akkor kell szerepeltetnie, ha a szövegfájlos módszert használta a webhelytérkép generálásához. </li>
+		  </ul>
+			
+		  </font>
+		  <p><font size="-1"> Az a módszer, amellyel feltölti ezeket a fájlokat, az Ön környezetétől függ. Gyakori módszerek például az <a href="http://www.google.com/search?q=ftp">FTP</a> és az SCP. További információkért forduljon a webüzemeltető cégéhez.</font></p>
+			
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="execute"></a><strong>4. A Webhelytérkép Generátor szkript (sitemap_gen.py) futtatása  </strong></td> 
+				</tr> 
+			</tbody></table>
+				
+				<p><font size="-1">
+A Webhelytérkép Generátor futtatásához csatlakoznia kell a webszerveréhez. A kapcsolódási módszer az Ön környezetétől függ. Például UNIX alapú szerverhez általában hozzá lehet férni <a href="http://www.google.hu/search?q=ssh">SSH</a>-val.   Ha további tájékoztatást szeretne kapni a webszerveréhez való csatlakozásról és a szkriptek futtatásáról, forduljon a webüzemeltető cégéhez. </font></p>
+				
+				<p><font size="-1"> Ha a fájlokat a webszerverre másolta, le kell futtatnia a Webhelytérkép Generátor szkriptet. Csatlakozzon a webszerverhez, és futtassa a következő parancsot (cserélje ki a <strong>&lt;path/config.xml&gt;</strong> karaktersorozatot a kívánt konfigurációs fájl útvonalára és fájlnevére; ha a fájlt ugyanarra a helyre töltötte fel, mint a Python szkriptet, akkor kihagyhatja az útvonalat):</font></p>
+				
+				<pre>python sitemap_gen.py --config=&lt;path/config.xml&gt;</pre>
+<p><font size="-1">Például egy UNIX alapú parancssor ehhez hasonló lehet:</font></p>
+<p><img src="images/python_command.gif" alt="Python parancs"></p>
+<p><font size="-1">Egy MS-DOS alapú parancssor ehhez hasonló lehet:</font></p>
+<p><img src="images/python_dos.gif" alt="Python parancs"></p>
+<p><font size="-1"><b>Tipp:</b> Ha teszteli a konfigurációját, és még nincs kész a webhelytérkép beküldésére, a következő szintaxist alkalmazva megakadályozhatja, hogy a Webhelytérkép Generátor kapcsolatba lépjen a Google-lal:</font></p>
+				<pre><br>	$ python sitemap_gen.py --config=config.xml --testing</pre>
+				<font size="-1"><p>A kérése állapota a parancssorban lesz látható:</p></font>
+<pre>	
+	Reading configuration file: /path/config.xml
+	Opened URLLIST "/path/urllist.txt"
+	Walking DIRECTORY "/var/www/html/dir"
+	Walking DIRECTORY "/var/www/html/dir2"
+	Opened ACCESSLOG "/etc/httpd/logs/access-0.log"
+	Sorting and normalizing collected URLs.
+	Writing Sitemap file "/path/sitemap.xml.gz" with 1092 URLs
+	Notifying search engines.
+	Notifying www.google.com
+	Count of file extensions on URLs:
+		208  .html
+		574  .jpg
+		...
+		Number of errors: 0
+		Number of warnings: 0</pre>
+				<font size="-1">
+				<p>Ha nem lát ilyen sok kimenetet, ne feledje, hogy a konfigurációs fájljában lévő verbose beállítás befolyásolja, hogy mennyi információ jelenik meg a képernyőn.  A példa azt mutatja, amikor a verbose beállítás értéke "1".</p>
+				<p>A rendszer visszaadja a fájlban lévő esetleges hibákat is.  Ha például lehagyja az url= attribútumot egy könyvtárbejegyzésről, a szkript kimenete a következő lesz:
+				</p></font>
+<pre>	
+	[ERROR] Directory entries must have both "path" and "url" attributes
+	Number of errors: 1</pre>
+				<font size="-1">
+				</font>
+				<p><font size="-1">Javítsa ki a <b>config.xml</b> fájlban lévő hibákat, és futtassa újra a szkriptet. Ha nincsenek hibák, a Webhelytérkép Generátor egy új <b>sitemap.xml.gz</b> fájlt hoz létre a konfigurációs fájlban megadott helyen. </font></p>
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="submitting" id="submitting"></a><strong>5. A webhelytérképe elküldése a Google-nak </strong></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">A Webhelytérkép Generátor létrehoz egy <strong>sitemap.xml.gz</strong> fájlt a konfigurációs fájlban megadott helyen. A fájl sikeres létrejötte után ellenőrizze, hogy elérhető-e webböngészőn keresztül. Ezután, <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">adja</a>  a <a href="https://www.google.com/webmasters/sitemaps/siteoverview?hl=en">Google Webhelytérképek</a> fiókjához. Így a Google hasznos, állapotra vonatkozó és statisztikai adatokat tud kínálni. Ha a Google arról számol be, hogy problémák merültek fel az Ön webhelytérképével kapcsolatban, akkor kijavíthatja a problémákat, és elküldheti újra a webhelytérképet. A webhelytérképet csak egyszer kell manuálisan hozzáadnia. Ezután egy <a href=submit.html#ping>HTTP kérelemmel</a> értesítheti a Google-t a webhelytérképe változásairól (bár azt is megteheti, hogy újra elküldi a Google Webmester Eszközök fiókja segítségével). </font></p>
+		        
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="recur"></a><b>6. Ismétlődő szkript beállítása</b></td> 
+				</tr> 
+		  </tbody></table>
+		  <font size="-1">
+				<p>Azt ajánljuk, hogy úgy állítsa be a Webhelytérkép Generátort, hogy olyan gyakran fusson, amilyen gyakran az Ön tartalma módosul, maximálisan óránként egyszer.</p>
+		  </font>
+		  <p><font size="-1">A UNIX webszervert használó webmesterek mérlegelhetik ennek <a href="http://www.google.hu/search?q=cron">cron feladatként</a> való beállítását. </font></p>
+				<font size="-1"><p>A más platformokat használó webmestereknek a rendszergazdájukhoz kell fordulniuk, ha segítséget szeretnének kapni az ismétlődő szkriptek konfigurálásával kapcsolatban. Hasznosak lehetnek a kollégák tanácsai is a <a href="http://groups.google.com/group/Google_Webmaster_Help-Sitemap?tsc=1">Google Csoportok</a> Google Webhelytérképek csoportjában. </p>
+				
+	      </font>
+				<p><font size="-1"> <a href=submit.html#ping>HTTP kérelemmel</a> tájékoztathatja a Google-t a webhelytérképein történt változásokról. Egyszer azonban mindenképpen jelentkezzen be a <a href="https://www.google.com/webmasters/sitemaps/siteoverview?hl=en">Google Webmester Eszközök</a> szolgáltatásba a Google-fiókjával, és <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496>adja hozzá manuálisan a webhelytérképet</a> a Google Webmester Eszközök fiókjához.</font></p>
+				<font size="-1"></font>		
+			    <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="troubleshoot"></a><b>Hibaelhárítás</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p>Ebben a szakaszban azok a gyakori kérések és problémák találhatók, amelyek a Webhelytérkép Generátor használata során merülnek fel, továbbá, hogy mit tehet, ha találkozik ezek valamelyikével.</p>
+				<p><b>Webes elérhetőség</b></p>
+				<p><b>Probléma:</b> A Webhelytérkép Generátor a következő hibát és figyelmeztetést adja:</p>
+				</font>
+<pre>	
+	[ERROR] When attempting to access your generated Sitemap at the following URL:
+	http://www.pelda.com/sitemap.xml.gz
+	we failed to read it.  Please verify the store_into path you specified in
+	your configuration file is web-accessible.  Consult the FAQ for more
+	information.
+	[WARNING] Proceeding to notify with an unverifiable URL.</pre>
+				<font size="-1">
+				<p><b>Mi történt?</b> A Webhelytérkép Generátor létrehozta a fájlt az Ön által megadott helyen, majd megpróbálta lekérni HTTP segítségével, ahogyan egy keresőmotor tenné, ez azonban nem sikerült.  Továbbhaladt és mindenesetre értesítette a keresőmotorokat, de létrehozza ezt a hibát és figyelmeztetést, hogy ezzel tájékoztassa Önt, hogy a webhelytérképe valószínűleg nem olvasható a keresőmotorok számára.</p>
+				<p>A Webhelytérkép létrehozza az Ön webhelytérképfájlját arra az elérési útra, amelyet a <b>config.xml</b> fájljában lévő store_into attribútumban megadott. A Webhelytérkép Generátor ezután a base_url attribútum segítségével létrehoz egy, a fájlra mutató URL-t, majd jelenti az URL-t a keresőmotoroknak. Ha például a következőre állítja be a konfigurációt:</p>
+				</font>
+<pre>	&lt;site base_url="http://www.pelda.com/"
+	      store_into="/var/www/html/sitemap.xml.gz"&gt;</pre>
+				<font size="-1">
+				</font><p><font size="-1">A Webhelytérkép Generátor azt közli a keresőmotorokkal, hogy a következő címen keressék az Ön webhelytérképét:</font></p>
+				
+				<pre>	http://www.pelda.com/sitemap.xml.gz</pre>
+				<font size="-1"><p>
+				A fájlnak elérhetőnek kell lennie ezzel az URL-lel.  Ha a fájl nem kérhető le ezzel az URL-lel, akkor a keresőmotorok nem tudják megtalálni az Ön webhelytérképét.</p>
+				</font><p><font size="-1"><b>Mit tehet?</b>  Ellenőriznie kell, hogy a <b>config.xml</b> a megfelelő base_url és store_into útvonalat adja-e meg az Ön webhelytérképéhez.  Ellenőriznie kell azt is, hogy a webböngészők le tudják-e kérni a webhelytérképfájlt a base_url címről.  Ha hibát talál az útvonalban vagy az URL-ben, akkor lehet, hogy újra kell futtatnia a Webhelytérkép Generátort, vagy egyszerűen a megfelelő helyre kell áthelyeznie a webhelytérképfájlt, és manuálisan, a webhelyükön keresztül értesítenie kell a keresőmotorokat.</font></p>
+				<font size="-1"><p><b>Az XML támogatása</b></p>
+				<p><strong>Probléma:</strong> a Webhelytérkép Generátor a következő hibát adja:</p>
+				</font>
+<pre>	
+	Some installs of Python 2.2 do not include complete support for XML. 
+	Please try upgrading your version of Python and re-running the script.</pre>
+				<font size="-1"><p>
+				<b>Mi történt?</b>  Ahogyan az üzenet is állítja, egyes platformokon a Python (az a nyelv, amelyen a Webhelytérkép Generátor szkript íródott) olyan verziója található, amelyből hiányoznak az XML fájlok feldolgozásához támogatási könyvtárak. A szkript futásához teljes körű XML támogatásra van szükség.</p>
+				<p><b>Mit tehet?</b> Próbálja meg a Python telepített verzióját egy újabb verzióra frissíteni. Ehhez valószínűleg kapcsolatba kell lépnie a rendszergazdával.</p>
+				<p>Megjegyzendő, hogy ez nem befolyásolja a webhelytérképeket általában véve, csak a Webhelytérkép Generátort.  Ha van más módszere vagy eszköze webhelytérképek létrehozására, természetesen használhatja, és beküldheti a webhelytérképeket a keresőmotoroknak.</p>
+				<p><b>Mik a .gz vagy .zip kiterjesztésű fájlokban lévő további fájlok?</b></p>
+				<p>Amikor kibontja a sitemap_gen.py szkriptet, valószínűleg a fent felsoroltakon kívül más fájlokat is látni fog. A teljes lista jobban hasonlít a következőre:</p>
+				</font>
+	<pre>	
+	AUTHORS
+	ChangeLog
+	COPYING
+	example_config.xml
+	example_urllist.txt
+	PKG-INFO
+	README
+	setup.py
+	sitemap_gen.py
+	test_sitemap_gen.py</pre>
+		  <font size="-1"><p>
+				A további fájlok általában információkat tartalmaznak a csomagról és a licencelési feltételekről. Pillantson bele bátran ezekbe a fájlokba.</p>
+				<p>Az egyetlen kivétel a test_sitemap_gen.py, amely egy egységtesztelési szkript, amelyek más fejlesztők hasznosnak találhatnak, ha szeretnének hozzájárulni ehhez a nyílt forráskódú projekthez.  Ha a forráskód módosítása nélkül szeretné használni a Webhelytérkép Generátort – vélhetően majdnem mindenki esetén ez a helyzet – akkor valószínűleg nincs szüksége erre a tesztelési szkriptre.</p>
+	  Ha érdekli a projektben való részvétel, kérjük, látogassa meg a <a href="http://sourceforge.net/projects/goog-sitemapgen">http://sourceforge.net/projects/goog-sitemapgen</a> oldalt. Továbbá, <a href="http://code.google.com/sm_thirdparty.html">itt</a> találhat linkeket külső féltől származó, a Google webhelytérképeket támogató programokra.</p>
+	  
+	  <font size="-1"></font></font>
+		  <p><font size="-1"><b><a name="nonascii"></a>Nem ASCII karakterek </b></font></p>
+				<font size="-1"><font size="-1">
+				</font></font>
+				<p><font size="-1"><strong>Probléma:</strong> A webhelye domainneve, vagy az ott lévő URL-ek nem ASCII karaktereket is tartalmaznak.</font></p>
+				<p><font size="-1">A nem ASCII URL-eket általában <a href="protocol.html#escaped">UTF-8 segítségével kell kódolni</a> a %-kal kezdődő escape-kód használata előtt. Egyes webszerverek azonban csak akkor válaszolnak megfelelően, ha az URL-ek egy, az UTF-8-tól eltérő kódolással vannak kódolva. A webhelytérképben lévő minden URL-t, továbbá magának a webhelytérképnek az URL-jét is úgy kell kódolni, hogy olvashatók legyenek annak a webszerver számára, amelyen találhatók. A <a href="#sitetag">webhelydefiníciós szakaszon</a> belül a nem kötelező <strong>default_encoding</strong> attribútummal adhatja meg a webszerver által használt kódolást. Ha nem használja ezt a címkét, és a webszerver az UTF-8-tól eltérő kódolást használ, akkor nem tudhatjuk, milyen kódolást kell használni.</font></p>
+				<p><font size="-1">Ha az URL-címei tartalmaznak nem ASCII-karaktereket, javasoljuk, hogy a Webhelytérkép Generátor szkriptet Python 2.3 vagy újabb verzió használatával futtassa. A Python programnak ez a verziója nagyobb mértékben támogatja a nem ASCII karaktereket. Ha a domainneve tartalmaz nem ASCII karaktereket, akkor a Python 2.3 vagy újabb verziót kell használnia, mivel az IDNA (Internationalizing Domain Names in Applications, domainnevek nemzetközivé tétele az alkalmazásokban) támogatás csak ettől a verziótól kezdve szerepel. IDNA támogatás nélkül a Webhelytérkép Generátor nem tudja helyesen kódolni a nem ASCII domainneveket. </font></p>
+				<font size="-1">
+	  
+	  
+	  
+	<br>
+	<p class="d" align="right"><i>Utolsó módosítás: 2006. április 15.</i></p>
+	  </font></div>
+	</td> 
+  </tr> 
+  <tr> 
+    <td width=1% valign=top><img src=http://www.google.com/images/art.gif width=143 height=53 vspace=5 hspace=15></td> 
+    <td style="background-color: #ffffff" width=1 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td valign=middle><div class=footer> 
+        <div align=center><font size="-1"> &copy;2007 Google - <a href=http://www.google.hu/privacy.html>Adatvédelmi irányelvek</a> - <a href=http://www.google.hu/accounts/TOS>Felhasználói feltételek</a> - <a href=http://www.google.hu/about.html>Minden a Google-ról</a> </font></div> 
+      </div></td> 
+  </tr> 
+</table> 
+</body>
+</html>

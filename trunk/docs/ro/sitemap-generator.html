@@ -1,0 +1,723 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel=stylesheet href="http://www.google.com/google.css">
+<link rel=stylesheet href="../leftnav.css">
+<style>
+<!--
+body,td,font,p,a{font-family:arial,sans-serif}
+.i { margin-left: 1em; margin-right: 2em; }
+//.style1 {font-weight: bold}
+.style1 {font-weight: bold}
+.d {color:#999999;text-decoration:italics;font-size:10px;}
+.changes {color: #FF0000}
+-->
+</style>
+<script
+  src=" https://ssl.google-analytics.com/urchin.js "
+  type="text/javascript">
+</script>
+<script type="text/javascript">
+  _uacct="UA-18009-2";
+  _utcp="/webmasters/sitemaps/";
+  _uanchor=1; 
+  urchinTracker();
+</script>
+
+<title>Instrumentele Google pentru webmasteri</title>
+</head>
+<body class=search bgcolor=#ffffff text=#000000 link=#0000CC vlink=#800080 alink=#ff0000 topmargin=3>
+<table width=95% border=0 cellpadding=0 cellspacing=2>
+  <tr valign=top>
+    <td width=1%><a href=https://www.google.com/webmasters/sitemaps/> <img src=http://www.google.com/images/google_sm.gif border=0 width=143 height=59 alt="Reveniţi la pagina de pornire Google." hspace=15 vspace=5></a></td>
+    <td width=100% valign="middle">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		<td><font size="+0"><b>Instrumente pentru webmasteri</b></font></td>
+		</tr>
+		<tr>
+		<td style="border-bottom:1px solid #999999" height="1"><img width="1" height="1" alt=""></td>
+		</tr>
+		</table>  	
+	</td>
+  </tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=0 width=95%> 
+  <tr> 
+    <td width="175" valign="top">
+		<font size="-1">
+    <p class="sidenavlink">
+    <a href="about.html">Despre Instrumentele pentru webmasteri</a></p>
+    <p class="sidenavlink"><a href="protocol.html">Utilizarea protocolului pentru sitemap-uri</a></span>
+    <p class="sidenavtoc">Utilizarea Generatorului de sitemap-uri</p>
+<p class="sidenavlink"><a href="http://www.google.ro/webmasters/">Centrul Google pentru webmasteri</a></p>
+  </font></td>
+    <td background=http://www.google.com/images/dot2.gif valign=bottom width=5><img src=http://www.google.com/images/dot2.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=10 height=1></td> 
+    <td>
+		<div class="content"> 
+		
+			<p><strong>Conţinut</strong></p>
+			<p><font size="-1"><a href="#before">Înainte de a începe</a><br><a href="#download">Descărcarea fişierelor de program ale Generatorului de sitemap-uri</a><br><a href="#config">Crearea unui fişier de configurare</a><br><a href="#copy">Încărcarea fişierelor pe serverul dvs. de Web</a><br><a href="#execute">Executarea script-ului Generatorului de sitemap-uri</a><br><a href="#submitting">Trimiterea sitemap-ului dvs. la Google</a><br><a href="#troubleshoot">Depanare</a></font></p>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="before"></a><b>Înainte de a începe</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">
+Generatorul de sitemap-uri Google este un script Python care creează un sitemap pentru site-ul dvs. utilizând Protocolul pentru sitemap-uri. Scriptul poate crea sitemap-uri din liste de adrese URL, directoare de servere de Web sau din fişiere jurnal de acces. Pentru a utiliza acest script: </font></p>
+				
+				<ul>
+				  <li><font size="-1">Trebuie să vă puteţi conecta la, şi să rulaţi scripturi pe, serverul dvs. de Web. </font></li>
+				  <li><font size="-1">Serverul dvs. de Web trebuie să aibă instalat Python 2.2 sau o versiune mai recentă. </font></li>
+				  <li><font size="-1">Trebuie să ştiţi comanda care lansează Python. (În general, aceasta este <strong>python</strong>, dar poate varia în funcţie de instalare. De exemplu, dacă serverul de Web are două versiuni de Python instalate, versiunea iniţială poate fi invocată prin comanda <strong>python</strong> iar versiunea ulterioară poate fi invocată prin comanda <strong>python2</strong>.) </font></li>
+				  <li><font size="-1">Trebuie să cunoaşteţi calea site-ului dvs. Dacă serverul dvs. de Web găzduieşte un singur site, această cale poate fi de felul <strong>var/www/html</strong>. Dacă aveţi un server virtual care găzduieşte mai multe site-uri, această cale poate fi de felul <strong>home/virtual/site1/fst/var/www/html</strong>. </font></li>
+				  <li><font size="-1"> Trebuie să aveţi posibilitatea de a încărca fişierele pe serverul dvs. de Web (de exemplu, utilizând FTP). </font></li>
+				  <li><font size="-1">Dacă veţi genera o listă de adrese URL pe baza fişierelor jurnal de acces, trebuie să cunoaşteţi codificarea utilizată pentru acele fişiere jurnal şi calea completă către ele. </font></li>
+          </ul>
+		  
+				<p><font size="-1">Dacă nu sunteţi sigur de niciuna dintre acestea, puteţi verifica prin compania dvs. de găzduire Web. </font></p>
+				<font size="-1">
+				<p> Acum sunteţi pregătit să începeţi. Aici găsiţi o prezentare generală a ceea ce trebuie să faceţi. </p>
+				</font>
+		  <font size="-1">
+				<ol>
+                  <li><font size="-1"><a href="#download">Descărcaţi</a> fişierele de program ale Generatorului de sitemap-uri. Extrageţi fişierele într-un director local. </font></li>
+                  <li><font size="-1"><a href="#config">Creaţi un fişier de configuraţie</a> pentru site-ul dvs., utilizând ca şablon fişierul <strong>exemplu_config.xml</strong> furnizat. Modificaţi acest fişier aşa cum este necesar pentru site-ul dvs. şi salvaţi-l. </font></li>
+                  <li><font size="-1"><a href="#copy">Încărcaţi fişierele necesare</a> pe serverul dvs. de Web. </font></li>
+                  <li><font size="-1"><a href="#execute">Executaţi</a> <strong>sitemap_gen.py</strong>. </font></li>
+                  <li><font size="-1"><a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">Adăugaţi</a> sitemap-ul generat în contul dvs. de instrumente Google pentru webmasteri. </font></li>
+		          <li><font size="-1"><a href="#recur">Setarea unui script recurent</a>. (opţional) </font></li>
+				</ol>
+		  </font>
+		  
+				<p><font size="-1">Dacă nu puteţi utiliza Generatorul de sitemap-uri, puteţi adăuga un sitemap în contul dvs. de instrumente Google pentru webmasteri în <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34606&topic=8516>alt format</a>, cum ar fi un fişier text simplu. De asemenea, puteţi găsi link-uri către programe terţe care acceptă sitemap-uri Google <a href="http://code.google.com/sm_thirdparty.html">aici</a>.</font></p>
+				<p><font size="-1"><strong>Pentru sitemap-urile de ştiri:</strong> Generatorul de sitemap-uri nu este recomandat momentan pentru utilizare în crearea sitemap-urilor pentru Ştiri Google din cauza cerinţelor speciale ale sitemap-urilor de ştiri. Sitemap-urile de ştiri sunt destinate să fie liste dinamice numai cu articolele de ştiri cel mai recent publicate (nu pentru întregul site de Web) şi sunt actualizate frecvent.</font></p>  
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="download"></a><b>1. Descărcarea fişierelor de program pentru Generatorul de sitemap-uri</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p> Fişierele Generatorului de sitemap-uri sunt disponibile în formatele de arhivare ZIP sau GZ <font size="-1">din următoarea locaţie:</font></p>
+				</font>
+				<p><font size="-1"><a href="http://www.sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422">http://sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422</a></font></p>
+				<font size="-1">
+				<p>După ce descărcaţi arhiva, extrageţi-o într-un director local. Localizaţi următoarele fişiere: </p>
+				<ul>
+                  <li><strong> README</strong> &#8212;conţine cele mai recente informaţii despre acest instrument </li>
+                  <li><strong> sitemap_gen.py</strong> &#8212;script-ul python care generează sitemap-ul dvs. </li>
+                  <li><strong> exemplu_config.xml</strong> &#8212;fişierul de configurare şablon pe care îl veţi utiliza pentru a specifica configuraţia pentru site-ul dvs.</li>
+                  <li><strong> exemplu_listaurl.txt</strong> &#8212;lista şablon de adrese URL pe care o puteţi utiliza dacă doriţi să creaţi un sitemap bazat pe un set de adrese URL specificate de dvs.</li>
+		        </ul>
+				</font>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="config"></a><b>2a. Crearea unui fişier de configuraţie</b></td> 
+				</tr> 
+			</tbody></table>
+		  <font size="-1">
+		  </font><p><font size="-1">Această secţiune furnizează instrucţiuni pas cu pas pentru crearea unui fişier de configuraţie. De asemenea, furnizează <a href="#config_reference">referinţe complete</a> pentru opţiunile disponibile. Când creaţi  <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34627&topic=8493">sitemap-uri mobile</a>, verificaţi <a href="#creating_mobile">indicaţiile suplimentare pentru mobile</a>.</font></p>
+				<font size="-1"><p>Pentru a crea un fişier de configuraţie pentru site-ul dvs., trebuie să aveţi următoarele informaţii: </p>
+				<ul>
+                  <li>Adresa URL de bază pentru site-ul dvs. (cum ar fi <strong>http://www.exemplu.ro</strong>/). Asiguraţi-vă că aţi inclus protocolul (cum ar fi <strong>http://</strong>). De exemplu, <strong>http://www.google.ro</strong> este o adresă URL de bază valabilă, însă <strong>www.google.ro</strong> nu este. </li>
+		
+                  <li>Calea serverului de Web către locaţia unde doriţi să stocaţi sitemap-ul. În general, aceasta este calea către adresa URL de bază, deoarece sitemap-ul nu poate conţine adrese URL care se află într-un director de nivel mai înalt decât locaţia sitemap-ului. Când executaţi Generatorul de sitemap-uri Google, acesta creează sitemap-ul şi îl plasează în locaţia specificată de dvs. </li>
+		 
+                  <li>Metodele pe care doriţi să le utilizeze Generatorul de sitemap-uri pentru a crea sitemap-ul dvs. Puteţi utiliza orice combinaţie de metode. Sunt disponibile următoarele metode: </li>
+		  </ul>
+				
+		  </font><ol>
+<ul>
+                    <li><font size="-1"><strong> <a href="#URL">Adresa URL</a></strong>&#8212;listaţi adresele URL individuale din această secţiune a fişierului de configuraţie, împreună cu informaţii despre fiecare adresă URL. Această metodă se utilizează în general împreună cu o altă metodă, pentru a include manual adrese URL suplimentare, pe care alte metode nu le-ar alege. </font></li>
+                    <li><font size="-1"><strong><a href="#urllist">Listă de adrese URL</a> </strong>&#8212;direcţionaţi fişierul de configuraţie către un fişier text care conţine o listă de adrese URL. Puteţi utiliza această metodă dacă acest fişier text există deja sau dacă utilizaţi un script pentru a genera o listă de adrese URL. </font></li>
+                    <li><font size="-1"><strong><a href="#directory">Căi de directoare</a></strong>&#8212;specificaţi căile pentru site-ul dvs. şi adresele URL corespunzătoare acelor căi. Generatorul de sitemap-uri va crea o listă de adrese URL pe baza conţinutului acelor directoare. E posibil să doriţi să utilizaţi această metodă dacă site-ul dvs. constă din fişiere HTML statice. </font></li>
+            <li><font size="-1"><strong> <a href="#logs">Fişierele jurnal de acces</a></strong>&#8212;precizaţi calea către fişierele dvs. jurnal. Generatorul de sitemap-uri va crea o listă de adrese URL pe baza adreselor URL incluse în fişierele jurnal. Puteţi utiliza această metodă dacă site-ul dvs. constă din pagini dinamice. </font></li>
+ <li><font size="-1"><strong> <a href="#sitemap">Sitemap</a></strong>&#8212;indicaţi sitemap-urile existente pe care le-aţi creat cu Generatorul de sitemap-uri. Generatorul de sitemap-uri va crea un singur sitemap care va conţine toate adresele URL incluse în fiecare sitemap. Aţi putea utiliza această metodă dacă aţi creat deja câteva sitemap-uri mai mici pe care doriţi să le uniţi într-un sitemap mai mare. </font></li>
+            </ul>
+		  </ol>
+				
+		  <font size="-1"><p><b><a name="create_config"></a>Creaţi fişierul de configuraţie după cum urmează:</b></p>
+		  </font>
+				<ol>
+                 <font size="-1"> <li>Deschideţi fişierul <strong>exemplu_config.xml</strong> într-un editor de text. Salvaţi-l ca fişier nou (cum ar fi <strong>config.xml</strong> sau <strong>site-ulmeu_config.xml</strong>).</li> 
+                 </font>
+				
+                 
+                 <font size="-1">
+                 <li>Localizaţi secţiunea de definire a site-ului: </li>
+                 </font>		  
+				
+				<pre>&lt;site base_url="http://www.exemplu.ro/" store_into="/var/www/docroot/sitemap.xml.gz"verbose="1"&gt;</pre>				
+				
+                  <font size="-1"><li>Schimbaţi valoarea <strong>base_url</strong> cu adresa URL a site-ului dvs. </li>
+		 
+                  <li>Schimbaţi valoarea <strong>store_into</strong> cu calea de pe serverul dvs. de Web unde doriţi să stocaţi sitemap-ul şi numele de fişier pe care doriţi să îl utilizaţi pentru sitemap. În general, aceasta este calea către adresa URL de bază deoarece Google poate să accepte numai adrese URL care sunt la acelaşi nivel al, sau subdirectoare ale, directorului care conţine sitemap-ul. Puteţi specifica o cale relativă de la directorul unde aţi încărcat script-ul sau o cale completă din rădăcina serverului dvs. de Web. Dacă încărcaţi script-ul în directorul adresei URL de bază, puteţi specifica doar numele fişierului.</li>
+                  </font>
+                  <font size="-1"></font><font size="-1"><li>Localizaţi secţiunile metodei de generare care încep cu <span class="style1">** MODIFICAŢI</span> <span class="style1">sau ŞTERGEŢI **</span>. Fiecare dintre aceste secţiuni corespunde unei metode de generare a unui sitemap. </li>
+                  <li>Ştergeţi secţiunile pentru metodele pe care nu le veţi utiliza.</li>
+                  <li>Urmaţi instrucţiunile de mai jos pentru metodele pe care intenţionaţi să le utilizaţi. </li>
+                <p><strong> Adresa URL<a name="URL"></a></strong></p>
+                <p> Localizaţi următoarea secţiune: </p>
+                </font>
+                  <pre>&lt;!-- ** MODIFY or DELETE ** 
+"url" nodes specify individual URLs to include in the map. &lt;br&gt;
+
+Required attributes: 
+href - the URL
+
+Optional attributes: 
+lastmod - timestamp of last modification (ISO8601 format) changefreq - how often content at this URL is usually updated priority - value 0.0 to 1.0 of relative importance in your site --&gt; 
+
+&lt;url href="http://www.exemplu.ro/statistici?q=nume" /&gt;
+&lt;url href="http://www.exemplu.ro/statistici?q=vârsta" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre>
+                  <font size="-1">
+                <p>Această secţiune oferă două exemple: primul include doar atributul obligatoriu, iar al doilea include atât atributul obligatoriu, cât şi atributele opţionale. </p>
+                <p>Utilizaţi acest format pentru fiecare dintre adresele URL pe care doriţi să le includeţi. Atributul <strong>changefreq</strong> oferă pentru Google o idee generală despre frecvenţa cu care este actualizată adresa URL. Aceasta ajută Google să afle cât de des trebuie să viziteze pagina pentru un conţinut nou. Atributul <strong>priority</strong> oferă pentru Google informaţii despre importanţa relativă a acestei pagini în comparaţie cu celelalte pagini ale site-ului dvs. Acest atribut nu are niciun efect asupra modului în care compară Google pagina dvs. cu paginile altor site-uri, ci doar ajută Google să ştie ce pagini de pe site-ul dvs. credeţi că sunt cele mai importante. </p>
+                  </font>
+				<p><font size="-1"><strong> Listă de adrese URL <a name="urllist"></a> </strong></font></p>
+				<font size="-1"><p> Localizaţi următoarea secţiune: </p>
+				
+			</font>
+			<pre>
+&lt;!-- ** MODIFY or DELETE **
+"urllist" nodes name text files with lists of URLs. 
+An example file "example_urllist.txt" is provided. 
+
+Required attributes: 
+path - path to the file 
+
+Optional attributes: 
+encoding - encoding of the file if not US-ASCII 
+--&gt; 
+&lt;urllist path="example_urllist.txt" encoding="UTF-8" /&gt; 
+				</pre>
+				
+				<p><font size="-1"> Utilizaţi acest format pentru a preciza calea şi numele fişierului text care conţine lista dvs. de adrese URL. Puteţi să utilizaţi fişierul <strong>exemplu_listaurl.txt</strong> furnizat, ca şablon pentru acel fişier text. Puteţi specifica fie o cale relativă, fie una completă, către serverul dvs. de Web. De exemplu, dacă Generatorul de sitemap-uri şi fişierul <strong>urlist.txt</strong> se află în acelaşi director, puteţi să specificaţi pur şi simplu numele fişierului<strong> .txt</strong>. Când creaţi un fişier text cu o altă codificare decât UTF-8, puteţi utiliza atributul <strong>encoding</strong> pentru a indica această codificare. Dacă aveţi mai multe fişiere .txt, puteţi utiliza metacaractere. De exemplu:</font></p>
+				<pre>&lt;urllist path=&quot;example_urllist*.txt&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">Pentru fiecare adresă URL pe care o includeţi în fişierul text, puteţi să specificaţi data ultimei modificări, frecvenţa de modificare şi prioritatea. Consultaţi <a href="#urllist_reference">secţiunea referitoare la fişierul text URLlist</a> pentru informaţii complete despre structura acestui fişier.</font>  </p>
+				<p><font size="-1"><strong> Căi de directoare<a name="directory"></a> </strong></font></p>
+				<p><font size="-1"> Localizaţi următoarea secţiune: </font></p>
+				
+				<pre>&lt;!-- ** MODIFY or DELETE ** 
+"directory" nodes tell the script to walk the file system and 
+include all files and directories in the Sitemap.
+
+Required attributes:
+path - path to begin walking from 
+url - URL equivalent of that path 
+
+Optional attributes:
+default_file - name of the index or default file for directory URLs
+
+--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.example.com/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.exemplu.ro/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+				
+				<p><font size="-1">Această secţiune oferă două exemple. Dacă toate paginile dvs. sunt cuprinse în subdirectoare ale unei singure căi, nu trebuie să includeţi decât o singură intrare. Cu toate acestea, dacă aveţi mai multe căi către paginile de pe site-ul dvs., includeţi câte o intrare pentru fiecare. </font></p>
+				
+				<p><font size="-1">Reţineţi că fiecare adresă URL trebuie să înceapă cu adresa URL de bază pe care aţi specificat-o la pasul 3. De exemplu, ambele exemple date în fişierul <strong>exemplu_config.xml</strong> au adrese URL care încep cu <strong>http://www.exemplu.ro/</strong>. De aceea, ambele adrese URL sunt corecte. </font></p>
+				
+				<p><font size="-1">Înlocuiţi intrările din exemple cu intrările pentru site. Multe site-uri vor avea doar o singură intrare care duce la adresa URL de bază. Asiguraţi-vă că valoarea <strong>path</strong> este calea completă spre directorul de pe serverul dvs. de Web. Asiguraţi-vă că valoarea <strong>url</strong> este adresa URL completă, inclusiv protocolul (cum ar fi http) şi un caracter slash de final, dacă este necesar.</font></p>
+				<p><font size="-1">Puteţi utiliza parametrul <strong>default_file</strong> pentru a specifica numele fişierului pe care-l utilizează serverul dvs. ca pagină implicită pentru un director. În exemplul de mai sus, <strong>/var/www/docroot</strong> devine <strong>http://www.exemplu.ro/index.html</strong>. Nu vi se cere să specificaţi aceasta. Cu toate acestea, dacă faceţi aceasta, Generatorul de sitemap-uri va include pagina care indică spre fiecare subdirector doar o singură dată (în loc să listeze atât adresa URL a directorului, cât şi adresa URL a numelui fişierului) şi va utiliza ultima dată de modificare a fişierului (în loc de a directorului) pentru a extrage atributul lastmod pentru acea pagină. </font></p>
+				<p><font size="-1"><strong> Fişiere jurnal de acces <a name="logs"></a></strong></font></p>
+				<p><font size="-1"> Localizaţi următoarea secţiune: </font></p>
+				
+<pre>&lt;!-- ** MODIFY or DELETE **
+&quot;accesslog&quot; nodes tell the script to scan webserver log files to
+extract URLs on your site.  Both Common Logfile Format (Apache's default 
+logfile) and Extended Logfile Format (IIS's default logfile) can be read.
+				
+Required attributes:
+ path - path to the file
+Optional attributes:
+ encoding - encoding of the file if not US-ASCII
+  --&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.0&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.1.gz&quot; encoding=&quot;UTF-8&quot; /&gt;
+</pre>
+				 
+				<p><font size="-1">Această secţiune oferă trei exemple. Ar trebui să înlocuiţi aceste intrări şi să includeţi o intrare pentru fiecare fişier jurnal. Asiguraţi-vă că valoarea path este calea completă şi numele de fişier de pe serverul dvs. de Web. Dacă fişierele jurnal nu sunt codificate în US-ASCII sau UTF-8, atunci utilizaţi atributul opţional de <strong>codificare</strong> pentru a <a href="#encoding">specifica</a> codificarea. În loc să listaţi fiecare fişier jurnal, puteţi utiliza metacaractere. De pildă, în exemplul de mai sus, aţi putea include următoarea intrare, care ar include toate trei fişierele jurnal:</font></p>
+<pre>&lt;accesslog path=&quot;/etc/httpd/logs/access.log*&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">Generatorul de sitemap-uri acordă prioritate adreselor URL pe care le găseşte în fişierele jurnal, după cât de des este accesată fiecare adresă URL. De exemplu, unei adrese URL care a fost accesată de 100 de ori i se va da o prioritate mai mare decât unei adrese URL care a fost accesată de două ori. Desemnarea reală de prioritate este relativă şi depinde de fiecare adresă URL, în comparaţie cu celelalte adrese URL din site.</font></p>
+<p><font size="-1"><strong> sitemap <a name="sitemap"></a></strong></font></p>
+<p><font size="-1"> Localizaţi următoarea secţiune: </font></p>
+				
+<pre> &lt;!-- ** MODIFY or DELETE **<br>    
+&quot;sitemap&quot; nodes tell the script to scan other Sitemap files.  This can    
+be useful to aggregate the results of multiple runs of this script into
+a single Sitemap.
+				 
+Required attributes:
+  path - path to the file
+  --&gt;
+&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>
+				 
+				<p><font size="-1">Această secţiune oferă un exemplu. Ar trebui să înlocuiţi această intrare şi să includeţi o intrare pentru fiecare sitemap pe care doriţi să-l includeţi. Asiguraţi-vă că valoarea path este calea completă şi numele fişierului de pe serverul dvs. de Web. De asemenea, puteţi lista sitemap-urile arhivate cu gzip, dacă au o extensie .gz. În loc să listaţi fiecare sitemap, puteţi utiliza metacaractere. De exemplu, următoarea intrare ar include orice sitemap-uri care încep cu cuvântul „sitemap” şi au o extensie .xml:</font></p>
+<pre>&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap*.xml&quot; /&gt; </pre>
+				<p><font size="-1">Generatorul de sitemap-uri extrage toate adresele URL şi datele opţionale listate pentru fiecare adresă URL pentru fiecare sitemap pe care-l listaţi şi creează un sitemap cu aceste informaţii. Deocamdată, nu putem garanta că această metodă va funcţiona cu sitemap-uri create cu alte instrumente decât Generatorul de sitemap-uri.</font></p>
+
+
+
+				<font size="-1"><li>Localizaţi secţiunea de definire a filtrului:</li></font>
+				  
+		 
+<pre>&lt;!-- ********************************************************         
+FILTERS
+				
+Filters specify wild-card patterns that the script compares
+against all URLs it finds. Filters can be used to exclude
+certain URLs from your Sitemap, for instance if you have
+hidden content that you hope the search engines don't find.
+
+Filters can be either type=&quot;wildcard&quot;, which means standard
+path wildcards (* and ?) are used to compare against URLs,
+ or type=&quot;regexp&quot;, which means regular expressions are used
+to compare.
+
+Filters are applied in the order specified in this file.
+An action=&quot;drop&quot; filter causes exclusion of matching URLs.
+An action=&quot;pass&quot; filter causes inclusion of matching URLs,
+shortcutting any other later filters that might also match.
+If no filter at all matches a URL, the URL will be included.
+Together you can build up fairly complex rules.
+
+The default action is &quot;drop&quot;.
+The default type is &quot;wildcard&quot;.
+
+You can MODIFY or DELETE these entries as appropriate for
+your site. However, unlike above, the example entries in
+this section are not contrived and may be useful to you as
+they are.
+********************************************************* --&gt;
+
+&lt;!-- Exclude URLs that end with a '~' (IE: emacs backup files) --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*~&quot; /&gt;
+
+&lt;!-- Exclude URLs within UNIX-style hidden files or directories --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;regexp&quot; pattern=&quot;/\.[^/]*&quot; /&gt;
+</pre>
+				<p><font size="-1">Puteţi utiliza filtrarea pentru a exclude adrese URL specifice din sitemap-ul generat. E posibil să doriţi să faceţi aceasta pentru a crea o listă mai curată, pentru a reduce listările redundante sau pentru a împiedica anumite adrese URL să fie indexate. Reţineţi că, dacă utilizaţi un fişier <a href="http://www.robotstxt.org/wc/robots.html">robots.txt</a> pentru a împiedica adresele URL să fie indexate, atunci chiar dacă adresele URL sunt incluse în sitemap-ul dvs., Google nu le va căuta sau indexa. </font></p>
+				
+				<p><font size="-1">Puteţi utiliza oricare sau toate metodele de filtrare. Puteţi şterge intrările de care nu aveţi nevoie şi puteţi crea intrări suplimentare, dacă doriţi. Mai jos sunt exemple de utilizări. </font></p>
+				<pre>&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*.jpg&quot; /&gt;</pre>
+				<p><font size="-1">Acest filtru exclude adrese URL care se termină în .jpg. Puteţi include un filtru similar dacă toate imaginile site-ului dvs. sunt încastrate în pagini HTML şi nu ar trebui accesate ca adrese URL de sine stătătoare. </font></p>
+				<pre>&lt;filter action=&quot;pass&quot; type=&quot;wildcard&quot; pattern=&quot;*.htm*&quot; /&gt;&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*&quot; /&gt;</pre>
+				<font size="-1"> Acest filtru include toate fişierele .htm*, dar exclude orice altceva.</font><br>
+				<br>
+
+
+				<font size="-1"></font><font size="-1"><li>Odată ce aţi făcut toate modificările pentru site-ul dvs., salvaţi fişierul.</li></font>
+				</ol>
+				
+				
+		        <font size="-1"><a name="config_reference"></a><p><b>Referinţă de sintaxă pentru fişierul de configuraţie</b></p>
+		  </font><font size="-1">
+				</font>
+		  <p><font size="-1">Mai jos este o explicaţie completă a sintaxei fişierului de configuraţie. Fiecare etichetă începe cu o mostră de cod, urmată de o descriere a atributelor.
+</font></p>
+				
+		  <p><font size="-1"><strong><a name="sitetag"></a>site<br></strong></font><font size="-1">Etichetă obligatorie la începutul fiecărui fişier de configuraţie. </font></p>
+		  <pre>&lt;site base_url="http://www.exemplu.ro/"
+store_into="/var/www/html/sitemap.xml.gz"
+verbose="1"
+supress_search_engine_notify="1"
+default_encoding="UTF-8"&gt;</pre>
+				<br>
+				<font size="-1">
+				<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				
+					<tbody><tr>
+					<td valign="top" width="19%"><pre>base_url</pre></td>
+					<td valign="top" width="6%"><font size="-1">obligatorie</font></td>
+					<td valign="top" width="75%"><font size="-1">Calea HTTP a bazei site-ului dvs. de Web - numai adresele URL care încep cu această bază pot fi incluse în sitemap</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>store_into</pre></td>
+					<td valign="top"><font size="-1">obligatorie</font></td>
+					<td valign="top"><font size="-1">Calea serverului de Web către fişierul de ieşire dorit. Script-ul va crea acest fişier - nu este necesar să creaţi fişierul înainte de a executa script-ul.</font></td>
+					</tr> 
+					
+					<tr>
+					<td valign="top"><pre>verbose</pre></td>
+					<td valign="top"><font size="-1">opţională</font></td>
+					<td valign="top"><font size="-1">Introduceţi un număr de la 0 la 3, numerele mai mari corespunzând informaţiilor de depanare mai detaliate</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>suppress_search_engine_notify</pre></td>
+					<td valign="top"><font size="-1">opţională</font></td>
+					<td valign="top"><font size="-1"></font><font size="-1">Dezactivaţi notificările motorului de căutare introducând „1” pentru testare</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>default_encoding</pre></td>
+					<td valign="top"><font size="-1">opţională</font></td>
+					<td valign="top"><font size="-1">Specificaţi o codificare de caractere care să se aplice căilor fişierelor de sistem şi adreselor URL</font></td>
+					</tr>
+				 
+		  </tbody></table>
+		   </font>
+					<font size="-1">
+					
+				<p></p>
+				</font>
+					<p><font size="-1"><strong>url<br></strong></font><font size="-1">Etichetă opţională pe care o puteţi utiliza pentru a lista fiecare adresă URL din site-ul dvs. </font></p>
+					<p><pre>&lt;url
+href="http://www.exemplu.ro/stats?q=varsta" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre></p><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>href</pre></td>
+					  <td width="6%" valign="top"><font size="-1">obligatorie</font></td>
+					<td valign="top" width="75%"><font size="-1">Calea HTTP a bazei site-ului dvs. de Web - numai adresele URL care încep cu această bază pot fi incluse în sitemap</font></td>
+					</tr><tr>
+					<td valign="top"><pre>lastmod</pre></td>
+					<td valign="top"><font size="-1">opţională</font></td>
+					<td valign="top"><font size="-1">Ora la care adresa URL a fost modificată ultima dată, în format <a href="http://www.w3.org/TR/NOTE-datetime">Datetime W3C</a> (AAAA-LL-ZZThh:mm:ss+00:00). Puteţi să omiteţi ora. Exemple:<br>&nbsp;&nbsp;„2005-02-21T18:00:15+00:00”<br>&nbsp;&nbsp;„2005-02-21”</font></td>
+					</tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">opţională</font></td>
+					<td valign="top"><font size="-1">Frecvenţa probabilă de modificare a adresei URL. Aceasta este considerată o sugestie, nu o comandă. Valoarea trebuie să fie una dintre următoarele: „always” (întotdeauna), „hourly” (în fiecare oră), „daily” (zilnic), „weekly” (săptămânal), „monthly” (lunar), „yearly” (anual) sau „never” (niciodată).</font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">opţională</font></td>
+					<td valign="top"><font size="-1">Prioritatea acestei pagini faţă de alte pagini de pe acelaşi site. Valoarea este un număr între 0.0 şi 1.0, unde 0.0 este cea mai joasă prioritate şi 1.0 este cea mai înaltă prioritate. Prioritatea poate afecta ordinea în care selectează motoarele de căutare adresele URL de pe site-ul dvs. pentru a le explora. De vreme ce prioritatea este relativă, este utilizată doar pentru a selecta dintre adresele URL din site-ul dvs.; prioritatea paginilor dvs. nu va fi comparată cu prioritatea paginilor de pe alte site-uri.</font></td>
+					</tr>
+		  </tbody></table>
+					<p><font size="-1"><b>urllist<br></b></font><font size="-1">Etichetă opţională pe care o puteţi utiliza pentru a indica un fişier text care conţine o listă a adreselor URL din site-ul dvs. </font></p>
+					<pre>&lt;urllist path="/var/www/html/urllist.txt" encoding="UTF-8" /&gt;</pre>
+		  <br>
+		<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>path</pre></td>
+					  <td width="6%" valign="top"><font size="-1">obligatorie</font></td>
+					<td valign="top" width="75%"><font size="-1">Calea şi numele de fişier pentru fişierul .txt. Puteţi specifica fie o cale relativă, fie una completă. </font></td>
+			</tr><tr>
+					<td valign="top"><pre>encoding</pre></td>
+					<td valign="top"><font size="-1">opţională</font></td>
+					<td valign="top"><font size="-1">Codificarea fişierului, dacă nu este UTF-8.</font></td>
+					</tr>
+		  </tbody></table>
+<p><font size="-1"><a name="urllist_reference"></a>Fişierul <b>urllist.txt</b> este un fişier text simplu care conţine o listă de adrese URL de mapat. De asemenea, puteţi include atribute opţionale pentru fiecare adresă URL. Atributele sunt introduse pe acelaşi rând cu adresa URL şi sunt separate printr-un singur spaţiu. De exemplu:</font>
+          </p>
+		  <pre>http://www.exemplu.ro/abc/ceva
+http://www.exemplu.ro/abc/xyy.pdf lastmod=2001-12-31T14:05:06+00:00
+http://www.exemplu.ro/abc/def?x=12&amp;y=23 changefreq=weekly priority=0.3</pre>
+				<p>
+				<font size="-1">
+					
+				  </font><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%"  valign="top"><pre>lastmod</pre></td>
+					<td valign="top" width="6%"><font size="-1">opţională</font></td>
+					<td width="75%"  valign="top"><p><font size="-1">Ora la care a fost modificată ultima dată adresa URL, în format <a href="http://www.w3.org/TR/NOTE-datetime">Datetime W3C</a> (AAAA-LL-ZZThh:mm:ss+00:00). Puteţi să omiteţi ora. Exemple:</font><font size="-1"><br><br>&nbsp;&nbsp;„2005-02-21T18:00:15+00:00”<br>&nbsp;&nbsp;„2005-02-21”</font></p>
+				  </td>
+				  </tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">opţională</font></td>
+					<td valign="top"><font size="-1"><font size="-1">Frecvenţa probabilă de modificare a adresei URL. Aceasta este considerată o sugestie, nu o comandă. Valoarea trebuie să fie una dintre următoarele: „always” (întotdeauna), „hourly” (în fiecare oră), „daily” (zilnic), „weekly” (săptămânal), „monthly” (lunar), „yearly” (anual) sau „never” (niciodată).</font></font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">opţională</font></td>
+					<td valign="top"><font size="-1">Prioritatea acestei pagini faţă de alte pagini de pe acelaşi site. Valoarea este un număr între 0.0 şi 1.0, unde 0.0 este cea mai joasă prioritate şi 1.0 este cea mai înaltă prioritate. Prioritatea poate afecta ordinea în care selectează motoarele de căutare adresele URL de pe site-ul dvs. pentru a le explora. Deoarece prioritatea este relativă, se utilizează numai pentru selectarea dintre adresele URL de pe site-ul dvs.; prioritatea paginilor dvs. nu va fi comparată cu prioritatea paginilor de pe alte site-uri.</font></td>
+					</tr>
+					</tbody></table>
+				</p>
+		  <font size="-1">
+		  </font>
+		  <p><font size="-1"><strong>directory<br></strong></font><font size="-1">Etichetă opţională pe care o puteţi utiliza pentru a specifica directoarele din site-ul dvs. pentru ca Generatorul de sitemap-uri să poată crea o listă de adrese URL din fişierele găsite în acele directoare. </font></p>
+				<pre>--&gt;  &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.exemplu.ro/imagini/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.exemplu.ro/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+		  <table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">obligatorie</font></td>
+					<td width="75%" valign="top"><font size="-1">Precizează calea iniţială. Generatorul de sitemap-uri va traversa acest director şi toate subdirectoarele</font>.</td>
+				  </tr>
+					
+					<tr>
+					<td valign="top"><pre>url</pre></td>
+					 <td valign="top"><font size="-1">obligatorie</font></td>
+					<td valign="top"><font size="-1">Specifică adresa URL echivalentă valorii pentru cale.</font></td>
+					</tr>
+					<tr>
+					<td valign="top"><pre>default_file</pre></td>
+					 <td valign="top"><font size="-1">opţională</font></td>
+					 <td valign="top"><font size="-1">Specifică fişierul implicit pentru un director de pe server.</font></td>
+					</tr>
+		    </tbody></table>
+		  </font>
+		  <p><font size="-1"><b> accesslog<br></b>Etichetă opţională pe care o puteţi utiliza pentru a specifica o cale şi un nume de fişier pentru jurnalele de acces de tip IIS şi Apache, astfel încât Generatorul de sitemap-uri să poată prelua automat adrese URL din ele. </font>
+          </p>
+		  
+		  <pre>&lt;accesslog path="/etc/httpd/logs/access-0.log" encoding="UTF-8"/&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">obligatorie</font></td>
+					<td width="75%" valign="top"><font size="-1">Precizează calea către fişier.</font></td>
+		  </tr>
+					
+					<tr>
+					<td valign="top"><pre>encoding</pre></td>
+					 <td valign="top"><font size="-1">opţională</font></td>
+					<td valign="top"><font size="-1">Precizează codificarea fişierului, dacă nu este UTF-8.</font></td>
+					</tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><b> sitemap <br></b>Etichetă opţională pe care o puteţi utiliza pentru a preciza calea şi numele fişierului pentru sitemap-urile existente pe care le-aţi creat cu Generatorul de sitemap-uri. Generatorul de sitemap-uri va crea un singur sitemap care include adresele URL conţinute în fiecare sitemap. </font>
+          </p>
+		  
+		  <pre>&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">obligatorie</font></td>
+					<td width="75%" valign="top"><font size="-1">Menţionează calea către fişierul sitemap.</font></td>
+		  </tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><strong><a name="filter_examples"></a>filter<br></strong></font><font size="-1">Etichetă opţională pe care o puteţi utiliza pentru a construi reguli care includ sau exclud fişiere specifice. Filtrele se respectă în ordinea în care apar în fişierul config.xml. Cu toate acestea, amestecarea intrărilor de filtru şi intrărilor de admisie (url, urllist, directory, sau accesslog) nu are niciun efect suplimentar - fiecare adresă URL pe care o adaugă Generatorul de sitemap-uri la sitemap este întâi comparată cu fiecare filtru. </font><font size="-1">Dacă niciun filtru nu se potriveşte cu o adresă URL, se include implicit adresa URL în sitemap.</font></p>
+				
+				<pre>&lt;filter action="drop" type="wildcard" pattern="*/internal/*" /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>action</pre></td>
+					<td valign="top" width="6%"><font size="-1">opţională</font></td>
+					<td width="75%" valign="top">
+				      <font size="-1"><p>Acţiunea pe care trebuie să o realizeze filtrul. Valorile corecte sunt:</p>
+					  </font>				      <ul>
+					  <li><font size="-1">drop - exclude adresele URL care se potrivesc. Aceasta este acţiunea implicită, deci, dacă nu aţi specificat nicio acţiune, generatorul presupune că este „drop”.</font></li>
+					  <li><font size="-1">pass - include adresele URL care se potrivesc.</font></li>
+					  </ul>
+				      </p></td>
+		  </tr>
+					
+					<tr>
+					<td width="19%" valign="top"><pre>type</pre></td>
+					<td valign="top" width="6%"><font size="-1">opţională</font></td>
+					<td width="75%" valign="top"><font size="-1"><p>Tipul de filtrare. Valorile corecte sunt:</p>
+					</font>					  <ul>
+					<li><font size="-1">wildcard - metacaracterele standard pentru cale (? şi *) se utilizează pentru compararea cu adresele URL. Acesta este tipul implicit, deci, dacă nu se specifică niciun tip, generatorul presupune că este „wildcard”.</font></li>
+					<li><font size="-1">regexp - se utilizează expresii obişnuite.</font></li>
+					  </ul></td>
+		  </tr>
+				 
+<tr>
+					<td valign="top"><pre>pattern</pre></td>
+					 <td valign="top"><font size="-1">obligatorie</font></td>
+					 <td valign="top"><font size="-1">Specifică modelul cu care să se potrivească.</font></td>
+		  </tr>
+		  </tbody></table>
+
+<font size="-1">
+<p><b><a name="encoding"></a>Codificări</b></p>
+				
+		<p>Fişierele la care face referire fişierul de configuraţie, fie listele de adrese URL, fie fişierele jurnal ale serverului de Web, pot utiliza alte codificări decât cea implicită UTF-8. Puteţi specifica codificări alternative în config.xml pentru a influenţa modul în care Generatorul de sitemap-uri citeşte fişierele dvs. Unele dintre codificările obişnuite sunt:
+		</p>
+				<ul>
+				<li><strong>encoding=„utf-8”</strong> este presupusă ca implicită
+				</li><li><strong>encoding=„ascii</strong>” este un subset de UTF-8, deci nu este obligatoriu să îl specificaţi
+				</li><li><strong>encoding=„iso-8859-1</strong>” este uzuală pentru multe limbi vest-europene
+				</li></ul>
+		  </font>
+		  
+		  <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="creating_mobile" id="creating_mobile"></a><b>2b. Informaţii suplimentare pentru crearea unui fişier de configuraţie pentru mobil</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">Creaţi un fişier de configuraţie pentru un sitemap mobil în acelaşi mod în care creaţi un fişier pentru un sitemap care nu este mobil. Cu toate acestea, trebuie să creaţi un fişier de configurare separat pentru fiecare limbaj de markup şi să executaţi Generatorul de sitemap-uri cu fiecare fişier de configuraţie separat, pentru a putea crea un sitemap separat pentru fiecare.</font></p>
+				<p><font size="-1">Fiecare fişier de configuraţie trebuie să:</font></p>
+		  <ul>
+		    <li><font size="-1">Specifice un nume de fişier diferit pentru valoarea <a href="#create_config"><strong>store_into</strong> </a>.</font></li>
+	        <li><font size="-1">Utilizeze <a href="#filter_examples">filtre</a> pentru a specifica adresele URL care să fie excluse sau incluse în limbajul de markup. Reţineţi că fiecare sitemap ar trebui să includă adrese URL pentru un singur limbaj de markup. Aceasta înseamnă că aceeaşi adresă URL poate fi inclusă în mai multe sitemap-uri, dacă acele adrese URL utilizează mai multe limbaje de markup.</font></li>
+	      </ul>
+			<p><strong><font size="-1">Exemple de filtrare</font></strong></p>
+			<p><font size="-1">Mai jos sunt câteva exemple despre cum puteţi utiliza filtre bazate pe extensii pentru a genera sitemap-uri mobile pentru diferite limbaje de markup. Filtrarea specifică pe care o utilizaţi ar trebui să fie bazată pe tipurile de limbaje de markup utilizate în site-ul dvs. şi pe modul în care specificaţi fiecare tip. Dacă aţi implementat diferit detaliile site-ului dvs. (de exemplu, puteţi organiza adresele URL cu diferite limbaje de markup în foldere separate), ar trebui să filtraţi în funcţie de caracteristicile implementărilor site-ului dvs. Reţineţi că filtrele se aplică în ordinea în care le listaţi în fişierul de configuraţie. Astfel, primul filtru pe care trebuie să îl listaţi este o acţiune „pass” care specifică adresele URL pe care doriţi să le includeţi în sitemap. </font></p>
+			<p><font size="-1">Pentru a crea un sitemap pentru conţinut WML (WAP 1.2):</font></p>
+			
+			<pre>&lt;filter action="pass" type="wildcard" pattern="*.wml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+</pre>
+			
+			<p><font size=-1>Pentru a crea un sitemap pentru conţinutul de profil mobil XHTML (WAP 2.0):</font></p>
+			
+			<pre>&lt;filter action="pass" type="wildcard" pattern="*.xhtml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+			</pre>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="copy"></a><b>3. Încărcarea fişierelor pe serverul dvs. de Web</b></td> 
+				</tr> 
+			</tbody></table>
+		<p><font size="-1"> Ar trebui să încărcaţi următoarele fişiere pe serverul dvs. de Web într-o locaţie pe care o puteţi accesa dintr-o linie de comandă: </font></p>
+			
+			<font size="-1"><ul>
+              <li><strong> config.xml</strong> &#8212;acesta este fişierul de configuraţie pe care tocmai l-aţi creat cu <strong>example_config.xml</strong>. </li>
+              <li><strong> sitemap_gen.py</strong> &#8212;acesta este script-ul Python care generează sitemap-ul dvs. </li>
+              <li><strong> urllist.txt</strong> &#8212;acest fişier este opţional; trebuie să-l includeţi doar dacă aţi utilizat metoda fişier text de generare a unui sitemap. </li>
+		  </ul>
+			
+		  </font>
+		  <p><font size="-1">  Metoda pe care o utilizaţi pentru a încărca aceste fişiere depinde de mediul dvs. Metodele uzuale includ <a href="http://www.google.com/search?q=ftp">FTP</a> şi SCP. Pentru informaţii suplimentare, contactaţi gazda dvs. Web.		  </font></p>
+			
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="execute"></a><strong>4. Executarea script-ului Generatorului de sitemap-uri (sitemap_gen.py) </strong></td> 
+				</tr> 
+			</tbody></table>
+				
+				<p><font size="-1">
+Pentru a executa Generatorul de sitemap-uri, va fi necesar să vă conectaţi la serverul dvs. de Web. Metoda pe care o utilizaţi pentru a vă conecta depinde de mediul dvs. De exemplu, în general puteţi accesa un server bazat pe UNIX utilizând <a href="http://www.google.com/search?q=ssh">SSH</a>. Pentru mai multe informaţii privind conectarea la serverul dvs. de Web şi executarea script-urilor, adresaţi-vă gazdei dvs. Web. </font></p>
+				
+				<p><font size="-1"> După ce aţi copiat fişierele pe serverul dvs. de Web, va trebui să executaţi scriptul Generator de sitemap-uri. Conectaţi-vă la serverul dvs. de Web şi executaţi următoarea comandă (înlocuiţi  <strong>&lt;path/config.xml&gt;</strong> cu calea către şi numele fişierului de configuraţie; dacă aţi încărcat acest fişier în aceeaşi locaţie ca şi script-ul Python, puteţi exclude calea):</font></p>
+				
+				<pre>python sitemap_gen.py --config=&lt;path/config.xml&gt;
+</pre>
+<p><font size="-1">De exemplu, o linie de comandă bazată pe UNIX ar putea arăta similar acesteia:</font></p>
+<p><img src="images/python_command.gif" alt="Comanda pentru Python"></p>
+<p><font size="-1">O comandă shell bazată pe MS-DOS poate arăta ca aceasta:</font></p>
+<p><img src="images/python_dos.gif" alt="Comanda pentru Python"></p>
+<p><font size="-1"><b>Sfat:</b> Dacă vă testaţi configuraţia şi nu sunteţi încă pregătit să trimiteţi sitemap-ul, următoarea sintaxă va împiedica Generatorul de sitemap-uri să contacteze Google:</font></p>
+				<pre><br>	$ python sitemap_gen.py --config=config.xml --testing</pre>
+				<font size="-1"><p>Veţi vedea starea solicitării dvs. în linia de comandă:</p></font>
+<pre>Reading configuration file: /path/config.xml
+	Opened URLLIST "/path/urllist.txt"
+	Walking DIRECTORY "/var/www/html/dir"
+	Walking DIRECTORY "/var/www/html/dir2"
+	Opened ACCESSLOG "/etc/httpd/logs/access-0.log"
+	Sorting and normalizing collected URLs.
+	Writing Sitemap file "/path/sitemap.xml.gz" with 1092 URLs
+	Notifying search engines.
+	Notifying www.google.ro
+	Count of file extensions on URLs:
+		208  .html
+		574  .jpg
+		...
+		Number of errors: 0
+		Number of warnings: 0</pre>
+				<font size="-1">
+				<p>Dacă nu vedeţi astfel de rezultate, reţineţi că setarea verbose din fişierul dvs. de configuraţie afectează cantitatea de informaţii imprimate pe ecran. Acest exemplu este reprezentativ pentru setarea verbose pe „1”.</p>
+				<p>Vor fi returnate şi orice erori din fişier. De exemplu, dacă eliminaţi atributul url= dintr-o intrare de director, script-ul va da următoarele:
+				</p></font>
+<pre>[ERROR] Directory entries must have both "path" and "url" attributes Number of errors: 1</pre>
+				<font size="-1">
+				</font>
+				<p><font size="-1">Corectaţi orice erori din fişierul <b>config.xml</b> şi executaţi din nou script-ul. Dacă nu există erori, Generatorul de sitemap-uri va crea un nou fişier <b>sitemap.xml.gz</b> în locaţia pe care aţi specificat-o în fişierul de configuraţie. </font></p>
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="submitting" id="submitting"></a><strong>5. Trimiterea sitemap-ului dvs. către Google </strong></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">Generatorul de sitemap-uri creează un fişier <strong>sitemap.xml.gz</strong> în locaţia pe care aţi specificat-o în fişierul de configuraţie. Odată ce acest fişier a fost creat cu succes, asiguraţi-vă că este accesibil printr-un browser de Web. Apoi, <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">adăugaţi-l</a> la contul dvs. <a href="https://www.google.com/webmasters/sitemaps/siteoverview">Sitemap-uri Google</a>. Aceasta permite Google să vă furnizeze informaţii utile referitoare la stare şi statistici. Dacă Google raportează probleme referitoare la sitemap-ul dvs., puteţi corecta problema şi îl puteţi retrimite. Trebuie să adăugaţi sitemap-ul manual doar o singură dată. După aceea, puteţi utiliza o <a href=submit.html#ping>solicitare HTTP</a> pentru a informa Google despre modificările sitemap-ului dvs. (deşi îl puteţi retrimite şi prin contul dvs. de instrumente Google pentru webmasteri). </font></p>
+		        
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="recur"></a><b>6. Setarea unui script recurent</b></td> 
+				</tr> 
+		  </tbody></table>
+		  <font size="-1">
+				<p>Vă sugerăm să configuraţi Generatorul de sitemap-uri pentru a se executa la fel de des cu toate acestea se modifică conţinutul, până la o frecvenţă maximă de o dată pe oră.</p>
+		  </font>
+		  <p><font size="-1">Webmasterii cu un server de Web UNIX pot lua în considerare setarea ca o <a href="http://www.google.com/search?q=cron">planificare cron</a>. </font></p>
+				<font size="-1"><p>Webmasterii care utilizează alte platforme trebuie să-şi contacteze administratorul de sistem pentru asistenţă în configurarea de script-uri recurente. Puteţi, de asemenea, beneficia de sfaturi amănunţite în Grupul Sitemap-uri Google la  <a href="http://groups.google.com/group/Google_Webmaster_Help-Sitemap?tsc=1">Grupuri Google</a>.</p>
+				
+	      </font>
+				<p><font size="-1"> Puteţi utiliza o <a href=submit.html#ping>solicitare HTTP</a> pentru a anunţa Google despre modificările sitemap-ului dvs. Cu toate acestea, asiguraţi-vă că vă conectaţi la <a href="https://www.google.com/webmasters/sitemaps/siteoverview">instrumentele Google pentru webmasteri</a> cu contul dvs. Google pentru a <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496>adăuga sitemap-ul</a> manual la contul dvs. Google de instrumente pentru webmasteri.</font></p>
+				<font size="-1"></font>		
+			    <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="troubleshoot"></a><b>Depanare</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p>În această secţiune vorbim despre unele întrebări sau probleme comune pe care le întâmpină oamenii când utilizează Generatorul de sitemap-uri şi ce puteţi face dacă întâlniţi una dintre acestea.</p>
+				<p><b>Accesibil pe Web</b></p>
+				<p><b>Problema:</b> Generatorul de sitemap-uri returnează următoarea eroare şi avertizare:</p>
+				</font>
+<pre>[ERROR] When attempting to access your generated Sitemap at the following URL: http://www.exemplu.ro/sitemap.xml.gz
+	we failed to read it.  Please verify the store_into path you specified in your configuration file is web-accessible.  Consult the FAQ for more information.
+	[WARNING] Proceeding to notify with an unverifiable URL.</pre>
+				<font size="-1">
+				<p><b>Ce s-a întâmplat?</b> Generatorul de sitemap-uri a creat fişierul unde aţi specificat, apoi a încercat să-l găsească utilizând HTTP aşa cum ar face-o motorul de căutare şi a eşuat. A mers înainte şi a notificat oricum motoarele de căutare, dar scoate în evidenţă eroarea şi avertizarea pentru a vă înştiinţa că sitemap-ul dvs. e posibil să nu poată fi citit de motoarele de căutare.</p>
+				<p>Generatorul de sitemap-uri creează fişierul sitemap pe calea specificată în atributul store_into al fişierului <b>config.xml</b>. Apoi, Generatorul de sitemap-uri generează o adresă URL spre acel fişier utilizând atributul base_url şi raportează adresa URL motoarelor de căutare. De exemplu, dacă setaţi configuraţia pe:</p>
+				</font>
+<pre>&lt;site base_url="http://www.exemplu.ro/"
+	      store_into="/var/www/html/sitemap.xml.gz"&gt;</pre>
+				<font size="-1">
+				</font><p><font size="-1">Generatorul de sitemap-uri va anunţa motoarele de căutare să vă caute sitemap-ul la:</font></p>
+				
+				<pre>	http://www.exemplu.ro/sitemap.xml.gz</pre>
+				<font size="-1"><p>
+				Fişierul trebuie să fie accesibil prin această adresă URL. Dacă fişierul nu poate fi găsit utilizând această adresă URL, motoarele de căutare nu au cum să găsească sitemap-ul dvs.</p>
+				</font><p><font size="-1"><b>Ce puteţi face?</b> Trebuie să verificaţi dacă fişierul <b>config.xml</b> precizează căile corecte base_url şi store_into pentru sitemap. De asemenea, trebuie să confirmaţi faptul că browserele de Web pot găsi fişierul sitemap din base_url. Dacă găsiţi erori în cale sau în adresa URL, va trebui să executaţi din nou Generatorul de sitemap-uri sau doar să mutaţi fişierul sitemap în locul corect şi să informaţi manual motoarele de căutare prin intermediul site-urilor lor de Web.
+				</font></p>
+				<font size="-1"><p><b>Suportul pentru XML</b></p>
+				<p><strong>Problema:</strong> Generatorul de sitemap-uri dă următoarea eroare:</p>
+				</font>
+<pre>Some installs of Python 2.2 do not include complete support for XML. Please try upgrading your version of Python and re-running the script.</pre>
+				<font size="-1"><p>
+				<b>Ce s-a întâmplat?</b> După cum spune mesajul, unele platforme au o versiune de Python (limbajul în care este scris Generatorul de sitemap-uri) căreia îi lipsesc bibliotecile de suport necesare pentru procesarea fişierelor XML. Script-ul necesită suport XML complet pentru a rula.
+				</p>
+				<p><b>Ce puteţi face?</b> Încercaţi să actualizaţi versiunea dvs. de Python instalată la o versiune mai nouă. Pentru a face aceasta, va trebui probabil să contactaţi administratorul de sistem.</p>
+				<p>Reţineţi că acest lucru afectează numai Generatorul de sitemap-uri, nu sitemap-urile în general. Dacă aveţi o altă metodă sau un alt instrument pentru a crea sitemap-uri, bineînţeles că o puteţi utiliza şi trimite sitemap-urile la motoarele de căutare.</p>
+				<p><b>Ce reprezintă toate fişierele suplimentare din .gz sau .zip?</b></p>
+				<p>Când extrageţi scriptul sitemap_gen.py, probabil veţi vedea câteva fişiere în plus faţă de cele la care ne referim mai sus. Lista întreagă de fişiere arată aproape ca aceasta:</p>
+				</font>
+	<pre>	
+	AUTHORS
+	ChangeLog
+	COPYING
+	example_config.xml
+	example_urllist.txt
+	PKG-INFO
+	README
+	setup.py
+	sitemap_gen.py
+	test_sitemap_gen.py</pre>
+		  <font size="-1"><p>
+				Fişierele în plus tind să fie informaţii despre pachet şi termeni de licenţă. Sunteţi încurajat să vă uitaţi prin aceste fişiere.</p>
+				<p>Singura excepţie este test_sitemap_gen.py, care este o unitate de test script pe care alţi dezvoltatorii îl pot considera util în cazul în care doresc să contribuie la acest proiect open source. Dacă intenţionaţi să utilizaţi Generatorul de sitemap-uri fără a modifica nimic din codurile sursă - acesta este cazul cel mai întâlnit la majoritatea utilizatorilor - probabil că nu aveţi nevoie de acest script de test.
+</p>
+	  Dacă sunteţi interesat să ajutaţi la acest proiect, vizitaţi <a href="http://sourceforge.net/projects/goog-sitemapgen">http://sourceforge.net/projects/goog-sitemapgen</a>. Puteţi găsi şi link-uri către programe terţe care acceptă sitemap-urile Google <a href="http://code.google.com/sm_thirdparty.html">aici</a>.</p>
+	  
+	  <font size="-1"></font></font>
+		  <p><font size="-1"><b><a name="nonascii"></a>Caracterele non-ASCII </b></font></p>
+				<font size="-1"><font size="-1">
+				</font></font>
+				<p><font size="-1"><strong>Problema:</strong> Numele domeniului site-ului dvs. sau adresele URL din el conţin caractere non-ASCII.</font></p>
+				<p><font size="-1">În general, adresele URL non-ASCII ar trebui să fie <a href="protocol.html#escaped">codificate utilizând UTF-8</a> înainte de a fi codificate cu % ca şi caracter de escape. Cu toate acestea, unele servere de Web răspund corect doar dacă adresele URL sunt codificate utilizând o metodă de codificare diferită de UTF-8. Toate adresele URL din sitemap-urile dvs., inclusiv adresa URL a sitemap-ului dvs., trebuie să fie codificate pentru a putea fi citite de serverul de Web pe care sunt localizate. În <a href="#sitetag">secţiunea de definire a site-ului</a>, utilizaţi atributul opţional <strong>default_encoding</strong> pentru a specifica codificarea utilizată de serverul dvs. de Web. Dacă nu utilizaţi această etichetă, iar serverul dvs. de Web utilizează o codificare diferită de UTF-8, nu putem şti ce codificare să utilizăm.</font></p>
+				<p><font size="-1">Dacă adresa dvs. URL conţine caractere non-ASCII, vă recomandăm să executaţi script-ul Generator de sitemap-uri utilizând Python 2.3 sau o versiune mai nouă. Această versiune de Python are suport mărit pentru non-ASCII. Dacă numele domeniului dvs. conţine caractere non-ASCII, trebuie să utilizaţi Python 2.3 sau o versiune mai nouă deoarece suportul pentru Internationalizing Domain Names in Applications (Internaţionalizarea numelor de domenii în aplicaţii) (IDNA) nu a fost adăugat până la această versiune. Fără suportul IDNA, Generatorul de sitemap-uri nu poate codifica corect un nume de domeniu non-ASCII. </font></p>
+				<font size="-1">
+	  
+	  
+	  
+	<br>
+	<p class="d" align="right"><i>Modificat ultima dată: 15 aprilie 2006</i></p>
+	  </font></div>
+	</td> 
+  </tr> 
+  <tr> 
+    <td width=1% valign=top><img src=http://www.google.com/images/art.gif width=143 height=53 vspace=5 hspace=15></td> 
+    <td style="background-color: #ffffff" width=1 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td valign=middle><div class=footer> 
+        <div align=center><font size="-1"> &copy;2007 Google - <a href=http://www.google.ro/privacy.html>Politica de confidenţialitate</a> - <a href=http://www.google.ro/accounts/TOS>Termeni şi condiţii</a> - <a href=http://www.google.com/about.html>Despre Google</a> </font></div> 
+      </div></td> 
+  </tr> 
+</table> 
+</body>
+</html>

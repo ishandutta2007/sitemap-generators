@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/21/trunk/python
+END
+setup.py
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/21/trunk/python/setup.py
+END
+example_urllist.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/21/trunk/python/example_urllist.txt
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/21/trunk/python/ChangeLog
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/21/trunk/python/COPYING
+END
+PKG-INFO
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/21/trunk/python/PKG-INFO
+END
+._example_config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/21/trunk/python/._example_config.xml
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/21/trunk/python/README
+END
+example_config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/21/trunk/python/example_config.xml
+END
+sitemap_gen.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/21/trunk/python/sitemap_gen.py
+END
+._example_urllist.txt
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/21/trunk/python/._example_urllist.txt
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/21/trunk/python/AUTHORS
+END

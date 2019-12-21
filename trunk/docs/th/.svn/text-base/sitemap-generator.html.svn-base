@@ -1,0 +1,750 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel=stylesheet href="http://www.google.com/google.css">
+<link rel=stylesheet href="../leftnav.css">
+<style>
+<!--
+body,td,font,p,a{font-family:arial,sans-serif}
+.i { margin-left: 1em; margin-right: 2em; }
+//.style1 {font-weight: bold}
+.style1 {font-weight: bold}
+.d {color:#999999;text-decoration:italics;font-size:10px;}
+.changes {color: #FF0000}
+-->
+</style>
+<script
+  src=" https://ssl.google-analytics.com/urchin.js "
+  type="text/javascript">
+</script>
+<script type="text/javascript">
+  _uacct="UA-18009-2";
+  _utcp="/webmasters/sitemaps/";
+  _uanchor=1; 
+  urchinTracker();
+</script>
+
+<title>Google Webmaster Tools</title>
+</head>
+<body class=search bgcolor=#ffffff text=#000000 link=#0000CC vlink=#800080 alink=#ff0000 topmargin=3>
+<table width=95% border=0 cellpadding=0 cellspacing=2>
+  <tr valign=top>
+    <td width=1%><a href=https://www.google.com/webmasters/sitemaps/?hl=th> <img src=http://www.google.com/images/google_sm.gif border=0 width=143 height=59 alt="กลับไปที่หน้าแรกของ Google" hspace=15 vspace=5></a></td>
+    <td width=100% valign="middle">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		<td><font size="+0"><b>Webmaster Tools</b></font></td>
+		</tr>
+		<tr>
+		<td style="border-bottom:1px solid #999999" height="1"><img width="1" height="1" alt=""></td>
+		</tr>
+		</table>  	
+	</td>
+  </tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=0 width=95%> 
+  <tr> 
+    <td width="175" valign="top">
+		<font size="-1">
+    <p class="sidenavlink">
+    <a href="about.html">เกี่ยวกับ Webmaster Tools</a></p>
+    <p class="sidenavlink"><a href="protocol.html">การใช้โพรโทคอล Sitemap</a></span>
+    <p class="sidenavtoc">การใช้เครื่องมือสร้าง Sitemap</p>
+<p class="sidenavlink"><a href="http://www.google.co.th/webmasters/">Google Webmaster Central</a></p>
+  </font></td>
+    <td background=http://www.google.com/images/dot2.gif valign=bottom width=5><img src=http://www.google.com/images/dot2.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=10 height=1></td> 
+    <td>
+		<div class="content"> 
+		
+			<p><strong>สารบัญ</strong></p>
+			<p><font size="-1"><a href="#before">ก่อนที่คุณจะเริ่มต้น</a>
+		    <br><a href="#download">การดาวน์โหลดโปรแกรมไฟล์ของเครื่องมือสร้าง Sitemap</a>
+		    <br><a href="#config">การสร้างไฟล์กำหนดค่า</a><br>
+		    <a href="#copy">การอัปโหลดไฟล์ไปยังเว็บเซิร์ฟเวอร์</a>
+		    <br><a href="#execute">การเรียกใช้สคริปต์ของเครื่องมือสร้าง Sitemap</a>
+		    <br><a href="#submitting">การส่ง Sitemap ของคุณไปยัง Google</a>
+		    <br><a href="#troubleshoot">การแก้ไขปัญหา</a>
+		    </font></p>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="before"></a><b>ก่อนที่คุณจะเริ่มต้น</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">
+เครื่องมือสร้าง Sitemap ของ Google เป็นสคริปต์ Python ที่สร้าง Sitemap สำหรับเว็บไซต์ของคุณโดยใช้โพรโทคอล Sitemap สคริปต์นี้สามารถสร้าง Sitemap จากรายการ URL ไดเรกทอรีของเว็บเซิร์ฟเวอร์ หรือจากไฟล์บันทึกการเข้าถึง ในการใช้งานสคริปต์นี้: </font></p>
+				
+				<ul>
+				  <li><font size="-1">คุณต้องสามารถเชื่อมต่อและเรียกใช้สคริปต์บนเว็บเซิร์ฟเวอร์ของคุณได้ </font></li>
+				  <li><font size="-1">เว็บเซิร์ฟเวอร์ของคุณต้องติดตั้ง Python 2.2 ขึ้นไป </font></li>
+				  <li><font size="-1">คุณต้องทราบคำสั่งที่เปิดใช้ Python (โดยทั่วไปก็คือ <strong>Python</strong> แต่อาจแตกต่างกันตามการติดตั้ง ตัวอย่างเช่น หากเว็บเซิร์ฟเวอร์ติดตั้ง Python สองรุ่น รุ่นเก่าอาจเรียกได้จากคำสั่ง <strong>Python</strong> และรุ่นใหม่อาจเรียกได้จากคำสั่ง <strong>Python2</strong>) </font></li>
+				  <li><font size="-1">คุณต้องทราบเส้นทางไดเรกทอรีไปยังเว็บไซต์ของคุณ หากเว็บเซิร์ฟเวอร์ของคุณโฮสต์เพียงหนึ่งเว็บไซต์ เส้นทางอาจเป็น <strong>var/www/html</strong> หากคุณมีเซิร์ฟเวอร์เสมือนที่โฮสต์หลายเว็บไซต์ เส้นทางอาจเป็นเส้นทาง <strong>home/virtual/site1/fst/var/www/html</strong> </font></li>
+				  <li><font size="-1"> คุณต้องสามารถอัปโหลดไฟล์ไปยังเว็บเซิร์ฟเวอร์ของคุณได้ (ตัวอย่างเช่น การใช้ FTP) </font></li>
+				  <li><font size="-1">หากคุณจะสร้างรายการ URL โดยใช้ไฟล์บันทึกการเข้าถึง คุณต้องทราบการเข้ารหัสที่ใช้สำหรับไฟล์บันทึกเหล่านั้นและเส้นทางแบบสมบูรณ์ไปยังไฟล์บันทึกเหล่านั้น </font></li>
+          </ul>
+		  
+				<p><font size="-1">หากคุณไม่แน่ใจเกี่ยวกับสิ่งเหล่านี้ คุณสามารถตรวจสอบกับบริษัทผู้ให้บริการพื้นที่เว็บ </font></p>
+				<font size="-1">
+				<p> ตอนนี้ คุณพร้อมที่จะเริ่มต้นแล้ว ต่อไปนี้คือภาพรวมของสิ่งที่คุณจะต้องทำ </p>
+				</font>
+		  <font size="-1">
+				<ol>
+                  <li><font size="-1"><a href="#download">ดาวน์โหลด</a> โปรแกรมไฟล์ของเครื่องมือสร้าง Sitemap แยกไฟล์ลงในไดเรกทอรีในเครื่อง </font></li>
+                  <li><font size="-1"><a href="#config">สร้างไฟล์กำหนดค่า</a> สำหรับเว็บไซต์โดยใช้ไฟล์ <strong>example_config.xml</strong> ที่ให้เป็นเทมเพลต แก้ไขไฟล์นี้ตามต้องการสำหรับเว็บไซต์ของคุณและบันทึกไฟล์ </font></li>
+                  <li><font size="-1"><a href="#copy">อัปโหลดไฟล์ที่จำเป็น</a> ไปยังเว็บเซิร์ฟเวอร์ </font></li>
+                  <li><font size="-1"><a href="#execute">เรียกใช้</a> <strong>sitemap_gen.py</strong> </font></li>
+                  <li><font size="-1"><a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">เพิ่ม</a> Sitemap ที่สร้างขึ้นลงในบัญชี Google Webmaster Tools </font></li>
+		          <li><font size="-1"><a href="#recur">ตั้งค่าสคริปต์ที่เกิดขึ้นประจำ</a> (ตัวเลือก) </font></li>
+				</ol>
+		  </font>
+		  
+				<p><font size="-1">หากคุณไม่สามารถใช้เครื่องมือสร้าง Sitemap คุณสามารถเพิ่ม Sitemap ลงในบัญชี Google Webmaster Tools ใน <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34606&topic=8516>รูปแบบอื่น</a> เช่น ไฟล์ข้อความแบบง่าย <a href="http://code.google.com/sm_thirdparty.html">โปรแกรมอื่นที่สนับสนุนโพรโทคอล Sitemap</a></font></p>
+				<p><font size="-1"><strong>สำหรับ News Sitemaps:</strong> ไม่แนะนำให้ใช้เครื่องมือสร้าง Sitemap ในการสร้าง Google News Sitemaps ในขณะนี้ เนื่องจากข้อกำหนดพิเศษของ News Sitemaps  News Sitemaps ออกแบบไว้สำหรับรายการที่มีการเปลี่ยนแปลงตลอดเวลา เช่น บทความข่าวที่เพิ่งเผยแพร่ล่าสุดเท่านั้น (ไม่ใช่ทั้งเว็บไซต์) ซึ่งจะมีการอัปเดตบ่อยๆ</font></p>  
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="download"></a><b>1. การดาวน์โหลดโปรแกรมไฟล์ของเครื่องมือสร้าง Sitemap</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p> ไฟล์ของเครื่องมือสร้าง Sitemap จะอยู่ในรูปแบบ ZIP และ GZ <font size="-1">จากตำแหน่งต่อไปนี้:</font></p>
+				</font>
+				<p><font size="-1"><a href="http://www.sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422">http://sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422</a></font></p>
+				<font size="-1">
+				<p>หลังจากที่คุณดาวน์โหลดแล้ว ให้แยกลงในไดเรกทอรีในเครื่อง ค้นหาไฟล์ต่อไปนี้: </p>
+				<ul>
+                  <li><strong> README</strong> &#8212;ประกอบด้วยข้อมูลล่าสุดเกี่ยวกับเครื่องมือนี้ </li>
+                  <li><strong> sitemap_gen.py</strong> &#8212;สคริปต์ Python ที่สร้าง Sitemap ของคุณ </li>
+                  <li><strong> example_config.xml</strong> &#8212;ไฟล์กำหนดค่าเทมเพลตที่คุณจะใช้เพื่อระบุการกำหนดค่าสำหรับเว็บไซต์ของคุณ</li>
+                  <li><strong> example_urllist.txt</strong> &#8212;รายการ URL เทมเพลตที่คุณสามารถใช้ในกรณีที่ต้องการสร้าง Sitemap จากชุด URL ที่คุณระบุ</li>
+		        </ul>
+				</font>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="config"></a><b>2a. การสร้างไฟล์กำหนดค่า</b></td> 
+				</tr> 
+			</tbody></table>
+		  <font size="-1">
+		  </font><p><font size="-1">ในส่วนนี้จะมีคำแนะนำทีละขั้นตอนในการสร้างไฟล์กำหนดค่า นอกจากนี้ ยังมี <a href="#config_reference">ข้อมูลอ้างอิงทั้งหมด</a> สำหรับตัวเลือกที่มีอยู่ หากคุณสร้าง <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34627&topic=8493">Mobile Sitemap</a> โปรดดู <a href="#creating_mobile">คำแนะนำเกี่ยวกับมือถือเพิ่มเติม</a></font></p>
+				<font size="-1"><p>ในการสร้างไฟล์กำหนดค่าสำหรับเว็บไซต์ของคุณ คุณต้องมีข้อมูลต่อไปนี้: </p>
+				<ul>
+                  <li>URL พื้นฐานสำหรับเว็บไซต์ (เช่น <strong>http://www.example.co.th</strong>/) ให้แน่ใจว่าคุณระบุโพรโทคอล (เช่น <strong>http://</strong>) ตัวอย่างเช่น <strong>http://www.google.co.th</strong> เป็น url พื้นฐานที่ถูกต้อง แต่ <strong>www.google.co.th</strong> ไม่ถูกต้อง </li>
+		
+                  <li>เส้นทางของเว็บเซิร์ฟเวอร์ไปยังตำแหน่งที่คุณต้องการจัดเก็บ Sitemap โดยทั่วไป นี่คือเส้นทางไปยัง URL พื้นฐาน เนื่องจาก Sitemap ไม่สามารถมี URL ที่อยู่ในไดเรกทอรีระดับบนสุดจากตำแหน่งของ Sitemap ได้ เมื่อคุณเรียกใช้เครื่องมือสร้าง Sitemap ของ Google ก็จะสร้าง Sitemap และวาง Sitemap ในตำแหน่งที่คุณระบุ </li>
+		 
+                  <li>วิธีที่คุณต้องการให้เครื่องมือสร้าง Sitemap ใช้เพื่อสร้าง Sitemap ของคุณ คุณสามารถใช้วิธีการใดๆ ผสมกัน ต่อไปนี้คือวิธีการที่สามารถใช้ได้: </li>
+		  </ul>
+				
+		  </font><ol>
+<ul>
+                    <li><font size="-1"><strong> <a href="#URL">URL</a></strong> &#8212;จะแสดง URL แต่ละรายการในส่วนของไฟล์กำหนดค่าควบคู่กับข้อมูลเกี่ยวกับ URL แต่ละรายการ โดยทั่วไป คุณสามารถใช้วิธีนี้ร่วมกับวิธีอื่นเพื่อเพิ่ม URL ซึ่งวิธีอื่นไม่สามารถทำได้ </font></li>
+                    <li><font size="-1"><strong><a href="#urllist">รายการ URL</a> </strong> &#8212;จะชี้ไฟล์กำหนดค่าไปยังไฟล์ข้อความที่มีรายการ URL คุณอาจต้องใช้วิธีนี้หากมีไฟล์ข้อความนี้อยู่แล้ว หรือหากคุณใช้สคริปต์ในการสร้างรายการ URL </font></li>
+                    <li><font size="-1"><strong><a href="#directory">เส้นทางไดเรกทอรี</a></strong>&#8212;จะระบุเส้นทางไดเรกทอรีสำหรับเว็บไซต์ของคุณและ URL ที่ไปยังเส้นทางเหล่านั้น เครื่องมือสร้าง Sitemap จะสร้างรายการ URL ตามเนื้อหาของไดเรกทอรีเหล่านั้น คุณอาจต้องใช้วิธีนี้หากเว็บไซต์ของคุณประกอบด้วยไฟล์ HTML แบบคงที่ </font></li>
+            <li><font size="-1"><strong> <a href="#logs">ไฟล์บันทึกการเข้าถึง</a></strong>&#8212;จะชี้ไปที่เส้นทางไปยังไฟล์บันทึกของคุณ เครื่องมือสร้าง Sitemap จะสร้างรายการ URL ตาม URL ที่อยู่ในไฟล์บันทึก คุณอาจต้องใช้วิธีนี้หากเว็บไซต์ของคุณประกอบด้วยหน้าเว็บแบบไดนามิก </font></li>
+ <li><font size="-1"><strong> <a href="#sitemap">Sitemap</a></strong>&#8212;จะชี้ไปยัง Sitemap ที่มีอยู่ ซึ่งคุณสร้างด้วยเครื่องมือสร้าง Sitemap เครื่องมือสร้าง Sitemap จะสร้าง Sitemap รายการเดียวที่รวม URL ที่มีใน Sitemap แต่ละรายการ คุณสามารถใช้วิธีนี้หากคุณได้สร้าง Sitemap ขนาดเล็กไว้หลายรายการแล้ว ซึ่งคุณต้องการรวมเป็น Sitemap ขนาดใหญ่เพียงรายการเดียว </font></li>
+            </ul>
+		  </ol>
+				
+		  <font size="-1"><p><b><a name="create_config"></a>สร้างไฟล์กำหนดค่าดังนี้:</b></p>
+		  </font>
+				<ol>
+                 <font size="-1"> <li>เปิดไฟล์ <strong>example_config.xml</strong> ในโปรแกรมแก้ไขข้อความ บันทึกเป็นไฟล์ใหม่ (เช่น <strong>config.xml</strong> หรือ <strong>mysite_config.xml</strong>)</li> 
+                 </font>
+				
+                 
+                 <font size="-1">
+                 <li>ค้นหาส่วนคำนิยามของเว็บไซต์: </li>
+                 </font>		  
+				
+				<pre>&lt;site base_url="http://www.example.co.th/" store_into="/var/www/docroot/sitemap.xml.gz"
+verbose="1"&gt;
+				</pre>				
+				
+                  <font size="-1"><li>เปลี่ยนค่า <strong>base_url</strong> เป็น URL สำหรับเว็บไซต์ของคุณ </li>
+		 
+                  <li>เปลี่ยนค่า <strong>store_into</strong>
+เป็นเส้นทางบนเว็บเซิร์ฟเวอร์ที่คุณต้องการจัดเก็บ Sitemap และชื่อไฟล์ที่คุณต้องการใช้สำหรับ Sitemap โดยทั่วไป นี่คือเส้นทางไปยัง URL พื้นฐาน เนื่องจาก Google สามารถยอมรับเฉพาะ URL ที่อยู่ในระดับเดียวกันหรือไดเรกทอรีย่อยของไดเรกทอรีที่เก็บ Sitemap คุณสามารถระบุเส้นทางแบบสัมพัทธ์จากไดเรกทอรีที่คุณอัปโหลดสคริปต์หรือเส้นทางแบบสมบูรณ์จากรากของเว็บเซิร์ฟเวอร์ หากคุณอัปโหลดสคริปต์ไปยังไดเรกทอรี URL พื้นฐานของคุณ คุณก็สามารถระบุชื่อไฟล์ได้</li>
+                  </font>
+                  <font size="-1"></font><font size="-1"><li>ค้นหาส่วนวิธีสร้างที่ขึ้นต้นด้วย <span class="style1">** MODIFY</span> <span class="style1">หรือ DELETE **</span> ส่วนต่างๆ เหล่านี้เป็นส่วนหนึ่งในวิธีสร้าง Sitemap </li>
+                  <li>ลบส่วนสำหรับวิธีที่คุณไม่ต้องการใช้อีกต่อไป</li>
+                  <li>ทำตามคำแนะนำด้านล่างสำหรับวิธีที่คุณต้องการใช้ </li>
+                <p><strong> URL<a name="URL"></a></strong></p>
+                <p> ค้นหาส่วนต่อไปนี้: </p>
+                </font>
+                  <pre>&lt;!-- ** MODIFY or DELETE ** 
+"url" nodes specify individual URLs to include in the map. &lt;br&gt;
+
+Required attributes: 
+href - the URL
+
+Optional attributes: 
+lastmod - timestamp of last modification (ISO8601 format) 
+changefreq - how often content at this URL is usually updated
+priority - value 0.0 to 1.0 of relative importance in your site 
+--&gt; 
+
+&lt;url href="http://www.example.co.th/stats?q=name" /&gt; 
+&lt;url 
+href="http://www.example.co.th/stats?q=age" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre>
+                  <font size="-1">
+                <p>ส่วนนี้มีสองตัวอย่าง: ตัวอย่างแรกจะประกอบด้วยแอตทริบิวต์ที่จำเป็นเท่านั้น และส่วนที่สองจะประกอบด้วยแอตทริบิวต์ที่จำเป็นและแอตทริบิวต์ตัวเลือก </p>
+                <p>ใช้รูปแบบนี้สำหรับ URL แต่ละรายการที่คุณต้องการรวม แอตทริบิวต์ <strong>changefreq</strong> จะให้ข้อมูลแก่ Google เกี่ยวกับความถี่ในการอัปเดต URL ซึ่งข้อมูลนี้จะช่วยให้ Google ทราบความถี่ในการเข้าชมหน้าเว็บสำหรับเนื้อหาใหม่ แอตทริบิวต์ <strong>priority</strong> จะให้ข้อมูลแก่ Google เกี่ยวกับความสำคัญของหน้าเว็บนี้เปรียบเทียบกับหน้าเว็บอื่นๆ ในเว็บไซต์ของคุณ แอตทริบิวต์นี้ไม่มีผลกับวิธีการที่ Google ใช้เปรียบเทียบหน้าเว็บของคุณกับหน้าเว็บในเว็บไซต์อื่นๆ แต่จะช่วยให้ Google ทราบว่าหน้าเว็บใดในเว็บไซต์ที่คุณคิดว่าสำคัญที่สุด </p>
+                  </font>
+				<p><font size="-1"><strong> รายการ URL <a name="urllist"></a> </strong></font></p>
+				<font size="-1"><p> ค้นหาส่วนต่อไปนี้: </p>
+				
+			</font>
+			<pre>
+&lt;!-- ** MODIFY or DELETE **
+"urllist" nodes name text files with lists of URLs. 
+An example file "example_urllist.txt" is provided. 
+
+Required attributes: 
+path - path to the file 
+
+Optional attributes: 
+encoding - encoding of the file if not US-ASCII 
+--&gt; 
+&lt;urllist path="example_urllist.txt" encoding="UTF-8" /&gt; 
+				</pre>
+				
+				<p><font size="-1"> ใช้รูปแบบนี้เพื่อชี้ไปยังเส้นทางและชื่อของไฟล์ข้อความที่มีในรายการ URL คุณสามารถใช้ไฟล์ <strong>example_urllist.txt </strong>ที่ให้มาเป็นเทมเพลตสำหรับไฟล์ข้อความ
+
+ คุณสามารถระบุเป็นเส้นทางแบบสัมพัทธ์หรือเส้นทางแบบสมบูรณ์เพื่อไปยังเว็บเซิร์ฟเวอร์ของคุณ ตัวอย่างเช่น หากเครื่องมือสร้าง Sitemap และไฟล์ <strong>urlist.txt </strong>อยู่ในไดเรกทอรีเดียวกัน คุณสามารถระบุชื่อไฟล์<strong> .txt</strong> หากคุณสร้างไฟล์ข้อความที่มีการเข้ารหัสอื่นที่ไม่ใช่แบบ UTF-8 คุณสามารถใช้แอตทริบิวต์ <strong>encoding</strong> เพื่อระบุการเข้ารหัสนี้ หากคุณมีไฟล์ .txt หลายไฟล์ คุณสามารถใช้สัญลักษณ์แทนได้ ตัวอย่าง:</font></p>
+				<pre>&lt;urllist path=&quot;example_urllist*.txt&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">สำหรับ URL แต่ละรายการที่คุณรวมไว้ในไฟล์ข้อความ คุณสามารถระบุวันที่แก้ไขล่าสุด ความถี่ในการเปลี่ยนแปลง และลำดับความสำคัญ โปรดดู <a href="#urllist_reference">ส่วนอ้างอิงไฟล์ข้อความ URLlist</a> สำหรับข้อมูลทั้งหมดเกี่ยวกับโครงสร้างของไฟล์นี้</font>  </p>
+				<p><font size="-1"><strong> เส้นทางไดเรกทอรี<a name="directory"></a> </strong></font></p>
+				<p><font size="-1"> ค้นหาส่วนต่อไปนี้: </font></p>
+				
+				<pre>
+&lt;!-- ** MODIFY or DELETE ** 
+"directory" nodes tell the script to walk the file system and 
+include all files and directories in the Sitemap.
+
+Required attributes:
+path - path to begin walking from 
+url - URL equivalent of that path 
+
+Optional attributes:
+default_file - name of the index or default file for directory URLs
+
+--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.example.co.th/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.example.co.th/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+				
+				<p><font size="-1">ส่วนนี้มีสองตัวอย่าง หากหน้าเว็บทั้งหมดของคุณอยู่ในไดเรกทอรีย่อยของเส้นทางหนึ่ง คุณจะต้องรวมเพียงหนึ่งรายการเท่านั้น อย่างไรก็ตาม หากคุณมีหลายเส้นทางไปยังหน้าเว็บในเว็บไซต์ของคุณ ให้รวมรายการสำหรับแต่ละเส้นทาง </font></p>
+				
+				<p><font size="-1">โปรดทราบว่า URL แต่ละรายการต้องขึ้นต้นด้วย URL พื้นฐานที่คุณระบุในขั้นตอนที่ 3 ตัวอย่างเช่น ตัวอย่างทั้งสองแบบที่ให้ไว้ในไฟล์ <strong>example_config.xml</strong> นั้นมี URL ที่ขึ้นต้นด้วย <strong>http://www.example.co.th/</strong> ดังนั้น URL ทั้งสองรายการถูกต้อง </font></p>
+				
+				<p><font size="-1">แทนที่รายการตัวอย่างด้วยรายการสำหรับเว็บไซต์ของคุณ เว็บไซต์จำนวนมากจะมีเพียงหนึ่งรายการเท่านั้นที่ชี้ไปยัง URL พื้นฐาน ให้แน่ใจว่าค่า <strong>เส้นทาง</strong> เป็นเส้นทางแบบสมบูรณ์ไปยังไดเรกทอรีบนเว็บเซิร์ฟเวอร์ของคุณ ให้แน่ใจว่าค่า <strong>url</strong> เป็น URL ที่ครบถ้วน รวมถึงโพรโทคอล (เช่น http) และเครื่องหมายสแลชในกรณีจำเป็น</font></p>
+				<p><font size="-1">คุณสามารถใช้พารามิเตอร์ <strong>default_file</strong> เพื่อระบุชื่อไฟล์ที่เซิร์ฟเวอร์ของคุณใช้เป็นหน้าเว็บเริ่มต้นสำหรับไดเรกทอรี ในตัวอย่างข้างต้น <strong>/var/www/docroot</strong> จะต้องแก้ไขเป็น <strong>http://www.example.co.th/index.html</strong> คุณไม่จำเป็นต้องระบุข้อมูลนี้ อย่างไรก็ตาม หากคุณระบุเครื่องมือสร้าง Sitemap จะรวมหน้าเว็บที่แมปกับแต่ละไดเรกทอรีย่อยเพียงครั้งเดียวเท่านั้น (ไม่แสดงทั้ง URL ของไดเรกทอรีและ URL ของชื่อไฟล์) และจะใช้วันที่แก้ไขล่าสุดของไฟล์ (ไม่ใช่ไดเรกทอรี) เพื่อดึงแอตทริบิวต์ lastmod สำหรับหน้าเว็บนั้น </font></p>
+				<p><font size="-1"><strong> ไฟล์บันทึกการเข้าถึง <a name="logs"></a></strong></font></p>
+				<p><font size="-1"> ค้นหาส่วนต่อไปนี้: </font></p>
+				
+<pre>&lt;!-- ** MODIFY or DELETE **
+&quot;accesslog&quot; nodes tell the script to scan webserver log files to
+extract URLs on your site.  Both Common Logfile Format (Apache's default 
+logfile) and Extended Logfile Format (IIS's default logfile) can be read.
+				
+Required attributes:
+ path - path to the file
+Optional attributes:
+ encoding - encoding of the file if not US-ASCII
+  --&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.0&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.1.gz&quot; encoding=&quot;UTF-8&quot; /&gt;
+</pre>
+				 
+				<p><font size="-1">ส่วนนี้มีสามตัวอย่าง คุณควรแทนที่รายการเหล่านี้และรวมรายการสำหรับไฟล์บันทึกแต่ละไฟล์ ให้แน่ใจว่าค่าเส้นทางเป็นเส้นทางแบบสมบูรณ์และชื่อไฟล์บนเว็บเซิร์ฟเวอร์ของคุณ หากไฟล์บันทึกไม่ได้รับการเข้ารหัสแบบ US-ASCII หรือ UTF-8 ให้ใช้แอตทริบิวต์ตัวเลือก <strong>encoding</strong> เพื่อ <a href="#encoding">ระบุ</a> การเข้ารหัส แทนที่จะแสดงไฟล์บันทึกแต่ละไฟล์ คุณสามารถใช้สัญลักษณ์แทนได้ ในตัวอย่างข้างต้น คุณสามารถรวมรายการต่อไปนี้ซึ่งจะรวมไฟล์บันทึกทั้งสามไฟล์:</font></p>
+<pre>&lt;accesslog path=&quot;/etc/httpd/logs/access.log*&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">เครื่องมือสร้าง Sitemap จะกำหนดลำดับความสำคัญให้กับ URL ที่พบในไฟล์บันทึกตามความถี่ในการเข้าถึงของ URL แต่ละรายการ ตัวอย่างเช่น URL ที่มีการเข้าถึง 100 ครั้งจะมีลำดับความสำคัญมากกว่า URL ที่มีการเข้าถึงสองครั้ง การกำหนดลำดับความสำคัญที่แท้จริงจะเกี่ยวเนื่องกันและขึ้นอยู่กับ URL แต่ละรายการเมื่อเปรียบเทียบกับ URL อื่นๆ ในเว็บไซต์</font></p>
+<p><font size="-1"><strong> sitemap <a name="sitemap"></a></strong></font></p>
+<p><font size="-1"> ค้นหาส่วนต่อไปนี้: </font></p>
+				
+<pre> &lt;!-- ** MODIFY or DELETE **<br>    
+&quot;sitemap&quot; nodes tell the script to scan other Sitemap files.  This can    
+be useful to aggregate the results of multiple runs of this script into
+a single Sitemap.
+				 
+Required attributes:
+  path - path to the file
+  --&gt;
+&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>
+				 
+				<p><font size="-1">ส่วนนี้มีหนึ่งตัวอย่าง คุณควรแทนที่รายการนี้และรวมรายการสำหรับ Sitemap แต่ละรายการที่คุณต้องการรวม ให้แน่ใจว่าค่าเส้นทางเป็นเส้นทางแบบสมบูรณ์และชื่อไฟล์บนเว็บเซิร์ฟเวอร์ของคุณ  คุณสามารถแสดง Sitemap แบบ gzip ได้เช่นกันหากมีนามสกุลเป็น .gz แทนที่จะแสดง Sitemap แต่ละรายการ คุณสามารถใช้สัญลักษณ์แทนได้ ตัวอย่างเช่น รายการต่อไปนี้จะรวม Sitemap ใดๆ ที่ขึ้นต้นด้วยคำว่า &quot;sitemap&quot; และมีนามสกุลเป็น .xml</font></p>
+<pre>&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap*.xml&quot; /&gt; </pre>
+				<p><font size="-1">เครื่องมือสร้าง Sitemap จะแยก URL ทั้งหมดและข้อมูลตัวเลือกที่แสดงสำหรับ URL แต่ละรายการสำหรับทุกๆ Sitemap ที่คุณแสดงและสร้าง Sitemap หนึ่งรายการสำหรับข้อมูลนี้ ในขณะนี้ เราไม่สามารถรับประกันได้ว่าวิธีนี้จะใช้ได้ผลกับ Sitemap ที่สร้างขึ้นด้วยเครื่องมืออื่นๆ ที่ไม่ใช่เครื่องมือสร้าง Sitemap ของเรา</font></p>
+
+
+
+				<font size="-1"><li>ค้นหาส่วนคำนิยามของตัวกรอง:</li></font>
+				  
+		 
+<pre>&lt;!-- ********************************************************         
+ตัวกรอง
+				
+ตัวกรองจะระบุรูปแบบสัญลักษณ์แทนซึ่งสคริปต์ใช้เปรียบเทียบกับ URL ทั้งหมดที่พบ ตัวกรองสามารถใช้เพื่อแยก URL ที่ต้องการออกจาก Sitemap ของคุณ ตัวอย่างเช่น หากคุณซ่อนเนื้อหาที่คุณหวังว่าเครื่องมือค้นหาจะไม่พบ
+
+ตัวกรองสามารถเป็นได้ทั้ง type=&quot;wildcard&quot; ซึ่งหมายถึงสัญลักษณ์แทนเส้นทางมาตรฐาน (* และ ?) จะใช้เพื่อเปรียบเทียบกับ URL หรือ type=&quot;regexp&quot; ซึ่งหมายถึงการแสดงผลปกติจะใช้เพื่อเปรียบเทียบ
+
+ตัวกรองเหล่านี้จะใช้ตามลำดับที่ระบุในไฟล์นี้ ตัวกรอง action=&quot;drop&quot; จะทำให้ยกเว้นการจับคู่ URL ตัวกรอง action=&quot;pass&quot; จะทำให้รวมการจับคู่ URL ซึ่งเป็นทางลัดให้กับตัวกรองอื่นๆ ในภายหลังที่อาจจับคู่ด้วยเช่นกัน หากไม่มีตัวกรองที่จะจับคู่กับ URL เลย จะมีการรวม URL ไว้ คุณสามารถสร้างกฎที่ค่อนข้างซับซ้อนได้
+
+ค่าการกระทำเริ่มต้นคือ &quot;drop&quot; ประเภทเริ่มต้นคือ &quot;wildcard&quot;
+
+คุณสามารถแก้ไขหรือลบรายการเหล่านี้ได้ตามความเหมาะสมสำหรับเว็บไซต์ของคุณ อย่างไรก็ตาม รายการตัวอย่างในส่วนนี้จะไม่มีการวางแผนไว้ และอาจมีประโยชน์กับคุณ ไม่เหมือนกับตัวอย่างข้างต้น
+********************************************************* --&gt;
+
+&lt;!-- Exclude URLs that end with a '~' (IE: emacs backup files) --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*~&quot; /&gt;
+
+&lt;!-- Exclude URLs within UNIX-style hidden files or directories --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;regexp&quot; pattern=&quot;/\.[^/]*&quot; /&gt;
+</pre>
+				<p><font size="-1">คุณสามารถใช้การกรองเพื่อยกเว้น URL ที่ต้องการจาก Sitemap ที่สร้างขึ้น คุณอาจต้องทำเช่นนี้เพื่อสร้างรายการที่สะอาด เพื่อลดรายการที่ซ้ำซ้อน หรือเพื่อป้องกัน URL จากการจัดทำดัชนี โปรดทราบว่าหากคุณใช้ไฟล์ <a href="http://www.robotstxt.org/wc/robots.html">robots.txt</a> เพื่อป้องกัน URL จากการจัดทำดัชนี แม้ว่าจะมีการรวม URL ไว้ใน Sitemap ของคุณ Google จะไม่ค้นหาหรือจัดทำดัชนีให้ </font></p>
+				
+				<p><font size="-1">
+คุณสามารถใช้วิธีการกรองใดๆ หรือทั้งหมด คุณสามารถลบรายการที่คุณไม่ต้องการ และสามารถสร้างรายการเพิ่มเติมได้ตามต้องการ ด้านล่างนี้เป็นตัวอย่างการใช้งาน </font></p>
+				<pre>&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*.jpg&quot; /&gt;</pre>
+				<p><font size="-1">ตัวกรองจะยกเว้น URL ที่ลงท้ายด้วย .jpg คุณอาจต้องรวมตัวกรองที่คล้ายกันหากรูปภาพทั้งหมดในเว็บไซต์ของคุณมีการฝังอยู่ภายในหน้าเว็บ HTML และไม่สามารถเข้าถึงได้จาก URL เพียงอย่างเดียว </font></p>
+				<pre>&lt;filter action=&quot;pass&quot; type=&quot;wildcard&quot; pattern=&quot;*.htm*&quot; /&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*&quot; /&gt;</pre>
+				<font size="-1"> ตัวกรองนี้จะรวมไฟล์ .htm* ทั้งหมดแต่ไม่รวมสิ่งอื่นๆ</font><br>
+				<br>
+
+
+				<font size="-1"></font><font size="-1"><li>หลังจากที่คุณทำการเปลี่ยนแปลงทั้งหมดในเว็บไซต์ของคุณแล้ว ให้บันทึกไฟล์</li></font>
+				</ol>
+				
+				
+		        <font size="-1"><a name="config_reference"></a><p><b>การอ้างอิงไวยากรณ์ไฟล์กำหนดค่า</b></p>
+		  </font><font size="-1">
+				</font>
+		  <p><font size="-1">คำอธิบายทั้งหมดของไวยากรณ์ไฟล์กำหนดค่าจะมีอยู่ที่ด้านล่างนี้ แต่ละแท็กจะเริ่มต้นด้วยโค้ดตัวอย่างแล้วตามด้วยคำอธิบายของแอตทริบิวต์
+</font></p>
+				
+		  <p><font size="-1"><strong><a name="sitetag"></a>site<br>
+		  </strong></font><font size="-1">แท็กที่จำเป็นในการเริ่มต้นไฟล์กำหนดค่าแต่ละไฟล์ </font></p>
+		  <pre>&lt;sitebase_url="http://www.example.co.th/"
+store_into="/var/www/html/sitemap.xml.gz"
+verbose="1"
+supress_search_engine_notify="1"
+default_encoding="UTF-8"&gt;</pre>
+				<br>
+				<font size="-1">
+				<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				
+					<tbody><tr>
+					<td valign="top" width="19%"><pre>base_url</pre></td>
+					<td valign="top" width="6%"><font size="-1">จำเป็น</font></td>
+					<td valign="top" width="75%"><font size="-1">เส้นทาง HTTP ของข้อมูลพื้นฐานในเว็บไซต์ของคุณ - เฉพาะ URL ที่ขึ้นต้นด้วยข้อมูลพื้นฐานเท่านั้นที่จะสามารถรวมอยู่ใน Sitemap</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>store_into</pre></td>
+					<td valign="top"><font size="-1">จำเป็น</font></td>
+					<td valign="top"><font size="-1">เส้นทางเว็บเซิร์ฟเวอร์ไปยังไฟล์เอาต์พุตที่ต้องการ สคริปต์จะสร้างไฟล์นี้ - ไม่จำเป็นต้องสร้างไฟล์ก่อนเรียกใช้สคริปต์</font></td>
+					</tr> 
+					
+					<tr>
+					<td valign="top"><pre>verbose</pre></td>
+					<td valign="top"><font size="-1">ตัวเลือก</font></td>
+					<td valign="top"><font size="-1">ป้อนตัวเลข 0-3 โดยที่ตัวเลขมากจะมีข้อมูลการดีบักมากขึ้นด้วย</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>suppress_search_engine_notify</pre></td>
+					<td valign="top"><font size="-1">ตัวเลือก</font></td>
+					<td valign="top"><font size="-1">ปิด</font><font size="-1">ใช้งานการแจ้งเตือนเครื่องมือค้นหาโดยป้อน "1" สำหรับจุดประสงค์ในการทดสอบ</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>default_encoding</pre></td>
+					<td valign="top"><font size="-1">ตัวเลือก</font></td>
+					<td valign="top"><font size="-1">ระบุการเข้ารหัสอักขระที่จะใช้กับเส้นทางของระบบไฟล์และ URL</font></td>
+					</tr>
+				 
+		  </tbody></table>
+		   </font>
+					<font size="-1">
+					
+				<p></p>
+				</font>
+					<p><font size="-1"><strong>url<br>
+					</strong></font><font size="-1">แท็กตัวเลือกที่คุณสามารถใช้เพื่อแสดง URL แต่ละรายการในเว็บไซต์ของคุณ </font></p>
+					<p><pre>&lt;url href="http://www.example.co.th/stats?q=age" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre></p><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>href</pre></td>
+					  <td width="6%" valign="top"><font size="-1">จำเป็น</font></td>
+					<td valign="top" width="75%"><font size="-1">เส้นทาง HTTP ของข้อมูลพื้นฐานในเว็บไซต์ของคุณ - เฉพาะ URL ที่ขึ้นต้นด้วยข้อมูลพื้นฐานเท่านั้นที่จะสามารถรวมอยู่ใน Sitemap</font></td>
+					</tr><tr>
+					<td valign="top"><pre>lastmod</pre></td>
+					<td valign="top"><font size="-1">ตัวเลือก</font></td>
+					<td valign="top"><font size="-1">เวลาที่มีการแก้ไข URL ล่าสุดในรูปแบบ <a href="http://www.w3.org/TR/NOTE-datetime">วันที่และเวลาแบบ W3C</a> (ปปปป-ดด-วว เวลา hh:mm:ss+00:00) คุณสามารถละส่วนที่เป็นเวลาได้ ตัวอย่าง:<br>
+				&nbsp;&nbsp;"2005-02-21T18:00:15+00:00"<br>
+				&nbsp;&nbsp;"2005-02-21"</font></td>
+					</tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">ตัวเลือก</font></td>
+					<td valign="top"><font size="-1">ความถี่ในการเปลี่ยนแปลง URL ซึ่งอาจพิจารณาว่าเป็นข้อเสนอแนะและไม่ใช่คำสั่ง ค่าจะต้องเป็นอย่างใดอย่างหนึ่งต่อไปนี้ "ตลอดเวลา" "ทุกชั่วโมง" "ทุกวัน" "ทุกสัปดาห์" "ทุกเดือน" "ทุกปี" หรือ "ไม่เคย"</font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">ตัวเลือก</font></td>
+					<td valign="top"><font size="-1">ลำดับความสำคัญของหน้าเว็บนี้เมื่อเปรียบเทียบกับหน้าเว็บอื่นๆ ในเว็บไซต์เดียวกัน ค่าจะเป็นตัวเลขระหว่าง 0.0 ถึง 1.0 โดยที่ 0.0 หมายถึงลำดับความสำคัญน้อยที่สุด และ 1.0 หมายถึงลำดับความสำคัญมากที่สุด ลำดับความสำคัญอาจมีผลกับลำดับการเลือก URLของเครื่องมือค้นหาในการสำรวจเว็บไซต์ของคุณ เนื่องจากลำดับความสำคัญมีความเกี่ยวเนื่องกัน และจะใช้เพื่อเลือกระหว่าง URL ต่างๆ ภายในเว็บไซต์ของคุณเอง ลำดับความสำคัญของหน้าเว็บจะไม่เปรียบเทียบกับลำดับความสำคัญของหน้าในเว็บไซต์อื่นๆ</font></td>
+					</tr>
+		  </tbody></table>
+					<p><font size="-1"><b>urllist<br>
+					</b></font><font size="-1">แท็กตัวเลือกที่คุณสามารถใช้เพื่อชี้ไปยังไฟล์ข้อความที่มีรายการ URL ในเว็บไซต์ของคุณ </font></p>
+					<pre>&lt;urllist path="/var/www/html/urllist.txt" encoding="UTF-8" /&gt;</pre>
+		  <br>
+		<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>path</pre></td>
+					  <td width="6%" valign="top"><font size="-1">จำเป็น</font></td>
+					<td valign="top" width="75%"><font size="-1">เส้นทางและชื่อไฟล์ของไฟล์ .txt คุณสามารถระบุเป็นเส้นทางแบบสัมพัทธ์หรือเส้นทางแบบสมบูรณ์ </font></td>
+			</tr><tr>
+					<td valign="top"><pre>encoding</pre></td>
+					<td valign="top"><font size="-1">ตัวเลือก</font></td>
+					<td valign="top"><font size="-1">การเข้ารหัสของไฟล์หากไม่ใช่แบบ UTF-8</font></td>
+					</tr>
+		  </tbody></table>
+<p><font size="-1"><a name="urllist_reference"></a>ไฟล์ <b>urllist.txt</b> เป็นไฟล์ข้อความแบบง่ายที่มีรายการ URL ที่จะแมป คุณยังสามารถรวมแอตทริบิวต์ตัวเลือกสำหรับ URL แต่ละรายการ โดยต้องป้อนแอตทริบิวต์ในบรรทัดเดียวกันกับ URL และคั่นด้วยช่องว่างเดี่ยว ตัวอย่างเช่น:</font>
+          </p>
+		  <pre>
+http://www.example.co.th/abc/something
+http://www.example.co.th/abc/xyy.pdf lastmod=2001-12-31T14:05:06+00:00
+http://www.example.co.th/abc/def?x=12&amp;y=23 changefreq=weekly priority=0.3</pre>
+				<p>
+				<font size="-1">
+					
+				  </font><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%"  valign="top"><pre>lastmod</pre></td>
+					<td valign="top" width="6%"><font size="-1">ตัวเลือก</font></td>
+					<td width="75%"  valign="top"><p><font size="-1">เวลาที่มีการแก้ไข URL ล่าสุดในรูปแบบ <a href="http://www.w3.org/TR/NOTE-datetime">วันที่และเวลาแบบ W3C</a> (ปปปป-ดด-วว เวลา hh:mm:ss+00:00) คุณสามารถละส่วนที่เป็นเวลาได้ ตัวอย่าง:</font><font size="-1"><br>
+				  <br>
+&nbsp;&nbsp;"2005-02-21T18:00:15+00:00"<br>
+&nbsp;&nbsp;"2005-02-21"</font></p>
+				  </td>
+				  </tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">ตัวเลือก</font></td>
+					<td valign="top"><font size="-1"><font size="-1">ความถี่ในการเปลี่ยนแปลง URL ซึ่งอาจพิจารณาว่าเป็นข้อเสนอแนะและไม่ใช่คำสั่ง ค่าจะต้องเป็นอย่างใดอย่างหนึ่งต่อไปนี้ "ตลอดเวลา" "ทุกชั่วโมง" "ทุกวัน" "ทุกสัปดาห์" "ทุกเดือน" "ทุกปี" หรือ "ไม่เคย"</font></font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">ตัวเลือก</font></td>
+					<td valign="top"><font size="-1">ลำดับความสำคัญของหน้าเว็บนี้เมื่อเปรียบเทียบกับหน้าเว็บอื่นๆ ในเว็บไซต์เดียวกัน ค่าจะเป็นตัวเลขระหว่าง 0.0 ถึง 1.0 โดยที่ 0.0 หมายถึงลำดับความสำคัญน้อยที่สุด และ 1.0 หมายถึงลำดับความสำคัญมากที่สุด ลำดับความสำคัญอาจมีผลกับลำดับการเลือก URL ของเครื่องมือค้นหาในการสำรวจเว็บไซต์ของคุณ เนื่องจากลำดับความสำคัญมีความเกี่ยวเนื่องกัน และจะใช้เพื่อเลือกระหว่าง URL ต่างๆ ภายในเว็บไซต์ของคุณเอง ลำดับความสำคัญของหน้าเว็บจะไม่เปรียบเทียบกับลำดับความสำคัญของหน้าในเว็บไซต์อื่นๆ</font></td>
+					</tr>
+					</tbody></table>
+				</p>
+		  <font size="-1">
+		  </font>
+		  <p><font size="-1"><strong>directory<br>
+		  </strong></font><font size="-1">แท็กตัวเลือกที่คุณสามารถใช้เพื่อระบุไดเรกทอรีในเว็บไซต์ของคุณ เพื่อให้เครื่องมือสร้าง Sitemap สามารถสร้างรายการ URL จากไฟล์ที่พบในไดเรกทอรีเหล่านั้น </font></p>
+				<pre>--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.example.co.th/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.example.co.th/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+		  <table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">จำเป็น</font></td>
+					<td width="75%" valign="top"><font size="-1">ระบุเส้นทางเริ่มต้น เครื่องมือสร้าง Sitemap จะข้ามไดเรกทอรีนี้และไดเรกทอรีย่อยทั้งหมด</font></td>
+				  </tr>
+					
+					<tr>
+					<td valign="top"><pre>url</pre></td>
+					 <td valign="top"><font size="-1">จำเป็น</font></td>
+					<td valign="top"><font size="-1">ระบุ URL ที่เทียบเท่ากับค่าเส้นทาง</font></td>
+					</tr>
+					<tr>
+					<td valign="top"><pre>default_file</pre></td>
+					 <td valign="top"><font size="-1">ตัวเลือก</font></td>
+					 <td valign="top"><font size="-1">ระบุไฟล์เริ่มต้นสำหรับไดเรกทอรีบนเซิร์ฟเวอร์</font></td>
+					</tr>
+		    </tbody></table>
+		  </font>
+		  <p><font size="-1"><b> accesslog<br>
+		  </b>แท็กตัวเลือกที่คุณสามารถใช้เพื่อระบุเส้นทางและชื่อไฟล์ของ IIS และไฟล์บันทึกการเข้าถึงในรูปแบบ Apache เพื่อให้เครื่องมือสร้าง Sitemap สามารถเลือก URL ได้อัตโนมัติ </font>
+          </p>
+		  
+		  <pre>&lt;accesslog path="/etc/httpd/logs/access-0.log" encoding="UTF-8"/&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">จำเป็น</font></td>
+					<td width="75%" valign="top"><font size="-1">ระบุเส้นทางไปยังไฟล์</font></td>
+		  </tr>
+					
+					<tr>
+					<td valign="top"><pre>encoding</pre></td>
+					 <td valign="top"><font size="-1">ตัวเลือก</font></td>
+					<td valign="top"><font size="-1">ระบุการเข้ารหัสของไฟล์หากไม่ใช่แบบ UTF-8</font></td>
+					</tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><b> sitemap <br>
+		  </b>แท็กตัวเลือกที่คุณสามารถใช้เพื่อระบุเส้นทางและชื่อไฟล์ของ Sitemap ที่มีอยู่ ซึ่งคุณสร้างขึ้นด้วยเครื่องมือสร้าง Sitemap เครื่องมือสร้าง Sitemap จะสร้าง Sitemap รายการเดียวที่รวม URL ที่มีใน Sitemap แต่ละรายการ </font>
+          </p>
+		  
+		  <pre>&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">จำเป็น</font></td>
+					<td width="75%" valign="top"><font size="-1">ระบุเส้นทางไปยังไฟล์ Sitemap</font></td>
+		  </tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><strong><a name="filter_examples"></a>filter<br>
+		  </strong></font><font size="-1">แท็กตัวเลือกที่คุณสามารถใช้เพื่อสร้างกฎเพื่อรวมหรือยกเว้นไฟล์ที่ต้องการ ตัวกรองจะทำตามลำดับที่ปรากฏในไฟล์ config.xml อย่างไรก็ตาม รายการกรองที่ผสมกัน (url, urllist, directory หรือ accesslog) จะไม่มีผลกระทบเพิ่มเติม URL ทุกๆ รายการที่เครื่องมือสร้าง Sitemap เพิ่มลงใน Sitemap จะได้รับการเปรียบเทียบกับตัวกรองทุกตัวก่อน </font><font size="-1">หากไม่มีตัวกรองใดตรงกับ URL ค่าเริ่มต้นคือ รวม URL ไว้ใน Sitemap</font></p>
+				
+				<pre>&lt;filter action="drop" type="wildcard" pattern="*/internal/*" /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>action</pre></td>
+					<td valign="top" width="6%"><font size="-1">ตัวเลือก</font></td>
+					<td width="75%" valign="top">
+				      <font size="-1"><p>การกระทำที่ตัวกรองควรดำเนินการ ค่าที่ถูกต้องได้แก่:</p>
+					  </font>				      <ul>
+					  <li><font size="-1">drop - จะยกเว้น URL ที่ตรงกัน นี่คือการกระทำเริ่มต้น ดังนั้นหากไม่มีการระบุการกระทำเครื่องมือสร้างจะใช้ &quot;drop&quot;</font></li>
+					  <li><font size="-1">pass - จะรวม URL ที่ตรงกัน</font></li>
+					  </ul>
+				      </p></td>
+		  </tr>
+					
+					<tr>
+					<td width="19%" valign="top"><pre>type</pre></td>
+					<td valign="top" width="6%"><font size="-1">ตัวเลือก</font></td>
+					<td width="75%" valign="top"><font size="-1"><p>ประเภทของการกรอง ค่าที่ถูกต้องได้แก่:</p>
+					</font>					  <ul>
+					<li><font size="-1">wildcard - สัญลักษณ์แทนเส้นทางมาตรฐาน (? และ *) จะใช้เพื่อเปรียบเทียบกับ URL นี่คือประเภทเริ่มต้น ดังนั้นหากไม่มีการระบุประเภทเครื่องมือสร้างจะใช้ &quot;wildcard&quot;</font></li>
+					<li><font size="-1">regexp - การแสดงผลปกติที่จะใช้</font></li>
+					  </ul></td>
+		  </tr>
+				 
+<tr>
+					<td valign="top"><pre>pattern</pre></td>
+					 <td valign="top"><font size="-1">จำเป็น</font></td>
+					 <td valign="top"><font size="-1">ระบุรูปแบบที่จะจับคู่</font></td>
+		  </tr>
+		  </tbody></table>
+
+<font size="-1">
+<p><b><a name="encoding"></a>การเข้ารหัส</b></p>
+				
+		<p>ไฟล์ที่ระบุโดยไฟล์กำหนดค่าของคุณ ไม่ว่าจะเป็นรายการ URL หรือไฟล์บันทึกของเว็บเซิร์ฟเวอร์ก็สามารถใช้การเข้ารหัสอื่นที่ไมใช่แบบ UTF-8 เริ่มต้น คุณสามารถระบุการเข้ารหัสทางเลือกใน config.xml เพื่อให้มีผลกับวิธีการอ่านไฟล์ของเครื่องมือสร้าง Sitemap ต่อไปนี้เป็นการเข้ารหัสทั่วไป:
+		</p>
+				<ul>
+				<li><strong>encoding="utf-8"</strong> เป็นค่าเริ่มต้น
+				</li><li><strong>encoding="ascii</strong>" คือชุดย่อยของ UTF-8 ดังนั้น คุณจึงไม่ต้องระบุ
+				</li><li><strong>encoding="iso-8859-1</strong>" เป็นแบบทั่วไปสำหรับภาษายุโรปตะวันตก
+				</li></ul>
+		  </font>
+		  
+		  <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="creating_mobile" id="creating_mobile"></a><b>2b. ข้อมูลเพิ่มเติมสำหรับการสร้างไฟล์กำหนดค่าสำหรับมือถือ</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">คุณสร้างไฟล์กำหนดค่าสำหรับ Mobile Sitemap ด้วยวิธีเดียวกับ Sitemap ที่ไม่ใช่สำหรับมือถือ อย่างไรก็ตาม คุณต้องสร้างไฟล์กำหนดค่าแยกต่างหากสำหรับภาษามาร์กอัปแต่ละภาษา และเรียกใช้เครื่องมือสร้าง Sitemap พร้อมกับไฟล์กำหนดค่าแต่ละไฟล์แยกกัน เพื่อให้คุณสามารถสร้าง Sitemap ต่างหากสำหรับแต่ละไฟล์</font></p>
+				<p><font size="-1">ไฟล์กำหนดค่าแต่ละไฟล์ต้อง:</font></p>
+		  <ul>
+		    <li><font size="-1">ระบุชื่อไฟล์ที่แตกต่างกันสำหรับ <a href="#create_config">ค่า <strong>store_into</strong></a></font></li>
+	        <li><font size="-1">ใช้ <a href="#filter_examples">ตัวกรอง</a> เพื่อระบุ URL ที่จะยกเว้นและรวมสำหรับภาษามาร์กอัป โปรดทราบว่า Sitemap แต่ละรายการควรมี URL สำหรับภาษามาร์กอัปเพียงภาษาเดียวเท่านั้น ซึ่งหมายความว่า URL เดียวกันสามารถรวมอยู่ใน Sitemap ต่างๆ ได้ หาก URL  เหล่านั้นแสดงภาษามาร์กอัปหลายภาษา</font></li>
+	      </ul>
+			<p><strong><font size="-1">ตัวอย่างของการกรอง</font></strong></p>
+			<p><font size="-1">ต่อไปนี้เป็นตัวอย่างวิธีการที่คุณสามารถใช้ตัวกรองส่วนขยายเพื่อสร้าง Mobile Sitemap สำหรับภาษามาร์กอัปต่างๆ คุณควรใช้การกรองเฉพาะอย่างตามประเภทของภาษามาร์กอัปที่ใช้ในเว็บไซต์ของคุณ และวิธีที่คุณระบุแต่ละประเภท หากคุณใช้งานรายละเอียดของเว็บไซต์แตกต่างกัน (ตัวอย่างเช่น คุณอาจจัดระเบียบ URL ด้วยภาษามาร์กอัปต่างๆ ในโฟลเดอร์ต่างหาก) คุณควรกรองตามลักษณะการใช้งานเว็บไซต์ของคุณ โปรดทราบว่าตัวกรองจะใช้ตามลำดับที่คุณแสดงไว้ในไฟล์กำหนดค่า ดังนั้น ตัวกรองแรกที่คุณควรแสดงคือ การกระทำ &quot;pass&quot; ซึ่งระบุ URL ที่คุณต้องการรวมไว้ใน Sitemap </font></p>
+			<p><font size="-1">หากต้องการสร้าง Sitemap สำหรับเนื้อหา WML (WAP 1.2):</font></p>
+			
+			<pre>&lt;filter action="pass" type="wildcard" pattern="*.wml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+</pre>
+			
+			<p><font size=-1>หากต้องการสร้าง Sitemap สำหรับเนื้อหา XHTML mobile profile (WAP 2.0):</font></p>
+			
+			<pre>&lt;filter action="pass" type="wildcard" pattern="*.xhtml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+			</pre>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="copy"></a><b>3. การอัปโหลดไฟล์ไปยังเว็บเซิร์ฟเวอร์</b></td> 
+				</tr> 
+			</tbody></table>
+		<p><font size="-1"> คุณควรอัปโหลดไฟล์ต่อไปนี้ไปยังเว็บเซิร์ฟเวอร์ของคุณในตำแหน่งที่คุณสามารถเข้าถึงจากบรรทัดคำสั่ง: </font></p>
+			
+			<font size="-1"><ul>
+              <li><strong> config.xml</strong> &#8212;นี่คือไฟล์กำหนดค่าที่คุณเพิ่งสร้างโดยใช้ <strong>example_config.xml</strong> </li>
+              <li><strong> sitemap_gen.py</strong> &#8212;นี่คือสคริปต์ Python ที่สร้าง Sitemap ของคุณ </li>
+              <li><strong> urllist.txt</strong> &#8212;ไฟล์นี้เป็นตัวเลือก ซึ่งคุณต้องรวมไว้เฉพาะในกรณีที่คุณใช้ไฟล์ข้อความในการสร้าง Sitemap </li>
+		  </ul>
+			
+		  </font>
+		  <p><font size="-1"> วิธีที่คุณใช้ในการอัปโหลดไฟล์เหล่านี้จะขึ้นอยู่กับระบบของคุณ วิธีทั่วไป ได้แก่ <a href="http://www.google.co.th/search?q=ftp">FTP</a> และ SCP สำหรับข้อมูลเพิ่มเติม โปรดติดต่อเว็บโฮสต์ของคุณ		  </font></p>
+			
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="execute"></a><strong>4. การเรียกใช้สคริปต์ของเครื่องมือสร้าง Sitemap (sitemap_gen.py) </strong></td> 
+				</tr> 
+			</tbody></table>
+				
+				<p><font size="-1">
+ในการเรียกใช้เครื่องมือสร้าง Sitemap คุณจะต้องเชื่อมต่อกับเว็บเซิร์ฟเวอร์ของคุณ วิธีที่คุณใช้ในการเชื่อมต่อจะขึ้นอยู่กับระบบของคุณ ตัวอย่างเช่น โดยทั่วไป คุณสามารถเข้าถึงเซิร์ฟเวอร์ที่ใช้ UNIX ได้โดยใช้ <a href="http://www.google.co.th/search?q=ssh">SSH</a>  สำหรับข้อมูลเพิ่มเติมเกี่ยวกับการเชื่อมต่อไปยังเว็บเซิร์ฟเวอร์ของคุณ และการเรียกใช้สคริปต์ ให้ปรึกษากับเว็บโฮสต์ของคุณ </font></p>
+				
+				<p><font size="-1"> หลังจากที่คุณคัดลอกไฟล์ไปยังเว็บเซิร์ฟเวอร์ของคุณแล้ว คุณจะต้องเรียกใช้สคริปต์ของเครื่องมือสร้าง Sitemap เชื่อมต่อกับเว็บเซิร์ฟเวอร์ของคุณและเรียกใช้คำสั่งต่อไปนี้ (แทนที่ <strong>&lt;path/config.xml&gt;</strong> ด้วยเส้นทางและชื่อไฟล์ของไฟล์กำหนดค่า หากคุณอัปโหลดไฟล์นี้ไปยังตำแหน่งเดียวกันกับสคริปต์ Python คุณสามารถยกเว้นเส้นทางได้):</font></p>
+				
+				<pre>python sitemap_gen.py --config=&lt;path/config.xml&gt;
+</pre>
+<p><font size="-1">ตัวอย่างเช่น บรรทัดคำสั่งที่ใช้ UNIX อาจมีลักษณะเช่นนี้:</font></p>
+<p><img src="images/python_command.gif" alt="คำสั่ง Python"></p>
+<p><font size="-1">เชลล์คำสั่งที่ใช้ MS-DOS อาจมีลักษณะเช่นนี้:</font></p>
+<p><img src="images/python_dos.gif" alt="คำสั่ง Python"></p>
+<p><font size="-1"><b>เคล็ดลับ:</b> หากคุณกำลังทดสอบการกำหนดค่าและยังไม่พร้อมที่จะส่ง Sitemap ของคุณ ไวยากรณ์ต่อไปนี้จะป้องกันเครื่องมือสร้าง Sitemap จากการติดต่อกับ Google:</font></p>
+				<pre><br>	$ python sitemap_gen.py --config=config.xml --testing</pre>
+				<font size="-1"><p>คุณจะเห็นสถานะของคำขอในพร้อมท์คำสั่ง:</p></font>
+<pre>	
+	กำลังอ่านไฟล์กำหนดค่า: /path/config.xml
+	เปิด URLLIST  "/path/urllist.txt"
+	กำลังไปตาม DIRECTORY "/var/www/html/dir"
+	กำลังไปตาม DIRECTORY "/var/www/html/dir2"
+	เปิด ACCESSLOG "/etc/httpd/logs/access-0.log"
+	กำลังจัดเรียงและทำ URL ที่รวบรวมไว้ให้เป็นมาตรฐาน
+	กำลังเขียนไฟล์ Sitemap "/path/sitemap.xml.gz" with 1092 URLs
+	กำลังแจ้งเครื่องมือค้นหา
+	กำลังแจ้ง www.google.co.th
+	จำนวนไฟล์นับตามนามสกุลบน URL:
+		208  .html
+		574  .jpg
+		...
+		จำนวนข้อผิดพลาด: 0
+		จำนวนคำเตือน: 0</pre>
+				<font size="-1">
+				<p>หากคุณไม่เห็นผลลัพธ์จำนวนมากเช่นนี้ โปรดทราบว่าการตั้งค่า verbose ในไฟล์กำหนดค่าของคุณจะมีผลกับปริมาณข้อมูลที่ปรากฏบนหน้าจอ  ตัวอย่างนี้คือการตั้งค่า verbose เป็น "1"</p>
+				<p>ข้อผิดพลาดใดๆ ในไฟล์จะได้รับการแจ้งให้ทราบ  ตัวอย่างเช่น หากคุณไม่ป้อนแอตทริบิวต์ url= ในรายการไดเรกทอรี สคริปต์จะแจ้งผลลัพธ์ต่อไปนี้:
+				</p></font>
+<pre>	
+	[ERROR] Directory entries must have both "path" and "url" attributes
+	Number of errors: 1</pre>
+				<font size="-1">
+				</font>
+				<p><font size="-1">แก้ไขข้อผิดพลาดใดๆ ในไฟล์ <b>config.xml</b> ของคุณและเรียกใช้สคริปต์อีกครั้ง หากไม่มีข้อผิดพลาดเครื่องมือสร้าง Sitemap จะสร้างไฟล์ <b>sitemap.xml.gz</b> ใหม่ในตำแหน่งที่คุณระบุในไฟล์กำหนดค่า </font></p>
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="submitting" id="submitting"></a><strong>5. การส่ง Sitemap ของคุณไปยัง Google </strong></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">เครื่องมือสร้าง Sitemap จะสร้างไฟล์ <strong>sitemap.xml.gz</strong> ในตำแหน่งที่คุณระบุในไฟล์กำหนดค่า เมื่อมีการสร้างไฟล์นี้เรียบร้อยแล้ว ตรวจสอบให้แน่ใจว่าสามารถเข้าถึงไฟล์ผ่านเว็บเบราว์เซอร์ได้ จากนั้น <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">เพิ่ม</a> ลงในบัญชี <a href="https://www.google.com/webmasters/sitemaps/siteoverview">Google Sitemaps</a> ของคุณ ซึ่งจะทำให้ Google สามารถแจ้งสถานะและข้อมูลทางสถิติที่เป็นประโยชน์แก่คุณ หาก Google รายงานปัญหาที่มีใน Sitemap ของคุณ คุณก็สามารถแก้ไขปัญหาและส่ง Sitemap ใหม่ได้ คุณต้องเพิ่ม Sitemap ด้วยตนเองเพียงครั้งเดียวเท่านั้น หลังจากนั้น คุณสามารถใช้ <a href=submit.html#ping>คำขอ HTTP</a> เพื่อแจ้งให้ Google ทราบเกี่ยวกับการเปลี่ยนแปลงใน Sitemap ของคุณ (แม้ว่าคุณสามารถส่ง Sitemap ผ่านบัญชี Google Webmaster Tools ก็ได้) </font></p>
+		        
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="recur"></a><b>6. การตั้งค่าสคริปต์ที่เกิดขึ้นประจำ</b></td> 
+				</tr> 
+		  </tbody></table>
+		  <font size="-1">
+				<p>เราขอแนะนำให้ตั้งค่าเครื่องมือสร้าง Sitemap ให้ทำงานบ่อยเท่ากับความถี่ในการเปลี่ยนแปลงเนื้อหาของคุณ จนถึงบ่อยที่สุดคือชั่วโมงละหนึ่งครั้ง</p>
+		  </font>
+		  <p><font size="-1">เว็บมาสเตอร์ที่ใช้เว็บเซิร์ฟเวอร์ UNIX อาจพิจารณาการตั้งค่านี้เป็น <a href="http://www.google.co.th/search?q=cron">งาน cron</a> </font></p>
+				<font size="-1"><p>เว็บมาสเตอร์ที่ใช้แพลตฟอร์มอื่นๆ ควรติดต่อกับผู้ดูแลระบบของแพลตฟอร์มนั้นๆ เพื่อขอความช่วยเหลือในการกำหนดค่าสคริปต์ที่เกิดขึ้นประจำ นอกจากนี้ คุณอาจได้รับประโยชน์จากคำแนะนำเชิงลึกใน Google Sitemaps Group ที่ <a href="http://groups.google.com/group/Google_Webmaster_Help-Sitemap-en?tsc=1">Google Groups</a>
+</p>
+				
+	      </font>
+				<p><font size="-1"> คุณสามารถใช้ <a href=submit.html#ping>คำขอ HTTP</a> เพื่อแจ้งให้ Google ทราบเกี่ยวกับการเปลี่ยนแปลงใน Sitemap ของคุณ อย่างไรก็ตาม โปรดตรวจสอบให้แน่ใจว่าคุณเข้าสู่ระบบ <a href="https://www.google.com/webmasters/tools/siteoverview">Google Webmaster Tools</a> ด้วยบัญชีผู้ใช้ Google เพื่อ <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496>เพิ่ม Sitemap ของคุณ</a> ด้วยตนเองในบัญชี Google Webmaster Tools ของคุณ</font></p>
+				<font size="-1"></font>		
+			    <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="troubleshoot"></a><b>การแก้ไขปัญหา</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p>ในส่วนนี้เราจะกล่าวถึงคำถามทั่วไปบางคำถามหรือปัญหาบางอย่างที่พบในขณะที่ใช้เครื่องมือสร้าง Sitemap และสิ่งที่คุณสามารถทำได้หากคุณพบปัญหาเหล่านี้</p>
+				<p><b>การเข้าถึงเว็บ</b></p>
+				<p><b>ปัญหา:</b> เครื่องมือสร้าง Sitemap แจ้งข้อผิดพลาดและคำเตือนต่อไปนี้:</p>
+				</font>
+<pre>	
+	[ERROR] When attempting to access your generated Sitemap at the following URL:
+	http://www.example.co.th/sitemap.xml.gz
+	we failed to read it.  Please verify the store_into path you specified in
+	your configuration file is web-accessible.  Consult the FAQ for more
+	information.
+	[WARNING] Proceeding to notify with an unverifiable URL.</pre>
+				<font size="-1">
+				<p><b>เกิดอะไรขึ้น</b> เครื่องมือสร้าง Sitemap สร้างไฟล์ที่คุณระบุ จากนั้น พยายามเรียกไฟล์โดยใช้ HTTP แบบเดียวกับที่เครื่องมือค้นหาใช้ แต่ล้มเหลว  ซึ่งขั้นตอนก็ดำเนินต่อไปและมีการแจ้งให้เครื่องมือค้นหาทราบ จากนั้นจึงแสดงข้อผิดพลาดและคำเตือนที่แจ้งให้คุณทราบว่า เครื่องมือค้นหาอาจไม่สามารถอ่าน Sitemap ของคุณได้</p>
+				<p>เครื่องมือสร้าง Sitemap จะสร้างไฟล์ Sitemap ของคุณในเส้นทางที่ระบุในแอตทริบิวต์ store_into ของไฟล์ <b>config.xml</b> จากนั้นเครื่องมือสร้าง Sitemap จะสร้าง URL ให้กับไฟล์นั้นโดยใช้แอตทริบิวต์ base_url และรายงาน URL ไปยังเครื่องมือค้นหา  ตัวอย่างเช่น หากคุณกำหนดค่าเป็น:</p>
+				</font>
+<pre>	&lt;site base_url="http://www.example.co.th/"
+	      store_into="/var/www/html/sitemap.xml.gz"&gt;</pre>
+				<font size="-1">
+				</font><p><font size="-1">เครื่องมือสร้าง Sitemap จะแจ้งให้เครื่องมือค้นหาทำการค้นหา Sitemap ของคุณที่:</font></p>
+				
+				<pre>	http://www.example.co.th/sitemap.xml.gz</pre>
+				<font size="-1"><p>
+				ไฟล์จะต้องสามารถเข้าถึงผ่าน URL นี้  หากไม่สามารถเรียกไฟล์โดยใช้ URL นี้ได้ เครื่องมือค้นหาจะไม่มีทางค้นพบ Sitemap ของคุณ</p>
+				</font><p><font size="-1"><b>คุณสามารถทำอะไรได้บ้าง</b>  คุณต้องยืนยันว่า <b>config.xml</b> ของคุณระบุเส้นทาง base_url และ store_into ที่ถูกต้องสำหรับ Sitemap ของคุณ  นอกจากนี้ คุณต้องยืนยันว่าเว็บเบราว์เซอร์สามารถเรียกไฟล์ Sitemap จาก base_url  หากคุณพบข้อผิดพลาดในเส้นทางหรือ URL คุณจะต้องเรียกใช้เครื่องมือสร้าง Sitemap ใหม่หรือเพียงย้ายไฟล์ Sitemap ไปยังตำแหน่งที่ถูกต้อง และแจ้งให้เครื่องมือค้นหาทราบด้วยตนเองผ่านเว็บไซต์ของเครื่องมือค้นหา
+				</font></p>
+				<font size="-1"><p><b>การสนับสนุนสำหรับ XML</b></p>
+				<p><strong>ปัญหา:</strong> เครื่องมือสร้าง Sitemap แจ้งข้อผิดพลาดต่อไปนี้:</p>
+				</font>
+<pre>	
+	Some installs of Python 2.2 do not include complete support for XML. 
+	Please try upgrading your version of Python and re-running the script.</pre>
+				<font size="-1"><p>
+				<b>เกิดอะไรขึ้น</b>  เมื่อข้อความระบุว่า บางแพลตฟอร์มมี Python (ภาษาที่ใช้เขียนสคริปต์ของเครื่องมือสร้าง Sitemap) รุ่นที่ไม่มีไลบรารีการสนับสนุนที่จำเป็นสำหรับการประมวลผลไฟล์ XML  สคริปต์นี้ต้องมีการสนับสนุน XML อย่างเต็มที่ในการเรียกใช้งาน
+				</p>
+				<p><b>คุณสามารถทำอะไรได้บ้าง</b> ลองอัปเกรด Python ที่คุณติดตั้งให้เป็นรุ่นใหม่  คุณอาจจะต้องติดต่อผู้ดูแลระบบของคุณให้ดำเนินการนี้</p>
+				<p>โปรดทราบว่านี่จะมีผลกับเครื่องมือสร้าง Sitemap เท่านั้น ไม่ใช่ Sitemap ทั้งหมด  หากคุณมีวิธีหรือเครื่องมืออื่นในการสร้าง Sitemap คุณสามารถใช้งานและส่ง Sitemap ของคุณไปยังเครื่องมือค้นหา</p>
+				<p><b>ไฟล์เพิ่มเติมทั้งหมดใน .gz หรือ .zip คืออะไร</b></p>
+				<p>เมื่อคุณแยกสคริปต์ sitemap_gen.py คุณอาจจะเห็นไฟล์เพิ่มเติมมากกว่าที่เรากล่าวถึงข้างต้น  ไฟล์ทั้งหมดควรมีลักษณะดังนี้:</p>
+				</font>
+	<pre>	
+	AUTHORS
+	ChangeLog
+	COPYING
+	example_config.xml
+	example_urllist.txt
+	PKG-INFO
+	README
+	setup.py
+	sitemap_gen.py
+	test_sitemap_gen.py</pre>
+		  <font size="-1"><p>
+				ไฟล์เพิ่มเติมเหล่านั้นน่าจะเป็นข้อมูลเกี่ยวกับแพคเกจและข้อกำหนดในการอนุญาต  ขอแนะนำให้คุณอ่านไฟล์เหล่านี้ด้วย</p>
+				<p>ข้อยกเว้นอย่างหนึ่งคือ test_sitemap_gen.py ซึ่งเป็นสคริปต์สำหรับการทดลองที่นักพัฒนารายอื่นๆ อาจพบว่าเป็นประโยชน์ หากต้องการช่วยเหลือโครงการโอเพนซอร์สนี้  หากคุณตั้งใจใช้เครื่องมือสร้าง Sitemap โดยไม่แก้ไขรหัสต้นฉบับเลยเช่นเดียวกับผู้ใช้ส่วนใหญ่ คุณก็ไม่จำเป็นต้องใช้สคริปต์ทดลองนี้
+</p>
+	  หากคุณสนใจให้ความช่วยเหลือโครงการนี้ โปรดไปที่ <a href="http://sourceforge.net/projects/goog-sitemapgen">http://sourceforge.net/projects/goog-sitemapgen</a> <a href="http://code.google.com/sm_thirdparty.html">โปรแกรมอื่นที่สนับสนุนโพรโทคอล Sitemap</a></p>
+	  
+	  <font size="-1"></font></font>
+		  <p><font size="-1"><b><a name="nonascii"></a>อักขระที่ไม่ใช่แบบ ASCII </b></font></p>
+				<font size="-1"><font size="-1">
+				</font></font>
+				<p><font size="-1"><strong>ปัญหา:</strong> ชื่อโดเมนของเว็บไซต์หรือ URL ของคุณมีอักขระที่ไม่ใช่แบบ ASCII</font></p>
+				<p><font size="-1">โดยทั่วไป URL ที่มีอักขระที่ไม่ใช่แบบ ASCII ควรได้รับ <a href="protocol.html#escaped">การเข้ารหัสแบบ UTF-8</a> ก่อนที่จะมีการยกเว้นเปอร์เซ็นต์ อย่างไรก็ตาม เว็บเซิร์ฟเวอร์บางแห่งจะทำงานได้อย่างถูกต้องเฉพาะเมื่อ URL ได้รับการเข้ารหัสแบบอื่นๆ ที่ไม่ใช่แบบ UTF-8 เท่านั้น URL ทั้งหมดใน Sitemap ของคุณและ URL ของ Sitemap เองต้องได้รับการเข้ารหัสเพื่อให้เว็บเซิร์ฟเวอร์ที่ URL นั้นวางอยู่สามารถอ่านได้ ภายใน <a href="#sitetag">ส่วนคำนิยามของเว็บไซต์</a> ให้ใช้แอตทริบิวต์ตัวเลือก <strong>default_encoding</strong> เพื่อระบุการเข้ารหัสที่ใช้โดยเว็บเซิร์ฟเวอร์ของคุณ หากคุณไม่ใช้แท็กนี้และเว็บเซิร์ฟเวอร์ของคุณใช้การเข้ารหัสอื่นๆ ที่ไม่ใช่แบบ UTF-8 เราจะไม่ทราบว่าควรใช้การเข้ารหัสแบบใด</font></p>
+				<p><font size="-1">หาก URL ของคุณมีอักขระที่ไม่ใช่แบบ ASCII เราขอแนะนำให้คุณเรียกใช้สคริปต์ของเครื่องมือสร้าง Sitemap โดยใช้ Python 2.3 ขึ้นไป Python รุ่นนี้ได้เพิ่มการสนับสนุนการเข้ารหัสที่ไม่ใช่แบบ ASCII หากชื่อโดเมนของคุณมีอักขระที่ไม่ใช่แบบ ASCII คุณต้องใช้ Python 2.3 ขึ้นไป เนื่องจากการสนับสนุน Internationalizing Domain Names in Applications (IDNA) จะไม่มีอยู่ในรุ่นเก่า หากไม่มีการสนับสนุน IDNA เครื่องมือสร้าง Sitemap จะไม่สามารถเข้ารหัสชื่อโดเมนที่ไม่ใช่แบบ ASCII ได้อย่างถูกต้อง </font></p>
+				<font size="-1">
+	  
+	  
+	  
+	<br>
+	<p class="d" align="right"><i>แก้ไขครั้งล่าสุด: 15 เมษายน 2006</i></p>
+	  </font></div>
+	</td> 
+  </tr> 
+  <tr> 
+    <td width=1% valign=top><img src=http://www.google.com/images/art.gif width=143 height=53 vspace=5 hspace=15></td> 
+    <td style="background-color: #ffffff" width=1 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td valign=middle><div class=footer> 
+        <div align=center><font size="-1"> &copy;2007 Google - <a href=http://www.google.co.th/privacy.html>นโยบายส่วนบุคคล</a> - <a href=http://www.google.co.th/accounts/TOS>ข้อกำหนดในการให้บริการ</a> - <a href=http://www.google.com/about.html>เกี่ยวกับ Google</a> </font></div> 
+      </div></td> 
+  </tr> 
+</table> 
+</body>
+</html>

@@ -1,0 +1,742 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel=stylesheet href="http://www.google.com/google.css">
+<link rel=stylesheet href="../leftnav.css">
+<style>
+<!--
+body,td,font,p,a{font-family:arial,sans-serif}
+.i { margin-left: 1em; margin-right: 2em; }
+//.style1 {font-weight: bold}
+.style1 {font-weight: bold}
+.d {color:#999999;text-decoration:italics;font-size:10px;}
+.changes {color: #FF0000}
+-->
+</style>
+<script
+  src=" https://ssl.google-analytics.com/urchin.js "
+  type="text/javascript">
+</script>
+<script type="text/javascript">
+  _uacct="UA-18009-2";
+  _utcp="/webmasters/sitemaps/";
+  _uanchor=1; 
+  urchinTracker();
+</script>
+
+<title>Nástroje Google pro správce webu</title>
+</head>
+<body class=search bgcolor=#ffffff text=#000000 link=#0000CC vlink=#800080 alink=#ff0000 topmargin=3>
+<table width=95% border=0 cellpadding=0 cellspacing=2>
+  <tr valign=top>
+    <td width=1%><a href=https://www.google.com/webmasters/sitemaps?hl=cs> <img src=http://www.google.com/images/google_sm.gif border=0 width=143 height=59 alt="Návrat na domovskou stránku Google." hspace=15 vspace=5></a></td>
+    <td width=100% valign="middle">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		<td><font size="+0"><b>Nástroje pro správce webu</b></font></td>
+		</tr>
+		<tr>
+		<td style="border-bottom:1px solid #999999" height="1"><img width="1" height="1" alt=""></td>
+		</tr>
+		</table>  	
+	</td>
+  </tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=0 width=95%> 
+  <tr> 
+    <td width="175" valign="top">
+		<font size="-1">
+    <p class="sidenavlink">
+    <a href="about.html">O nástrojích pro správce webu</a></p>
+    <p class="sidenavlink"><a href="protocol.html">Použití protokolu Sitemap</a></span>
+    <p class="sidenavtoc">Použití generátoru souborů Sitemap</p>
+<p class="sidenavlink"><a href="http://www.google.cz/webmasters/">Centrála Google pro správce webu</a></p>
+  </font></td>
+    <td background=http://www.google.com/images/dot2.gif valign=bottom width=5><img src=http://www.google.com/images/dot2.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=10 height=1></td> 
+    <td>
+		<div class="content"> 
+		
+			<p><strong>Obsah</strong></p>
+			<p><font size="-1"><a href="#before">Než začnete</a>
+		    <br><a href="#download">Stažení programových souborů generátoru souborů Sitemap</a>
+		    <br><a href="#config">Vytvoření konfiguračního souboru</a><br>
+		    <a href="#copy">Nahrání souborů na webový server</a>
+		    <br><a href="#execute">Spuštění skriptu generátoru souborů Sitemap</a>
+		    <br><a href="#submitting">Odeslání souborů Sitemap na Google</a>
+		    <br><a href="#troubleshoot">Odstraňování problémů</a>
+		    </font></p>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="before"></a><b>Než začnete</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">
+Generátor souborů Sitemap Google je skript v jazyce Python, který pomocí protokolu Sitemap vytváří soubory Sitemap vašich stránek. Tento skript umí vytvořit soubory Sitemap ze seznamu adres URL, z adresářů webového serveru nebo ze záznamů o přístupech. Chcete-li použít tento skript: </font></p>
+				
+				<ul>
+				  <li><font size="-1">musíte být schopni připojit se ke svému webovému serveru a spustit na něm skripty. </font></li>
+				  <li><font size="-1">na webovém serveru musí být nainstalován jazyk Python verze 2.2 nebo novější. </font></li>
+				  <li><font size="-1">musíte znát příkaz pro spuštění interpretu jazyka Python. (Obecně je to příkaz <strong>python</strong>, ale může se lišit podle typu instalace. Pokud jsou na webovém serveru například nainstalovány dvě verze jazyka Python, starší verze může být vyvolávána příkazem <strong>python</strong> a novější může být spouštěna příkazem <strong>python2</strong>.) </font></li>
+				  <li><font size="-1">musíte znát cestu do adresáře ke svým stránkám. Jestliže na webovém serveru běží pouze jedny stránky, může tato cesta vypadat například takto: <strong>var/www/html</strong>. Jestliže máte virtuální server, který hostí několik webů, může cesta vypadat nějak takto: <strong>home/virtual/stranky1/fst/var/www/html</strong>. </font></li>
+				  <li><font size="-1"> musíte být schopni nahrát soubory na svůj webový server (například pomocí protokolu FTP). </font></li>
+				  <li><font size="-1">pokud budete vytvářet seznam adres URL na základě záznamů o přístupech, musíte znát kódování použité pro tyto záznamy a úplnou cestu k nim. </font></li>
+          </ul>
+		  
+				<p><font size="-1">Jestliže si některou z těchto informací nejste jisti, můžete se obrátit na společnost, která poskytuje prostor pro vaše stránky. </font></p>
+				<font size="-1">
+				<p> Nyní jste připraveni začít. Zde je uveden postup toho, co bude třeba provést. </p>
+				</font>
+		  <font size="-1">
+				<ol>
+                  <li><font size="-1"><a href="#download">Stáhnout</a> programové soubory generátoru souborů Sitemap. Rozbalit soubory do místního adresáře. </font></li>
+                  <li><font size="-1"><a href="#config">Vytvořit konfigurační soubor</a> pro web s použitím souboru <strong>example_config.xml</strong> jako šablony. Upravit tento soubor podle potřeb vašeho webu a uložit jej. </font></li>
+                  <li><font size="-1"><a href="#copy">Nahrát potřebné soubory</a> na váš webový server. </font></li>
+                  <li><font size="-1"><a href="#execute">Spustit</a> <strong>soubor sitemap_gen.py</strong>. </font></li>
+                  <li><font size="-1"><a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">Přidat</a> vytvořený soubor Sitemap do účtu Nástroje Google pro správce webu. </font></li>
+		          <li><font size="-1"><a href="#recur">Spustit opakující se skript</a>. (volitelné) </font></li>
+				</ol>
+		  </font>
+		  
+				<p><font size="-1">Jestliže nemůžete používat generátor souborů Sitemap, můžete přidat soubory Sitemap do svého účtu Nástroje Google pro správce webu v <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34606&topic=8516>jiném formátu</a>, například jako jednoduchý textový soubor. <a href="http://code.google.com/sm_thirdparty.html">Zde</a> naleznete odkazy na programy jiných společností, které podporují soubory Sitemap Google.</font></p>
+				<p><font size="-1"><strong>Soubory Sitemap pro zprávy:</strong> vzhledem ke zvláštním požadavkům souborů Sitemap pro zprávy se v současné době nedoporučuje používat k vytváření souborů Sitemap pro zprávy generátor souborů Sitemap.  Soubory Sitemap pro zprávy mají představovat dynamické seznamy těch nejaktuálnějších zpravodajských článků (spíše než celého webu) a jsou často aktualizovány.</font></p>  
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="download"></a><b>1. Stažení programových souborů generátoru souborů Sitemap</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p> Soubory generátoru souborů sitemap jsou k dispozici v archivačních formátech ZIP a GZ <font size="-1">v následujícím umístění:</font></p>
+				</font>
+				<p><font size="-1"><a href="http://www.sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422">http://sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422</a></font></p>
+				<font size="-1">
+				<p>Jakmile archív stáhnete, rozbalte jej do místního adresáře. Bude obsahovat následující soubory: </p>
+				<ul>
+                  <li><strong>README</strong> &#8212;obsahuje nejnovější informace o tomto nástroji </li>
+                  <li><strong>sitemap_gen.py</strong> &#8212;skript v jazyce python, který vytváří soubory Sitemap </li>
+                  <li><strong>example_config.xml</strong> &#8212;šablona konfiguračního souboru, kterou použijete k upřesnění konfigurace vašich stránek</li>
+                  <li><strong>example_urllist.txt</strong> &#8212;vzorový seznam adres URL, který můžete použít, pokud chcete vytvořit soubor Sitemap na základě souboru zadaných adres URL</li>
+		        </ul>
+				</font>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="config"></a><b>2a. Vytvoření konfiguračního souboru</b></td> 
+				</tr> 
+			</tbody></table>
+		  <font size="-1">
+		  </font><p><font size="-1">Tato sekce uvádí podrobné pokyny pro vytvoření konfiguračního souboru. Včetně <a href="#config_reference">úplného seznamu</a> použitelných možností. Pokud vytváříte <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34627&topic=8493">soubor Sitemap pro mobilní web</a>, přečtěte si další <a href="#creating_mobile">pokyny pro mobilní weby</a>.</font></p>
+				<font size="-1"><p>Abyste mohli vytvořit konfigurační soubor pro své stránky, musíte znát následující údaje: </p>
+				<ul>
+                  <li>základní adresu URL svých stránek (např. <strong>http://www.priklad.cz</strong>/). Do souborů Sitemap mohou být zahrnuty pouze adresy URL začínající touto základní adresou URL. Ujistěte se, že jste zahrnuli protokol (např. <strong>http://</strong>). Například <strong>http://www.google.cz</strong> je platná základní adresa URL, zatímco <strong>www.google.cz</strong> nikoli. </li>
+		
+                  <li>cestu webového serveru k lokaci, do které chcete soubory Sitemap ukládat. Obecně je to cesta k základní adrese URL, neboť soubory Sitemap nemohou obsahovat adresy URL nacházející se v adresáři vyšší úrovně, než je umístění souborů Sitemap. Když spustíte generátor souborů Sitemap Google, vytvoří soubor Sitemap a uloží jej na vámi určené místo. </li>
+		 
+                  <li>metody, které má generátor souborů Sitemap používat při vytváření souboru Sitemap. Můžete použít libovolnou kombinaci těchto metod. K dispozici jsou následující metody: </li>
+		  </ul>
+				
+		  </font><ol>
+<ul>
+                    <li><font size="-1"><strong> <a href="#URL">adresa URL</a></strong>
+&#8212;vytvoří v dané sekci konfiguračního souboru seznam jednotlivých adres URL spolu s údaji o nich. Budete-li chtít manuálně zařadit dodatečné adresy URL, které by ostatní metody nezaznamenaly, budete používat především tuto metodu. </font></li>
+                    <li><font size="-1"><strong><a href="#urllist">seznam adres URL</a> </strong>
+&#8212;odkazuje konfigurační soubor na textový soubor, který obsahuje seznam adres URL. Tuto metodu budete nejspíše používat v případě, že již existuje daný textový soubor nebo pokud používáte skript na vytvoření seznamu adres URL. </font></li>
+                    <li><font size="-1"><strong><a href="#directory">adresářové cesty</a></strong>
+&#8212;určete adresářové cesty svých stránek a adresy URL odpovídající těmto cestám. Generátor souborů Sitemap vytvoří seznam adres URL na základě obsahu daných adresářů. Pokud se váš web skládá ze statických souborů HTML, bude možná používat tuto metodu. </font></li>
+            <li><font size="-1"><strong> <a href="#logs">záznamy o přístupu</a></strong>
+&#8212;ukazuje na cestu k vašim souborům protokolu. Generátor souborů Sitemap vytvoří seznam adres URL na základě adres URL obsažených v těchto záznamech. Jestliže se váš web skládá z dynamických stránek, budete možná používat tuto metodu. </font></li>
+ <li><font size="-1"><strong> <a href="#sitemap">soubor Sitemap</a></strong>
+&#8212;odkazuje na existující soubory Sitemap, které byly vytvořeny pomocí generátoru souborů Sitemap. Generátor souborů Sitemap vytvoří jeden soubor Sitemap, který zahrnuje adresy URL obsažené v každém ze souborů Sitemap. Tuto metodu můžete použít v případě, že jste již vytvořili několik menších souborů Sitemap, které byste chtěli zkombinovat do jednoho většího souboru Sitemap. </font></li>
+            </ul>
+		  </ol>
+				
+		  <font size="-1"><p><b><a name="create_config"></a>Podle následujících pokynů vytvořte konfigurační soubor:</b></p>
+		  </font>
+				<ol>
+                 <font size="-1"> <li>Otevřete v textovém editoru soubor <strong>example_config.xml</strong>. Uložte jej jako nový soubor (např. <strong>config.xml</strong> nebo <strong>mojestranky_config.xml</strong>).</li> 
+                 </font>
+				
+                 
+                 <font size="-1">
+                 <li>Vyhledejte definiční sekci stránky: </li>
+                 </font>		  
+				
+				<pre>&lt;site base_url="http://www.example.com/" store_into="/var/www/docroot/sitemap.xml.gz"verbose="1"&gt;
+				</pre>				
+				
+                  <font size="-1"><li>Změňte hodnotu <strong>base_url</strong> na adresu URL svých stránek. </li>
+		 
+                  <li>Zaměňte hodnotu <strong>store_into</strong> za cestu na svůj webový server, kde chcete ukládat soubor Sitemap, a jméno souboru, jež chcete pro soubor Sitemap používat. Obecně je to cesta k základní adrese URL, neboť Google může pracovat pouze s adresami URL nacházejícími se v  podadresářích nebo v adresáři stejné úrovně jako je adresář se soubory Sitemap. Můžete zadat částečnou cestu z adresáře s nahranými skripty nebo úplnou cestu z kořenového adresáře webového serveru. Pokud nahrajete skripty do svého základního adresáře adres URL, zadejte jednoduše název souboru.</li>
+                  </font>
+                  <font size="-1"></font><font size="-1"><li>Vyhledejte sekci metody vytváření, která začíná výrazem <span class="style1">**MODIFY</span> <span class="style1"> nebo DELETE**</span>. Každá z těchto sekcí odpovídá metodě vytváření souboru Sitemap. </li>
+                  <li>Smažte oddíly metod, které nebudete používat.</li>
+                  <li>U metod, které nebudete používat, postupujte podle následujících pokynů. </li>
+                <p><strong> Adresa URL<a name="URL"></a></strong></p>
+                <p> Vyhledejte následující sekci: </p>
+                </font>
+                  <pre>&lt;!-- ** MODIFY or DELETE ** 
+"url" nodes specify individual URLs to include in the map. &lt;br&gt;
+
+Required attributes: 
+href - the URL
+
+Optional attributes: 
+lastmod - timestamp of last modification (ISO8601 format) 
+changefreq - how often content at this URL is usually updated
+priority - value 0.0 to 1.0 of relative importance in your site 
+--&gt; 
+
+&lt;url href="http://www.example.com/stats?q=name" /&gt; &lt;url href="http://www.example.com/stats?q=age" lastmod="2004-11-14T01:00:00-07:00" changefreq="yearly" priority="0.3"/&gt; </pre>
+                  <font size="-1">
+                <p>Tento oddíl obsahuje dva příklady: první zahrnuje pouze požadovaný atribut, druhý obsahuje požadovaný i volitelný atribut. </p>
+                <p>Použijte tento formát pro všechny adresy URL, které chcete zahrnout. Atribut <strong>changefreq</strong> poskytuje společnosti Google všeobecný přehled o frekvenci aktualizací adresy URL. Díky tomu Google zjistí, jak často je třeba stránky navštěvovat a zjišťovat nový obsah. Atribut <strong>priority</strong> informuje Google o relativní důležitosti dané stránky ve srovnání s ostatními stránkami webu. Tento atribut nemá žádný vliv na srovnávání dané stránky se stránkami na jiných webech, pomáhá pouze vyhledávači Google rozpoznat, které stránky ze svého webu považujete za nejdůležitější. </p>
+                  </font>
+				<p><font size="-1"><strong> Seznam adres URL <a name="urllist"></a> </strong></font></p>
+				<font size="-1"><p> Vyhledejte následující sekci: </p>
+				
+			</font>
+			<pre>
+&lt;!-- ** MODIFY or DELETE **
+"urllist" nodes name text files with lists of URLs. 
+An example file "example_urllist.txt" is provided. 
+
+Required attributes: 
+path - path to the file 
+
+Optional attributes: 
+encoding - encoding of the file if not US-ASCII 
+--&gt; 
+&lt;urllist path="example_urllist.txt" encoding="UTF-8" /&gt; 
+				</pre>
+				
+				<p><font size="-1"> Pomocí tohoto formátu zaznamenejte cestu a název textového souboru obsahujícího seznam adres URL. Jako šablonu pro tento textový soubor můžete použít dodaný soubor <strong>example_urllist.txt</strong>. Můžete zadat částečnou nebo úplnou cestu ke svému webovému serveru. Pokud se generátor souborů Sitemap a soubor <strong>urlist.txt</strong> nachází ve stejném adresáři, stačí zadat jméno soubor s příponou <strong>.txt</strong>. Pokud vytvoříte textový soubor s jiným kódováním než UTF-8, můžete k označení tohoto kódování použít atribut <strong>pro kódování</strong>. Máte-li více souborů ve formátu .txt, můžete použít hvězdičkovou notaci. Příklad:</font></p>
+				<pre>&lt;urllist path=&quot;example_urllist*.txt&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">U každé adresy URL obsažené v textovém souboru můžete specifikovat datum poslední změny, frekvenci změn a prioritu. Úplné údaje o struktuře tohoto souboru naleznete v <a href="#urllist_reference">oddíle poznámek k textovému souboru se seznamem adres URL</a>.</font>  </p>
+				<p><font size="-1"><strong> Adresářové cesty<a name="directory"></a> </strong></font></p>
+				<p><font size="-1"> Vyhledejte následující sekci: </font></p>
+				
+				<pre>
+&lt;!-- ** MODIFY or DELETE ** 
+"directory" nodes tell the script to walk the file system and 
+include all files and directories in the Sitemap.
+
+Required attributes:
+path - path to begin walking from 
+url - URL equivalent of that path 
+
+Optional attributes:
+default_file - name of the index or default file for directory URLs
+
+--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.example.com/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.example.com/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+				
+				<p><font size="-1">Tento oddíl obsahuje dva příklady. Jestliže jsou všechny vaše stránky obsaženy v podadresářích jedné cesty, není třeba zadávat víc než jeden záznam. Pokud však máte více cest ke stránkám na svém webu, zadejte pro každou jeden záznam. </font></p>
+				
+				<p><font size="-1">Pamatujte si, že každá adresa URL musí začínat základní adresou URL zadanou v kroku 3. Třeba příklady v souboru <strong>example_config.xml</strong> mají adresy URL začínající <strong>http://example.com/</strong>. Proto jsou obě adresy URL platné. </font></p>
+				<p><font size="-1">Nahraďte údaje v příkladu údaji pro svůj web. Mnohé webové stránky budou mít jenom jeden záznam odkazující k základní adrese URL. Ujistěte se, že hodnota <strong>path</strong> obsahuje úplnou cestou k adresáři na vašem webovém serveru. Ujistěte se, že hodnota <strong>url</strong> obsahuje úplnou adresu URL včetně protokolu (např. http) a v případě potřeby také zpětné lomítko.</font></p>
+				<p><font size="-1">Pokud chcete upřesnit název souboru, který váš server používá jako výchozí stránku adresáře, můžete použít parametr <strong>default_file</strong>. <strong>/var/www/docroot</strong> ve výše uvedeném příkladu se promění ve <strong>http://www.example.com/index.html</strong>. Toto nemusíte upřesňovat. Jestliže tak učiníte, zahrne generátor souborů Sitemap stránku odkazující ke každému podadresáři jenom jednou (spíše než aby zaznamenal adresu URL adresáře i adresu URL názvu souboru) a k získání atributu lastmod dané stránky použije datum v souboru (spíše než v adresáři). </font></p>
+				<p><font size="-1"><strong> Záznamy o přístupu <a name="logs"></a></strong></font></p>
+				<p><font size="-1"> Vyhledejte následující sekci: </font></p>
+				
+<pre>&lt;!-- ** MODIFY or DELETE **
+&quot;accesslog&quot; nodes tell the script to scan webserver log files to
+extract URLs on your site.  Both Common Logfile Format (Apache's default 
+logfile) and Extended Logfile Format (IIS's default logfile) can be read.
+				
+Required attributes:
+ path - path to the file
+Optional attributes:
+ encoding - encoding of the file if not US-ASCII
+  --&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.0&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.1.gz&quot; encoding=&quot;UTF-8&quot; /&gt;
+</pre>
+				<p><font size="-1">Tento oddíl obsahuje tři příklady. Měli byste nahradit tyto záznamy a zahrnout záznam pro každý soubor protokolu. Ujistěte se, že hodnota path obsahuje úplnou cestou a název souboru na vašem webovém serveru. Nepoužívají-li vaše soubory protokolu kódování US-ASCII nebo UTF-8, použijte k <a href="#encoding">upřesnění</a> kódování volitelný atribut pro <strong>kódování</strong>. Je lepší použít hvězdičkovou notaci než zadávat všechny soubory protokolu. Ve výše uvedeném příkladu můžete zadat následující záznam, který bude zahrnovat všechny tři soubory protokolu:</font></p>
+<pre>&lt;accesslog path=&quot;/etc/httpd/logs/access.log*&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">Podle toho, jak často je daná adresa URL navštívena, přiřadí generátor souborů Sitemap prioritu pro tuto adresu. Například adresa URL, která byla navštívena stokrát, bude mít vyšší prioritu než adresa URL, která byla navštívena dvakrát. Konkrétní přiřazení priorit je relativní a záleží na každé adrese URL a jejím porovnání s ostatními adresami URL v rámci webu.</font></p>
+<p><font size="-1"><strong> soubor Sitemap <a name="sitemap"></a></strong></font></p>
+<p><font size="-1"> Vyhledejte následující sekci: </font></p>
+<pre> &lt;!-- ** MODIFY or DELETE **<br>    
+&quot;sitemap&quot; nodes tell the script to scan other Sitemap files.  This can    
+be useful to aggregate the results of multiple runs of this script into
+a single Sitemap.
+				 
+Required attributes:
+  path - path to the file
+  --&gt;
+&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>
+				<p><font size="-1">Tento oddíl obsahuje jeden příklad. Měli byste nahradit tento záznam a vložit záznam pro každý soubor Sitemap, který chcete zahrnout. Ujistěte se, že hodnota path obsahuje úplnou cestou a název souboru na vašem webovém serveru.  Do seznamu můžete přidat i komprimované soubory Sitemap, jestliže mají příponu .gz. Je lepší použít hvězdičkovou notaci než zadávat všechny soubory Sitemap. Například následující záznam by zahrnoval všechny soubory Sitemap začínající slovem&quot; sitemap&quot; s příponou .xml:</font></p>
+<pre>&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap*.xml&quot; /&gt; </pre>
+				<p><font size="-1">Generátor souborů Sitemap extrahuje všechny adresy URL a volitelné údaje zadané pro jednotlivé adresy URL pro každý soubor Sitemap y seznamu a vytvoří jeden soubor Sitemap s těmito údaji. V tomto okamžiku však nemůžeme zaručit, že tato metoda bude fungovat u souborů Sitemap vytvořených jinými nástroji než generátorem souborů Sitemap.</font></p>
+
+
+
+				<font size="-1"><li>Vyhledejte definiční sekci filtru:</li></font>
+				  
+		 
+<pre>&lt;!-- ********************************************************         
+FILTERS
+				
+Filters specify wild-card patterns that the script compares against all URLs it finds. Filters can be used to exclude certain URLs from your Sitemap, for instance if you have hidden content that you hope the search engines don't find.
+
+Filters can be either type=&quot;wildcard&quot;, which means standard path wildcards (* and ?) are used to compare against URLs, or type=&quot;regexp&quot;, which means regular expressions are used to compare.
+
+Filters are applied in the order specified in this file.
+An action=&quot;drop&quot; filter causes exclusion of matching URLs.
+An action=&quot;pass&quot; filter causes inclusion of matching URLs,
+shortcutting any other later filters that might also match.
+If no filter at all matches a URL, the URL will be included.
+Together you can build up fairly complex rules.
+
+The default action is &quot;drop&quot;.
+The default type is &quot;wildcard&quot;.
+
+You can MODIFY or DELETE these entries as appropriate for
+your site. However, unlike above, the example entries in
+this section are not contrived and may be useful to you as
+they are.
+********************************************************* --&gt;
+
+&lt;!-- Exclude URLs that end with a '~' (IE: emacs backup files) --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*~&quot; /&gt;
+
+&lt;!-- Exclude URLs within UNIX-style hidden files or directories --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;regexp&quot; pattern=&quot;/\.[^/]*&quot; /&gt;
+</pre>
+				<p><font size="-1">Chcete-li z generovaného souboru Sitemap vyřadit konkrétní adresy URL, můžete použít filtrování. O to můžete mít zájem, pokud budete chtít vytvořit přehlednější seznam, odstranit nadbytečné položky v seznamu nebo zabránit zaznamenání některých položek. Mějte na paměti, že pokud použijete soubor <a href="http://www.robotstxt.org/wc/robots.html">robots.txt</a>  a zabráníte tak zaznamenání adres URL, pak je prohledávač Google nebude prohledávat ani zaznamenávat, i když budou obsaženy v souboru Sitemap. </font></p>
+				<p><font size="-1">Můžete použít jednu nebo více filtrovacích metod: Můžete smazat záznamy, které nepotřebujete, a dodatečné podle libosti vytvářet. Níže je uvedeno několik příkladů použití. </font></p>
+				<pre>&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*.jpg&quot; /&gt;</pre>
+				<p><font size="-1">Tento filtr vyřadí adresy URL končící řetězcem .jpg. Podobný filtr můžete použít v případě, že všechny obrázky na vašich stránkách jsou zasazeny do stránek HTML a neměly by být zobrazovány jako samostatné adresy URL. </font></p>
+				<pre>&lt;filter action=&quot;pass&quot; type=&quot;wildcard&quot; pattern=&quot;*.htm*&quot; /&gt;&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*&quot; /&gt;</pre>
+				<font size="-1"> Tento filtr zahrne všechny soubory .htm*, ale vyřadí vše ostatní.</font><br>
+				<br>
+
+
+				<font size="-1"></font><font size="-1"><li>Poté, co jste provedli všechny změny pro svůj web, soubor uložte.</li></font>
+				</ol>
+				
+				
+		        <font size="-1"><a name="config_reference"></a><p><b>Reference syntaxe konfiguračního souboru</b></p>
+		  </font><font size="-1">
+				</font>
+		  <p><font size="-1">Níže je uvedeno úplné vysvětlení syntaxe konfiguračního souboru. Každá značka začíná ukázkou kódu, pak následuje popis atributů.
+</font></p>
+				
+		  <p><font size="-1"><strong><a name="sitetag"></a>Adresa URL webu<br>
+</strong></font><font size="-1">Povinná značka na začátku každého konfiguračního souboru. </font></p>
+		  <pre>&lt;site
+base_url="http://www.priklad.cz/"
+store_into="/var/www/html/sitemap.xml.gz"
+verbose="1"
+supress_search_engine_notify="1"
+default_encoding="UTF-8"&gt;</pre>
+				<br>
+				<font size="-1">
+				<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				
+					<tbody><tr>
+					<td valign="top" width="19%"><pre>base_url</pre></td>
+					<td valign="top" width="6%"><font size="-1">povinné</font></td>
+					<td valign="top" width="75%"><font size="-1">Cesta HTTP základu adresy webu - do souboru Sitemap mohou být zahrnuty pouze adresy URL začínající touto základní adresou URL</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>store_into</pre></td>
+					<td valign="top"><font size="-1">povinné</font></td>
+					<td valign="top"><font size="-1">Cesta na webovém serveru k požadovanému výstupnímu souboru. Skript soubor vytvoří takže jej není třeba vytvářet před spuštěním skriptu.</font></td>
+					</tr> 
+					
+					<tr>
+					<td valign="top"><pre>verbose</pre></td>
+					<td valign="top"><font size="-1">volitelné</font></td>
+					<td valign="top"><font size="-1">Zadejte číslo 0 až 3, přičemž vyšší čísla odpovídají většímu počtu údajů pro ladění</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>suppress_search_engine_notify</pre></td>
+					<td valign="top"><font size="-1">volitelné</font></td>
+					<td valign="top">Zadáním hodnoty „1“ <font size="-1">z</font><font size="-1">akážete informování vyhledávačů pro účely testování</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>default_encoding</pre></td>
+					<td valign="top"><font size="-1">volitelné</font></td>
+					<td valign="top"><font size="-1">Určete kódování znaků, které má být použito na cesty v systému souborů a adresy URL </font></td>
+					</tr>
+				 
+		  </tbody></table>
+		   </font>
+					<font size="-1">
+					
+				<p></p>
+				</font>
+					<p><font size="-1"><strong>url<br>
+					</strong></font><font size="-1">Volitelná značka, kterou můžete použít k zařazení každé adresy URL na webu do seznamu. </font></p>
+					<p><pre>&lt;url
+href="http://www.priklad.cz/stats?q=age" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre></p><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>href</pre></td>
+					  <td width="6%" valign="top"><font size="-1">povinné</font></td>
+					<td valign="top" width="75%"><font size="-1">Cesta HTTP základu adresy webu - do souboru Sitemap mohou být zahrnuty pouze adresy URL začínající touto základní adresou URL</font></td>
+					</tr><tr>
+					<td valign="top"><pre>lastmod</pre></td>
+					<td valign="top"><font size="-1">volitelné</font></td>
+					<td valign="top"><font size="-1">Čas poslední změny adresy URL v <a href="http://www.w3.org/TR/NOTE-datetime">datovém a časovém formátu W3C</a> (RRRR-MM-DDČhh:mm:ss+00:00). Je možné vynechat čas. Příklady:<br>
+				&nbsp;&nbsp;2005-02-21T18:00:15+00:00<br>
+				&nbsp;&nbsp;"2005-02-21"</font></td>
+					</tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">volitelné</font></td>
+					<td valign="top"><font size="-1">Pravděpodobná frekvence změn adresy URL. Tato značka se považuje za náznak, nikoli za příkaz. Hodnota musí odpovídat jedné z uvedených: always, hourly, daily, weekly, monthly, yearly nebo never.</font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">volitelné</font></td>
+					<td valign="top"><font size="-1">Priorita dané stránky v poměru k ostatním stránkám na stejném webu. Hodnotou je číslo od 0.0 do 1.0, kde 0.0 je nejnižší priorita a 1.0 je nejvyšší priorita. Priorita může mít vliv na pořadí, podle kterého vyhledávače volí adresy URL při zkoumávání webu. Protože je priorita relativní, je používána pouze k výběru mezi adresami URL na jednom webu. Priorita vašich stránek nebude srovnávána s prioritou stránek na dalších webech.</font></td>
+					</tr>
+		  </tbody></table>
+					<p><font size="-1"><b>urllist<br>
+					</b></font><font size="-1">Volitelná značka, pomocí které můžete odkazovat na textový soubor obsahující seznam adres URL na svém webu. </font></p>
+					<pre>&lt;urllist path="/var/www/html/urllist.txt" encoding="UTF-8" /&gt;</pre>
+		  <br>
+		<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>path</pre></td>
+					  <td width="6%" valign="top"><font size="-1">povinné</font></td>
+					<td valign="top" width="75%"><font size="-1">Cesta a název souboru .txt. Můžete zadat buď částečnou nebo úplnou cestu. </font></td>
+			</tr><tr>
+					<td valign="top"><pre>encoding</pre></td>
+					<td valign="top"><font size="-1">volitelné</font></td>
+					<td valign="top"><font size="-1">Kódování souboru, pokud není v UTF-8.</font></td>
+					</tr>
+		  </tbody></table>
+<p><font size="-1"><a name="urllist_reference"></a>Soubor <b>urllist.txt</b> je jednoduchý textový soubor obsahující seznam adres URL ke zmapování. Můžete přidat také volitelné atributy pro každou adresu URL. Atributy se zadávají na stejný řádek jako adresa URL a oddělují se jednou mezerou. Například:</font>
+          </p>
+		  <pre>
+http://www.priklad.cz/abc/something
+http://www.priklad.cz/abc/xyy.pdf lastmod=2001-12-31T14:05:06+00:00
+http://www.priklad.cz/abc/def?x=12&amp;y=23 changefreq=weekly priority=0.3</pre>
+				<p>
+				<font size="-1">
+					
+				  </font><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%"  valign="top"><pre>lastmod</pre></td>
+					<td valign="top" width="6%"><font size="-1">volitelné</font></td>
+					<td width="75%"  valign="top"><p><font size="-1">Čas poslední změny adresy URL v <a href="http://www.w3.org/TR/NOTE-datetime">datovém a časovém formátu W3C</a> (RRRR-MM-DDČhh:mm:ss+00:00). Je možné vynechat čas. Příklady:</font><font size="-1"><br>
+				  <br>
+&nbsp;&nbsp;2005-02-21T18:00:15+00:00<br>
+&nbsp;&nbsp;"2005-02-21"</font></p>
+				  </td>
+				  </tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">volitelné</font></td>
+					<td valign="top"><font size="-1"><font size="-1">Pravděpodobná frekvence změn adresy URL. Tato značka se považuje za náznak, nikoli za příkaz. Hodnota musí odpovídat jedné z uvedených: always, hourly, daily, weekly, monthly, yearly nebo never.</font></font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">volitelné</font></td>
+					<td valign="top"><font size="-1">Priorita dané stránky v poměru k ostatním stránkám na stejném webu. Hodnotou je číslo od 0.0 do 1.0, kde 0.0 je nejnižší priorita a 1.0 je nejvyšší priorita. Priorita může mít vliv na pořadí, podle kterého vyhledávače volí adresy URL při prozkoumávání webu. Protože je priorita relativní, je používána pouze k výběru mezi adresami URL na jednom webu. Priorita vašich stránek nebude srovnávána s prioritou stránek na dalších webech.</font></td>
+					</tr>
+					</tbody></table>
+				</p>
+		  <font size="-1">
+		  </font>
+		  <p><font size="-1"><strong>directory<br>
+		  </strong></font><font size="-1">Volitelná značka pro upřesnění adresářů na webu. Generátor souborů Sitemap může vytvořit seznam adres URL ze souborů nalezených v uvedených adresářích. </font></p>
+				<pre>--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.priklad.cz/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.priklad.cz/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+		  <table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">povinné</font></td>
+					<td width="75%" valign="top"><font size="-1">Určuje počáteční cestu. Generátor souborů Sitemap prohledá tento adresář a všechny podadresáře</font>.</td>
+				  </tr>
+					
+					<tr>
+					<td valign="top"><pre>url</pre></td>
+					 <td valign="top"><font size="-1">povinné</font></td>
+					<td valign="top"><font size="-1">Určuje adresu URL odpovídající hodnotě značky path.</font></td>
+					</tr>
+					<tr>
+					<td valign="top"><pre>default_file</pre></td>
+					 <td valign="top"><font size="-1">volitelné</font></td>
+					 <td valign="top"><font size="-1">Určuje výchozí soubor adresáře na serveru.</font></td>
+					</tr>
+		    </tbody></table>
+		  </font>
+		  <p><font size="-1"><b>accesslog<br>
+		  </b>Volitelná značka, kterou můžete použít k upřesnění cesty a názvu souboru přístupových záznamů ve formátu serverů IIS a Apache, takže generátor souborů Sitemap je z nich schopen automaticky vybrat adresy URL. </font>
+          </p>
+		  
+		  <pre>&lt;accesslog path="/etc/httpd/logs/access-0.log" encoding="UTF-8"/&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">povinné</font></td>
+					<td width="75%" valign="top"><font size="-1">Určuje počáteční cestu k souboru.</font></td>
+		  </tr>
+					
+					<tr>
+					<td valign="top"><pre>encoding</pre></td>
+					 <td valign="top"><font size="-1">volitelné</font></td>
+					<td valign="top"><font size="-1">Upřesňuje kódování souboru, pokud není v kódu UTF-8.</font></td>
+					</tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><b> sitemap <br>
+		  </b>Volitelná značka, kterou můžete použít k upřesnění cesty a názvu souboru stávajících souborů Sitemap vytvořených pomocí generátoru souborů Sitemap. Generátor souborů Sitemap vytvoří jeden soubor Sitemap, který bude obsahovat adresy URL obsažené v každém ze souborů Sitemap. </font>
+          </p>
+		  
+		  <pre>&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">povinné</font></td>
+					<td width="75%" valign="top"><font size="-1">Určuje počáteční cestu k souboru Sitemap.</font></td>
+		  </tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><strong><a name="filter_examples"></a>filtr<br>
+</strong></font><font size="-1">Volitelná značka použitelná k vytváření pravidel pro zahrnutí nebo vyřazení konkrétních souborů. Filtry jsou používány v tom pořadí, v jakém jsou seřazeny v souboru config.xml. Kombinování položek filtrů a vstupních položek (url, urllist, directory nebo accesslog) nemá žádný vedlejší účinek - každá adresa URL, kterou generátor souborů Sitemap přidává do souboru Sitemap, je nejprve porovnávána se všemi filtry. </font><font size="-1">Pokud se adresa URL neshoduje s žádným filtrem, je výchozím pravidlem zahrnout ji do souboru Sitemap.</font></p>
+				
+				<pre>&lt;filter action="drop" type="wildcard" pattern="*/internal/*" /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>action</pre></td>
+					<td valign="top" width="6%"><font size="-1">volitelné</font></td>
+					<td width="75%" valign="top">
+				      <font size="-1"><p>Jak by měl filtr postupovat. Platné hodnoty jsou:</p>
+					  </font>				      <ul>
+					  <li><font size="-1">drop – vyřadit odpovídající adresy URL. Toto je základní akce. Nejsou-li specifikovány žádné kroky, generátor bude předpokládat hodnotu &quot;drop&quot;.</font></li>
+					  <li><font size="-1">pass – zahrnout odpovídající adresy URL.</font></li>
+					  </ul>
+				      </p></td>
+		  </tr>
+					
+					<tr>
+					<td width="19%" valign="top"><pre>type</pre></td>
+					<td valign="top" width="6%"><font size="-1">volitelné</font></td>
+					<td width="75%" valign="top"><font size="-1"><p>Typ filtrování. Platné hodnoty jsou:</p>
+					</font>					  <ul>
+					<li><font size="-1">wildcard – standardní zástupné znaky (?   a *) používané pro porovnávání s adresami URL. Toto je výchozí typ. Nejsou-li upřesněn typ, generátor bude předpokládat hodnotu &quot;wildcard&quot;.</font></li>
+					<li><font size="-1">regexp – jsou použity standardní výrazy.</font></li>
+					  </ul></td>
+		  </tr>
+				 
+<tr>
+					<td valign="top"><pre>pattern</pre></td>
+					 <td valign="top"><font size="-1">povinné</font></td>
+					 <td valign="top"><font size="-1">Určuje vzor pro srovnávání.</font></td>
+		  </tr>
+		  </tbody></table>
+
+<font size="-1">
+<p><b><a name="encoding"></a>Kódování</b></p>
+		<p>Soubory - seznamy adres URL nebo záznamy webového serveru, ke kterým odkazuje konfigurační soubor, mohou používat jiné kódování než výchozí UTF-8. V souboru config.xml můžete specifikovat jiné kódování a ovlivnit tak způsob čtení souborů generátorem souborů Sitemap. Některá běžná kódování jsou:</p>
+				<ul>
+				<li><strong>encoding="utf-8"</strong> je považováno za výchozí
+				</li><li><strong>encoding="ascii</strong>" je součástí UTF-8, takže je nemusíte specifikovat
+				</li><li><strong>encoding="iso-8859-1</strong>" je běžné pro mnoho západoevropských jazyků
+				</li></ul>
+		  </font>
+		  
+		  <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="creating_mobile" id="creating_mobile"></a><b>2b. Dodatečné informace o vytváření konfiguračního souboru pro mobilní web</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">Konfigurační soubor pro soubor Sitemap pro mobilní web vytvoříte stejným způsobem jako soubor Sitemap pro standardní web. Musíte však vytvořit samostatný konfigurační soubor pro každý značkovací jazyk a spustit generátor souborů Sitemap s každým konfiguračním souborem zvlášť, aby byl vytvořen samostatný soubor Sitemap pro každý z nich.</font></p>
+				<p><font size="-1">Každý konfigurační soubor musí:</font></p>
+		  <ul>
+		    <li><font size="-1">specifikovat odlišný název souboru pro hodnotu <a href="#create_config"><strong>store_into</strong> </a>.</font></li>
+	        <li><font size="-1">použít <a href="#filter_examples">filtry</a> pro určení adres URL, které mají být vyřazeny a zahrnuty pro daný značkovací jazyk. Pamatujte si, že každý soubor Sitemap by měl zahrnovat adresy URL pouze pro jeden značkovací jazyk. To znamená, že shodné adresy URL mohou být zahrnuty do několika souborů Sitemap, pokud tyto adresy URL náleží několika značkovacím jazykům.</font></li>
+	      </ul>
+			<p><strong><font size="-1">Příklady filtrování</font></strong></p>
+			<p><font size="-1">Níže je uvedeno několik příkladů, jak je možné použít filtry na základě přípony k vytvoření souborů Sitemap pro různé značkovací jazyky. Konkrétní použité filtrování by mělo být založeno na typu značkovacího jazyka využitého na vašem webu a na způsobu specifikace jednotlivých typů. Pokud jste implementovali podrobnosti svých stránek odlišně (můžete např. uspořádat adresy URL s různými značkovacími jazyky do samostatných složek), měli byste filtrovat na základě specifik implementace webu. Pamatujte, že filtry jsou aplikovány v tom pořadí, v jakém jsou uvedeny v konfiguračním souboru. Prvním filtrem na seznamu by tedy měla být akce &quot;pass&quot;, která určí adresy URL vybrané k zahrnutí do souboru Sitemap. </font></p>
+			<p><font size="-1">Pro vytvoření souboru Sitemap pro obsah WML (WAP 1.2):</font></p>
+			
+			<pre>&lt;filter action="pass" type="wildcard" pattern="*.wml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+</pre>
+			
+			<p><font size=-1>Pro vytvoření souboru Sitemap pro obsah mobilního profilu XHTML (WAP 2.0):</font></p>
+			
+			<pre>&lt;filter action="pass" type="wildcard" pattern="*.xhtml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+			</pre>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="copy"></a><b>3. Nahrání souborů na webový server</b></td> 
+				</tr> 
+			</tbody></table>
+		<p><font size="-1"> Následující soubory byste měli nahrát na svůj webový server na místo, na které můžete přistupovat z příkazového řádku: </font></p>
+			
+			<font size="-1"><ul>
+              <li><strong>config.xml</strong> &#8212;to je konfigurační soubor, který jste právě vytvořili za použití souboru <strong>example_config.xml</strong>. </li>
+              <li><strong>sitemap_gen.py</strong> &#8212;toto je skript v jazyce Python, který vytváří soubor Sitemap. </li>
+              <li><strong>urllist.txt</strong> &#8212; tento soubor je volitelný. Potřebujete jej pouze v případě, že jste k vytvoření souboru Sitemap použili metodu textového souboru. </li>
+		  </ul>
+			
+		  </font>
+		  <p><font size="-1"> Způsob nahrání uvedených souborů závisí na vašem prostředí. Mezi běžné způsoby patří použití protokolu <a href="http://www.google.cz/search?q=ftp">FTP</a> a SCP. Pro další informace se obraťte na hostitele svého webu.</font></p>
+			
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="execute"></a><strong>4. Spuštění skriptu generátoru souborů Sitemap (sitemap_gen.py) </strong></td> 
+				</tr> 
+			</tbody></table>
+				
+				<p><font size="-1">
+Abyste mohli spustit generátor souborů Sitemap, musíte se připojit ke svému webovému serveru. Způsob připojení závisí na vašem prostředí. Obecně můžete například na servery založené na platformě UNIX přistupovat pomocí protokolu <a href="http://www.google.cz/search?q=ssh">SSH</a>.  Další informace o připojování na webový server a spouštění skriptů získáte od hostitele svého webu. </font></p>
+				
+				<p><font size="-1"> Poté, co zkopírujete soubory na webový server, musíte spustit skript generátoru souborů Sitemap. Připojte se ke svému webovému serveru a spusťte následující příkaz (nahraďte cestu <strong>&lt;path/config.xml&gt;</strong> cestou a názvem souboru svého konfiguračního souboru. Pokud jste soubor nahráli na stejné místo jako skript v jazyce Python, můžete cestu vynechat.):</font></p>
+				
+				<pre>python sitemap_gen.py --config=&lt;path/config.xml&gt;</pre>
+<p><font size="-1">Například příkazový řádek operačního systému na základě UNIXu může vypadat podobně jako tento:</font></p>
+<p><img src="images/python_command.gif" alt="Python command"></p>
+<p><font size="-1">Příkazový řádek u operačního systému MS-DOS může vypadat podobně jako tento:</font></p>
+<p><img src="images/python_dos.gif" alt="Python command"></p>
+<p><font size="-1"><b>Tip:</b> Jestliže testuje konfiguraci a ještě nechcete soubor Sitemap odeslat, následující syntax zabrání generátoru souborů Sitemap ve spojení s Google:</font></p>
+				<pre><br>	$ python sitemap_gen.py --config=config.xml --testing</pre>
+				<font size="-1"><p>Stav svého požadavku uvidíte v příkazovém řádku:</p></font>
+<pre>	
+	Reading configuration file: /path/config.xml
+	Opened URLLIST "/path/urllist.txt"
+	Walking DIRECTORY "/var/www/html/dir"
+	Walking DIRECTORY "/var/www/html/dir2"
+	Opened ACCESSLOG "/etc/httpd/logs/access-0.log"
+	Sorting and normalizing collected URLs.
+	Writing Sitemap file "/path/sitemap.xml.gz" with 1092 URLs
+	Notifying search engines.
+	Notifying www.google.com
+	Count of file extensions on URLs:
+		208  .html
+		574  .jpg
+		...
+		Number of errors: 0
+		Number of warnings: 0</pre>
+				<font size="-1">
+				<p>Pokud nevidíte příliš mnoho podobných výstupních dat, uvědomte si, že mnohomluvné nastavení konfiguračního souboru může ovlivnit množství informací zobrazených na monitoru.  Tento příklad představuje nastavení výmluvnosti na „1“.</p>
+				<p>Všechny chyby v souboru se také zobrazí.  Pokud například vynecháte u záznamů o adresáři atribut url=, skript vrátí následující výstup:
+				</p></font>
+<pre>	
+	[ERROR] Directory entries must have both "path" and "url" attributes
+	Number of errors: 1</pre>
+				<font size="-1">
+				</font>
+				<p><font size="-1">Opravte všechny chyby v souboru <b>config.xml</b> a znovu spusťte skript. Jestliže se neobjevují žádné chyby, generátor souborů Sitemap vytvoří nový soubor <b>sitemap.xml.gz</b> v lokaci určené konfiguračním souborem. </font></p>
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="submitting" id="submitting"></a><strong>5. Odeslání souborů Sitemap na Google </strong></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">Generátor souborů Sitemap vytvoří soubor <strong>sitemap.xml.gz</strong> v lokaci určené konfiguračním souborem. Poté, co byl soubor úspěšně vytvořen, ujistěte se, že je přístupný pomocí webového prohlížeče. Pak jej <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">přidejte</a> do svého účtu <a href="https://www.google.com/webmasters/sitemaps/siteoverview?hl=cs">souborů Sitemap Google</a>. Google vám pak bude moci poskytovat užitečné stavové a statistické informace. Jestliže Google oznámí problémy s vaším souborem Sitemap, můžete problémy opravit a soubor odeslat znovu. Přidat soubor Sitemap manuálně je třeba pouze jedenkrát. Poté už můžete oznamovat Google změny svého souboru Sitemap pomocí <a href=submit.html#ping>požadavku HTTP</a> (můžete jej ale také znovu odeslat pomocí účtu Nástroje Google pro správce webu). </font></p>
+		        
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="recur"></a><b>6. Nastavení opakujícího se skriptu.</b></td> 
+				</tr> 
+		  </tbody></table>
+		  <font size="-1">
+				<p>Doporučujeme nastavit, aby generátor souborů Sitemap běžel tak často, jak se mění obsah. Maximální frekvence by měla být jednou za hodinu.</p>
+		  </font>
+		  <p><font size="-1">Správci webů mohou u webových serverů s operačním systémem UNIX zvážit nastavení této operace jako <a href="http://www.google.cz/search?q=cron">cron</a>. </font></p>
+				<font size="-1"><p>Správci webů využívající jiných platforem by měli kontaktovat správce systému a požádat o pomoc s konfigurací opakujících se skriptů. Můžete také těžit z rad ostatních uživatelů ve skupině soubory Sitemap Google na <a href="http://groups.google.com/group/Google_Webmaster_Help-Sitemap?tsc=1">Skupinách Google</a>.</p>
+				
+	      </font>
+				<p><font size="-1"> O změnách ve svém souboru Sitemap můžete Google informovat pomocí <a href=submit.html#ping>požadavku HTTP</a>. Nicméně se prosím ujistěte, že jste se přihlásili do <a href="https://www.google.com/webmasters/sitemaps/siteoverview?hl=cs">Nástrojů Google pro správce webu</a> pomocí svého účtu Google, abyste poprvé <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496>přidali soubor Sitemap</a> do účtu Nástroje Google pro správce webu. </font></p>
+				<font size="-1"></font>		
+			    <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="troubleshoot"></a><b>Odstraňování problémů</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p>V této sekci budeme hovořit o některých běžných otázkách nebo problémech, se kterými se lidé mohou setkat při používání generátoru souborů Sitemap, a o tom, co můžete dělat, pokud na některé narazíte.</p>
+				<p><b>Přístupný prostřednictvím webu</b></p>
+				<p><b>Problém:</b> Generátor souborů Sitemap vrací následující chybu a upozornění:</p>
+				</font>
+<pre>	
+	[ERROR] When attempting to access your generated Sitemap at the following URL:
+	http://www.priklad.cz/sitemap.xml.gz
+	we failed to read it.  Please verify the store_into path you specified in
+	your configuration file is web-accessible.  Consult the FAQ for more
+	information.
+	[WARNING] Proceeding to notify with an unverifiable URL.</pre>
+				<font size="-1">
+				<p><b>Co se stalo?</b> Generátor souborů Sitemap vytvořil soubor podle vaší specifikace, poté se podobně jako vyhledávač pokusil načíst pomocí protokolu HTTP a neuspěl.  Generátor pokračoval v práci a informoval vyhledávače, chybovým hlášením a upozorněním vás však informuje o tom, že váš soubor Sitemap může být pro vyhledávače nečitelný.</p>
+				<p>Generátor souborů Sitemap vytvoří soubor Sitemap podle cesty určené atributem store_into v souboru <b>config.xml</b>. Generátor souborů Sitemap pak s využitím atributu base_url vytvoří adresu URL k tomuto souboru a předá adresu URL vyhledávačům. Pokud jste nastavili konfiguraci např. takto:</p>
+				</font>
+<pre>	&lt;site base_url="http://www.priklad.cz/"
+	      store_into="/var/www/html/sitemap.xml.gz"&gt;</pre>
+				<font size="-1">
+				</font><p><font size="-1">Generátor souborů Sitemap oznámí vyhledávačům, aby hledali váš soubor Sitemap na adrese:</font></p>
+				
+				<pre>	http://www.priklad.cz/sitemap.xml.gz</pre>
+				<font size="-1"><p>
+				Soubor musí být přístupný prostřednictvím protokolu HTTP.  Jestliže není možné načíst soubor pomocí dané adresy URL, vyhledávače nemohou soubor Sitemap najít.</p>
+				</font><p><font size="-1"><b>Co mohu udělat?</b>  Musíte ověřit, že soubor <b>config.xml</b> určuje správné cesty base_url a store-into pro soubor Sitemap.  Musíte také potvrdit, že webové prohlížeče mohou načíst soubor Sitemap podle cesty base_url.  Najdete-li chyby v cestě nebo adrese URL, měli byste znovu spustit generátor souborů Sitemap nebo přesunout soubor Sitemap na správné místo a informovat vyhledávače ručně prostřednictvím jejich webových stránek.</font></p>
+				<font size="-1"><p><b>Podpora pro jazyk XML</b></p>
+				<p><strong>Problém:</strong> Generátor souborů Sitemap vrací následující chybu:</p>
+				</font>
+<pre>	
+	Some installs of Python 2.2 do not include complete support for XML. 
+	Please try upgrading your version of Python and re-running the script.</pre>
+				<font size="-1"><p>
+				<b>Co se stalo?</b>  Jak zpráva říká, některé platformy mají verzi jazyka Python (jazyk, ve kterém je napsán generátor souborů Sitemap) postrádající podpůrné knihovny nezbytné pro zpracování souborů XML. Tento skript vyžaduje pro své fungování plnou podporu jazyka XML.</p>
+				<p><b>Co mohu udělat?</b> Zkuste aktualizovat nainstalovanou verzi jazyka Python na novější verzi. Možná kvůli tomu budete muset kontaktovat správce systému.</p>
+				<p>Uvědomte si, že toto ovlivňuje pouze generátor souborů Sitemap, nikoli soubory Sitemap obecně.  Používáte-li k vytváření souborů Sitemap jiný způsob nebo nástroj, můžete jej použít a odeslat soubory Sitemap vyhledávačům.</p>
+				<p><b>Co jsou dodatečné soubory ve formátu .gz nebo .zip?</b></p>
+				<p>Když rozbalíte skript sitemap_gen.py, uvidíte patrně o pár souborů více, než bylo uvedeno výše. Celý sezname souborů vypadá spíše takto:</p>
+				</font>
+	<pre>	
+	AUTHORS
+	ChangeLog
+	COPYING
+	example_config.xml
+	example_urllist.txt
+	PKG-INFO
+	README
+	setup.py
+	sitemap_gen.py
+	test_sitemap_gen.py</pre>
+		  <font size="-1"><p>
+				Dodatečné soubory obvykle obsahují informace o svazku a licenční podmínky. Doporučujeme vám si tyto soubory prohlédnout.</p>
+				<p>Jedinou výjimkou je soubor test_sitemap_gen.py, což je testovací skript užitečný pro vývojáře, kteří by si přáli podílet se na tomto projektu s otevřeným zdrojovým kódem.  Jestliže chcete používat generátor souborů Sitemap aniž byste měnili cokoli v jeho zdrojovém kódu, což se ve většině případů předpokládá, nejspíš tento testovací skript nebudete potřebovat.</p>
+	  Chcete-li nabídnout svou pomoc při vývoji tohoto projektu, podívejte se prosím na adresu <a href="http://sourceforge.net/projects/goog-sitemapgen">http://sourceforge.net/projects/goog-sitemapgen</a>. Odkazy na některé programy jiných společností podporující soubory Google Sitemap najdete také <a href="http://code.google.com/sm_thirdparty.html">zde</a>.</p>
+	  
+	  <font size="-1"></font></font>
+		  <p><font size="-1"><b><a name="nonascii"></a>Znaky jiné než v kódu ASCII </b></font></p>
+				<font size="-1"><font size="-1">
+				</font></font>
+				<p><font size="-1"><strong>Problém:</strong> Název domény vašeho webu nebo adres URL obsahuje znaky mimo sadu ASCII.</font></p>
+				<p><font size="-1">Obecně by měly být znaky jiné než v kódu ASCII zapsány pomocí <a href="protocol.html#escaped">kódování UTF-8</a> než budou uvozena znakem procent. Některé webové servery však reagují správně pouze tehdy, jsou-li adresy URL zapsány jinak než pomocí kódování UTF-8. Všechny adresy URL v souboru Sitemap stejně jako adresa URL samotná musí být kódovány tak, aby byly čitelné pro webový server, na kterém jsou umístěny. Použijte volitelný atribut <strong>default_encoding</strong> <a href="#sitetag">v definiční sekci webu</a> a upřesněte kódování používané vaším webovým serverem. Jestliže nepoužijete tuto značku a váš webový server používá jiné kódování než UTF-8, nemůžeme zjistit, jaké kódování použít.</font></p>
+				<p><font size="-1">Pokud adresy URL obsahují znaky jiné než v kódu ASCII, doporučujeme vám spustit skript generátoru souborů Sitemap s využitím jazyka Python verze 2.3 nebo vyšší. Tato verze jazyka Python má rozšířenou podporu znaků jiných než v kódu ASCII. Jestliže název domény obsahuje znaky jiné než v kódu ASCII, je třeba použít jazyk Python verze 2.3 nebo novější, neboť podpora Mezinárodních názvů domén v aplikacích (IDNA - Internationalizing Domain Names in Applications) byla přidána až od této verze. Bez podpory IDNA nemůže generátor souborů Sitemap správně kódovat název domény se znaky jinými než v kódu ASCII. </font></p>
+				<font size="-1">
+	  
+	  
+	  
+	<br>
+	<p class="d" align="right"><i>Naposledy upraveno: 15. dubna 2006</i></p>
+	  </font></div>
+	</td> 
+  </tr> 
+  <tr> 
+    <td width=1% valign=top><img src=http://www.google.com/images/art.gif width=143 height=53 vspace=5 hspace=15></td> 
+    <td style="background-color: #ffffff" width=1 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td valign=middle><div class=footer> 
+        <div align=center><font size="-1"> &copy;2007 Google - <a href=http://www.google.cz/privacy.html>Zásady ochrany osobních údajů</a> - <a href=http://www.google.cz/accounts/TOS>Podmínky</a> - <a href=http://www.google.com/about.html>O Google</a> </font></div> 
+      </div></td> 
+  </tr> 
+</table> 
+</body>
+</html>

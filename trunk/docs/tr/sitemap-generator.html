@@ -1,0 +1,723 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel=stylesheet href="http://www.google.com/google.css">
+<link rel=stylesheet href="../leftnav.css">
+<style>
+<!--
+body,td,font,p,a{font-family:arial,sans-serif}
+.i { margin-left: 1em; margin-right: 2em; }
+//.style1 {font-weight: bold}
+.style1 {font-weight: bold}
+.d {color:#999999;text-decoration:italics;font-size:10px;}
+.changes {color: #FF0000}
+-->
+</style>
+<script
+  src=" https://ssl.google-analytics.com/urchin.js "
+  type="text/javascript">
+</script>
+<script type="text/javascript">
+  _uacct="UA-18009-2";
+  _utcp="/webmasters/sitemaps/";
+  _uanchor=1; 
+  urchinTracker();
+</script>
+
+<title>Google Web Yöneticisi Araçları</title>
+</head>
+<body class=search bgcolor=#ffffff text=#000000 link=#0000CC vlink=#800080 alink=#ff0000 topmargin=3>
+<table width=95% border=0 cellpadding=0 cellspacing=2>
+  <tr valign=top>
+    <td width=1%><a href=https://www.google.com/webmasters/sitemaps/> <img src=http://www.google.com/images/google_sm.gif border=0 width=143 height=59 alt="Google ana sayfasına geri dön." hspace=15 vspace=5></a></td>
+    <td width=100% valign="middle">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		<td><font size="+0"><b>Web Yöneticisi Araçları</b></font></td>
+		</tr>
+		<tr>
+		<td style="border-bottom:1px solid #999999" height="1"><img width="1" height="1" alt=""></td>
+		</tr>
+		</table>  	
+	</td>
+  </tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=0 width=95%> 
+  <tr> 
+    <td width="175" valign="top">
+		<font size="-1">
+    <p class="sidenavlink">
+    <a href="about.html">Web Yöneticisi Araçları Hakkında</a></p>
+    <p class="sidenavlink"><a href="protocol.html">Site Haritası Protokolünü Kullanma</a></span>
+    <p class="sidenavtoc">Site Haritası Oluşturucuyu Kullanma</p>
+<p class="sidenavlink"><a href="http://www.google.com.tr/webmasters/">Google Web Yöneticisi Merkezi</a></p>
+  </font></td>
+    <td background=http://www.google.com/images/dot2.gif valign=bottom width=5><img src=http://www.google.com/images/dot2.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=10 height=1></td> 
+    <td>
+		<div class="content"> 
+		
+			<p><strong>İçindekiler</strong></p>
+			<p><font size="-1"><a href="#before">Başlamadan önce</a><br><a href="#download">Site Haritası Oluşturucu program dosyalarını indirme</a><br><a href="#config">Yapılandırma dosyası oluşturma</a><br><a href="#copy">Dosyaları web sunucunuza yükleme</a><br><a href="#execute">Site Haritası Oluşturucu komut dizisini çalıştırma</a><br><a href="#submitting">Site Haritanızı Google’a gönderme</a><br><a href="#troubleshoot">Sorun Giderme</a></font></p>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="before"></a><b>Başlamadan önce</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">
+Google Site Haritası Oluşturucu, Site Haritası Protokolü'nü kullanarak sitenize ait bir Site Haritası oluşturan bir Python komut dizisidir. Bu komut dizisi, URL listelerinden, web sunucusu dizinlerinden veya erişim günlüklerinden Site Haritaları oluşturabilir. Bu komut dizisini kullanmak için: </font></p>
+				
+				<ul>
+				  <li><font size="-1">Web sunucunuza bağlanabilmeniz ve komut dizilerini çalıştırabilmeniz gerekir. </font></li>
+				  <li><font size="-1">Web sunucunuzda Python 2.2 veya üst sürümü yüklenmiş olmalıdır. </font></li>
+				  <li><font size="-1">Python'u başlatan komutu bilmeniz gerekir. (Genellikle bu <strong>python</strong> komutudur ancak yüklemeye göre değişebilir. Örneğin, web sunucusunda Python'un iki sürümü yüklüyse, daha önceki sürüm <strong>python</strong> komutuyla ve daha sonraki sürüm ise (<strong>python2</strong>) komutuyla başlatılıyor olabilir. </font></li>
+				  <li><font size="-1">Sitenize ilişkin dizin yolunu biliyor olmanız gerekir. Web sunucunuzda tek bir site barındırılıyorsa, bu <strong>var/www/html</strong> gibi bir yol olabilir. Birden çok site barındıran sanal bir sunucunuz varsa, bu <strong>home/virtual/site1/fst/var/www/html</strong> gibi bir yol olabilir.  </font></li>
+				  <li><font size="-1"> Web sunucunuza dosya yükleyebilir olmanız gerekir (örneğin, FTP kullanarak). </font></li>
+				  <li><font size="-1">Erişim günlükleri temelinde bir URL listesi oluşturacaksanız, bu günlükler için kullanılan kodlamayı ve bunların tam yolunu bilmeniz gerekir. </font></li>
+          </ul>
+		  
+				<p><font size="-1">Bu konuda emin değilseniz, web barındırma şirketinize danışabilirsiniz. </font></p>
+				<font size="-1">
+				<p> Şimdi başlamaya hazırsınız. Yapmanız gerekenler aşağıda genel olarak açıklanmıştır. </p>
+				</font>
+		  <font size="-1">
+				<ol>
+                  <li><font size="-1">Site Haritası Oluşturucu program dosyalarını <a href="#download">indirin</a>. Dosyaları yerel bir dizine açın. </font></li>
+                  <li><font size="-1">Sağlanan <strong>example_config.xml</strong> dosyasını şablon olarak kullanarak, siteniz için <a href="#config">bir yapılandırma dosyası oluşturun</a>. Bu dosyayı siteniz için gerektiği şekilde değiştirin ve kaydedin. </font></li>
+                  <li><font size="-1">Web sunucunuza <a href="#copy">gerekli dosyaları yükleyin</a>. </font></li>
+                  <li><font size="-1"><a href="#execute"></a> <strong>sitemap_gen.py</strong> dosyasını çalıştırın. </font></li>
+                  <li><font size="-1">Oluşturulan Site Haritasını Google web yöneticisi araçları hesabınıza <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">ekleyin</a>. </font></li>
+		          <li><font size="-1"><a href="#recur">Yinelenen bir komut dizisi hazırlayın</a>. (isteğe bağlı) </font></li>
+				</ol>
+		  </font>
+		  
+				<p><font size="-1">Site Haritası Oluşturucu'yu kullanamazsanız, Google web yöneticisi araçları hesabına <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34606&topic=8516>başka bir biçimde</a> örneğin basit metin dosyası olarak bir Site Haritası ekleyebilirsiniz. Ayrıca, Google Site Haritalarını destekleyen üçüncü tarafların programlarını da <a href="http://code.google.com/sm_thirdparty.html">burada</a> bulabilirsiniz.</font></p>
+				<p><font size="-1"><strong>Haberler Site Haritaları için:</strong> Haberler Site Haritaları'nın özel gereksinimleri nedeniyle, şu anda Site Haritası Oluşturucu'nun Google Haberler Site Haritaları oluşturmak için kullanılması tavsiye edilmez. Haberler Site Haritaları'nın yalnızca en son yayınlanan haber makalelerinin (tüm web sitesinin değil) dinamik listeleri olmaları amaçlanmıştır ve sık sık güncellenirler.</font></p>  
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="download"></a><b>1. Site Haritası Oluşturucu program dosyalarını indirme</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p> Site Haritası Oluşturucu dosyaları, ZIP ve GZ arşiv biçimlerinde <font size="-1">aşağıdaki yerde</font> bulunabilir:</p>
+				</font>
+				<p><font size="-1"><a href="http://www.sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422">http://sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422</a></font></p>
+				<font size="-1">
+				<p>Arşivi indirdiğinizde, yerel bir dizine açın. Aşağıdaki dosyaları bulun: </p>
+				<ul>
+                  <li><strong> BENİOKU</strong> &#8212;, bu araç hakkındaki en son bilgileri içerir </li>
+                  <li><strong> sitemap_gen.py</strong> &#8212;Site Haritanızı üreten python komut dizisidir. </li>
+                  <li><strong> example_config.xml</strong> &#8212;siteniz için yapılandırmayı belirtmek için kullanacağınız şablon yapılandırma dosyası</li>
+                  <li><strong> example_urllist.txt</strong> &#8212;belirttiğiniz URL kümesi temelinde bir Site Haritası oluşturmak istiyorsanız kullanabileceğiniz şablon URL listesi</li>
+		        </ul>
+				</font>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="config"></a><b>2a. Bir yapılandırma dosyası oluşturma</b></td> 
+				</tr> 
+			</tbody></table>
+		  <font size="-1">
+		  </font><p><font size="-1">Bu bölümde, bir yapılandırma dosyası oluşturmakla ilgili adım adım talimatlar sağlanmıştır. Ayrıca, kullanılabilir seçenekler için <a href="#config_reference">tam referans bilgileri</a> de sağlanmıştır. <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34627&topic=8493">Mobil Site Haritaları</a> oluşturuyorsanız, <a href="#creating_mobile">ek mobil yönergelerine</a> bakın.</font></p>
+				<font size="-1"><p>Siteniz için bir yapılandırma dosyası oluşturmak için aşağıdakilere sahip olmanız gerekir: </p>
+				<ul>
+                  <li>Sitenizin temel URL'si (<strong>http://www.ornek.com.tr</strong>/ gibi). Protokolü eklemeyi unutmayın (<strong>http://</strong> gibi). Örneğin, <strong>http://www.google.com.tr</strong> geçerli bir temel url olmasına karşın, <strong>www.google.com.tr</strong> geçerli değildir. </li>
+		
+                  <li>Site Haritasını depolamak istediğiniz yerin web sunucusu yolu. Genel olarak, Site Haritası Site Haritasının yerinden daha yüksek düzeydeki bir dizinde bulunan URL'leri içeremeyeceğinden, bu temel URL'ye ilişkin yoldur. Google Site Haritası Oluşturucu'yu çalıştırdığınızda, Site Haritasını oluşturur ve sizin belirttiğiniz yere yerleştirir. </li>
+		 
+                  <li>Site Haritası Oluşturucu'nun Site Haritanızı oluşturmak için kullanmasını istediğiniz yöntemler. Herhangi bir yöntem bileşenini kullanabilirsiniz. Aşağıdaki yöntemler kullanılabilir: </li>
+		  </ul>
+				
+		  </font><ol>
+<ul>
+                    <li><font size="-1"><strong> <a href="#URL">URL</a></strong>&#8212; her bir URL ile ilgili bilgilerle birlikte, tek tek URL'leri yapılandırma dosyasının bu bölümünde listeleyin. Başka yöntemlerin seçmeyeceği ek URL'leri el ile eklemek için, bu yöntemi genel olarak başka bir yöntemle birlikte kullanabilirsiniz. </font></li>
+                    <li><font size="-1"><strong><a href="#urllist">URL listesi</a> </strong>&#8212;, yapılandırma dosyasını bir URL listesi içeren bir metin dosyasına yönlendirir. Bu metin dosyası zaten varsa veya bir URL listesi oluşturmak için bir komut dizisi kullanırsanız, bu yöntemi kullanmak isteyebilirsiniz. </font></li>
+                    <li><font size="-1"><strong><a href="#directory">Dizin yolları</a></strong>&#8212;, sitenize ilişkin dizin yollarını ve o yollara karşılık gelen URL'leri belirtir. Site Haritası Oluşturucu, bu dizinlerin içeriğine dayalı olarak bir URL listesi oluşturur. Siteniz statik HTML dosyalarından oluşuyorsa, bu yöntemi kullanabilirsiniz. </font></li>
+            <li><font size="-1"><strong> <a href="#logs">Erişim günlükleri</a></strong>&#8212;günlük dosyalarınıza ilişkin yolu gösterir. Site Haritası Oluşturucu, günlüklerde yer alan URL'lere dayalı olarak bir URL listesi oluşturur. Siteniz dinamik sayfalardan oluşuyorsa, bu yöntemi kullanmak isteyebilirsiniz. </font></li>
+ <li><font size="-1"><strong> <a href="#sitemap">Site Haritası</a></strong>&#8212;Site Haritası Oluşturucu ile oluşturduğunuz varolan Site Haritalarını gösterir. Site Haritası Oluşturucu, her bir Site Haritasında yer alan URL'leri içeren tek bir Site Haritası oluşturur. Daha büyük tek bir Site Haritasıyla birleştirmek istediğiniz daha küçük çeşitli Site Haritaları oluşturduysanız, bu yöntemi kullanabilirsiniz. </font></li>
+            </ul>
+		  </ol>
+				
+		  <font size="-1"><p><b><a name="create_config"></a>Yapılandırma dosyasını aşağıdaki şekilde oluşturun:</b></p>
+		  </font>
+				<ol>
+                 <font size="-1"> <li><strong>example_config.xml</strong> dosyasını metin düzenleyicisinde açın. Yeni bir dosya olarak kaydedin (<strong>config.xml</strong> veya <strong>sitem_config.xml</strong> gibi).</li> 
+                 </font>
+				
+                 
+                 <font size="-1">
+                 <li>Site tanımı bölümünü bulun: </li>
+                 </font>		  
+				
+				<pre>&lt;site base_url="http://www.ornek.com.tr" store_into="/var/www/docroot/sitemap.xml.gz"verbose="1"&gt;</pre>				
+				
+                  <font size="-1"><li><strong>base_url</strong> değerini sitenizin URL'si olacak şekilde değiştirin. </li>
+		 
+                  <li><strong>store_into</strong> değerini, Site Haritasını depolamak istediğiniz web sunucunuzdaki yol ve Site Haritası için kullanmak istediğiniz dosya adı olacak şekilde değiştirin. Genel olarak, Google yalnızca Site Haritasının bulunduğu dizinle yanı düzeyde olan veya onun alt dizini olan URL'leri kabul edebileceğinden, bu temel URL'ye ilişkin yoldur. Komut dizisini yüklediğiniz dizinden göreli bir yol veya web sunucunuzun kökünden bir tam yol belirtebilirsiniz. Komut dizisini temel URL dizininize yüklerseniz, yalnızca dosya adını belirtebilirsiniz.</li>
+                  </font>
+                  <font size="-1"></font><font size="-1"><li><span class="style1">** DEĞİŞTİRİN</span> <span class="style1">veya SİLİN **</span> ifadesiyle başlayan oluşturma yöntemi bölümlerini bulun. Bu bölümlerin her biri Site Haritası oluşturma yöntemlerinden birine karşılık gelir. </li>
+                  <li>Kullanmayacağınız yöntemlere ilişkin bölümleri silin.</li>
+                  <li>Kullanacağınız yöntemler için aşağıdaki talimatları uygulayın. </li>
+                <p><strong> URL<a name="URL"></a></strong></p>
+                <p> Aşağıdaki bölümü bulun: </p>
+                </font>
+                  <pre>&lt;!-- ** MODIFY or DELETE ** 
+"url" nodes specify individual URLs to include in the map. &lt;br&gt;
+
+Required attributes: 
+href - the URL
+
+Optional attributes: 
+lastmod - timestamp of last modification (ISO8601 format) changefreq - how often content at this URL is usually updated priority - value 0.0 to 1.0 of relative importance in your site --&gt; 
+
+&lt;url href="http://www.ornek.com/stats?q=ad" /&gt;
+&lt;url href="http://www.ornek.com/stats?q=yas" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre>
+                  <font size="-1">
+                <p>Bu bölümde iki örnek verilmektedir: ilki yalnızca gerekli özniteliği ve ikincisi ise gerekli özniteliğin yanı sıra isteğe bağlı öznitelikleri de içermektedir. </p>
+                <p>Eklemek istediğiniz her URL için bu biçimi kullanın. <strong>changefreq</strong> özniteliği Google'a URL'nin güncellenme sıklığı hakkında genel bir fikir verir. Bu, Google'ın yeni içerik için sayfayı ne sıklıkta ziyaret edeceğini bilmesine yardımcı olur. <strong>priority</strong> özniteliği, Google'a bu sayfanın sitenizdeki diğer sayfalarla karşılaştırıldığında görece önemi hakkında bilgi verir. Bu öznitelik, Google'ın sayfanızı başka sitelerin sayfalarıyla karşılaştırmasını etkilemez; yalnızca Google'ın sitenizdeki sayfalar arasında hangilerinin en önemli olduğunu düşündüğünüzü bilmesine yardımcı olur. </p>
+                  </font>
+				<p><font size="-1"><strong> URL listesi <a name="urllist"></a> </strong></font></p>
+				<font size="-1"><p> Aşağıdaki bölümü bulun: </p>
+				
+			</font>
+			<pre>
+&lt;!-- ** MODIFY or DELETE **
+"urllist" nodes name text files with lists of URLs. 
+An example file "example_urllist.txt" is provided. 
+
+Required attributes: 
+path - path to the file 
+
+Optional attributes: 
+encoding - encoding of the file if not US-ASCII 
+--&gt; 
+&lt;urllist path="example_urllist.txt" encoding="UTF-8" /&gt; 
+				</pre>
+				
+				<p><font size="-1"> Sizin URL listenizi içeren metin dosyasının yoluna ve adına işaret etmek için bu biçimi kullanın. Sağlanan <strong>example_urllist.txt </strong>dosyasını o metin dosyası için bir şablon olarak kullanabilirsiniz. Web sunucunuza ilişkin göreli veya tam bir yol belirtebilirsiniz. Örneğin, Site Haritası Oluşturucu ve <strong>urlist.txt </strong>dosyası aynı dizinde bulunuyorsa, yalnızca<strong> .txt</strong> dosyasının dosya adını belirtebilirsiniz. UTF-8 dışında bir kodlamayla bir metin dosyası oluşturursanız, bu kodlamayı göstermek için <strong>kodlama</strong> özniteliğini kullanabilirsiniz. Birden fazla .txt dosyanız varsa, joker karakterleri kullanabilirsiniz. Örneğin:</font></p>
+				<pre>&lt;urllist path=&quot;example_urllist*.txt&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">Metin dosyasına eklediğiniz her bir URL için, son değiştirme tarihini, değiştirilme sıklığını ve önceliği belirtebilirsiniz. Bu dosyanın yapısıyla ilgili tam bilgiler için <a href="#urllist_reference">URLlist metin dosyası referans bölümüne</a> bakın.</font>  </p>
+				<p><font size="-1"><strong> Dizin yolları<a name="directory"></a> </strong></font></p>
+				<p><font size="-1"> Aşağıdaki bölümü bulun: </font></p>
+				
+				<pre>&lt;!-- ** MODIFY or DELETE ** 
+"directory" nodes tell the script to walk the file system and 
+include all files and directories in the Sitemap.
+
+Required attributes:
+path - path to begin walking from 
+url - URL equivalent of that path 
+
+Optional attributes:
+default_file - name of the index or default file for directory URLs
+
+--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.example.com/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.ornek.com.tr/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+				
+				<p><font size="-1">Bu bölümde iki örnek verilmektedir: Tüm sayfalarınız tek bir yolun alt dizinlerinde yer alıyorsa, o durumda yalnızca bir giriş eklemeniz gerekir. Bununla birlikte, sitenizdeki sayfalara ilişkin birden çok yolunuz varsa, her biri için bir giriş ekleyin. </font></p>
+				
+				<p><font size="-1">Her bir URL'nin 3. adımda belirttiğiniz temel URL ile başlaması gerektiğini unutmayın. Örneğin, <strong>example_config.xml</strong> dosyasında verilen örneklerin her ikisi de <strong>http://www.ornek.com/</strong> ile başlayan URL'ler içeriyor. Bu nedenle, her iki URL de geçerli. </font></p>
+				
+				<p><font size="-1">Örnek girişleri, sitenize ilişkin girişlerle değiştirin. Birçok sitenin, temel URL'yi gösteren yalnızca tek bir girişi olur. <strong>path</strong> değerinin, web sunucunuzdaki dizine ilişkin tam yol olduğundan emin olun. <strong>url</strong> değerinin, gerekirse protokol ve sonrasında bir eğik çizgi dahil olmak üzere, tam URL olduğundan emin olun.</font></p>
+				<p><font size="-1">Sunucunuzun bir dizin için varsayılan sayfa olarak kullandığı dosya adını belirtmek için <strong>default_file</strong> parametresini kullanabilirsiniz. Yukarıdaki örnekte, <strong>/var/www/docroot</strong>, <strong>http://www.ornek.com.tr/index.html</strong> olarak çözümlenir. Bunu belirtmeniz gerekmez. Bununla birlikte, belirtirseniz, Site Haritası Oluşturucu her bir altdizinle eşleşen sayfayı yalnızca bir kez ekler (hem dizin URL'sini hem de dosya adı URL'sini listelemek yerine) ve o sayfaya ilişkin lastmod özniteliğini çıkarmak için dosyanın en son değiştirilme tarihini (dizin yerine) kullanır. </font></p>
+				<p><font size="-1"><strong> Erişim günlükleri <a name="logs"></a></strong></font></p>
+				<p><font size="-1"> Aşağıdaki bölümü bulun: </font></p>
+				
+<pre>&lt;!-- ** MODIFY or DELETE **
+&quot;accesslog&quot; nodes tell the script to scan webserver log files to
+extract URLs on your site.  Both Common Logfile Format (Apache's default 
+logfile) and Extended Logfile Format (IIS's default logfile) can be read.
+				
+Required attributes:
+ path - path to the file
+Optional attributes:
+ encoding - encoding of the file if not US-ASCII
+  --&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.0&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.1.gz&quot; encoding=&quot;UTF-8&quot; /&gt;
+</pre>
+				 
+				<p><font size="-1">Bu bölümde üç örnek verilmiştir. Bu girişleri değiştirmeniz ve her bir günlük dosyası için bir giriş eklemeniz gerekir. path değerinin, web sunucunuzdaki tam yol ve dosya adı olduğundan emin olun. Günlük dosyaları US-ASCII veya UTF-8 olarak kodlanmadıysa, kodlamayı <a href="#encoding">belirtmek</a> için isteğe bağlı <strong>kodlama</strong> özniteliğini kullanın. Her bir günlük dosyasını listelemek yerine, joker karakterler kullanabilirsiniz. Örneğin, yukarıdaki örnekte, üç günlük dosyasını da ekleyecek aşağıdaki girişi ekleyebilirdiniz:</font></p>
+<pre>&lt;accesslog path=&quot;/etc/httpd/logs/access.log*&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">Site Haritası Oluşturucu, her bir URL'ye nasıl erişildiğine dayalı olarak günlüklerde bulduğu URL'lere öncelik atar. Örneğin, 100 kez erişilmiş olan bir URL'ye, iki kez erişilmiş bir URL'ye göre daha yüksek öncelik verilir. Gerçek öncelik ataması görelidir ve sitedeki diğer URL'lerle karşılaştırmalı olarak her bir URL'ye bağlıdır.</font></p>
+<p><font size="-1"><strong> site haritası <a name="sitemap"></a></strong></font></p>
+<p><font size="-1"> Aşağıdaki bölümü bulun: </font></p>
+				
+<pre> &lt;!-- ** MODIFY or DELETE **<br>    
+&quot;sitemap&quot; nodes tell the script to scan other Sitemap files.  This can    
+be useful to aggregate the results of multiple runs of this script into
+a single Sitemap.
+				 
+Required attributes:
+  path - path to the file
+  --&gt;
+&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>
+				 
+				<p><font size="-1">Bu bölümde bir örnek verilmektedir. Bu girişi değiştirmeniz ve eklemek istediğiniz her bir Site Haritası için bir giriş eklemeniz gerekir. path değerinin, web sunucunuzdaki tam yol ve dosya adı olduğundan emin olun. Uzantıları .gz şeklinde olduğu sürece, gzip'lenmiş Site Haritalarını da listeleyebilirsiniz. Her bir Site Haritasını listelemek yerine, joker girişler kullanabilirsiniz. Örneğin, aşağıdaki giriş, "site haritası" kelimeleriyle başlayan ve .xml uzantısı olan tüm Site Haritalarını ekler:</font></p>
+<pre>&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap*.xml&quot; /&gt; </pre>
+				<p><font size="-1">Site Haritası Oluşturucu, listelediğiniz her bir Site Haritasına ilişkin her bir URL için listelenen tüm URL'leri ve isteğe bağlı verileri çıkarır ve bu bilgileri kullanarak tek bir Site Haritası oluşturur. Şu anda, bu yöntemin Site Haritası Oluşturucu'dan başka araçlarla oluşturulan Site Haritaları ile çalışacağını garanti edemiyoruz.</font></p>
+
+
+
+				<font size="-1"><li>Filtre tanımı bölümünü bulun:</li></font>
+				  
+		 
+<pre>&lt;!-- ********************************************************         
+FILTERS
+				
+Filters specify wild-card patterns that the script compares
+against all URLs it finds. Filters can be used to exclude
+certain URLs from your Sitemap, for instance if you have
+hidden content that you hope the search engines don't find.
+
+Filters can be either type=&quot;wildcard&quot;, which means standard
+path wildcards (* and ?) are used to compare against URLs,
+ or type=&quot;regexp&quot;, which means regular expressions are used
+to compare.
+
+Filters are applied in the order specified in this file.
+An action=&quot;drop&quot; filter causes exclusion of matching URLs.
+An action=&quot;pass&quot; filter causes inclusion of matching URLs,
+shortcutting any other later filters that might also match.
+If no filter at all matches a URL, the URL will be included.
+Together you can build up fairly complex rules.
+
+The default action is &quot;drop&quot;.
+The default type is &quot;wildcard&quot;.
+
+You can MODIFY or DELETE these entries as appropriate for
+your site. However, unlike above, the example entries in
+this section are not contrived and may be useful to you as
+they are.
+********************************************************* --&gt;
+
+&lt;!-- Exclude URLs that end with a '~' (IE: emacs backup files) --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*~&quot; /&gt;
+
+&lt;!-- Exclude URLs within UNIX-style hidden files or directories --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;regexp&quot; pattern=&quot;/\.[^/]*&quot; /&gt;
+</pre>
+				<p><font size="-1">Oluşturulan Site Haritasında belirli URL'leri hariç bırakmak için filtreleme kullanabilirsiniz. Bunu, bir temizleyici listesi oluşturmak, gereksiz listelemeleri azaltmak veya belirli URL'lerin dizininin oluşturulmasını engellemek için yapmak isteyebilirsiniz. URL'lerin dizininin oluşturulmasını engellemek için bir <a href="http://www.robotstxt.org/wc/robots.html">robots.txt</a> dosyası kullanırsanız, URL'ler Site Haritanızda yer alsa bile Google'ın onları aramayacağını veya dizinlerini oluşturmayacağını unutmayın. </font></p>
+				
+				<p><font size="-1">Filtreleme yöntemlerinden herhangi birini veya tümünü kullanabilirsiniz. Gerek duymadığınız girişleri silebilir ve isterseniz ek girişler oluşturabilirsiniz. Aşağıda kullanım örnekleri verilmiştir. </font></p>
+				<pre>&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*.jpg&quot; /&gt;</pre>
+				<p><font size="-1">Bu filtre, .jpg olarak sona eren URL'leri hariç bırakır. Sitenizin tüm resimleri HTML sayfalarına katıştırılırsa ve bağımsız URL'ler olarak erişilmemeleri gerekiyorsa, benzer bir filtre eklemek isteyebilirsiniz. </font></p>
+				<pre>&lt;filter action=&quot;pass&quot; type=&quot;wildcard&quot; pattern=&quot;*.htm*&quot; /&gt;&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*&quot; /&gt;</pre>
+				<font size="-1"> Bu filtre tüm .htm* dosyalarını içerir, ancak geri kalan her şeyi hariç tutar.</font><br>
+				<br>
+
+
+				<font size="-1"></font><font size="-1"><li>Siteniz için tüm değişiklikleri yaptıktan sonra, dosyayı kaydedin.</li></font>
+				</ol>
+				
+				
+		        <font size="-1"><a name="config_reference"></a><p><b>Yapılandırma Dosyası Sözdizimi Referansı</b></p>
+		  </font><font size="-1">
+				</font>
+		  <p><font size="-1">Aşağıda, yapılandırma dosyası sözdiziminin tam açıklaması verilmiştir. Her bir etiket bir kod örneğiyle başlar ve ardından özniteliklerin bir açıklaması gelir.
+</font></p>
+				
+		  <p><font size="-1"><strong><a name="sitetag"></a>site<br></strong></font><font size="-1">Her bir yapılandırma dosyasının başında olması gereken etiket. </font></p>
+		  <pre>&lt;site base_url="http://www.ornek.com.tr"
+store_into="/var/www/html/sitemap.xml.gz"
+verbose="1"
+supress_search_engine_notify="1"
+default_encoding="UTF-8"&gt;</pre>
+				<br>
+				<font size="-1">
+				<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				
+					<tbody><tr>
+					<td valign="top" width="19%"><pre>base_url</pre></td>
+					<td valign="top" width="6%"><font size="-1">gerekli</font></td>
+					<td valign="top" width="75%"><font size="-1">Web sitenizin temelinin HTTP yolu; Site Haritası'na yalnızca bu temel URL'yle başlayan URL'ler eklenebilir.</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>store_into</pre></td>
+					<td valign="top"><font size="-1">gerekli</font></td>
+					<td valign="top"><font size="-1">İstenen çıkış dosyasının web sunucusu yolu. Komut dizisi bu dosyayı oluşturur; komut dosyasını çalıştırmadan önce dosyayı oluşturmak gerekmez.</font></td>
+					</tr> 
+					
+					<tr>
+					<td valign="top"><pre>verbose</pre></td>
+					<td valign="top"><font size="-1">isteğe bağlı</font></td>
+					<td valign="top"><font size="-1">Artırılmış hata ayıklama bilgilerine daha yüksek sayılar karşılık gelecek şekilde, 0-3 arasında bir sayı girin</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>suppress_search_engine_notify</pre></td>
+					<td valign="top"><font size="-1">isteğe bağlı</font></td>
+					<td valign="top"><font size="-1"></font><font size="-1">Test amacıyla "1" girerek arama motoru bildirimini devre dışı bırakın</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>default_encoding</pre></td>
+					<td valign="top"><font size="-1">isteğe bağlı</font></td>
+					<td valign="top"><font size="-1">Dosya sistemi yollarına ve URL'lere uygulanacak bir karakter kodlaması belirtin</font></td>
+					</tr>
+				 
+		  </tbody></table>
+		   </font>
+					<font size="-1">
+					
+				<p></p>
+				</font>
+					<p><font size="-1"><strong>url<br></strong></font><font size="-1">Sitenizdeki her bir URL'yi listelemek için kullanabileceğiniz isteğe bağlı etiket. </font></p>
+					<p><pre>&lt;url
+href="http://www.ornek.com/stats?q=yas" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre></p><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>href</pre></td>
+					  <td width="6%" valign="top"><font size="-1">gerekli</font></td>
+					<td valign="top" width="75%"><font size="-1">Web sitenizin temelinin HTTP yolu; Site Haritası'na yalnızca bu temel URL'yle başlayan URL'ler eklenebilir.</font></td>
+					</tr><tr>
+					<td valign="top"><pre>lastmod</pre></td>
+					<td valign="top"><font size="-1">isteğe bağlı</font></td>
+					<td valign="top"><font size="-1"><a href="http://www.w3.org/TR/NOTE-datetime">W3C Datetime</a> biçiminde (YYYY-AA-DDSss:dd:ss+00:00), URL'nin son değiştirildiği saat. Saat bölümünü çıkarabilirsiniz. Örnekler:<br>&nbsp;&nbsp;"2005-02-21T18:00:15+00:00"<br>&nbsp;&nbsp;"2005-02-21"</font></td>
+					</tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">isteğe bağlı</font></td>
+					<td valign="top"><font size="-1">URL'nin olası değişme sıklığı. Bu bir komut olarak değil, bir ipucu olarak düşünülür. Değer, "her zaman", "her saat", "her gün", "her hafta", "her ay", "her yıl" veya "hiçbir zaman" olmalıdır.</font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">isteğe bağlı</font></td>
+					<td valign="top"><font size="-1">Aynı sitedeki diğer sayfalara göre bu sayfanın önceliği. Değer, 0.0 ile 1.0 arasında bir sayıdır; burada, 0.0 en düşük önceliktir ve 1.0 en yüksek önceliktir. Öncelik, arama motorlarının sitenizde gezinmek için seçecekleri URL'lerin sırasını etkileyebilir. Öncelik göreli olduğundan, yalnızca kendi sitenizdeki URL'ler arasında seçim yapmak için kullanılır; sayfalarınızın önceliği, diğer sitelerdeki sayfaların önceliğiyle karşılaştırılmaz.</font></td>
+					</tr>
+		  </tbody></table>
+					<p><font size="-1"><b>urllist<br></b></font><font size="-1">Sitenizdeki URL'leri içeren listenin bulunduğu metin dosyasına işaret etmek için kullanabileceğiniz isteğe bağlı bir etiket. </font></p>
+					<pre>&lt;urllist path="/var/www/html/urllist.txt" encoding="UTF-8" /&gt;</pre>
+		  <br>
+		<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>path</pre></td>
+					  <td width="6%" valign="top"><font size="-1">gerekli</font></td>
+					<td valign="top" width="75%"><font size="-1">.txt dosyasının yolu ve dosya adı. Göreli veya tam bir yol belirtebilirsiniz. </font></td>
+			</tr><tr>
+					<td valign="top"><pre>encoding</pre></td>
+					<td valign="top"><font size="-1">isteğe bağlı</font></td>
+					<td valign="top"><font size="-1">UTF-8 değilse, dosyanın kodlaması.</font></td>
+					</tr>
+		  </tbody></table>
+<p><font size="-1"><a name="urllist_reference"></a><b>urllist.txt</b> dosyası, eşlenecek URL'lerin listesini içeren basit bir metin dosyasıdır. Ayrıca, her bir URL için isteğe bağlı öznitelikler de ekleyebilirsiniz. Öznitelikler URL ile aynı satıra girilir ve tek bir boşlukla ayrılır. Örneğin:</font>
+          </p>
+		  <pre>http://www.ornek.com/abc/birsey
+http://www.ornek.com/abc/xyy.pdf lastmod=2001-12-31T14:05:06+00:00
+http://www.ornek.com/abc/def?x=12&amp;y=23 changefreq=haftalık öncelik=0.3</pre>
+				<p>
+				<font size="-1">
+					
+				  </font><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%"  valign="top"><pre>lastmod</pre></td>
+					<td valign="top" width="6%"><font size="-1">isteğe bağlı</font></td>
+					<td width="75%"  valign="top"><p><font size="-1">URL’nin <a href="http://www.w3.org/TR/NOTE-datetime">W3C Datetime</a> biçiminde (YYYY-AA-DDSss:dd:ss+00:00), son değiştirildiği saat. Saat bölümünü çıkarabilirsiniz. Örnekler:</font><font size="-1"><br><br>&nbsp;&nbsp;"2005-02-21T18:00:15+00:00"<br>&nbsp;&nbsp;"2005-02-21"</font></p>
+				  </td>
+				  </tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">isteğe bağlı</font></td>
+					<td valign="top"><font size="-1"><font size="-1">URL'nin olası değişme sıklığı. Bu bir komut olarak değil, bir ipucu olarak düşünülür. Değer, "her zaman", "her saat", "her gün", "her hafta", "her ay", "her yıl" veya "hiçbir zaman" olmalıdır.</font></font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">isteğe bağlı</font></td>
+					<td valign="top"><font size="-1">Aynı sitedeki diğer sayfalara göre bu sayfanın önceliği. Değer, 0.0 ile 1.0 arasında bir sayıdır; burada, 0.0 en düşük önceliktir ve 1.0 en yüksek önceliktir. Öncelik, arama motorlarının sitenizde gezinmek için seçecekleri URL'lerin sırasını etkileyebilir. Öncelik göreli olduğundan, yalnızca kendi sitenizdeki URL'ler arasında seçim yapmak için kullanılır; sayfalarınızın önceliği, diğer sitelerdeki sayfaların önceliğiyle karşılaştırılmaz.</font></td>
+					</tr>
+					</tbody></table>
+				</p>
+		  <font size="-1">
+		  </font>
+		  <p><font size="-1"><strong>directory<br></strong></font><font size="-1">Site Haritası Oluşturucu'nun bu dizinlerde bulunan dosyalardan bir URL listesi oluşturabilmesi için sitenizdeki dizinleri belirtmek üzere kullanabileceğiniz isteğe bağlı etiket. </font></p>
+				<pre>--&gt;  &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.ornek.com/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.ornek.com/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+		  <table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">gerekli</font></td>
+					<td width="75%" valign="top"><font size="-1">İlk yolu belirtir. Site Haritası Oluşturucu bu dizinin ve tüm alt dizinlerinin üzerinden geçer</font>.</td>
+				  </tr>
+					
+					<tr>
+					<td valign="top"><pre>url</pre></td>
+					 <td valign="top"><font size="-1">gerekli</font></td>
+					<td valign="top"><font size="-1">Yol değerinin URL olarak karşılığını belirtir.</font></td>
+					</tr>
+					<tr>
+					<td valign="top"><pre>default_file</pre></td>
+					 <td valign="top"><font size="-1">isteğe bağlı</font></td>
+					 <td valign="top"><font size="-1">Sunucudaki bir dizin için varsayılan dosyayı belirtir.</font></td>
+					</tr>
+		    </tbody></table>
+		  </font>
+		  <p><font size="-1"><b> accesslog<br></b>Site Haritası Oluşturucu'nun URL'leri onlardan otomatik olarak seçebilmesi için, IIS ve Apache tarzı erişim günlüklerinin yolunu ve dosya adını belirtmek üzere kullanabileceğiniz isteğe bağlı etiket. </font>
+          </p>
+		  
+		  <pre>&lt;accesslog path="/etc/httpd/logs/access-0.log" encoding="UTF-8"/&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">gerekli</font></td>
+					<td width="75%" valign="top"><font size="-1">Dosyanın yolunu belirtir.</font></td>
+		  </tr>
+					
+					<tr>
+					<td valign="top"><pre>encoding</pre></td>
+					 <td valign="top"><font size="-1">isteğe bağlı</font></td>
+					<td valign="top"><font size="-1">UTF-8 değilse, dosyanın kodlamasını belirtir.</font></td>
+					</tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><b> sitemap <br></b>Site Haritası Oluşturucu ile oluşturduğunuz varolan Site Haritalarının yolunu ve dosya adını belirtmek için kullanabileceğiniz isteğe bağlı etiket. Site Haritası Oluşturucu, her bir Site Haritasında yer alan URL'leri içeren tek bir Site Haritası oluşturur. </font>
+          </p>
+		  
+		  <pre>&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">gerekli</font></td>
+					<td width="75%" valign="top"><font size="-1">Site Haritası dosyasının yolunu belirtir.</font></td>
+		  </tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><strong><a name="filter_examples"></a>filter<br></strong></font><font size="-1">Belirli dosyaları içeren veya hariç tutan kurallar oluşturmak için kullanabileceğiniz isteğe bağlı etiket. Filtrelere, config.xml dosyasında göründükleri sıraya göre uyulur. Bununla birlikte, filtre girişlerini ve girdi girişlerini (url, urllist, directory veya accesslog) birbirine karıştırmanın hiçbir ek etkisi yoktur - Site Haritası Oluşturucu'nun Site Haritasına eklediği her bir URL önce her bir filtreyle karşılaştırılır. </font><font size="-1">Hiçbir filtre bir URL ile eşleşmezse, varsayılan değer URL'yi Site Haritasına eklemektir.</font></p>
+				
+				<pre>&lt;filter action="drop" type="wildcard" pattern="*/internal/*" /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>action</pre></td>
+					<td valign="top" width="6%"><font size="-1">isteğe bağlı</font></td>
+					<td width="75%" valign="top">
+				      <font size="-1"><p>Filtrenin yapması gereken işlem. Geçerli değerler şunlardır:</p>
+					  </font>				      <ul>
+					  <li><font size="-1">drop - eşleşen URL'leri hariç bırakır. Bu varsayılan eylem olduğundan, herhangi bir eylem belirtilmezse, oluşturucu "drop" parametresini varsayar.</font></li>
+					  <li><font size="-1">pass - eşleşen URL'leri içerir.</font></li>
+					  </ul>
+				      </p></td>
+		  </tr>
+					
+					<tr>
+					<td width="19%" valign="top"><pre>type</pre></td>
+					<td valign="top" width="6%"><font size="-1">isteğe bağlı</font></td>
+					<td width="75%" valign="top"><font size="-1"><p>Filtreleme türü. Geçerli değerler şunlardır:</p>
+					</font>					  <ul>
+					<li><font size="-1">wildcard - URL'lerle karşılaştırmak için standart yol joker karakterleri (? ve *) kullanılır. Bu varsayılan tür olduğundan, herhangi bir tür belirtilmezse, oluşturucu "wildcard" parametresini varsayar.</font></li>
+					<li><font size="-1">regexp - normal ifadeler kullanılır.</font></li>
+					  </ul></td>
+		  </tr>
+				 
+<tr>
+					<td valign="top"><pre>pattern</pre></td>
+					 <td valign="top"><font size="-1">gerekli</font></td>
+					 <td valign="top"><font size="-1">Eşlenecek modeli belirtir.</font></td>
+		  </tr>
+		  </tbody></table>
+
+<font size="-1">
+<p><b><a name="encoding"></a>Kodlamalar</b></p>
+				
+		<p>Yapılandırma dosyanızda adı geçen dosyalar, ister URL listeleri isterse web sunucusu günlükleri olsunlar, varsayılan UTF-8 kodlamasından başka kodlamalar kullanabilirler. Site Haritası Oluşturucu'nun dosyalarınızı okuma biçimini etkilemek için, config.xml dosyasında alternatif kodlamalar belirtebilirsiniz. Yaygın olarak kullanılan bazı kodlamalar şunlardır:
+		</p>
+				<ul>
+				<li><strong>encoding="utf-8"</strong> varsayılan değerdir
+				</li><li><strong>encoding="ascii</strong>" UTF-8'in bir alt kümesi olduğundan, onu belirtmeniz gerekmez
+				</li><li><strong>encoding="iso-8859-1</strong>", birçok batı Avrupa dili için yaygın olarak kullanılır
+				</li></ul>
+		  </font>
+		  
+		  <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="creating_mobile" id="creating_mobile"></a><b>2b. Bir mobil yapılandırma dosyası oluşturmak için ek bilgiler</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">Mobil Site Haritası'nın yapılandırma dosyasını, mobil olmayan bir Site Haritası'nınkiyle aynı biçimde oluşturursunuz. Bununla birlikte, her biçimlendirme dili için ayrı bir yapılandırma dosyası oluşturmanız ve her biri için ayrı Site Haritası oluşturabilmek amacıyla Site Haritası Oluşturucu'yu her yapılandırma dosyası için ayrıca çalıştırmanız gerekir.</font></p>
+				<p><font size="-1">Her bir yapılandırma dosyası şu özellikleri taşımalıdır:</font></p>
+		  <ul>
+		    <li><font size="-1"><a href="#create_config"><strong>store_into</strong> değeri</a> için farklı bir dosya adı belirtin.</font></li>
+	        <li><font size="-1">Biçimlendirme dili için hariç bırakılacak veya eklenecek URL'leri belirtmek için <a href="#filter_examples">filtreleri</a> kullanın. Her bir Site Haritasının yalnızca bir biçimlendirme dili için URL'ler içermesi gerektiğini unutmayın. Bu, o URL'ler birden fazla biçimlendirme dili sunuyorsa, aynı URL'nin birden fazla Site Haritasına eklenebileceği anlamına gelir.</font></li>
+	      </ul>
+			<p><strong><font size="-1">Filtreleme örnekleri</font></strong></p>
+			<p><font size="-1">Aşağıda, farklı biçimlendirme dilleri için Mobil Site Haritaları oluştururken uzantı tabanlı filtreleri nasıl kullanabileceğinizi gösteren bazı örnekler verilmiştir. Tam olarak sizin kullandığınız filtreleme, sitenizde kullanılan biçimlendirme dillerinin türlerine ve her türü nasıl belirttiğinize bağlı olacaktır. Sitenizin ayrıntıları için farklı uygulamalarınız varsa (örneğin, biçimlendirme dilleri farklı olan URL'leri ayrı klasörlerde düzenliyor olabilirsiniz), sitenizin uygulamasındaki özelliklere uygun filtreleme kullanmalısınız. Filtrelerin, yapılandırma dosyasında bunları listelediğiniz sırayla uygulandığını unutmayın. Bu nedenle, listelediğiniz ilk filtre Site Haritası'na eklemek istediğiniz URL'leri belirleyen bir "geçiş" işlemi olmalıdır. </font></p>
+			<p><font size="-1">WML (WAP 1.2) içeriğine bir Site Haritası oluşturmak için:</font></p>
+			
+			<pre>&lt;filter action="pass" type="wildcard" pattern="*.wml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+</pre>
+			
+			<p><font size=-1>XHTML mobil profil (WAP 2.0) içeriğine Site Haritası oluşturmak için:</font></p>
+			
+			<pre>&lt;filter action="pass" type="wildcard" pattern="*.xhtml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+			</pre>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="copy"></a><b>3. Dosyaları web sunucunuza yükleme</b></td> 
+				</tr> 
+			</tbody></table>
+		<p><font size="-1"> Aşağıdaki dosyaları web sunucunuzda komut satırından erişebileceğiniz bir konuma yüklemelisiniz: </font></p>
+			
+			<font size="-1"><ul>
+              <li><strong> config.xml</strong> &#8212;bu, <strong>example_config.xml</strong> dosyasını kullanarak oluşturduğunuz yapılandırma dosyasıdır. </li>
+              <li><strong> sitemap_gen.py</strong> &#8212;bu, Site Haritanızı üreten Python komut dizisidir. </li>
+              <li><strong> urllist.txt</strong> &#8212;bu dosya isteğe bağlıdır; dosyayı yalnızca, Site Haritası oluşturmak için metin dosyası yöntemini kullandıysanız eklemeniz gerekir. </li>
+		  </ul>
+			
+		  </font>
+		  <p><font size="-1"> Bu dosyaları yüklemek için kullandığınız yöntem ortamınıza bağlıdır. Sık kullanılan yöntemler <a href="http://www.google.com/search?q=ftp">FTP</a> ve SCP'dir. Daha fazla bilgi için web barındırma sağlayıcınıza başvurun.		  </font></p>
+			
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="execute"></a><strong>4. Site Haritası Oluşturucu komut dizisi (sitemap_gen.py) çalıştırılıyor  </strong></td> 
+				</tr> 
+			</tbody></table>
+				
+				<p><font size="-1">
+Site Haritası Oluşturucu'yu çalıştırmak için web sunucunuza bağlanmanız gerekecektir. Bağlanmak için kullandığınız yöntem ortamınıza bağlıdır. Örneğin, <a href="http://www.google.com/search?q=ssh">SSH</a> kullanarak UNIX tabanlı bir sunucuya genellikle erişebilirsiniz. Web sunucunuza bağlanma ve komut dosyalarını çalıştırma hakkında daha fazla bilgi edinmek için web barındırma sağlayıcınızla görüşün. </font></p>
+				
+				<p><font size="-1"> Dosyaları web sunucunuza kopyaladıktan sonra, Site Haritası Oluşturucu komut dosyasını çalıştırmanız gerekir. Web sunucunuza bağlanın ve aşağıdaki komutu çalıştırın (<strong>&lt;path/config.xml&gt;</strong> değerlerini yapılandırma dosyanızın yolu ve dosya adıyla değiştirin; bu dosyayı Python komut dosyasıyla aynı konuma yüklediyseniz, yolu dışlayabilirsiniz):</font></p>
+				
+				<pre>python sitemap_gen.py --config=&lt;path/config.xml&gt;
+</pre>
+<p><font size="-1">Örneğin, UNIX tabanlı bir komut satırı şuna benzeyebilir:</font></p>
+<p><img src="images/python_command.gif" alt="Python komutu"></p>
+<p><font size="-1">MS-DOS tabanlı bir komut kabuğu şuna benzeyebilir:</font></p>
+<p><img src="images/python_dos.gif" alt="Python komutu"></p>
+<p><font size="-1"><b>İpucu:</b> Yapılandırmanızı test ediyorsanız ve Site Haritanızı göndermeye hazır değilseniz, aşağıdaki sözdizimi Site Haritası Oluşturucu'nun Google'la bağlantı kurmasını engeller:</font></p>
+				<pre><br>	$ python sitemap_gen.py --config=config.xml --testing</pre>
+				<font size="-1"><p>İsteğinizin durumunu komut dizisinde görürsünüz:</p></font>
+<pre>Reading configuration file: /path/config.xml
+	Opened URLLIST "/path/urllist.txt"
+	Walking DIRECTORY "/var/www/html/dir"
+	Walking DIRECTORY "/var/www/html/dir2"
+	Opened ACCESSLOG "/etc/httpd/logs/access-0.log"
+	Sorting and normalizing collected URLs.
+	Writing Sitemap file "/path/sitemap.xml.gz" with 1092 URLs
+	Notifying search engines.
+	Notifying www.google.com.tr
+	Count of file extensions on URLs:
+		208  .html
+		574  .jpg
+		...
+		Number of errors: 0
+		Number of warnings: 0</pre>
+				<font size="-1">
+				<p>Bunun gibi çok fazla çıkış görmezseniz, yapılandırma dosyanızdaki 'verbose' ayarının ekrana yazdırılacak bilgi miktarını etkilediğini unutmayın. Bu örnekte, 'verbose' için "1" ayarlanmış olarak gösterilmektir.</p>
+				<p>Dosyadaki hatalar da döndürülür. Örneğin, url= özniteliğini bir dizin girişinin dışında bırakırsanız, komut dizisi aşağıdakileri verir:
+				</p></font>
+<pre>[ERROR] Directory entries must have both "path" and "url" attributes Number of errors: 1</pre>
+				<font size="-1">
+				</font>
+				<p><font size="-1"><b>config.xml</b> dosyanızdaki hataları düzeltin ve komut dizisini yeniden çalıştırın. Hiçbir hata yoksa, Site Haritası Oluşturucu, yapılandırma dosyasında belirttiğiniz yerde yeni bir <b>sitemap.xml.gz</b> dosyası oluşturur. </font></p>
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="submitting" id="submitting"></a><strong>5. Site Haritanızı Google'a Gönderme  </strong></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">Site Haritası Oluşturucu, yapılandırma dosyasında belirttiğiniz yerde bir <strong>sitemap.xml.gz</strong> dosyası oluşturur. Bu dosya başarılı bir şekilde oluşturulduktan sonra, bunun web tarayıcısı yoluyla erişilebilir olduğundan emin olun. Sonra, bunu <a href="https://www.google.com/webmasters/sitemaps/siteoverview">Google Site Haritaları</a> hesabınıza <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">ekleyin</a>. Bu Google'ın size kullanışlı durum ve istatistik bilgileri sağlamasına olanak tanır.  Google Site Haritanızda sorun olduğunu raporlarsa, sorunları çözüp haritayı yeniden gönderebilirsiniz. Site Haritası'nı bir kez el ile eklemeniz yeterlidir. Bundan sonra, Site Haritanızdaki değişiklikleri Google'a bildirmek için <a href=submit.html#ping>HTTP isteği</a> kullanabilirsiniz (öte yandan Google web yöneticisi araçları hesabınız yoluyla Site Haritanızı da yeniden gönderebilirsiniz). </font></p>
+		        
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="recur"></a><b>6. Yinelenen bir komut dizisi hazırlama</b></td> 
+				</tr> 
+		  </tbody></table>
+		  <font size="-1">
+				<p>Site Haritası Oluşturucu'yu içeriğiniz değiştikçe ve en fazla saatte bir kez çalışacak şekilde ayarlamanızı tavsiye ederiz.</p>
+		  </font>
+		  <p><font size="-1">UNIX web sunucusuna sahip web yöneticileri, bunu bir <a href="http://www.google.com/search?q=cron">cron işi</a> olarak hazırlamayı düşünebilir. </font></p>
+				<font size="-1"><p>Başka platformlar kullanan web yöneticileri, yinelenen komut dosyalarını yapılandırma konusunda yardım almak için kendi sistem yöneticilerine başvurmalıdır. Ayrıca, <a href="http://groups.google.com/group/Google_Webmaster_Help-Sitemap?tsc=1">Google Grupları</a>'ndaki Google Site Haritaları Grubu'nda bulunan önerilerden de yararlanabilirsiniz.</p>
+				
+	      </font>
+				<p><font size="-1"> Site Haritanızdaki değişiklikleri Google'a bildirmek için bir <a href=submit.html#ping>HTTP isteği</a> kullanabilirsiniz. Bununla birlikte, Google web yöneticisi araçları hesabınıza el ile <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496>Site haritanızı eklemek</a> için href="https://www.google.com/webmasters/sitemaps/siteoverview">Google web yöneticisi araçlarında</a> oturum açtığınızdan lütfen emin olun.</font></p>
+				<font size="-1"></font>		
+			    <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="troubleshoot"></a><b>Sorun Giderme</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p>Bu bölümde, bazı kişilerin Site Haritası Oluşturucu'yu kullanırken karşılaştıkları bazı genel sorular veya sorunlar ve bunlarla sizin karşılaşmanız durumunda yapabilecekleriniz hakkında konuştuk.</p>
+				<p><b>Web'de erişilebilir</b></p>
+				<p><b>Sorun:</b> Site Haritası Oluşturucu aşağıdaki hata ve uyarıyı döndürüyor:</p>
+				</font>
+<pre>[ERROR] When attempting to access your generated Sitemap at the following URL: http://www.ornek.com/sitemap.xml.gz
+	we failed to read it.  Please verify the store_into path you specified in your configuration file is web-accessible.  Consult the FAQ for more information.
+	[WARNING] Proceeding to notify with an unverifiable URL.</pre>
+				<font size="-1">
+				<p><b>Ne oldu?</b> Site Haritası Oluşturucu dosyayı belirttiğiniz yerde oluşturdu, sonra tıpkı bir arama motoru gibi HTTP kullanarak dosyayı almaya çalıştı ve başarısız oldu. Devam etti ve arama motorlarına bildirdi, ancak Site Haritanızın okunabilir olmayabileceğini size bildirmek için hatayı ve uyarıyı ortaya çıkarması arama motorları tarafından okunabilir olmayabilir.</p>
+				<p>Site Haritası Oluşturucu, <b>config.xml</b> dosyanızın store_info özniteliğinde belirtilen yolda Site Haritası dosyanızı oluşturur. Site Haritası Oluşturucu daha sonra, base_url özniteliğini kullanarak o dosyaya bir URL oluşturur ve URL'yi arama motorlarına bildirir. Örneğin, yapılandırmayı şu şekilde ayarlarsanız:</p>
+				</font>
+<pre>&lt;site base_url="http://www.ornek.com.tr/"
+	      store_into="/var/www/html/sitemap.xml.gz"&gt;</pre>
+				<font size="-1">
+				</font><p><font size="-1">Site Haritası Oluşturucu, arama motorlarına Site Haritanızı şu adreste aramalarını bildirir:</font></p>
+				
+				<pre>	http://www.ornek.com.tr/sitemap.xml.gz</pre>
+				<font size="-1"><p>
+				Dosya bu URL üzerinden erişilebilir olmalıdır. Dosya bu URL kullanılarak alınamazsa, arama motorları Site Haritanızı hiçbir şekilde bulamaz.</p>
+				</font><p><font size="-1"><b>Ne yapabilirsiniz?</b> <b>Config.xml</b> dosyanızın Site Haritanız için doğru base_url ve store_into yollarını belirttiğini doğrulamalısınız. Ayrıca, Web tarayıcılarının base_url yolundan Site Haritası dosyasını alabileceklerini de doğrulamanız gerekir. Yolda veya URL'de hata bulursanız Site Haritası Oluşturucu'yu yeniden çalıştırmanız gerekebilir; ya da yalnızca Site Haritası dosyasını doğru konuma taşır ve arama motorlarına bunu Web siteleri aracılığıyla kendiniz bildirirsiniz.
+				</font></p>
+				<font size="-1"><p><b>XML desteği</b></p>
+				<p><strong>Sorun:</strong> Site Haritası Oluşturucu aşağıdaki hatayı veriyor:</p>
+				</font>
+<pre>Some installs of Python 2.2 do not include complete support for XML. Please try upgrading your version of Python and re-running the script.</pre>
+				<font size="-1"><p>
+				<b>Ne oldu?</b> İletide de belirtildiği gibi, bazı platformlarda XML dosyalarını işlemek için gereken destek kitaplıklarının eksik olduğu bir Python (Site Haritası Oluşturucu komut dosyasının yazıldığı dil) sürümü var. Bu komut dosyasının çalışabilmesi için tam XML desteği gerekir.
+				</p>
+				<p><b>Ne yapabilirsiniz?</b> Yüklü Python sürümünü yeni bir sürüme yükseltmeyi deneyin. Bunu yapmak için sistem yöneticinize başvurmanız gerekebilir.</p>
+				<p>Bunun genel olarak Site Haritaları'nı değil, yalnızca Site Haritası Oluşturucu'yu etkilediğini unutmayın. Site Haritaları oluşturmak için başka bir yönteminiz veya aracınız varsa, elbette onu kullanabilir ve Site Haritalarınızı arama motorlarına gönderebilirsiniz.</p>
+				<p><b>.gz veya .zip'teki tüm fazladan dosyalar nelerdir?</b></p>
+				<p>sitemap_gen.py komut dizisini açtığınızda, yukarıda değindiğimizden biraz daha fazla sayıda dosya görebilirsiniz. Tam dosya listesi şuna benzer:</p>
+				</font>
+	<pre>	
+	AUTHORS
+	ChangeLog
+	COPYING
+	example_config.xml
+	example_urllist.txt
+	PKG-INFO
+	README
+	setup.py
+	sitemap_gen.py
+	test_sitemap_gen.py</pre>
+		  <font size="-1"><p>
+				Fazladan dosyalar, genellikle paket ve lisanslama şartlarıyla ilgili bilgilerdir. Bu dosyaları incelemeniz tavsiye edilir.</p>
+				<p>Tek istisna, bu açık kaynak projesine katkıda bulunmak isteyen diğer geliştiricilerin yararlı bulabileceği bir birim-test komut dosyası olan test_sitemap_gen.py'dir. Site Haritası Oluşturucu'yu, neredeyse herkesin yaptığı gibi kaynak kodun hiçbir bölümünü değiştirmeden kullanmak istiyorsanız, büyük olasılıkla bu test komut dosyasına gerek duymayacaksınız.
+</p>
+	  Bu projeye yardımcı olmakla ilgileniyorsanız, lütfen <a href="http://sourceforge.net/projects/goog-sitemapgen">http://sourceforge.net/projects/goog-sitemapgen</a> adresini ziyaret edin. Ayrıca, Google Site Haritalarını destekleyen bazı üçüncü taraf programlara ilişkin bağlantıları <a href="http://code.google.com/sm_thirdparty.html">burada</a> bulabilirsiniz.</p>
+	  
+	  <font size="-1"></font></font>
+		  <p><font size="-1"><b><a name="nonascii"></a>ASCII olmayan karakterler  </b></font></p>
+				<font size="-1"><font size="-1">
+				</font></font>
+				<p><font size="-1"><strong>Sorun:</strong> Site alan adınız veya içindeki URL'ler ASCII dışı karakterler içeriyor.</font></p>
+				<p><font size="-1"> Genel olarak, ASCII olmayan URL'ler % işareti ile kaçış yapılmadan önce <a href="protocol.html#escaped">UTF-8 kullanılarak kodlanmalıdır</a>. Bununla birlikte, bazı web sunucuları yalnızca URL'ler UTF-8 dışında bir kodlama kullanılarak kodlanırsa yanıt verir. Site Haritanızdaki tüm URL'ler ve Site Haritasının kendi URL'si, bulundukları web sunucusunda okunabilirlik için kodlanmalıdır. <a href="#sitetag">Site tanımı bölümünde</a>, web sunucunuz tarafından kullanılan kodlamayı belirtmek için isteğe bağlı <strong>default_encoding</strong> özniteliğini kullanın. Bu etiketi kullanmazsanız ve web sunucunuz UTF-8 dışında bir kodlama kullanırsa, hangi kodlamayı kullanacağımızı bilemeyiz.</font></p>
+				<p><font size="-1">URL'leriniz ASCII dışı karakterler içeriyorsa, Python 2.3 veya üst sürümünü kullanarak Site Haritası Oluşturucu'yu çalıştırmanızı tavsiye ederiz. Bu Python sürümü artırılmış ASCII dışı destek içerir. Alan adınız ASCII dışı karakterler içeriyorsa, Uygulamalardaki Alan Adlarını Uluslararasılaştırma (IDNS) desteği bu sürüme kadar eklenmediğinden, Python 2.3 veya üstünü kullanmanız gerekir. IDNA desteği olmadan, Site Haritası Oluşturucu ASCII dışı bir alan adını doğru şekilde kodlayamaz. </font></p>
+				<font size="-1">
+	  
+	  
+	  
+	<br>
+	<p class="d" align="right"><i>Son değiştirilme: 15 Nisan 2006</i></p>
+	  </font></div>
+	</td> 
+  </tr> 
+  <tr> 
+    <td width=1% valign=top><img src=http://www.google.com/images/art.gif width=143 height=53 vspace=5 hspace=15></td> 
+    <td style="background-color: #ffffff" width=1 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td valign=middle><div class=footer> 
+        <div align=center><font size="-1"> &copy;2007 Google - <a href=http://www.google.com.tr/privacy.html>Gizlilik Politikası</a> - <a href=http://www.google.com.tr/accounts/TOS>Şartlar ve Koşullar</a> - <a href=http://www.google.com/about.html>Google Hakkında</a> </font></div> 
+      </div></td> 
+  </tr> 
+</table> 
+</body>
+</html>

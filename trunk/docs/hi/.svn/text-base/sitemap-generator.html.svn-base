@@ -1,0 +1,749 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel=stylesheet href="http://www.google.com/google.css">
+<link rel=stylesheet href="../leftnav.css">
+<style>
+<!--
+body,td,font,p,a{font-family:arial,sans-serif}
+.i { margin-left: 1em; margin-right: 2em; }
+//.style1 {font-weight: bold}
+.style1 {font-weight: bold}
+.d {color:#999999;text-decoration:italics;font-size:10px;}
+.changes {color: #FF0000}
+-->
+</style>
+<script
+  src=" https://ssl.google-analytics.com/urchin.js "
+  type="text/javascript">
+</script>
+<script type="text/javascript">
+  _uacct="UA-18009-2";
+  _utcp="/webmasters/sitemaps/";
+  _uanchor=1; 
+  urchinTracker();
+</script>
+
+<title>Google वेबमास्टर उपकरण</title>
+</head>
+<body class=search bgcolor=#ffffff text=#000000 link=#0000CC vlink=#800080 alink=#ff0000 topmargin=3>
+<table width=95% border=0 cellpadding=0 cellspacing=2>
+  <tr valign=top>
+    <td width=1%><a href=https://www.google.com/webmasters/sitemaps/?hl=en> <img src=http://www.google.com/images/google_sm.gif border=0 width=143 height=59 alt="Google मुखपृष्ठ पर लौटें." hspace=15 vspace=5></a></td>
+    <td width=100% valign="middle">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		<td><font size="+0"><b>वेबमास्टर उपकरण</b></font></td>
+		</tr>
+		<tr>
+		<td style="border-bottom:1px solid #999999" height="1"><img width="1" height="1" alt=""></td>
+		</tr>
+		</table>  	
+	</td>
+  </tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=0 width=95%> 
+  <tr> 
+    <td width="175" valign="top">
+		<font size="-1">
+    <p class="sidenavlink">
+    <a href="about.html">Google वेबमास्टर उपकरण</a></p>
+    <p class="sidenavlink"><a href="protocol.html">साइटमैप प्रोटोकोल का उपयोग</a></span>
+    <p class="sidenavtoc">साइटमैप जनक का उपयोग</p>
+<p class="sidenavlink"><a href="http://www.google.com/webmasters/">Google वेबमास्टर केंद्र</a></p>
+  </font></td>
+    <td background=http://www.google.com/images/dot2.gif valign=bottom width=5><img src=http://www.google.com/images/dot2.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=10 height=1></td> 
+    <td>
+		<div class="content"> 
+		
+			<p><strong>सामग्री</strong></p>
+			<p><font size="-1"><a href="#before">शुरू करने से पहले</a>
+		    <br><a href="#download">साइटमैप जनक प्रोग्राम फ़ाइलें डाउनलोड हो रही हैं</a>
+		    <br><a href="#config">पुष्टिकरण फ़ाइल निर्मित हो रही है</a><br>
+		    <a href="#copy">आपके वेब सर्वर पर फ़ाइलें अपलोड हो रही हैं</a>
+		    <br><a href="#execute">साइटमैप जनक लिपि चल रही है</a>
+		    <br><a href="#submitting">आपका साइटमैप Google प्रस्तुत हो रहा है</a>
+		    <br><a href="#troubleshoot">समस्या निवारण</a>
+		    </font></p>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="before"></a><b>शुरू करने से पहले</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">
+Google साइटमैप जनक एक पायथॉन लिपि है जो साइटमैप प्रोटोकॉल का उपयोग कर आपकी साइट के लिए एक साइटमैप बनाती है. यह लिपि यूआरएल सूचियों, वेब सर्वर निर्देशिकाओं, या एक्सेस लॉग से साइटमैप का निर्माण कर सकती है. इस लिपि का उपयोग करने के लिएः </font></p>
+				
+				<ul>
+				  <li><font size="-1">आपको अपने वेब सर्वर पर लिपियाँ जोड़ने और उन्हें चलाने में सक्षम होना ज़रूरी है. </font></li>
+				  <li><font size="-1">आपके वेब सर्वर में पायथॉन 2.2 या बाद का संस्करण स्थापित होना ज़रूरी है. </font></li>
+				  <li><font size="-1">आपको वे निर्देश पता होना ज़रूरी है, जो पायथॉन प्रारंभ करते हैं. (सामान्यतया, यह <strong>पायथॉन</strong> है, लेकिन स्थापना के द्वारा भिन्न हो सकता है. उदाहरण के लिए, यदि वेब सर्वर में पायथॉन के दो संस्करण स्थापित हैं, तब आरंभिक संस्करण को <strong>पायथॉन</strong> निर्देश द्वारा लाया जा सकता है और बाद वाले संस्करण को <strong>पायथॉन2</strong> द्वारा लाया जा सकता है.) </font></li>
+				  <li><font size="-1">आपको अपनी साइट पर डायरेक्टी पथ अवश्य पता होना चाहिए. यदि आपका वेब सर्वर एक साइट को होस्ट करता है, तब यह <strong>var/www/html</strong> की तरह पथ हो सकता है. यदि आपके पास एक वर्चुअल सर्वर है जो एकाधिक साइटों को होस्ट करता है, तब यह <strong>home/virtual/site1/fst/var/www/html</strong> की तरह पथ हो सकता है. </font></li>
+				  <li><font size="-1"> आपको अपने वेब सर्वर पर फ़ाइलें अपलोड करने में सक्षम होना ज़रूरी है (उदाहरण के लिए, FTP का उपयोग करके). </font></li>
+				  <li><font size="-1">यदि आप एक्सेस लॉग के आधार पर यूआरएल की सूची तैयार कर होंगे, तब आपको उन लॉग के लिए प्रयुक्त एन्कोडिंग और उनका पूर्ण पथ अवश्य पता होना चाहिए. </font></li>
+          </ul>
+		  
+				<p><font size="-1">यदि आप इसमें किसी को लेकर सुनिश्चित नहीं है, तब आप अपने वेब होस्टिंग कंपनी के साथ जाँच कर सकते हैं. </font></p>
+				<font size="-1">
+				<p> अब आप &#8217;शुरू करने के लिए तैयार हैं. यहाँ&#8217;एक पुनरवलोकन है कि आपको &#8217;क्या करना होगा. </p>
+				</font>
+		  <font size="-1">
+				<ol>
+                  <li><font size="-1">साइटमैप जनक प्रोग्राम फ़ाइलें <a href="#download">डाउनलोड करें</a>. स्थानीय डायरेक्टरी पर फ़ाइलें निकालें. </font></li>
+                  <li><font size="-1">उपलब्ध कराई गई <strong>example_config.xml</strong> फ़ाइल को टेम्पलेट के रूप में उपयोग कर अपनी साइट के लिए <a href="#config">एक पुष्टिकरण फ़ाइल बनाएँ</a>. अपनी साइट की आवश्यकतानुसार इस फ़ाइल को संशोधित करें और इसे सहेजें. </font></li>
+                  <li><font size="-1">अपने वेब सर्वर पर <a href="#copy">आवश्यक फ़ाइलें अपलोड करें</a>. </font></li>
+                  <li><font size="-1"><strong>sitemap_gen.py</strong> <a href="#execute">रन करें</a>. </font></li>
+                  <li><font size="-1">अपने Google वेबमास्टर उपकरण खाते पर निर्मित साइटमैप <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">जोड़ें</a>. </font></li>
+		          <li><font size="-1"><a href="#recur">एक आवर्ती लिपि सेट करें</a>. (वैकल्पिक) </font></li>
+				</ol>
+		  </font>
+		  
+				<p><font size="-1">यदि आप एक साइटमैप जनक देखने में असमर्थ हैं, तब आप अपने Google वेबमास्टर खाते पर <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34606&topic=8516>अन्य प्रारूप</a>, जैसे एक साधारण पाठ फ़ाइल में साइटमैप जोड़ सकते हैं. <a href="http://code.google.com/sm_thirdparty.html">साइटमैप प्रोटोकॉल को समर्थन कर रहे तृतीय-पक्ष प्रोग्राम</a>.</font></p>
+				<p><font size="-1"><strong>समाचार साइटमैप के लिएः</strong> इस समय समाचार साइटमैप की विशेष आवश्यकता के चलते Google समाचार साइटमैप निर्माण में साइटमैप जनक के उपयोग की अनुशंसा नहीं की जाती है.  समाचार साइटमैप केवल हालिया प्रकाशित समाचार लेखों की वृहद सूची के उद्देश्य से बनाए गए हैं (बजाय कि पूरी वेबसाइट) और उन्हें नियमित अंतराल पर अपडेट किया जाता है.</font></p>  
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="download"></a><b>1. साइटमैप जनक प्रोग्राम फ़ाइलें डाउनलोड हो रही हैं</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p> साइटमैप जनक फ़ाइलें निम्न लिखित स्थानों से ZIP और GZ संग्रह प्रारूपों <font size="-1">में उपलब्ध हैं:</font></p>
+				</font>
+				<p><font size="-1"><a href="http://www.sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422">http://sourceforge.net/project/showfiles.php?group_id=137793&amp;package_id=153422</a></font></p>
+				<font size="-1">
+				<p>एक बार संग्रह डाउनलोड करने के बाद आप आप इसे स्थानीय डायरेक्टरी में ला सकते हैं. निम्न लिखित फ़ाइलों का पता लगाएँ: </p>
+				<ul>
+                  <li><strong> README</strong> &#8212;में इस उपकरण के बारे में नवीनतम जानकारी है </li>
+                  <li><strong> sitemap_gen.py</strong> &#8212;पायथॉन लिपि जो आपका साइटमैप निर्मित करती है </li>
+                  <li><strong>example_config.xml</strong> &#8212; टेम्पलेट पुष्टिकरण फ़ाइल, जिसे आप&#8217;अपनी साइट के लिए पुष्टिकरण निर्दिष्ट करने में उपयोग करेंगे</li>
+                  <li><strong> example_urllist.txt</strong> &#8212;टेम्पलेट यूआरएल सूची जिसे आप उपयोग करते हैं, यदि आप स्वयं द्वारा निर्दिष्ट किए गए यूआरएल के सेट के आधार पर साइटमैप निर्मित करना चाहते हैं</li>
+		        </ul>
+				</font>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="config"></a><b>2अ. पुष्टिकरण फ़ाइल निर्मित हो रही है</b></td> 
+				</tr> 
+			</tbody></table>
+		  <font size="-1">
+		  </font><p><font size="-1">यह भाग पुष्टिकरण फ़ाइल बनाने के लिए चरण-दर-चरण निर्देश उपलब्ध कराता है. यह उपलब्ध विकल्पों का एक <a href="#config_reference">पूर्ण संदर्भ</a>  भी उपलब्ध कराता है. यदि आप <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34627&topic=8493">मोबाइल साइटमैप</a> बना रहे हैं, तब <a href="#creating_mobile">अतिरिक्त मोबाइल दिशा-निर्देश देखें</a>.</font></p>
+				<font size="-1"><p>अपनी साइट के लिए एक पुष्टिकरण फ़ाइल बनाने के लिए आपके पास निम्न लिखित जानकारी होना अनिवार्य है: </p>
+				<ul>
+                  <li>आपकी साइट के लिए आधार यूआरएल (जैसे <strong>http://www.example.com</strong>/). सुनिश्चत करें कि आप प्रोटोकॉल शामिल करते हैं (जैसे कि <strong>http://</strong>). उदाहरण के लिए, <strong>http://www.google.com</strong> एक मान्य आधार यूआरएल है, लेकिन <strong>www.google.com</strong> नहीं. </li>
+		
+                  <li>उस स्थान का वेब सर्वर पथ जहाँ आप साइटमैप स्टोर करना चाहते हैं. सामान्यतया, यह आधार यूआरएल का पथ है, क्योंकि साइटमैप में ऐसे यूआरएल शामिल नहीं हो सकते हैं, जो साइटमैप के स्थान से उच्च-स्तर वाली डायरेक्टरी में हैं. जब आप Google साइटमैप जनक रन करते हैं, तब यह एक साइटमैप निर्मित करता है और इसे आपके द्वारा निर्दिष्ट स्थान पर स्थापित करता है. </li>
+		 
+                  <li>पद्धतियाँ जिन्हें आप अपना साइटमैप निर्मित करते समय साइटमैप जनक द्वारा अपनाया जाना चाहते हैं. आप पद्धतियों को कोई भी संयोजन प्रयुक्त कर सकते हैं. निम्नलिखित पद्धतियाँ उपलब्ध हैं: </li>
+		  </ul>
+				
+		  </font><ol>
+<ul>
+                    <li><font size="-1"><strong> <a href="#URL">यूआरएल</a></strong> &#8212;पुष्टिकरण फ़ाइल के इस भाग में प्रत्येक यूआरएल के बारे में सूचना के साथ ही व्यक्तिगत यूआरएल की सूची बनाता है. आप सामान्यतया एक अन्य पद्धति के साथ इस पद्धति का उपयोग उन अतिरिक्त यूआरएल को मैन्युअली शामिल करने के लिए करते हैं, जिन्हें दूसरी पद्धतियाँ नहीं उठा सकती हैं. </font></li>
+                    <li><font size="-1"><strong><a href="#urllist">यूआरएल सूची</a> </strong> &#8212;पुष्टिकरण फ़ाइल को उस पाठ फ़ाइल पर अंकित करती है, जिसमें यूआरएल की सूची है. यदि यह पाठ फ़ाइल पहले से मौजूद है या यूआरएल की सूची बनाने के लिए आप लिपि का उपयोग करते हैं, तो आप इस पद्धति का उपयोग करना चाह सकते हैं. </font></li>
+                    <li><font size="-1"><strong><a href="#directory">डायरेक्टरी पथ</a></strong>&#8212;आपकी साइट के लिए डायरेक्टरी पथ और उन पाथों के अनुकूल यूआरएल निर्दिष्ट करती है. साइटमैप जनक उन डायरेक्टरियों की सामग्री के आधार पर यूआरएल की एक सूची तैयार करेगा. यदि आपकी साइट स्थिर HTML फ़ाइलों से बनी है, तो आप इस पद्धति का उपयोग करना चाह सकते हैं. </font></li>
+            <li><font size="-1"><strong> <a href="#logs">एक्सेस लॉग</a></strong>&#8212;आपकी लॉग फ़ाइलों के पथ को अंकित करती है. साइटमैप जनक लॉग में शामिल यूआरएल के आधार पर यूआरएल की एक सूची तैयार करेगा. यदि आपकी साइट वृहद पृष्ठों से बनी है, तो आप इस पद्धति का उपयोग करना चाह सकते हैं. </font></li>
+ <li><font size="-1"><strong> <a href="#sitemap">साइटमैप</a></strong>&#8212;उन मौजूद साइटमैप को अंकित करती है, जिन्हें आपने साइटमैप जनक के साथ बनाया है. साइटमैप जनक एकल साइटमैप निर्मित करेगा जिसमें प्रत्येक साइटमैप में शामिल यूआरएल भी शामिल हैं. यदि आपने पहले ही विभिन्न छोटे साइटमैप बनाए हैं, जिन्हें आप एक बड़े साइटमैप में जोड़ना चाहते हैं, तब आप इस पद्धति का उपयोग कर सकते हैं. </font></li>
+            </ul>
+		  </ol>
+				
+		  <font size="-1"><p><b><a name="create_config"></a>निम्न तरह से पुष्टिकरण फ़ाइल निर्मित करें:</b></p>
+		  </font>
+				<ol>
+                 <font size="-1"> <li>पाठ संपादक में <strong>example_config.xml</strong> फ़ाइल खोलें. इसे एक नई फ़ाइल के रूप में सहेजें (जैसे <strong>config.xml</strong> या <strong>mysite_config.xml</strong>).</li> 
+                 </font>
+				
+                 
+                 <font size="-1">
+                 <li>साइट परिभाषा भाग का पता लगाएँ: </li>
+                 </font>		  
+				
+				<pre>&lt;site base_url="http://www.example.com/" store_into="/var/www/docroot/sitemap.xml.gz"
+verbose="1"&gt;
+				</pre>				
+				
+                  <font size="-1"><li>अपनी साइट के लिए यूआरएल पर <strong>base_url</strong> मान बदलें. </li>
+		 
+                  <li><strong>store_into</strong> बदलें
+आपके वेब सर्वर पर पथ का नाम, जहाँ आप साइटमैप और साइटमैप के लिए आपके द्वारा उपयोग किए जाने वाले फ़ाइल नाम को स्टोर करना चाहते हैं. सामान्यतया, यह आधार यूआरएल का पथ है, क्योंकि Google केवल उन्हीं यूआरएल को स्वीकार कर सकता है, जो साइटमैप रखने वाली डायरेक्टरी या सबडायरेक्टरी के समान स्तर के हैं. आप उस डायरेक्टरी से संबंधित पथ निर्दिष्ट कर सकते हैं, जहाँ आप अपने वेब सर्वर के रूट से लिपि या एक पूर्ण पथ अपलोड करते हैं. यदि आप अपनी आधार यूआरएल डायरेक्टरी पर लिपि अपलोड करते हैं, तो आप साधारण तरीके से फ़ाइल नाम निर्दिष्ट कर सकते हैं.</li>
+                  </font>
+                  <font size="-1"></font><font size="-1"><li>उन जनक पद्धति भागों का पता लगाएँ, जो <span class="style1">** संशोधित</span> <span class="style1">या मिटाएँ **</span> से आरंभ होते हैं. इनमें से प्रत्येक भाग साइटमैप जनरेट करने के लिए एक पद्धति के साथ व्यवहार करता है. </li>
+                  <li>उन पद्धतियों के लिए भागों को हटा दें, जिन्हें आप उपयोग करने नहीं&#8217;जा रहे हैं.</li>
+                  <li>उन पद्धतियों के लिए नीचे दिए निर्देशों का पालन करें, जिनका उपयोग करने जा रहे हैं. </li>
+                <p><strong> यूआरएल<a name="URL"></a></strong></p>
+                <p> निम्नलिखित भागों का पता लगाएँ: </p>
+                </font>
+                  <pre>&lt;!-- ** MODIFY or DELETE ** 
+"url" nodes specify individual URLs to include in the map. &lt;br&gt;
+
+Required attributes: 
+href - the URL
+
+Optional attributes: 
+lastmod - timestamp of last modification (ISO8601 format) 
+changefreq - how often content at this URL is usually updated
+priority - value 0.0 to 1.0 of relative importance in your site 
+--&gt; 
+
+&lt;url href="http://www.example.com/stats?q=name" /&gt; 
+&lt;url 
+href="http://www.example.com/stats?q=age" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre>
+                  <font size="-1">
+                <p>यह भाग दो उदाहरण देता है: पहले वाले में केवल आवश्यक विशेषता और दूसरे वाले में आवश्यक विशेषता के साथ ही वैकल्पिक विशेषता भी शामिल है. </p>
+                <p>उस प्रत्येक यूआरएल के लिए इस प्रारूप का उपयोग करें, जिसे आप शामिल करना चाहते हैं.  <strong>changefreq</strong> विशेषता Google को एक सामान्य विचार प्रदान करती है कि प्रायः यूआरएल किस प्रकार अपलोड होते हैं. इससे Google को यह जानने में सहायता मिलती है कि नई सामग्री के लिए पृष्ठ पर प्रायः कितनी बार जाना है. <strong>प्राथमिकता</strong> विशेषता Google को आपकी साइट पर दूसरे पृष्ठों की तुलना में इस पृष्ठ के महत्व के बारे में जानकारी देती है. इस विशेषता का इस पर कोई प्रभाव नहीं पड़ता है कि Google किस प्रकार दूसरी साइटों के पृष्ठों के साथ आपके पृष्ठ की तुलना करता है, यह केवल यह जानने में Google की मदद करती है कि अपनी साइट के कौन-से पृष्ठों को आप सर्वाधिक महत्वपूर्ण मानते हैं. </p>
+                  </font>
+				<p><font size="-1"><strong> यूआरएल सूची <a name="urllist"></a> </strong></font></p>
+				<font size="-1"><p> निम्नलिखित भागों का पता लगाएँ: </p>
+				
+			</font>
+			<pre>
+&lt;!-- ** MODIFY or DELETE **
+"urllist" nodes name text files with lists of URLs. 
+An example file "example_urllist.txt" is provided. 
+
+Required attributes: 
+path - path to the file 
+
+Optional attributes: 
+encoding - encoding of the file if not US-ASCII 
+--&gt; 
+&lt;urllist path="example_urllist.txt" encoding="UTF-8" /&gt; 
+				</pre>
+				
+				<p><font size="-1"> उस पाठ फ़ाइल के पथ और नाम को इंगित करने के लिए इस प्रारूप का उपयोग करें, जिसमें यूआरएल की आपकी सूची शामिल है. आप उपलब्ध कराई गई <strong>example_urllist.txt</strong> फ़ाइल को टेम्पलेट के रूप में उस पाठ फ़ाइल के लिए उपयोग कर सकते हैं. आप अपने वेब सर्वर पर संबंधित या पूर्ण पथ में से एक को निर्दिष्ट कर सकते हैं. उदाहरण के लिए, यदि साइटमैप जनक और <strong>urlist.txt </strong>फ़ाइल समान डायरेक्टरी में स्थापित हैंस तब साधारण तरीके से <strong> .txt</strong> फ़ाइल का फ़ाइल नाम निर्दिष्ट कर सकते हैं, यदि आप UTF-8 से भिन्न एन्कोडिंग के साथ पाठ फ़ाइल बनाते हैं, तब इस एन्कोडिंग को इंगित करने के लिए <strong>एन्कोडिंग</strong> विशेषता का उपयोग कर सकते हैं. यदि आपके पास एकाधिक .txt फ़ाइलें हैं, तब आप वाइल्डकार्ड का उपयोग कर सकते हैं. उदाहरण के लिए:</font></p>
+				<pre>&lt;urllist path=&quot;example_urllist*.txt&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">पाठ फ़ाइल में आपके द्वारा शामिल प्रत्येक यूआरएल के लिए आप अंतिम संशोधन तिथि, परिवर्तन तीव्रता, और प्राथमिकता को निर्दिष्ट कर सकते हैं. इस फ़ाइल की संरचना के बारे में पूरी जानकारी के लिए <a href="#urllist_reference">यूआरएल सूची पाठ फ़ाइल संदर्भ भाग</a> देखें.</font>  </p>
+				<p><font size="-1"><strong> डायरेक्टरी पथ<a name="directory"></a> </strong></font></p>
+				<p><font size="-1"> निम्नलिखित भागों का पता लगाएँ: </font></p>
+				
+				<pre>
+&lt;!-- ** MODIFY or DELETE ** 
+"directory" nodes tell the script to walk the file system and 
+include all files and directories in the Sitemap.
+
+Required attributes:
+path - path to begin walking from 
+url - URL equivalent of that path 
+
+Optional attributes:
+default_file - name of the index or default file for directory URLs
+
+--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.example.com/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.example.com/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+				
+				<p><font size="-1">यह भाग दो उदाहरण देता है. यदि आपके सभी पृष्ठ एक पथ की सबडायरेक्टरियों में हैं, तब आपको केवल एक प्रविष्टि शामिल करने की ज़रूरत है. हालांकि, यदि आपकी साइट पर पृष्ठों पर एकाधिक पथ हैं, तब प्रत्येक के लिए एक प्रविष्टि शामिल करें. </font></p>
+				
+				<p><font size="-1">याद रखें कि प्रत्येक यूआरएल आपके द्वारा चरण 3 में निर्दिष्ट आधार यूआरएल के साथ ही आरंभ होना चाहिए. उदाहरण के लिए, <strong>example_config.xml</strong> फ़ाइल में दिए गए दोनों उदाहरणों में यूआरएल <strong>http://www.example.com/</strong> के साथ आरंभ होते हैं. इस प्रकार, दोनों यूआरएल मान्य हैं. </font></p>
+				
+				<p><font size="-1">उदाहरण प्रविष्टियों को आपकी साथ की प्रविष्टियों के साथ बदलें. कई साइटों में केवल एक प्रविष्टि होगी, जो आधार यूआरएल को इंगित करेगी. सुनिश्चित करें कि <strong>पथ</strong> मान आपके वेब सर्वर पर डायरेक्टरी का पूर्ण पथ है. सुनिश्चित करें कि आवश्यक होने पर <strong>यूआरएल</strong> मान प्रोटोकॉल (जैसे http) और ट्रेलिंग स्लेश के साथ एक पूर्ण यूआरएल है.</font></p>
+				<p><font size="-1">आप उस फ़ाइल नाम को निर्दिष्ट करने के लिए <strong>default_file</strong> मानदंड का उपयोग कर सकते हैं, जिसे आपका सर्वर डायरेक्टरी के लिए डिफॉल्ट पृष्ठ के रूप में उपयोग करता है. उपर्युक्‍त उदाहरण में,<strong>/var/www/docroot</strong> को <strong>http://www.example.com/index.html</strong> हल करती है. आपको इसे निर्दिष्ट करने की आवश्यकता नहीं है. तथापि, यदि आप करते हैं, तो साइटमैप जनक उस पृष्ठ को शामिल करेगा, जो प्रत्येक सबडायरेक्टरी को केवल एक बार मैप करता है (डायरेक्टरी और फ़ाइल नाम यूआरएल दोनों की सूची बनाने के बजाय) और उस पृष्ठ के लिए अंतिम मोड विशेषता निकालने के लिए फ़ाइल (डायरेक्टरी के बजाय) की अंतिम संशोधित तिथि का उपयोग करेगा. </font></p>
+				<p><font size="-1"><strong> एक्सेस लॉग <a name="logs"></a></strong></font></p>
+				<p><font size="-1"> निम्नलिखित भागों का पता लगाएँ: </font></p>
+				
+<pre>&lt;!-- ** MODIFY or DELETE **
+&quot;accesslog&quot; nodes tell the script to scan webserver log files to
+extract URLs on your site.  Both Common Logfile Format (Apache's default 
+logfile) and Extended Logfile Format (IIS's default logfile) can be read.
+				
+Required attributes:
+ path - path to the file
+Optional attributes:
+ encoding - encoding of the file if not US-ASCII
+  --&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.0&quot; encoding=&quot;UTF-8&quot; /&gt;
+&lt;accesslog path=&quot;/etc/httpd/logs/access.log.1.gz&quot; encoding=&quot;UTF-8&quot; /&gt;
+</pre>
+				 
+				<p><font size="-1">यह भाग तीन उदाहरण देता है. आपको ये प्रविष्टियाँ बदलना चाहिए और प्रत्येक लॉग फ़ाइल के लिए एक प्रविष्टि शामिल करना चाहिए. सुनिश्चित करें कि पथ मान पूर्ण पथ और आपके वेब सर्वर पर फ़ाइल नाम है. यदि लॉग फ़ाइलें US-ASCII या UTF-8 के रूप में एन्कोड नहीं हैं, तब एन्कोडिंग को <a href="#encoding">निर्दिष्ट</a> करने के लिए वैकल्पिक  <strong>एन्कोडिंग</strong> का उपयोग करें. प्रत्येक लॉग फ़ाइल की सूची बनाने के बजाय आप वाइल्डकार्ड का उपयोग कर सकते हैं. उदाहरण के लिए, उपर्युक्‍त उदाहरण में, आप निम्नलिखित प्रविष्टि को शामिल कर सकते हैं जो सभी तीन लॉग फ़ाइलों को शामिल कर लेगी:</font></p>
+<pre>&lt;accesslog path=&quot;/etc/httpd/logs/access.log*&quot; encoding=&quot;UTF-8&quot; /&gt; </pre>
+				<p><font size="-1">साइटमैप जनक इस आधार पर इसके द्वारा लॉग में पाए जाने वाले यूआरएल को प्राथमिकता प्रदान करता है कि प्रायः कितनी बार यूआरएल में प्रवेश किया गया है. उदाहरण के लिए, उस यूआरएल को, जिसमें 100 बार प्रवेश किया जा चुका है, उस यूआरएल की तुलना में उच्च प्राथमिकता प्रदान की जाएगी, जिसमें केवल दो बार प्रवेश किया गया है. वास्तविक प्राथमिकता प्रदान करना संबंधित होता है और साइट में प्रत्येक यूआरएल की दूसरे से तुलना की जाती है.</font></p>
+<p><font size="-1"><strong> साइटमैप <a name="sitemap"></a></strong></font></p>
+<p><font size="-1"> निम्नलिखित भागों का पता लगाएँ: </font></p>
+				
+<pre> &lt;!-- ** MODIFY or DELETE **<br>    
+&quot;sitemap&quot; nodes tell the script to scan other Sitemap files.  This can    
+be useful to aggregate the results of multiple runs of this script into
+a single Sitemap.
+				 
+Required attributes:
+  path - path to the file
+  --&gt;
+&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>
+				 
+				<p><font size="-1">यह भाग एक उदाहरण देता है. आपको यह प्रविष्टि बदलना चाहिए और उस प्रत्येक साइटमैप के लिए प्रविष्टि शामिल करना चाहिए, जिसे आप शामिल करना चाहते हैं. सुनिश्चित करें कि पथ मान पूर्ण पथ और आपके वेब सर्वर पर फ़ाइल नाम है.  जब तक जीज़िप साइटमैप में एक .gz एक्सटेंशन है, आप उनकी सूची बना सकते हैं. प्रत्येक साइटमैप की सूची बनाने के बजाय आप वाइल्डकार्ड का उपयोग कर सकते हैं. उदाहरण के लिए, निम्नलिखित प्रविष्टि उन साइटमैप को शामिल करेगी, जो शब्द &quot;साइटमैप&quot; से आरंभ होते हैं और उनका एक्सटेंशन .xml है:</font></p>
+<pre>&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap*.xml&quot; /&gt; </pre>
+				<p><font size="-1">साइटमैप आपके द्वारा सूचीबद्ध प्रत्येक साइटमैप के लिए प्रत्येक यूआरएल हेतु सूचीबद्ध सभी यूआरएल और वैकल्पिक डेटा को बाहर निकालता है और इस सूचना के साथ एक साइटमैप बनाता है. इस समय, हम इस बात की गारंटी नहीं दे सकते हैं कि यह पद्धति उपकरणों से बनाए साइटमैप के लिए काम करेगी या साइटमैप जनक से निर्मित के लिए.</font></p>
+
+
+
+				<font size="-1"><li>फ़िल्टर परिभाषा भाग का पता लगाएँ:</li></font>
+				  
+		 
+<pre>&lt;!-- ********************************************************         
+फ़िल्टर 
+				
+फ़िल्टर वाइल्ड-कार्ड पैटर्न को निर्दिष्ट करता है कि लिपि प्राप्त होने वाले सभी यूआरएल की तुलना करती है. फ़िल्टर का उपयोग निश्चित यूआरएल को आपके साइटमैप से बाहर निकालने के लिए किया जा सकता है, उदाहरण के लिए, आप उस सामग्री को छुपा देते हैं, जिसके बारे में आप आशा करते हैं कि खोज इंजन नहीं खोज पाए.
+
+फ़िल्टर =&quot;वाइल्डकार्ड&quot;में से किसी एक प्रकार के हो सकते हैं, इसका तात्पर्य है कि मानक पथ वाइल्डकार्ड (* और?) का उपयोग यूआरएल के खिलाफ तुलना के लिए किया जाता है, अथवा प्रकार=&quot;regexp&quot;, इसका तात्पर्य है कि तुलना के लिए नियमित व्यंजक का उपयोग किया जाता है.
+
+इस फ़ाइल में निर्दिष्ट करने के लिए फ़िल्टर लागू किए जाते हैं. एक क्रिया=&quot;ड्रॉप&quot; फ़िल्टर मिलान वाले यूआरएल के बहिष्कार का कारण बनता है. एक क्रिया=&quot;पास&quot; फ़िल्टर मिलान वाले यूआरएल के शामिल होने और बाद वाले उस फ़िल्टर को शॉर्टकट का कारण बनता है, जो भी मिलान कर सकता है. यदि कोई फ़िल्टर यूआरएल के मिलान नहीं करता है, तो वह यूआरएल शामिल कर लिया जाएगा. साथ मिलाकर आप जटिल नियम बना सकते हैं.
+
+डिफ़ॉल्ट क्रिया &quot;ड्रॉप&quot; है. डिफ़ॉल्ट प्रकार &quot;वाइल्डकार्ड&quot; है.
+
+आप अपनी साइट के अनुसार इन प्रविष्टियों को संशोधित कर सकते हैं या मिटा सकते हैं. हालांकि, ऊपर बताए से ठीक उलट, इस भाग में उदाहरण प्रविष्टियाँ काल्पनिक नहीं हैं और वे अपने असली रूप में आपके लिए उपयोगी हो सकती हैं.
+********************************************************* --&gt;
+
+&lt;!-- Exclude URLs that end with a '~' (IE: emacs backup files) --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*~&quot; /&gt;
+
+&lt;!-- Exclude URLs within UNIX-style hidden files or directories --&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;regexp&quot; pattern=&quot;/\.[^/]*&quot; /&gt;
+</pre>
+				<p><font size="-1">आप निर्मित साइटमैप से निर्दिष्ट यूआरएल को बाहर निकालने के लिए फ़िल्टरिंग का उपयोग कर सकते हैं. आप यह काम स्वच्छ सूची बनाने, अनावश्यक सूचीकरण को कम करने, या कुछ निश्चित यूआरएल को इंडेक्स से बचाने के लिए करना चाह सकते हैं. ध्यान दें कि यदि आप यूआरएल को इंडेक्स होने से रोकने के लिए एक <a href="http://www.robotstxt.org/wc/robots.html">robots.txt</a> फ़ाइल का उपयोग करते हैं, तब यूआरएल आपके साइटमैप में शामिल होने पर भी Google उन्हें नहीं खोजेगा और इंडेक्स करेगा. </font></p>
+				
+				<p><font size="-1">
+आप किसी एक या सभी फ़िल्टरिंग पद्धतियों का उपयोग कर सकते हैं. आप उस प्रत्येक प्रविष्टि को मिटा सकते हैं, जिसे आप &#8217;नहीं चाहते हैं और यदि चाहें तो अतिरिक्त प्रविष्टियाँ निर्मित कर सकते हैं. नीचे नमूना प्रयोग दिए गए हैं. </font></p>
+				<pre>&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*.jpg&quot; /&gt;</pre>
+				<p><font size="-1">यह फ़िल्टर उस यूआरएल को निकाल देता है जो .jpg में समाप्त होता है. यदि आपकी साइट&#8217;की छवियाँ HTML पृष्ठों में बनी हैं, तो आप समान फ़िल्टर को शामिल कर सकते हैं और अकेले यूआरएल के समान प्रवेश नहीं होना चाहिए. </font></p>
+				<pre>&lt;filter action=&quot;pass&quot; type=&quot;wildcard&quot; pattern=&quot;*.htm*&quot; /&gt;
+&lt;filter action=&quot;drop&quot; type=&quot;wildcard&quot; pattern=&quot;*&quot; /&gt;</pre>
+				<font size="-1"> यह फ़िल्टर सभी .htm* फ़ाइलों को शामिल करता है, लेकिन बाकी सभी को छोड़ देता है.</font><br>
+				<br>
+
+
+				<font size="-1"></font><font size="-1"><li>अपनी साइट के लिए सभी परिवर्तन करने के बाद आप फ़ाइल सहेजें.</li></font>
+				</ol>
+				
+				
+		        <font size="-1"><a name="config_reference"></a><p><b>पुष्टिकरण फ़ाइल वाक्य विन्यास संदर्भ</b></p>
+		  </font><font size="-1">
+				</font>
+		  <p><font size="-1">पुष्टिकरण फ़ाइल वाक्य विन्यास संदर्भ का एक पूर्ण विवरण नीचे दिया गया है. प्रत्येक टैग एक कोड नमूने के साथ आरंभ होता है, और उसके बाद विशेषताओं का विवरण है.
+</font></p>
+				
+		  <p><font size="-1"><strong><a name="sitetag"></a>साइट<br>
+		  </strong></font><font size="-1">प्रत्येक पुष्टिकरण फ़ाइल के आरंभ में टैग की आवश्यकता. </font></p>
+		  <pre>&lt;sitebase_url="http://www.उदाहरण.com/"
+store_into="/var/www/html/sitemap.xml.gz"
+verbose="1"
+supress_search_engine_notify="1"
+default_encoding="UTF-8"&gt;</pre>
+				<br>
+				<font size="-1">
+				<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				
+					<tbody><tr>
+					<td valign="top" width="19%"><pre>base_url</pre></td>
+					<td valign="top" width="6%"><font size="-1">आवश्यक</font></td>
+					<td valign="top" width="75%"><font size="-1">आपकी वेबसाइट के आधार का एचटीटीपी पथ – साइटमैप में केवल इस आधार से प्रारंभ होने वाले URL शामिल किए जाए सकते हैं</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>store_into</pre></td>
+					<td valign="top"><font size="-1">आवश्यक</font></td>
+					<td valign="top"><font size="-1">वांछित आउटपुट फ़ाइल के लिए वेब सर्वर पथ. लिपि इस फ़ाइल को बनाएगी – लिपि चलाने से पहले फ़ाइल बनाने की आवश्यकता नहीं है.</font></td>
+					</tr> 
+					
+					<tr>
+					<td valign="top"><pre>verbose</pre></td>
+					<td valign="top"><font size="-1">वैकल्पिक</font></td>
+					<td valign="top"><font size="-1">बढ़ी हुई डिबग जानकारी के लिए उच्च संख्या के अनुकूलने के साथ 0-3 तक की एक संख्या दर्ज करें</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>suppress_search_engine_notify</pre></td>
+					<td valign="top"><font size="-1">वैकल्पिक</font></td>
+					<td valign="top"><font size="-1">D</font><font size="-1">परीक्षण उद्देश्य के लिए "1" दर्ज कर खोज इंजन नोटिफिकेशन अक्षम करें</font></td>
+					</tr>
+					
+					<tr>
+					<td valign="top"><pre>default_encoding</pre></td>
+					<td valign="top"><font size="-1">वैकल्पिक</font></td>
+					<td valign="top"><font size="-1">फ़ाइल सिस्टम पथ और यूआरएल पर लागू की जाने वाली वर्ण एन्कोडिंग निर्दिष्ट करें</font></td>
+					</tr>
+				 
+		  </tbody></table>
+		   </font>
+					<font size="-1">
+					
+				<p></p>
+				</font>
+					<p><font size="-1"><strong>यूआरएल<br>
+					</strong></font><font size="-1">वैकल्पिक टैग जिसका उपयोग आप अपनी साइट में प्रत्येक यूआरएल की सूची बनाने के लिए कर सकते हैं. </font></p>
+					<p><pre>&lt;url href="http://www.example.com/stats?q=age" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/&gt; </pre></p><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>href</pre></td>
+					  <td width="6%" valign="top"><font size="-1">आवश्यक</font></td>
+					<td valign="top" width="75%"><font size="-1">आपकी वेबसाइट के आधार के HTTP पथ – केवल यूआरएल जो इस बेस के साथ आरंभ होते हैं, साइटमैप में शामिल किए जा सकते हैं</font></td>
+					</tr><tr>
+					<td valign="top"><pre>lastmod</pre></td>
+					<td valign="top"><font size="-1">वैकल्पिक</font></td>
+					<td valign="top"><font size="-1">समय जब यूआरएल को आखिरी बार यूआरएल में संशोधित किया गया था <a href="http://www.w3.org/TR/NOTE-datetime">W3C तिथि समय</a> प्रारूप (YYYY-MM-DDThh:mm:ss+00:00). आप समय भाग छोड़ सकते हैं. उदाहरण:<br>
+				&nbsp;&nbsp;"2005-02-21T18:00:15+00:00"<br>
+				&nbsp;&nbsp;"2005-02-21"</font></td>
+					</tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">वैकल्पिक</font></td>
+					<td valign="top"><font size="-1">आवृत्ति जिसके साथ यूआरएल के बदलने की संभावना है. इसे एक संकेत माना जाए और एक कमांड नहीं. मान "हमेशा", "हर घंटे", "दैनिक", "साप्तहिक", "मासिक", "वार्षिक", या "कभी नहीं" में से एक होना चाहिए.</font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">वैकल्पिक</font></td>
+					<td valign="top"><font size="-1">समान साइट पर दूसरे पृष्ठों की तुलना में इस पृष्ठ की प्राथमिकता. मान 0.0 और 1.0 के बीच की एक संख्या है, जहाँ 0.0  न्यूनतम प्राथमिकता और 1.0 उच्चतम प्राथमिकता है. प्राथमिकता इस प्रकार प्रभावित कर सकती है कि खोज इंजन आपकी साइट पर खोज करने के लिए यूआरएल का चयन करते हैं. चूंकि प्राथमिकता संबंधित होती है, इसलिए इसका उपयोग आपकी स्वयं की साइट में यूआरएल के बीच चयन के लिए किया जाता है; आपके पृष्ठों की प्राथमिकता की तुलना दूसरी साइटों के पृष्ठों की प्राथमिकता के साथ नहीं की जाएगी.</font></td>
+					</tr>
+		  </tbody></table>
+					<p><font size="-1"><b>यूआरएल सूची<br>
+					</b></font><font size="-1">वैकल्पिक टैग जिसका उपयोग आप उस पाठ फ़ाइल को इंगित करने के लिए कर सकते हैं, जिसमें यूआरएल की आपकी सूची शामिल है. </font></p>
+					<pre>&lt;urllist path="/var/www/html/urllist.txt" encoding="UTF-8" /&gt;</pre>
+		  <br>
+		<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+			<td height="20" valign="top" width="19%"><pre>path</pre></td>
+					  <td width="6%" valign="top"><font size="-1">आवश्यक</font></td>
+					<td valign="top" width="75%"><font size="-1">.txt फ़ाइल का पथ और फ़ाइल नाम. आप अपने  संबंधित या पूर्ण पथ में से एक को निर्दिष्ट कर सकते हैं. </font></td>
+			</tr><tr>
+					<td valign="top"><pre>encoding</pre></td>
+					<td valign="top"><font size="-1">वैकल्पिक</font></td>
+					<td valign="top"><font size="-1">यदि UTF-8 नहीं, तो फ़ाइल की एन्कोडिंग.</font></td>
+					</tr>
+		  </tbody></table>
+<p><font size="-1"><a name="urllist_reference"></a><b>urllist.txt</b> फ़ाइल साधारण पाठ फ़ाइल है, जिसमें मैप करने के लिए यूआरएल की सूची है. आप प्रत्येक यूआरएल के लिए वैकल्पिक विशेषताएँ भी शामिल कर सकते हैं. विशेषताओं को उसी पंक्ति पर दर्ज किया जाता है, जिसे पर यूआरएल को और एकल स्थान के द्वारा पृथक किया जाता है. उदाहरण के लिए:</font>
+          </p>
+		  <pre>
+http://www.example.com/abc/something
+http://www.example.com/abc/xyy.pdf lastmod=2001-12-31T14:05:06+00:00
+http://www.example.com/abc/def?x=12&amp;y=23 changefreq=weekly priority=0.3</pre>
+				<p>
+				<font size="-1">
+					
+				  </font><table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%"  valign="top"><pre>lastmod</pre></td>
+					<td valign="top" width="6%"><font size="-1">वैकल्पिक</font></td>
+					<td width="75%"  valign="top"><p><font size="-1">समय जब यूआरएल को आखिरी बार यूआरएल में संशोधित किया गया था <a href="http://www.w3.org/TR/NOTE-datetime">W3C तिथि समय</a> प्रारूप (YYYY-MM-DDThh:mm:ss+00:00). आप समय भाग छोड़ सकते हैं. उदाहरण:</font><font size="-1"><br>
+				  <br>
+&nbsp;&nbsp;"2005-02-21टी18:00:15+00:00"<br>
+&nbsp;&nbsp;"2005-02-21"</font></p>
+				  </td>
+				  </tr><tr>
+					<td valign="top"><pre>changefreq</pre></td>
+					 <td valign="top"><font size="-1">वैकल्पिक</font></td>
+					<td valign="top"><font size="-1"><font size="-1">आवृति जिसके साथ यूआरएल के बदलने की संभावना है. इसे एक संकेत माना जाए और एक कमांड नहीं. मान "हमेशा", "हर घंटे", "दैनिक", "साप्तहिक", "मासिक", "वार्षिक", या "कभी नहीं" होना चाहिए.</font></font></td>
+					</tr><tr>
+					<td valign="top"><pre>priority</pre></td>
+					<td valign="top"><font size="-1">वैकल्पिक</font></td>
+					<td valign="top"><font size="-1">समान साइट पर दूसरे पृष्ठों की तुलना में इस पृष्ठ की प्राथमिकता. मान 0.0 और 1.0 के बीच की एक संख्या है, जहाँ 0.0  न्यूनतम प्राथमिकता और 1.0 उच्चतम प्राथमिकता है. प्राथमिकता इस प्रकार प्रभावित कर सकती है कि खोज इंजन आपकी साइट पर खोज करने के लिए यूआरएल का चयन करते हैं. चूंकि प्राथमिकता संबंधित होती है, इसलिए इसका उपयोग आपकी स्वयं की साइट में यूआरएल के बीच चयन के लिए किया जाता है; आपके पृष्ठों की प्राथमिकता की तुलना दूसरी साइटों के पृष्ठों की प्राथिमकता के साथ नहीं की जाएगी.</font></td>
+					</tr>
+					</tbody></table>
+				</p>
+		  <font size="-1">
+		  </font>
+		  <p><font size="-1"><strong>डायरेक्टरी<br>
+		  </strong></font><font size="-1">वैकल्पिक टैक, जिसका उपयोग आप अपनी साइट में डायरेक्टरी निर्दिष्ट करने के लिए कर सकते हैं, ताकि उन डायरेक्टरियों में पाई गई फ़ाइलों से साइटमैप जनक यूआरएल की एक सूची बना सके. </font></p>
+				<pre>--&gt; 
+ &lt;directory  path=&quot;/var/www/icons&quot;    url=&quot;http://www.example.com/images/&quot; /&gt;<br>  &lt;directory<br>     path=&quot;/var/www/docroot&quot;<br>     url=&quot;http://www.example.com/&quot;<br>    default_file=&quot;index.html&quot;<br>  /&gt;
+ </pre>
+		  <table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">आवश्यक</font></td>
+					<td width="75%" valign="top"><font size="-1">आरंभिक पथ अवस्थाएँ. साइटमैप जनक इस डायरेक्टरी और सभी सबडायरेक्टरियों को तिरछा कर देगा</font>.</td>
+				  </tr>
+					
+					<tr>
+					<td valign="top"><pre>url</pre></td>
+					 <td valign="top"><font size="-1">आवश्यक</font></td>
+					<td valign="top"><font size="-1">पथ मान के बराबर यूआरएल निर्दिष्ट करता है.</font></td>
+					</tr>
+					<tr>
+					<td valign="top"><pre>default_file</pre></td>
+					 <td valign="top"><font size="-1">वैकल्पिक</font></td>
+					 <td valign="top"><font size="-1">सर्वर पर डायरेक्टरी के लिए डिफॉल्ट फ़ाइल को निर्दिष्ट करता है.</font></td>
+					</tr>
+		    </tbody></table>
+		  </font>
+		  <p><font size="-1"><b>एक्सेस लॉग<br>
+		  </b>वैकल्पिक टैग, जिसका उपयोग आप IIS का पथ और फ़ाइल नाम तथा Apache-शैली एक्सेस लॉग निर्दिष्ट करने के लिए कर सकते हैं, ताकि साइटमैप जनक सीधे उनसे अपने आप यूआरएल प्राप्त कर सके. </font>
+          </p>
+		  
+		  <pre>&lt;accesslog path="/etc/httpd/logs/access-0.log" encoding="UTF-8"/&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">आवश्यक</font></td>
+					<td width="75%" valign="top"><font size="-1">फ़ाइल पर पथ अवस्थाएँ.</font></td>
+		  </tr>
+					
+					<tr>
+					<td valign="top"><pre>encoding</pre></td>
+					 <td valign="top"><font size="-1">वैकल्पिक</font></td>
+					<td valign="top"><font size="-1">यदि UTF-8 नहीं, तो फ़ाइल की एन्कोडिंग निर्दिष्ट करता है.</font></td>
+					</tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><b>साइटमैप<br>
+		  </b>वैकल्पिक टैग, जिसका उपयोग आप उस मौजूदा साइटमैप के पथ और फ़ाइल नाम निर्दिष्ट करने के लिए कर सकते हैं, जिसे आपने साइटमैप जनक के साथ बनाना है. साइटमैप जनक एकल साइटमैप निर्मित करेगा जिसमें प्रत्येक साइटमैप में शामिल यूआरएल भी शामिल हैं. </font>
+          </p>
+		  
+		  <pre>&lt;sitemap path=&quot;/var/www/docroot/subpath/sitemap.xml&quot; /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>path</pre></td>
+					<td valign="top" width="6%"><font size="-1">आवश्यक</font></td>
+					<td width="75%" valign="top"><font size="-1">साइटमैप फ़ाइल पर पथ अवस्थाएँ.</font></td>
+		  </tr>	
+		  </tbody></table>
+		  
+		  
+		  <p><font size="-1"><strong><a name="filter_examples"></a>फ़िल्टर <br>
+		  </strong></font><font size="-1">वैकल्पिक टैग, जिसका उपयोग आप नियम बनाने में कर सकते हैं, जो विशिष्ट फ़ाइलों को शामिल या बाहर करते हैं. फ़िल्टर उसी क्रम के अधीन काम करते हैं, जिसमें वे config.xml फ़ाइल में प्रकट हुए हैं. हालांकि, फ़िल्टर प्रविष्टियों और इनपुट प्रविष्टियों को आपस में मिलने (यूआरएल, यूआरएलसूची, डायरेक्टरी, या एक्सेस लॉग) पर कोई अतिरिक्त प्रभाव नहीं पड़ता है—साइटमैप जनक द्वारा साइटमैप पर जोड़े गए प्रत्येक यूआरएल की तुलना सबसे पहले प्रत्येक फ़िल्टर से की जाती है. </font><font size="-1">यदि कोई फ़िल्टर यूआरएल के मिलान नहीं करता, तो साइटमैप में यूआरएल शामिल करने के लिए डिफ़ॉल्ट का उपयोग करें.</font></p>
+				
+				<pre>&lt;filter action="drop" type="wildcard" pattern="*/internal/*" /&gt;</pre>			
+
+<table border="1" cellpadding="2" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td width="19%" valign="top"><pre>action</pre></td>
+					<td valign="top" width="6%"><font size="-1">वैकल्पिक</font></td>
+					<td width="75%" valign="top">
+				      <font size="-1"><p>कदम जो फ़िल्टर को उठाना चाहिए. मान्य मान हैं:</p>
+					  </font>	
+			      <ul>
+					<li><font size="-1">ड्रॉप – मिलान वाले यूआरएल बाहर करता है. यह डिफ़ॉल्ट क्रिया है, इसलिए यदि कोई क्रिया निर्दिष्ट नहीं है, तब जनक &quot;ड्रॉप&quot; को मानता है.</font></li>
+					  <li><font size="-1">पास – मिलान वाले यूआरएल शामिल करता है.</font></li>
+					  </ul>
+				      </p></td>
+		  </tr>
+					
+					<tr>
+					<td width="19%" valign="top"><pre>type</pre></td>
+					<td valign="top" width="6%"><font size="-1">वैकल्पिक</font></td>
+					<td width="75%" valign="top"><font size="-1"><p>फ़िल्टरिंग के प्रकार. मान्य मान हैं:</p>
+					</font>					  <ul>
+					<li><font size="-1">वाइल्डकार्ड – मानक पथ वाइल्डकार्ड (? और *) का उयोग यूआरएल के खिलाफ तुलना में किया जाता है. यह डिफ़ॉल्ट प्रकार है, इसलिए यदि कोई प्रकार निर्दिष्ट नहीं है, तब जनक &quot;वाइल्डकार्ड&quot; को मानता है.</font></li>
+					<li><font size="-1">regexp – नियमित व्यंजक का उपयोग किया जाता है.</font></li>
+					  </ul></td>
+		  </tr>
+				 
+<tr>
+					<td valign="top"><pre>pattern</pre></td>
+					 <td valign="top"><font size="-1">आवश्यक</font></td>
+					 <td valign="top"><font size="-1">मिलान करने के लिए पेटर्न को निर्दिष्ट करता है.</font></td>
+		  </tr>
+		  </tbody></table>
+
+<font size="-1">
+<p><b><a name="encoding"></a>एन्कोडिंग</b></p>
+				
+		<p>आपकी पुष्टिकरण फ़ाइल द्वारा संदर्भित फ़ाइलें, यूआरएल सूचियाँ या वेब सर्वर लॉग,  डिफ़ॉल्ट UTF-8 के अलावा किसी एन्कोडिंग का उपयोग कर सकती हैं. साइटमैप जनक आपकी फ़ाइलों को किस प्रकार पढ़ते हैं, इसे प्रभावित करने के लिए आप config.xml में वैकल्पिक एन्कोडिंग को निर्दिष्ट कर सकते हैं. कुछ सामान्य एन्कोडिंग्स हैं:
+		</p>
+				<ul>
+				<li><strong>एन्कोडिंग="utf-8"</strong> डिफ़ॉल्ट मानी जाती है
+				</li><li><strong>एन्कोडिंग="ascii</strong>" UTF-8 की उपसमुच्चय है, इसलिए आपको इसे निर्दिष्ट नहीं करना होगा.
+				</li><li><strong>एन्कोडिंग="iso-8859-1</strong>" कई पश्चिमी यूरोपिय भाषाओं के लिए आम है
+				</li></ul>
+		  </font>
+		  
+		  <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="creating_mobile" id="creating_mobile"></a><b>2ब. मोबाइल पुष्टिकरण फ़ाइल बनाने के लिए अतिरिक्त सूचना</b></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">आप मोबाइल साइटमैप के लिए एक पुष्टिकरण फ़ाइल उसी प्रकार बनाते हैं, जैसे किसी गैर-मोबाइल साइटमैप के लिए. हालांकि, आपको प्रत्येक मार्कअप भाषा के लिए एक पृथक पुष्टिकरण फ़ाइल बनाना चाहिए और प्रत्येक पुष्टिकरण फ़ाइल के साथ अलग से साइटमैप जनक रन करना चाहिए, ताकि आप प्रत्येक के लिए एक पृथक साइटमैप बना सकें.</font></p>
+				<p><font size="-1">प्रत्येक पुष्टिकरण फ़ाइल अनिवार्य रूप से:</font></p>
+		  <ul>
+		    <li><font size="-1"><a href="#create_config"><strong>store_into</strong> मान</a> के लिए एक भिन्न फ़ाइल नाम निर्दिष्ट होना चाहिए.</font></li>
+	        <li><font size="-1">मार्कअप भाषा के लिए यूआरएल शामिल करना और निकालना निर्दिष्ट करने के लिए <a href="#filter_examples">फ़िल्टर</a> का उपयोग करना चाहिए. याद रखें कि प्रत्येक साइटमैप में केवल एक मार्कअप भाषा के लिए यूआरएल शामिल करना चाहिए. इसका तात्पर्य है कि यदि यूआरएल एकाधिक मार्कअप भाषा को सेवा प्रदान करता है, तो समान यूआरएल एकाधिक साइटमैप में शामिल किया जा सकता है.</font></li>
+	      </ul>
+			<p><strong><font size="-1">फ़िल्टरिंग के उदाहरण</font></strong></p>
+			<p><font size="-1">नीचे कुछ उदाहरण दिए गए हैं कि भिन्न मार्कअप भाषाओं के लिए मोबाइल साइटमैप बनाने के लिए आप किस प्रकार एक्सटेंशन आधारित फ़िल्टर का उपयोग कर सकते हैं. आपके द्वारा उपयोग की जाने वाली निर्दिष्ट फ़िल्टरिंग आपकी साइट में प्रयुक्त मार्क भाषाओं के प्रकारों के साथ ही इस पर आधारित होना चाहिए कि आप कैसे प्रत्येक प्रकार को निर्दिष्ट करते हैं. यदि आपने अपनी साइट के विवरण भिन्न तरीके से लागू किए हैं (उदाहरण के लिए, आप पृथक फ़ोल्डर में भिन्न मार्क अप भाषाओं के साथ यूआरएल संगठित कर सकते हैं), तो आपको अपनी साइट पर कार्यान्वयन के निर्दिष्टों के आधार पर फ़िल्टर करना चाहिए. याद रखें कि फ़िल्टर उसी क्रम में लागू किए जाएँगे, जिस क्रम में आपने उन्हें पुष्टिकरण फ़ाइल में सूचीबद्ध किया है. इसलिए, पहला फ़िल्टर जो आपको सूचीबद्ध करना चाहिए एक &quot;पास&quot; है, क्रिया जो उन यूआरएल को निर्दिष्ट करती है, जिनहें आप अपने साइटमैप में शामिल करना चाहते हैं. </font></p>
+			<p><font size="-1">WML (WAP 1.2) सामग्री के लिए साइटमैप निर्मित करने के लिए:</font></p>
+			
+			<pre>&lt;filter action="pass" type="wildcard" pattern="*.wml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+</pre>
+			
+			<p><font size=-1>XHTML मोबाइल प्रोफ़ाइल (WAP 2.0) सामग्री के लिए साइटमैप निर्मित करने के लिए:</font></p>
+			
+			<pre>&lt;filter action="pass" type="wildcard" pattern="*.xhtml" /&gt;
+&lt;filter action="drop" type="wildcard" pattern="*.*" /&gt;<br>
+			</pre>
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="copy"></a><b>3. आपके वेब सर्वर पर फ़ाइलें अपडेट हो रही हैं</b></td> 
+				</tr> 
+			</tbody></table>
+		<p><font size="-1"> आपको अपने वेब सर्वर के उस स्थान पर निम्न लिखित फ़ाइलें अपलोड करना चाहिए, जहाँ आप एक कमांड पंक्ति से प्रवेश कर सकते हैं: </font></p>
+			
+			<font size="-1"><ul>
+              <li><strong> config.xml</strong> &#8212; यह एक पुष्टिकरण फ़ाइल है जिसे आपने हाल ही में <strong>example_config.xml</strong> का उपयोग कर बनाया है. </li>
+              <li><strong> sitemap_gen.py</strong> &#8212;यह पायथॉन लिपि है जो आपका साइटमैप निर्मित करती है </li>
+              <li><strong> urllist.txt</strong> &#8212;यह फ़ाइल वैकल्पिक है; यदि आप साइटमैप बनाने के लिए पाठ फ़ाइल पद्धति का उपयोग करते हैं, तो आपको केवल इसे शामिल करने की ज़रूरत होगी. </li>
+		  </ul>
+			
+		  </font>
+		  <p><font size="-1"> इन फ़ाइलों को अपलोड करने के लिए आपके द्वारा अपनाई गई पद्धति आपके माहौल पर निर्भर करती है. सामान्य पद्धति में <a href="http://www.google.com/search?q=ftp">एफटीपी</a> और एससीपी शामिल हैं. अधिक जानकारी के लिए, अपने वेब होस्ट से संपर्क करें.		  </font></p>
+			
+			<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="execute"></a><strong>4. साइटमैप जनक लिपि रन हो रही है (sitemap_gen.py) </strong></td> 
+				</tr> 
+			</tbody></table>
+				
+				<p><font size="-1">
+साइटमैप जनक रन करने के लिए, आपको&#8217;अपने वेब सर्वर से संपर्क करने की ज़रूरत होगी. जुड़ने के लिए आपके द्वारा अपनाई गई पद्धति आपके माहौल पर निर्भर करती है. उदाहरण के लिए, आप <a href="http://www.google.com/search?q=ssh">एसएसएच</a> का उपयोग कर आप यूनिक्स आधारित सर्वर तक पहुँच सकते हैं.  अपने बेव सर्वर से जुड़ने और लिपियाँ रन करने के बारे में अधिक जानकारी के लिए, अपने वेब होस्ट से बात करें. </font></p>
+				
+				<p><font size="-1"> अपने वेब सर्वर पर फ़ाइलें कॉपी करने के बाद, आपको साइटमैप जनक लिपि रन करने की ज़रूरत होगी. अपने वेब सर्वर से संपर्क करें और निम्न लिखित कमांड रन करें (<strong>&lt;path/config.xml&gt;</strong> को अपनी पुष्टिकरण फ़ाइल के पथ और फ़ाइल नाम के साथ बदलें; यदि आपने पायथॉन लिपि वाले स्थान पर ही इस फ़ाइल को अपलोड किया है, तब आप पथ छोड़ करते हैं):</font></p>
+				
+				<pre>python sitemap_gen.py --config=&lt;path/config.xml&gt;
+</pre>
+<p><font size="-1">उदाहरण के लिए, यूनिक्स आधारित कमांड पंक्ति इसके समान दिखाई दे सकती है:</font></p>
+<p><img src="images/python_command.gif" alt="पायथॉन कमांड"></p>
+<p><font size="-1">MS-DOS आधारित कमांड पंक्ति इसके समान दिखाई देनी चाहिए:</font></p>
+<p><img src="images/python_dos.gif" alt="पायथॉन कमांड"></p>
+<p><font size="-1"><b>टिप:</b> यदि आप अपने पुष्टिकरण का परीक्षण कर रहे हैं और अपना साइटमैप प्रस्तुत करने के लिए तैयार नहीं हैं, तब निम्न लिखित वाक्य विन्यास साइटमैप जनक को Google के साथ संपर्क करने से रोकेगा:</font></p>
+				<pre><br>	$ python sitemap_gen.py --config=config.xml --testing</pre>
+				<font size="-1"><p>आप कमांड प्रॉम्प्ट में अपने अनुरोध की स्थिति को देखेंगे:</p></font>
+<pre>	
+	पुष्टिकरण फ़ाइल पढ़ी जा रही हैः /path/config.xml
+	खुली यूआरएलसूची "/path/urllist.txt"
+	चल रही DIRECTORY "/var/www/html/dir"
+	चल रही DIRECTORY "/var/www/html/dir2"
+	खुला एक्सेसलॉग "/etc/httpd/logs/access-0.log"
+	एकत्रित यूआरएल को छाँट और सामान्य कर रहे हैं.
+	साइटमैप फ़ाइल "/path/sitemap.xml.gz" with 1092 URLs लिख रहे हैं
+	खोज इंजनों को सूचित कर रहे हैं.
+	www.google.com को सूचित करना
+	URL पर फ़ाइल एक्सटेंशन की गणना:
+		208  .html
+		574  .jpg
+		...
+		त्रुटियों की संख्याः 0
+		चेतावनियों की संख्याः 0</pre>
+				<font size="-1">
+				<p>यदि आप इस प्रकार की बहुत अधिक आउटपुट नहीं देखते हैं, तब याद रखें कि आपकी पुष्टिकरण फ़ाइल में वरबोस सेटिंग इसे प्रभावित करती है कि स्क्रीन पर कितनी जानकारी प्रकाशित है.  यह उदाहरण वरबोस को "1" पर सेट करने का प्रतिनिधि है.</p>
+				<p>फ़ाइल में कोई भी त्रुटियाँ भी वापस हो जाएँगी.  उदाहरण के लिए, यदि आप यूआरएल= विशेषता डायेक्टरी प्रविष्टि में छोड़ देते हैं, तब लिपि निम्नलिखित आउटपुट देगी:
+				</p></font>
+<pre>	
+	[ERROR] Directory entries must have both "path" and "url" attributes
+	Number of errors: 1</pre>
+				<font size="-1">
+				</font>
+				<p><font size="-1">अपनी <b>config.xml</b> फ़ाइल में त्रुटियों को सही करें और लिपि को पुनः चलाएँ. यदि कोई त्रुटि नहीं है, तब साइटमैप जनक पुष्टिकरण फ़ाइल में आपके द्वारा निर्दिष्ट स्थान में एक नई <b>sitemap.xml.gz</b> फ़ाइल बनाएगा. </font></p>
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="submitting" id="submitting"></a><strong>5. आपका साइटमैप Google प्रस्तुत हो रहा है </strong></td> 
+				</tr> 
+			</tbody></table>
+				<p><font size="-1">साइटमैप जनक पुष्टिकरण फ़ाइल में आपके द्वारा निर्दिष्ट स्थान में एक <strong>sitemap.xml.gz</strong> फ़ाइल बनाता है. यह फ़ाइल सफलतापूर्वक बनने के बाद, सुनिश्चित करें कि वेब ब्राउज़र के माध्यम से इस तक पहुँचा जा सकता है. तब, इसे अपने <a href="https://www.google.com/webmasters/sitemaps/siteoverview">Google साइटमैप</a> खाते पर <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496">जोड़ें</a> . यह Google को आपके लिए उपयोगी स्थिति और आंकड़ों की जानकारी उपलब्ध कराने में सक्षम बनाता है. यदि Google आपके साइटमैप के साथ समस्या की रिपोर्ट करता है, तब आप समस्या को सही कर इसे पुनः प्रस्तुत कर सकते हैं. आपको सिर्फ एक बार मैन्युअली साइटमैप को जोड़ना पड़ेगा. उसके बाद, आप अपने साइटमैप में परिवर्तनों के बारे में Google को सूचित करने के लिए एक <a href=submit.html#ping>HTTP अनुरोध</a> का उपयोग कर सकते हैं (यद्यपि आप इसे अपने Google वेबमास्टर उपकरण खाते के माध्यम से भी प्रस्तुत कर सकते हैं). </font></p>
+		        
+				<table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="recur"></a><b>6. एक आवर्ती लिपि सेट की जा रही है</b></td> 
+				</tr> 
+		  </tbody></table>
+		  <font size="-1">
+				<p>जैसे ही आपकी सामग्री परिवर्तित होती है, हम हर घंटे में एक बार अधिकतम आवृति के साथ साइटमैप जनक चलाने का सुझाव देते हैं.</p>
+		  </font>
+		  <p><font size="-1">यूनिक्स वेब सर्वर वाले वेबमास्टर इसे  <a href="http://www.google.com/search?q=cron">क्रोन जॉब</a> के रूप में सेट करने पर विचार कर सकते हैं. </font></p>
+				<font size="-1"><p>दूसरे प्लेटफॉर्म का उपयोग कर रहे वेबमास्टरों को आवर्ती लिपियों की पुष्टि के लिए अपने सिस्टम प्रबंधकों से संपर्क करना चाहिए. आप भी Google साइटमैप समूह में  <a href="http://groups.google.com/group/Google_Webmaster_Help-Sitemap-en?tsc=1">Google समूहों</a> पर श्रेष्ठ सलाह से लाभांवित हो सकते हैं.
+</p>
+				
+	      </font>
+				<p><font size="-1"> आप Google को अपने साइटमैप पर परिवर्तनों के बारे में जानने के लिए एक <a href=submit.html#ping>HTTP अनुरोध</a> का उपयोग कर सकते हैं. हालांकि, कृपया सुनिश्चित करें कि आप अपने Google खाते के साथ अपने Google वेबमास्टर उपकरण खाते पर मैन्युअली <a href=http://www.google.com/support/webmasters/bin/answer.py?answer=34575&topic=8496>अपना साइटमैप जोड़ने</a> के लिए  <a href="https://www.google.com/webmasters/tools/siteoverview">Google वेबमास्टर</a> में लॉग करते हैं.</font></p>
+				<font size="-1"></font>		
+			    <table border="0" cellpadding="2" cellspacing="0" width="100%"> 
+				<tbody><tr> 
+				<td style="border-top: 1px solid rgb(221, 173, 8); background-color: rgb(254, 250, 222);"><a name="troubleshoot"></a><b>समस्या निवारण</b></td> 
+				</tr> 
+			</tbody></table>
+				<font size="-1">
+				<p>इस भाग में हम उन सामान्य प्रश्नों या मुद्दों के बारे में चर्चा करते हैं, जो साइटमैप जनक उपयोग करते समय कुछ लोगों के सामने आते हैं, और यदि आपको ऐसे ही किसी का सामना करना पड़े, तो आप क्या कर सकते हैं.</p>
+				<p><b>वेब-पहुँच योग्य</b></p>
+				<p><b>मुद्दाः</b> साइटमैप जनक निम्नलिखित त्रुटि को लौटाता है और चेतावनी दे रहा है:</p>
+				</font>
+<pre>	
+	[ERROR] When attempting to access your generated Sitemap at the following URL:
+	http://www.example.com/sitemap.xml.gz
+	we failed to read it.  Please verify the store_into path you specified in
+	your configuration file is web-accessible.  Consult the FAQ for more
+	information.
+	[WARNING] Proceeding to notify with an unverifiable URL.</pre>
+				<font size="-1">
+				<p><b>अभी क्या हुआ?</b> साइटमैप जनक आपके द्वारा निर्दिष्ट स्थान पर फ़ाइल निर्मित करता है, तब खोज इंजन की तरह ही HTTP का उपयोग कर इसे पुनः प्राप्त करने का प्रयास करेगा, और असफल हो जाएगा.  यह आगे बढ़ा और किसी तरह खोज इंजनों को सूचित किया, लेकिन यह त्रुटि उत्पन्न कर रहा है और आपको यह जानने के लिए चेतावनी दे रहा है कि खोज इंजनों द्वारा आपके साइटमैप नहीं पढ़े जा सकते.</p>
+				<p>साइटमैप जनक आपकी <b>config.xml</b> फ़ाइल की store_into विशेषता में निर्दिष्ट पथ पर आपकी साइटमैप फ़ाइल बनाता है. इसके बाद साइटमैप जनक base_url विशेषता का उपयोग कर उस फ़ाइल पर एक यूआरएल बनाता है, और खोज इंजनों पर रिपोर्ट करता है.  उदाहरण के लिए, यदि आप पुष्टिकरण को निम्न पर सेट करते हैं:</p>
+				</font>
+<pre>	&lt;site base_url="http://www.example.com/"
+	      store_into="/var/www/html/sitemap.xml.gz"&gt;</pre>
+				<font size="-1">
+				</font><p><font size="-1">साइटमैप जनक यहाँ पर आपकी साइट के लिए खोज इंजनों को सूचित करेगाः</font></p>
+				
+				<pre>	http://www.example.com/sitemap.xml.gz</pre>
+				<font size="-1"><p>
+				फ़ाइल इस यूआरएल के माध्यम से पहुँच योग्य होना चाहिए.  यदि इस यूआरएल का उपयोग कर फ़ाइल को पुनः प्राप्त नहीं किया जा सकता है, तब खोज इंजनों के पास आपका साइटमैप पाने का कोई रास्ता नहीं बचेगा.</p>
+				</font><p><font size="-1"><b>आप क्या कर सकते हैं?</b>  आपको यह सत्यापित करने की ज़रूरत होगी कि आपका <b>config.xml</b> सही base_url को निर्दिष्ट कर रहा है और store_into आपके साइटमैप के लिए पथ बनाता है.  आपको यह पुष्टि करने की भी ज़रूरत होगी कि वेब ब्राउज़र base_url के बिना भी साइटमैप फ़ाइल को पुनः प्राप्त कर सकते हैं.  यदि आप पथ या यूआरएल में त्रुटियां पाते हैं, तब आपको साइटमैप जनक को सही स्थान पर पुनः चलाने और खोज इंजनों को उनकी वेब साइटों के माध्यम से मैन्युअली सूचित करने की ज़रूरत हो सकती है.
+				</font></p>
+				<font size="-1"><p><b>एक्सएमएल के लिए समर्थन</b></p>
+				<p><strong>मुद्दाः</strong> साइटमैप जनक निम्नलिखित त्रुटि देता है:</p>
+				</font>
+<pre>	
+	Some installs of Python 2.2 do not include complete support for XML. 
+	Please try upgrading your version of Python and re-running the script.</pre>
+				<font size="-1"><p>
+				<b>अभी क्या हुआ?</b>  जैसा कि संदेश कहता है, कुछ प्लेटफॉर्म में पायथॉन का एक संस्करण ऐसा है (जिस भाषा में साइटमैप जनक लिखा गया है), जिसमें एक्सएमएल फ़ाइलों की प्रोसेसिंग के लिए गुम समर्थन जिम्मेदारियों की आवश्यकता है.  इस लिपि को चलने के लिए पूरा एक्सएमएल समर्थन चाहिए.
+				</p>
+				<p><b>आप क्या कर सकते हैं?</b> अपने पायथॉन के संस्करण को नए संस्करण के साथ इंस्टॉल कर अपग्रेड करने  की कोशिश करें.  आपको ऐसा करने के लिए संभवतया अपने सिस्टम प्रबंधक से संपर्क करने की ज़रूरत है.</p>
+				<p>ध्यान दें कि यह केवल साइटमैप जनक को प्रभावित करता है, न कि पूरे साइटमैप को.  यदि साइटमैप बनाने के लिए आपके कोई दूसरी पद्धति या उपकरण है, तो आप निश्चित रूप से उसका उपयोग कर सकते हैं और अपना साइटमैप खोज इंजनों पर भेज सकते हैं.</p>
+				<p><b>.gz या .zip में सभी अतिरिक्त फ़ाइलें क्या हैं?</b></p>
+				<p>sitemap_gen.py लिपि निकालते हैं, तब संभवतया आपको कुछ और ऐसी फ़ाइलें दिखाई देंगी, जिनका हमने ऊपर संदर्भ दिया.  पूरी फ़ाइल सूची कुछ ऐसी दिखाई देती है:</p>
+				</font>
+	<pre>	
+	AUTHORS
+	ChangeLog
+	COPYING
+	example_config.xml
+	example_urllist.txt
+	PKG-INFO
+	README
+	setup.py
+	sitemap_gen.py
+	test_sitemap_gen.py</pre>
+		  <font size="-1"><p>
+				अतिरिक्त फ़ाइलें पैकेट और लायसेंसिंग शर्तों पर सूचना हो सकती हैं.  आपको इन फ़ाइलों में देखने के लिए प्रोत्साहित किया जाता है.</p>
+				<p>एक अपवाद test_sitemap_gen.py है, जो एक इकाई-परीक्षण लिपि है, जिसे दूसरे जनक उपयोगी पा सकते हैं, यदि वे इस खुला स्रोत परियोजना में भागिदारी करना चाहते हैं तब.  यदि किसी भी स्रोत कोड को संशोधित करे बगैर साइटमैप जनक का उपयोग करना चाहते हैं - यह लगभग सभी के लिए एक संभावित मामला है - तब आपको संभवतया इस परीक्षण लिपि की ज़रूरत नहीं होगी.
+</p>
+	  यदि आप इस परियोजना के साथ मदद करने में रुचि रखते हैं, तक कृपया यहाँ जाएँ <a href="http://sourceforge.net/projects/goog-sitemapgen">http://sourceforge.net/projects/goog-sitemapgen</a>. <a href="http://code.google.com/sm_thirdparty.html">साइटमैप प्रोटोकॉल को समर्थन करने वाले तृतीय-पक्ष प्रोग्राम</a>.</p>
+	  
+	  <font size="-1"></font></font>
+		  <p><font size="-1"><b><a name="nonascii"></a>गैर-ASCII वर्ण </b></font></p>
+				<font size="-1"><font size="-1">
+				</font></font>
+				<p><font size="-1"><strong>मुद्दाः</strong> आपके साइट डोमेन नाम या इसमें शामिल यूआरएल में गैर-ASCII वर्ण हैं.</font></p>
+				<p><font size="-1">सामान्यतया, एस्केप्ड प्रस्तुत किए जाने से पहले गैर-ASCII यूआरएल <a href="protocol.html#escaped">UTF-8 का उपयोग कर एन्कोडेड</a> होने चाहिए. हालांकि, यदि यूआरएल को UTF-8 के स्थान पर एन्कोडिंग का उपयोग कर एन्कोड किया गया है, तब कुछ वेब सर्वर केवल सही जवाब देते हैं. स्वयं साइटमैप के यूआरएल के साथ ही आपके साइटमैप के सभी यूआरएल, जिस वेब सर्वर पर स्थापित हैं, उसके द्वारा पठनीयता के लिए एन्कोडेड होना आवश्यक हैं. <a href="#sitetag">साइट परिभाषा भाग</a> में, आपके वेब सर्वर द्वारा प्रयुक्त एन्कोडिंग को निर्दिष्ट करने के लिए वैकल्पिक  <strong>एन्कोडिंग</strong> का उपयोग करें. यदि आप इस टैग का उपयोग नहीं करते हैं और आपका वेब सर्वर UTF-8 के स्थान पर एन्कोडिंग का उपयोग करता है, तब हम नहीं जानते की किसी एन्कोडिंग का उपयोग करना है.</font></p>
+				<p><font size="-1">यदि आपके यूआरएल में गैर-ASCII वर्ण हैं, तब हम अनुशंसा है कि पायथॉन 2.3 या उच्च के उपयोग कर साइटमैप जनक लिपि चलाएँ. पायथॉन के इस संस्करण ने गैर-ASCII समर्थन बढ़ा दिया है. यदि आपके डोमेन नाम में गैर-ASCII वर्ण हैं, तब आपको अनिवार्य रूप से पायथॉन 2.3 या बाद के संस्करण का उपयोग करना चाहिए, क्योंकि इंटरनेशनलाइज़िंग डोमेन नेम इन एल्पिकेशन्स (IDNA) समर्थन इस संस्करण तक नहीं जोड़ा गया था. IDNA समर्थन के बिना, साइटमैप जनक गैर-ASCII डोमेन नाम को सही तरीके से एनकोड नहीं कर सकता है. </font></p>
+				<font size="-1">
+	  
+	  
+	  
+	<br>
+	<p class="d" align="right"><i>अंतिम संशोधन: अप्रैल 15, 2006</i></p>
+	  </font></div>
+	</td> 
+  </tr> 
+  <tr> 
+    <td width=1% valign=top><img src=http://www.google.com/images/art.gif width=143 height=53 vspace=5 hspace=15></td> 
+    <td style="background-color: #ffffff" width=1 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td style="background-color: #ffffff" width=10 valign=top><img src=http://www.google.com/images/cleardot.gif width=1 height=1></td> 
+    <td valign=middle><div class=footer> 
+        <div align=center><font size="-1"> &copy;2007 Google - <a href=http://www.google.com/privacy.html>गोपनीयता नीति</a>   - <a href=http://www.google.com/accounts/TOS>नियम और शर्तें</a> - <a href=http://www.google.com/about.html>Google के बारे में</a> </font></div> 
+      </div></td> 
+  </tr> 
+</table> 
+</body>
+</html> 
